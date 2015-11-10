@@ -27,7 +27,17 @@ class Main extends CI_Controller {
 	public function catalogo()
 	{
 		 $data['title']='Catalogo';
-    	 $this->load->view ('dependencia', $data);
-    	 $this->load->view ('ciudadano', $data);    	 
+    	 $this->load->view ('dependencias', $data);
+    	 $this->load->view ('ciudadanos', $data);    	 
 	}
+
+	
+
+	public function ciudadanos()
+	{
+		 $this->load->view('template/header');
+		$this->load->view('LAY/ciudadanos');
+		$this->load->view('template/footer');
+	}
+
 }

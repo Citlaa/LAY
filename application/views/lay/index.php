@@ -37,7 +37,7 @@
                          <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
                          <li><a href="<?php echo base_url()."main/registros"?>"><i class="fa fa-group"></i>Registros</a></li>
                          <li class="has_submenu">
-                             <a href="#">
+                             <a href="<?php echo base_url()."main/catalogo"?>">
                                  <i class="fa fa-folder-open"></i>Catálogo
                                  <!-- Icon to show dropdown -->
                                  <span class="caret pull-right"></span>
@@ -50,7 +50,8 @@
                              </ul>
 
                          </li>  
-                         
+                         <li><a href="<?php echo base_url()."dependencias"?>"><i class="fa fa-group"></i>Dependencias</a></li>
+                         <li><a href="<?php echo base_url()."main/ciudadanos"?>"><i class="fa fa-group"></i>Ciudadanos</a></li>
                          <li><a href="<?php echo base_url()."main/reportes"?>"><i class="fa fa-bar-chart-o"></i>Reportes</a></li>
                       </ul>               
                   </div>

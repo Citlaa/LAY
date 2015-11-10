@@ -81,12 +81,7 @@ class Login extends CI_Controller {
 			
 			if($this->model_users->add_user())
 			{
-				//echo '<script language="javascript">alert("registro exitoso");</script>';
-				/*echo '<script language="javascript">alert("';
-					echo "registro exitoso";
-				echo '");</script'>
-				*/
-				
+								
 				redirect('login/login');
 				
 			}else{
