@@ -50,7 +50,7 @@
                              </ul>
 
                          </li>  
-                         <li><a href="<?php echo base_url()."dependencias"?>"><i class="fa fa-group"></i>Dependencias</a></li>
+                         <li><a href="<?php echo base_url()."dependencias/show_dependencias"?>"><i class="fa fa-group"></i>Dependencias</a></li>
                          <li><a href="<?php echo base_url()."main/ciudadanos"?>"><i class="fa fa-group"></i>Ciudadanos</a></li>
                          <li><a href="<?php echo base_url()."main/reportes"?>"><i class="fa fa-bar-chart-o"></i>Reportes</a></li>
                       </ul>               

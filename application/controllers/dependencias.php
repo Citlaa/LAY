@@ -5,9 +5,8 @@ class Dependencias extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('template/header');
-		$this->load->view('LAY/dependencias');
-		$this->load->view('template/footer');
+		
+		redirect('/dependencias/show_dependencias');
 	}
 
 
@@ -46,7 +45,22 @@ class Dependencias extends CI_Controller {
 		$this->load->view('template/footer');
 		}
 
+	
 	}
+
+		public function show_dependencias()
+		{
+			$this->load->model('model_dependencias');
+			$data = array(
+				'dependecias'=> $this->model_dependencias->show_all(),
+				'dump'=>0
+				);
+			$this->load->view('template/header');
+			$this->load->view('LAY/dependencias',$data);
+			$this->load->view('template/footer');
+
+		}
+
 
 
 

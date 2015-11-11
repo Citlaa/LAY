@@ -10,26 +10,16 @@
             <div class="sidebar">
                   <!-- Logo starts -->
                   <div class="logo">
-                     <img src="img/LogoLAY.jpg" widht="178px" height="180px">
+                     <img src="<?php echo base_url("assets/img/LogoLAY.jpg");?>" widht="178px" height="180px">
                   </div>
                   <!-- Logo ends -->
                   
                   <!-- Sidebar buttons starts -->
-                  <div class="sidebar-buttons text-center">
+                  <div class="sidebar-buttons text-left">
                      <!-- User button -->
                      <div class="btn-group">
-                       <a href="profile.html" class="btn btn-black btn-xs"><i class="fa fa-user"></i></a>
-                       <a href="profile.html" class="btn btn-danger btn-xs">Usuario</a>
-                     </div>
-                     <!-- Lock button -->
-                     <div class="btn-group">
-                       <a href="lock.html" class="btn btn-black btn-xs"><i class="fa fa-lock"></i></a>
-                       <a href="lock.html" class="btn btn-danger btn-xs">Bloquear</a>
-                     </div>
-                     <!-- Logout button -->
-                     <div class="btn-group">
-                       <a href="login.html" class="btn btn-black btn-xs"><i class="fa fa-power-off"></i></a>
-                       <a href="login.html" class="btn btn-danger btn-xs">Salir</a>
+                       <a href='<?php echo base_url()."login/logout"?>' class="btn btn-black btn-xs"><i class="fa fa-power-off"></i></a>
+                       <a href='<?php echo base_url()."login/logout"?>' class="btn btn-danger btn-xs">Salir</a>
                      </div>
                   </div>
                   <!-- Sidebar buttons ends -->
@@ -42,8 +32,8 @@
                          <!-- Main navigation. Refer Notes.txt files for reference. -->
                          
                          <!-- Use the class "current" in main menu to hightlight current main menu -->
-                         <li><a href="index.html"><i class="fa fa-desktop"></i>Menú</a></li>
-                         <li><a href="registros.html"><i class="fa fa-group"></i>Registros</a></li>
+                         <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
+                         <li><a href="<?php echo base_url()."main/registros"?>"><i class="fa fa-group"></i>Denuncias</a></li>
                          <li class="has_submenu">
                              <a href="#">
                                  <i class="fa fa-folder-open"></i>Catálogo
@@ -58,7 +48,7 @@
                              </ul>
                          </li>   
 
-             <li><a href="reportes.html"><i class="fa fa-bar-chart-o"></i>Reportes</a></li>
+             <li><a href="<?php echo base_url()."main/reportes"?>"><i class="fa fa-bar-chart-o"></i>Reportes</a></li>
                                                   
                      </ul>               
                   </div>
@@ -140,41 +130,40 @@
                    </thead>
                    <tbody>
 
-                   <tr>
-                     <td>1</td>
-                     <td>Salud</td>
-                     <td>Diana Laura Saucedo López</td>
-                     <td>Revolución</td>
-                     <td>95</td>
-                     <td>Los Sauces</td>
-                     <td>Encarnación</td>
-                     <td>47285</td>
-                     <td>234567</td>
-                     <td>345678</td>
-                     <td>
-                       <button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> </button>
-                       <button class="btn btn-xs btn-danger"><i class="fa fa-times"></i> </button>                     
-                     </td>
-                   </tr>
+                    
 
-                   <tr>
-                     <td>2</td>
-                     <td>Educación</td>
-                     <td>Diana Laura Saucedo López</td>
-                     <td>Revolución</td>
-                     <td>95</td>
-                     <td>Los Sauces</td>
-                     <td>Encarnación</td>
-                     <td>47285</td>
-                     <td>234567</td>
-                     <td>345678</td>
-                     <td>
-                       <button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> </button>
-                       <button class="btn btn-xs btn-danger"><i class="fa fa-times"></i> </button>                     
-                     </td>
-                   </tr>
+
+                   
+
+                   <?php
+                      foreach ($dependecias->result() as $row) {
+
+                        echo "<tr>";
+                          echo "<td>".$row->dependencia."</td>";
+                          echo "<td>".$row->titular."</td>";
+                          echo "<td>".$row->calle."</td>";
+                          echo "<td>".$row->numExt."</td>";
+                          echo "<td>".$row->numInt."</td>";
+                          echo "<td>".$row->colonia."</td>";
+                          echo "<td>".$row->localidad."</td>";
+                          echo "<td>".$row->cp."</td>";
+                          echo "<td>".$row->tel1."</td>";
+                          echo "<td>".$row->tel2."</td>";
+                          echo "<td>";
+                            echo "<button class='btn btn-xs btn-warning'><i class='fa fa-pencil'></i> </button>";
+                            echo "<button class='btn btn-xs btn-danger'><i class='fa fa-times'></i> </button>";
+                          echo "</td>";
+                        echo "</tr>";
+                        
+                      }
+
+                   ?>                                   
+
                    </tbody>
                  </table>
+
+                  
+
                              </div>
                            </div>
                
@@ -210,22 +199,22 @@
                 <?php echo validation_errors();?>
 
                   <div class="form-group row">
-                    <label for="id" class="col-md-2 control-label">Id de registro:</label>
+                    <label for="id" class="col-md-2 control-label" style="padding-left: 40px;padding-top: 7px;">Id de registro:</label>
                     <div class="col-md-2" style="margin-top: 15px">
                       <input type="text" class="form-control" id="id" placeholder="ID" disabled>
                     </div>                
                   </div>
 
-                  <div class="form-group">
-                    <label for="dependencia" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;">Dependencia:</label>
+                  <div class="form-group row">
+                    <label for="dependencia" class="col-md-2 control-label" style="padding-left: 40px;padding-top: 7px;">Dependencia:</label>
                     <div class="col-md-6" style="margin-top: 15px;">                      
                       <?php echo form_input('dependencia','',"class='form-control'", $this->input->post('dependencia'));?>
                     </div>
                   </div>
 
 
-                  <div class="form-group">
-                    <label for="titular" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;padding-right: 11px;">Titular:</label>
+                  <div class="form-group row">
+                    <label for="titular" class="col-md-2 control-label" style="padding-left: 40px;padding-top: 7px;">Titular:</label>
                     <div class="col-md-6" style="margin-top: 15px;">                      
                       <?php echo form_input('titular','',"class='form-control'", $this->input->post('titular'));?>
                     </div>
@@ -233,58 +222,59 @@
 
 
                   <div class="form-group row">
-                    <label for="calle" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;">Calle:</label>
-                    <div class="col-md-3" style="margin-top: 15px;">                      
+                    <label for="calle" class="col-md-2 control-label" style="padding-left: 40px;padding-top: 7px;width: 95px;padding-right: 5px;">Calle:</label>
+                    <div class="col-md-3" style="margin-top: 15px;">
                       <?php echo form_input('calle','',"class='form-control'", $this->input->post('calle'));?>
                     </div>
 
-
-                    <label for="calle" class="col-md-2 control-label" style= "width: 25px; padding-right: 5px; padding-left: 5px;">Nº:</label>
+                    <label for="calle" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;padding-top: 7px">Nº Ext:</label>
                     <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">
                       <?php echo form_input('numExt','',"class='form-control'", $this->input->post('numExt'));?>
                     </div>
 
-                    <label for="calle" class="col-md-2 control-label" style= "width: 25px; padding-right: 5px; padding-left: 5px;">Nº interior:</label>
+                    <label for="calle" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;padding-top: 7px">Nº Int:</label>
                     <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">
                       <?php echo form_input('numInt','',"class='form-control'", $this->input->post('numInt'));?>
                     </div>
 
-                    <label for="colonia" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;">Colonia:</label>
+                    <label for="colonia" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px; padding-top: 7px">Colonia:</label>
                     <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
                       <?php echo form_input('colonia','',"class='form-control'", $this->input->post('colonia'));?>
-                    </div>
-
-                    <label for="calle" class="col-md-2 control-label" style= "width: 25px; padding-right: 5px; padding-left: 5px;">CP:</label>
-                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                      <?php echo form_input('cp','',"class='form-control'", $this->input->post('cp'));?>
                     </div>
                   </div>
 
 
                   <div class="form-group row">
-                    <label for="localidad" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;padding-right: 11px;">Localidad:</label>
+                    <label for="calle" class="col-md-2 control-label" style= "padding-left: 40px; width: 90px; padding-top: 7px">C.P:</label>
+                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;padding-right: 5px;width: 130px;">
+                      <?php echo form_input('cp','',"class='form-control'", $this->input->post('cp'));?>
+                    </div>
+
+
+                    <label for="localidad" class="col-md-2 control-label" style="padding-left: 5px; width: 70px;padding-right: 5px; padding-top: 7px">Localidad:</label>
                     <div class="col-md-2" style="margin-top: 15px;">                      
                       <?php echo form_input('localidad','',"class='form-control'", $this->input->post('localidad'));?>
                     </div>
 
-                    <label for="t1" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 1:</label>                                          
+                    <label for="t1" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;padding-top: 7px">Teléfono 1:</label>                                          
+                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;padding-right: 0px">
                       <?php echo form_input('tel1','',"class='form-control'", $this->input->post('tel1'));?>
                     </div>
 
-                    <label for="t2" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 2:</label>
+                     <label for="t2" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px; padding-top: 7px">Teléfono 2:</label>
                     <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">                      
                       <?php echo form_input('tel2','',"class='form-control'", $this->input->post('tel2'));?>
                     </div>
                   </div>
-                  
-                  <div class="form-group" style="padding-left: 665px;">
-                  <div class="col-md-offset-2 col-md-10">                    
-                    <?php echo form_submit('dependencia_submit','Aceptar',"class='btn btn-info'"); ?>                    
-                    <button type="buton" value="cancel" class="btn btn-default" onClick="<?php echo base_url()."dependencias"?>">Cancelar</button>
-                  </div>
-                  </div>
-                </form>
-                
+               
+                    <div class="form-group" style="padding-left: 665px;height: 50px;">
+                      <div class="col-md-offset-2 col-md-10">
+                        <?php echo form_submit('dependencia_submit','Aceptar',"class='btn btn-info'"); ?>                    
+                        <button type="buton" value="cancel" class="btn btn-default" onClick="<?php echo base_url()."dependencias"?>">Cancelar</button>
+                      </div>
+                    </div>
+  
+                </form>               
                 </div>
 
 <!--hasta aqui -->

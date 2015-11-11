@@ -29,4 +29,16 @@ class Model_dependencias extends CI_Model
 
 	}
 
+	public function show_all()
+	{
+		$query= $this->db->get('dependencias');
+
+		if($query->num_rows()>0)
+		{
+			return $query;
+		}else{
+			return false;
+		}
+	}
+
 }
