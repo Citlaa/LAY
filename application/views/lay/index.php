@@ -19,7 +19,7 @@
                      
                      <!-- Logout button -->
                      <div class="btn-group">
-                       <a href="login.html" class="btn btn-black btn-xs"><i class="fa fa-power-off"></i></a>
+                       <a href='<?php echo base_url()."login/logout"?>' class="btn btn-black btn-xs"><i class="fa fa-power-off"></i></a>
                        <a href='<?php echo base_url()."login/logout"?>' class="btn btn-danger btn-xs">Salir</a>
                      </div>
                     
@@ -35,7 +35,7 @@
                          
                          <!-- Use the class "current" in main menu to hightlight current main menu -->
                          <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
-                         <li><a href="<?php echo base_url()."main/registros"?>"><i class="fa fa-group"></i>Registros</a></li>
+                         <li><a href="<?php echo base_url()."main/registros"?>"><i class="fa fa-group"></i>Denuncias</a></li>
                          <li class="has_submenu">
                              <a href="<?php echo base_url()."main/catalogo"?>">
                                  <i class="fa fa-folder-open"></i>Catálogo
@@ -98,7 +98,7 @@
                 <a href="<?php echo base_url()."main/registros"?>">
               <div class="well br-red">
                   <i class="fa fa-group"></i>
-                <h2>Registros</h2>                
+                <h2>Denuncias</h2>                
               </div>
                 </a>
               </div>
