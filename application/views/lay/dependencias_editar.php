@@ -93,113 +93,29 @@
             <div class="page-tabs">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
-                <li  class="active"><a href="#search" data-toggle="tab">Dependencias</a></li>                
-                
-                 <li><a href='<?php echo base_url()."dependencias/dependencias2"?>' class="btn btn-danger btn-xs">Añadir nueva dependencia</a></li>
+                <!--<li > <a href="#search" data-toggle="tab">Dependencias</a></li> -->
+                <li><a href='<?php echo base_url()."dependencias"?>' class="btn btn-danger btn-xs">Dependencias</a></li>               
+                <li class="active"><a href="#addnew" data-toggle="tab">Añadir nueva dependencia</a></li>
                 
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
-                <div class="tab-pane fade active in" id="search">
+                <div class="tab-pane fade" id="search">
           
-                  <div class="widget">
-                           <div class="widget-head">
-                    <h5><i class="fa fa-university"></i>Dependencias</h5>
-                  </div>
-                           <div id="data-table_filter" class="dataTables_filter">
-                              <label>Buscar:<input type="search" class placeholder aria-controls="data-table">
-                              </label>
-                           </div>
-                           <div class="widget-body no-padd">
-                <div class="table-responsive">
-                  <table class="table table-hover table-bordered ">
-                   <thead>
-                   <tr>
-                     <th>Nº</th>
-                     <th>Dependencia</th>
-                     <th>Titular</th>
-                     <th>Calle</th>
-                     <th>Número</th>
-                     <th>Colonia</th>
-                     <th>Localidad</th>
-                     <th>C.P</th>
-                     <th>Teléfono 1</th>
-                     <th>Teléfono 2</th>
-                     <th>Opciones</th>
-                   </tr>
-                   </thead>
-                   <tbody>
-
-                    
-
-
-                   
-
-                   <?php
-                      foreach ($dependecias->result() as $row) {
-
-                        echo "<tr>";
-                          echo "<td>".$row->dependencia."</td>";
-                          echo "<td>".$row->titular."</td>";
-                          echo "<td>".$row->calle."</td>";
-                          echo "<td>".$row->numExt."</td>";
-                          echo "<td>".$row->numInt."</td>";
-                          echo "<td>".$row->colonia."</td>";
-                          echo "<td>".$row->localidad."</td>";
-                          echo "<td>".$row->cp."</td>";
-                          echo "<td>".$row->tel1."</td>";
-                          echo "<td>".$row->tel2."</td>";
-                          echo "<td>";
-                            
-                            echo "<a class='btn btn-xs btn-warning' href=".base_url()."dependencias/edit_dependencia/".$row->idDependencia."><i class='fa fa-pencil'></i> </a> |";
-                            echo "<a class='btn btn-xs btn-danger' href=".base_url()."dependencias/delete_dependencia/".$row->idDependencia."><i class='fa fa-times'></i> </a>";
-                            
-                          echo "</td>";
-                        echo "</tr>";
-                        
-                      }
-
-                   ?>                                   
-
-                   </tbody>
-                 </table>
-
-                  
-
-                             </div>
-                           </div>
-               
-               <div class="widget-foot">
-              
-                <ul class="pagination pull-right">
-                                <li><a href="#">&laquo;</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                              </ul>
-                               
-                               <div class="clearfix"></div>           
-               </div>
-            
-                    <div class="pull-right">
-                      <button type="button" class="btn btn-info">Nueva Dependencia</button>
-                    </div>
-                    <div class="clearfix"></div>                  
-                </div>                                     
+                                                   
                 </div>
                 
 <!-- Add new Registro -->
-                <div class="tab-pane fade" id="addnew">
+                <div class="tab-pane fade active in" id="addnew">
                 <h4>Nueva Dependencia</h4>
                 
-                
+                <?php $id = $this->uri->segment(3);?>
                 <!--<form class="form-horizontal" role="form">-->
-                <?php echo form_open('dependencias/dependencia_validation');?>
+                <?php echo form_open('dependencias/dependencia_edit_validation/'.$id);?>
+                <!--<form id="form" name="fomr" action="<?= base_url()?>dependencias/dependencia_validation/<?=$id?>" method="POST">-->
                 <?php echo validation_errors();?>
+
 
                   <div class="form-group row">
                     <label for="id" class="col-md-2 control-label" style="padding-left: 40px;padding-top: 7px;">Id de registro:</label>
@@ -211,7 +127,7 @@
                   <div class="form-group row">
                     <label for="dependencia" class="col-md-2 control-label" style="padding-left: 40px;padding-top: 7px;">Dependencia:</label>
                     <div class="col-md-6" style="margin-top: 15px;">                      
-                      <?php echo form_input('dependencia','',"class='form-control'", $this->input->post('dependencia'));?>
+                      <?php echo form_input('dependencia',$dependencia,"class='form-control'", $this->input->post('dependencia'));?>                      
                     </div>
                   </div>
 
@@ -219,7 +135,7 @@
                   <div class="form-group row">
                     <label for="titular" class="col-md-2 control-label" style="padding-left: 40px;padding-top: 7px;">Titular:</label>
                     <div class="col-md-6" style="margin-top: 15px;">                      
-                      <?php echo form_input('titular','',"class='form-control'", $this->input->post('titular'));?>
+                      <?php echo form_input('titular',$titular,"class='form-control'", "value='".$dependencia."'", $this->input->post('titular'));?>
                     </div>
                   </div>
 
@@ -227,52 +143,52 @@
                   <div class="form-group row">
                     <label for="calle" class="col-md-2 control-label" style="padding-left: 40px;padding-top: 7px;width: 95px;padding-right: 5px;">Calle:</label>
                     <div class="col-md-3" style="margin-top: 15px;">
-                      <?php echo form_input('calle','',"class='form-control'", $this->input->post('calle'));?>
+                      <?php echo form_input('calle',$calle,"class='form-control'", $this->input->post('calle'));?>
                     </div>
 
                     <label for="calle" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;padding-top: 7px">Nº Ext:</label>
                     <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">
-                      <?php echo form_input('numExt','',"class='form-control'", $this->input->post('numExt'));?>
+                      <?php echo form_input('numExt',$numExt,"class='form-control'", $this->input->post('numExt'));?>
                     </div>
 
                     <label for="calle" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;padding-top: 7px">Nº Int:</label>
                     <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">
-                      <?php echo form_input('numInt','',"class='form-control'", $this->input->post('numInt'));?>
+                      <?php echo form_input('numInt',$numInt,"class='form-control'", $this->input->post('numInt'));?>
                     </div>
 
                     <label for="colonia" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px; padding-top: 7px">Colonia:</label>
                     <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                      <?php echo form_input('colonia','',"class='form-control'", $this->input->post('colonia'));?>
+                      <?php echo form_input('colonia',$colonia,"class='form-control'", $this->input->post('colonia'));?>
                     </div>
                   </div>
 
 
                   <div class="form-group row">
-                    <label for="calle" class="col-md-2 control-label" style= "padding-left: 40px; width: 90px; padding-top: 7px">C.P:</label>
+                    <label for="cp" class="col-md-2 control-label" style= "padding-left: 40px; width: 90px; padding-top: 7px">C.P:</label>
                     <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;padding-right: 5px;width: 130px;">
-                      <?php echo form_input('cp','',"class='form-control'", $this->input->post('cp'));?>
+                      <?php echo form_input('cp',$cp,"class='form-control'", $this->input->post('cp'));?>
                     </div>
 
 
                     <label for="localidad" class="col-md-2 control-label" style="padding-left: 5px; width: 70px;padding-right: 5px; padding-top: 7px">Localidad:</label>
                     <div class="col-md-2" style="margin-top: 15px;">                      
-                      <?php echo form_input('localidad','',"class='form-control'", $this->input->post('localidad'));?>
+                      <?php echo form_input('localidad',$localidad,"class='form-control'", $this->input->post('localidad'));?>
                     </div>
 
                     <label for="t1" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;padding-top: 7px">Teléfono 1:</label>                                          
                     <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;padding-right: 0px">
-                      <?php echo form_input('tel1','',"class='form-control'", $this->input->post('tel1'));?>
+                      <?php echo form_input('tel1',$tel1,"class='form-control'", $this->input->post('tel1'));?>
                     </div>
 
                      <label for="t2" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px; padding-top: 7px">Teléfono 2:</label>
                     <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">                      
-                      <?php echo form_input('tel2','',"class='form-control'", $this->input->post('tel2'));?>
+                      <?php echo form_input('tel2',$tel2,"class='form-control'", $this->input->post('tel2'));?>
                     </div>
                   </div>
                
                     <div class="form-group" style="padding-left: 665px;height: 50px;">
                       <div class="col-md-offset-2 col-md-10">
-                        <?php echo form_submit('dependencia_submit','Aceptar',"class='btn btn-info'"); ?>                    
+                        <?php echo form_submit('dependencia_submit','Guardar',"class='btn btn-info'"); ?>                    
                         <button type="buton" value="cancel" class="btn btn-default" onClick="<?php echo base_url()."dependencias"?>">Cancelar</button>
                       </div>
                     </div>

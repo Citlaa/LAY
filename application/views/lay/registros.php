@@ -149,13 +149,19 @@
           
                     <label for="dependencia" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Dependencia:</label>
                       <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
+                        
                         <select class="form-control">
-                          <option>USA</option>
-                          <option>India</option>
-                          <option>Canada</option>
-                          <option>South Africa</option>
-                          <option>Pakistan</option>
+                          <?php
+                            foreach ($dependecias->result() as $row) {
+                              echo "<option>".$row->dependencia."</option>";                              
+                                                      
+                            }
+
+                          ?>
+                          
                         </select>
+
+                        
                       </div>
                   </div>
 

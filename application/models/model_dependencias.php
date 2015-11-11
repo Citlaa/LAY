@@ -41,4 +41,29 @@ class Model_dependencias extends CI_Model
 		}
 	}
 
+	public function eliminar($id){
+
+		$this->db->where('idDependencia',$id);
+		$this->db->delete('dependencias');
+
+	}
+
+	public function obtenerId($id)
+	{
+		$this->db->where('idDependencia',$id);
+		$query= $this->db->get('dependencias');
+		if($query->num_rows()>0){
+			return $query;
+		}else{
+			return false;	
+		}
+	}
+
+	public function editar_dependencia($id, $data)
+	{
+		$this->db->where('idDependencia',$id);
+		$this->db->update('dependencias',$data);
+	}
+
+	
 }

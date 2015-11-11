@@ -10,12 +10,6 @@ class Main extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-	public function registros()
-	{
-		$this->load->view('template/header');
-		$this->load->view('LAY/registros');
-		$this->load->view('template/footer');
-	}
 
 	public function reportes()
 	{

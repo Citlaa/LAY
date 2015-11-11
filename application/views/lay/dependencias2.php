@@ -93,107 +93,21 @@
             <div class="page-tabs">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
-                <li  class="active"><a href="#search" data-toggle="tab">Dependencias</a></li>                
-                
-                 <li><a href='<?php echo base_url()."dependencias/dependencias2"?>' class="btn btn-danger btn-xs">Añadir nueva dependencia</a></li>
+                <!--<li > <a href="#search" data-toggle="tab">Dependencias</a></li> -->
+                <li><a href='<?php echo base_url()."dependencias"?>' class="btn btn-danger btn-xs">Dependencias</a></li>               
+                <li class="active"><a href="#addnew" data-toggle="tab">Añadir nueva dependencia</a></li>
                 
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
-                <div class="tab-pane fade active in" id="search">
+                <div class="tab-pane fade" id="search">
           
-                  <div class="widget">
-                           <div class="widget-head">
-                    <h5><i class="fa fa-university"></i>Dependencias</h5>
-                  </div>
-                           <div id="data-table_filter" class="dataTables_filter">
-                              <label>Buscar:<input type="search" class placeholder aria-controls="data-table">
-                              </label>
-                           </div>
-                           <div class="widget-body no-padd">
-                <div class="table-responsive">
-                  <table class="table table-hover table-bordered ">
-                   <thead>
-                   <tr>
-                     <th>Nº</th>
-                     <th>Dependencia</th>
-                     <th>Titular</th>
-                     <th>Calle</th>
-                     <th>Número</th>
-                     <th>Colonia</th>
-                     <th>Localidad</th>
-                     <th>C.P</th>
-                     <th>Teléfono 1</th>
-                     <th>Teléfono 2</th>
-                     <th>Opciones</th>
-                   </tr>
-                   </thead>
-                   <tbody>
-
-                    
-
-
-                   
-
-                   <?php
-                      foreach ($dependecias->result() as $row) {
-
-                        echo "<tr>";
-                          echo "<td>".$row->dependencia."</td>";
-                          echo "<td>".$row->titular."</td>";
-                          echo "<td>".$row->calle."</td>";
-                          echo "<td>".$row->numExt."</td>";
-                          echo "<td>".$row->numInt."</td>";
-                          echo "<td>".$row->colonia."</td>";
-                          echo "<td>".$row->localidad."</td>";
-                          echo "<td>".$row->cp."</td>";
-                          echo "<td>".$row->tel1."</td>";
-                          echo "<td>".$row->tel2."</td>";
-                          echo "<td>";
-                            
-                            echo "<a class='btn btn-xs btn-warning' href=".base_url()."dependencias/edit_dependencia/".$row->idDependencia."><i class='fa fa-pencil'></i> </a> |";
-                            echo "<a class='btn btn-xs btn-danger' href=".base_url()."dependencias/delete_dependencia/".$row->idDependencia."><i class='fa fa-times'></i> </a>";
-                            
-                          echo "</td>";
-                        echo "</tr>";
-                        
-                      }
-
-                   ?>                                   
-
-                   </tbody>
-                 </table>
-
-                  
-
-                             </div>
-                           </div>
-               
-               <div class="widget-foot">
-              
-                <ul class="pagination pull-right">
-                                <li><a href="#">&laquo;</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                              </ul>
-                               
-                               <div class="clearfix"></div>           
-               </div>
-            
-                    <div class="pull-right">
-                      <button type="button" class="btn btn-info">Nueva Dependencia</button>
-                    </div>
-                    <div class="clearfix"></div>                  
-                </div>                                     
+                                                   
                 </div>
                 
 <!-- Add new Registro -->
-                <div class="tab-pane fade" id="addnew">
+                <div class="tab-pane fade active in" id="addnew">
                 <h4>Nueva Dependencia</h4>
                 
                 
