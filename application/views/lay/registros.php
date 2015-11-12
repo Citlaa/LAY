@@ -132,7 +132,8 @@
                 <div class="tab-pane fade" id="addnew">
                 <h4>Nueva Denuncia</h4>
                 
-                <form class="form-horizontal" role="form">
+                <?php echo form_open('login/login_validation');?>
+                <?php echo validation_errors();?>
 
                   <div class="form-group row">
                     <label for="id" class="col-md-2 control-label">Id de registro:</label>
@@ -144,7 +145,7 @@
                       <i class="fa fa-calendar"></i>
                     </div>
                     <div class="col-md-3">
-                      <input type="date" class="form-control" id="fecha" style="margin-top: 15px;padding-left: 35px;padding-right: 10px;">
+                      <input type="date" class="form-control" id="fecha" style="margin-top: 15px;padding-left: 35px;padding-right: 10px;">                      
                     </div>
           
                     <label for="dependencia" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Dependencia:</label>
@@ -189,8 +190,8 @@
 
                   <div class="form-group">
                     <label for="nombre" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;">Nombre:</label>
-                    <div class="col-md-6" style="margin-top: 15px;">
-                      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <div class="col-md-6" style="margin-top: 15px;">                      
+                      <?php echo form_input('nombre','',"class='form-control'", $this->input->post('nombre'));?>
                     </div>
                   </div>
 
@@ -198,37 +199,37 @@
                   <div class="form-group">
                     <label for="apellidoP" class="col-md-2 control-label" style="padding-left: 10px; width: 176px;padding-right: 11px;">Apellido Paterno:</label>
                     <div class="col-md-6" style="margin-top: 15px;">
-                      <input type="text" class="form-control" id="apellidoP" placeholder="Apellido Paterno">
+                      <?php echo form_input('apellidoPa','',"class='form-control'", $this->input->post('apellidoPa'));?>
                     </div>
                   </div>
 
                    <div class="form-group">
                     <label for="apellidoM" class="col-md-2 control-label" style="padding-left: 10px; width: 176px;padding-right: 11px;">Apellido Materno:</label>
-                    <div class="col-md-6" style="margin-top: 15px;">
-                      <input type="text" class="form-control" id="apellidoM" placeholder="Apellido Materno">
+                    <div class="col-md-6" style="margin-top: 15px;">                      
+                      <?php echo form_input('apellidoMa','',"class='form-control'", $this->input->post('apellidoMa'));?>
                     </div>
                   </div>
 
 
                   <div class="form-group row">
                     <label for="calle" class="col-md-2 control-label" style="padding-left: 10px; width: 100px;">Calle:</label>
-                    <div class="col-md-3" style="margin-top: 15px;">
-                      <input type="text" class="form-control" id="calle" placeholder="Calle">
+                    <div class="col-md-3" style="margin-top: 15px;">                      
+                      <?php echo form_input('calle','',"class='form-control'", $this->input->post('calle'));?>
                     </div>
 
                     <label for="nExt" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;">Nº Ext:</label>
-                    <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="nExt" placeholder="Ext">
+                    <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">                      
+                      <?php echo form_input('noExt','',"class='form-control'", $this->input->post('noExt'));?>
                     </div>
 
                     <label for="nInt" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;">Nº Int:</label>
                     <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="nInt" placeholder="Int">
+                      <?php echo form_input('noInt','',"class='form-control'", $this->input->post('noInt'));?>
                     </div>
 
                     <label for="colonia" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;">Colonia:</label>
                     <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="colonia" placeholder="Colonia">
+                      <?php echo form_input('colonia','',"class='form-control'", $this->input->post('colonia'));?>
                     </div>
 
                     </div>
@@ -236,31 +237,31 @@
 
                   <div class="form-group row">
                      <label for="calle" class="col-md-2 control-label" style= "padding-left: 10px; width: 90px;">C.P:</label>
-                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;padding-right: 5px;width: 130px;">
-                      <input type="text" class="form-control" id="cp" placeholder="CP">
+                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;padding-right: 5px;width: 130px;">                      
+                      <?php echo form_input('cp','',"class='form-control'", $this->input->post('cp'));?>
                     </div>
 
                     <label for="localidad" class="col-md-2 control-label" style="padding-left: 5px; width: 70px;padding-right: 5px;">Localidad:</label>
-                    <div class="col-md-2" style="margin-top: 15px;padding-left: 10px;padding-right: 10px;">
-                      <input type="text" class="form-control" id="localidad" placeholder="Localidad">
+                    <div class="col-md-2" style="margin-top: 15px;padding-left: 10px;padding-right: 10px;">                  
+                      <?php echo form_input('localidad','',"class='form-control'", $this->input->post('localidad'));?>
                     </div>
 
                     <label for="t1" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 1:</label>
-                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;padding-right: 0px">
-                      <input type="text" class="form-control" id="t1" placeholder="Teléfono 1">
+                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;padding-right: 0px">                      
+                      <?php echo form_input('tel1','',"class='form-control'", $this->input->post('tel1'));?>
                     </div>
 
                     <label for="t2" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 2:</label>
                     <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="t2" placeholder="Teléfono 2">
+                      <?php echo form_input('tel2','',"class='form-control'", $this->input->post('tel2'));?>
                     </div>
                   </div>
 
 
                   <div class="form-group">
                     <label class="col-md-2 control-label" style="padding-left: 10px; width: 115px;">Asunto:</label>
-                    <div class="col-md-10">
-                      <textarea class="form-control" rows="3" placeholder="Asunto"></textarea>
+                    <div class="col-md-10">                      
+                      <?php echo form_input('descripcion','',"class='form-control'", $this->input->post('descripcion'));?>
                     </div>
                     <div style="padding-left: 770px;">
                         <button type="submit" class="btn btn-success">Nuevo asunto</button>
