@@ -132,7 +132,7 @@
                 <div class="tab-pane fade" id="addnew">
                 <h4>Nueva Denuncia</h4>
                 
-                <?php echo form_open('login/login_validation');?>
+                <?php echo form_open('registros_denuncias/denuncia_validation');?>
                 <?php echo validation_errors();?>
 
                   <div class="form-group row">
@@ -146,16 +146,16 @@
                     </div>
                     <div class="col-md-3">
                       <input type="date" class="form-control" id="fecha" style="margin-top: 15px;padding-left: 35px;padding-right: 10px;">                      
+                      <?php echo form_input('fecha','',"class='form-control'", $this->input->post('fecha'));?>                      
                     </div>
           
                     <label for="dependencia" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Dependencia:</label>
                       <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
                         
-                        <select class="form-control">
+                        <select class="form-control" name="idDependencia">
                           <?php
                             foreach ($dependecias->result() as $row) {
-                              echo "<option>".$row->dependencia."</option>";                              
-                                                      
+                              echo "<option value='$row->idDependencia'>$row->dependencia</option>";                              
                             }
 
                           ?>
@@ -170,19 +170,19 @@
                   <div class="form-group row">
                     <label for="estatus" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Estatus:</label>
                     <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
-                      <select class="form-control">
-                        <option>Resuelto</option>
-                        <option>Pendiente</option>                      
+                      <select class="form-control" name="estatus">
+                        <option value="0">Resuelto</option>
+                        <option value="1">Pendiente</option>                      
                       </select>
                     </div>
 
                     <label for="modr" class="col-md-2 control-label" style="width: 170px; padding-right: 5px;">Modo de recepción:</label>
                     <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
-                      <select class="form-control">
-                        <option>Llamada</option>
-                        <option>WhatsApp</option>                      
-                        <option>SMS</option>
-                        <option>Otros</option> 
+                      <select class="form-control" name="">
+                        <option value="1">Llamada</option>
+                        <option value="2">WhatsApp</option>                      
+                        <option value="3">SMS</option>
+                        <option value="4">Otros</option> 
                       </select>
                     </div>
                   </div>
