@@ -33,7 +33,7 @@
                          
                          <!-- Use the class "current" in main menu to hightlight current main menu -->
                          <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
-                         <li><a href="<?php echo base_url()."main/registros"?>"><i class="fa fa-group"></i>Denuncias</a></li>
+                         <li><a href="<?php echo base_url()."regidenu"?>"><i class="fa fa-group"></i>Denuncias</a></li>
                          <li class="has_submenu">
                              <a href="#">
                                  <i class="fa fa-folder-open"></i>Catálogo
@@ -43,7 +43,7 @@
                              <!-- Sub navigation -->
                              <ul>
                                  <!-- Use the class "active" in sub menu to hightlight current sub menu -->
-                                 <li><a href="dependencia.html"><i class="fa fa-angle-double-right"></i>Dependencia</a></li>
+                                  <li><a href="<?php echo base_url()."regidenu"?>"><i class="fa fa-group"></i>Denuncias</a></li>
                                  <li><a href="ciudadanos.html"><i class="fa fa-angle-double-right"></i>Ciudadanos</a></li>
                              </ul>
                          </li>   

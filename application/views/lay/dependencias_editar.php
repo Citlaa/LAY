@@ -43,7 +43,7 @@
                              <!-- Sub navigation -->
                              <ul>
                                  <!-- Use the class "active" in sub menu to hightlight current sub menu -->
-                                 <li><a href="dependencia.html"><i class="fa fa-angle-double-right"></i>Dependencia</a></li>
+                                 <li><a href="<?php echo base_url()."dependencias/show_dependencias"?>"><i class="fa fa-group"></i>Dependencias</a></li>
                                  <li><a href="ciudadanos.html"><i class="fa fa-angle-double-right"></i>Ciudadanos</a></li>
                              </ul>
                          </li>   

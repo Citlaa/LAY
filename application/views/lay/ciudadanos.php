@@ -11,23 +11,14 @@
             <div class="sidebar">
                   <!-- Logo starts -->
                   <div class="logo">
-                     <img src="img/LogoLAY.jpg" widht="178px" height="180px">
+                    <img src="<?php echo base_url("assets/img/LogoLAY.jpg");?>" widht="178px" height="180px">
+                     
                   </div>
                   <!-- Logo ends -->
                   
                   <!-- Sidebar buttons starts -->
-                  <div class="sidebar-buttons text-center">
-                     <!-- User button -->
-                     <div class="btn-group">
-                       <a href="profile.html" class="btn btn-black btn-xs"><i class="fa fa-user"></i></a>
-                       <a href="profile.html" class="btn btn-danger btn-xs">Usuario</a>
-                     </div>
-                     <!-- Lock button -->
-                     <div class="btn-group">
-                       <a href="lock.html" class="btn btn-black btn-xs"><i class="fa fa-lock"></i></a>
-                       <a href="lock.html" class="btn btn-danger btn-xs">Bloquear</a>
-                     </div>
-                     <!-- Logout button -->
+                  <div class="sidebar-buttons text-left">
+                     
                      <div class="btn-group">
                        <a href="login.html" class="btn btn-black btn-xs"><i class="fa fa-power-off"></i></a>
                        <a href="login.html" class="btn btn-danger btn-xs">Salir</a>
@@ -43,8 +34,9 @@
                          <!-- Main navigation. Refer Notes.txt files for reference. -->
                          
                          <!-- Use the class "current" in main menu to hightlight current main menu -->
-                         <li><a href="index.html"><i class="fa fa-desktop"></i>Menú</a></li>
-                         <li><a href="registros.html"><i class="fa fa-group"></i>Registros</a></li>
+                         <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
+                         
+                         <li><a href="<?php echo base_url()."regidenu"?>"><i class="fa fa-group"></i>Denuncias</a></li>
                          <li class="has_submenu">
                              <a href="#">
                                  <i class="fa fa-folder-open"></i>Catálogo
@@ -56,10 +48,11 @@
                                  <!-- Use the class "active" in sub menu to hightlight current sub menu -->
                                  <li><a href="dependencia.html"><i class="fa fa-angle-double-right"></i>Dependencia</a></li>
                                  <li><a href="ciudadanos.html"><i class="fa fa-angle-double-right"></i>Ciudadanos</a></li>
+
                              </ul>
                          </li>   
 
-             <li><a href="reportes.html"><i class="fa fa-bar-chart-o"></i>Reportes</a></li>
+          <li><a href="<?php echo base_url()."main/reportes"?>"><i class="fa fa-bar-chart-o"></i>Reportes</a></li>
                                                   
                      </ul>               
                   </div>

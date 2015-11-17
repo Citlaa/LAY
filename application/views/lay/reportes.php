@@ -109,13 +109,25 @@
                 <!-- Search users -->
                 <div class="well">
                   <!-- Advanced search -->
-                   <div class="form-group">
+                                      <div class="form-group">
                                   <label class="col-lg-2 control-label">Fecha:</label>
-                                  <div class="col-lg-10">
-                                    <input type="date" class="form-control" id="fecha" style="margin-top: 15px;padding-left: 35px;padding-right: 10px;">
-                                  </div>
-                                </div>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <input type='text' class="form-control" id='datetimepicker4' />
+        </div>
+        <script type="text/javascript">
+            $(function () {
                 
+                $('#datetimepicker4').datetimepicker({
+                  minDate: moment(),
+                  format: "DD/MM/YYYY",
+                  locale: 'es'
+                });
+            });
+        </script>
+    </div>
+</div>
                     <button type="submit" class="btn btn-default">Buscar</button>                  
                   </form>
                 </div>
