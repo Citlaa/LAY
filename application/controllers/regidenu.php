@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Registros_denuncias extends CI_Controller {
+class Regidenu extends CI_Controller {
 
 	public function index()
 	{
-		redirect('/registros_denuncias/mostrar_dependencias');
+		redirect('/regidenu/mostrar_dependencias');
 	}
 
 	public function mostrar_dependencias()
@@ -37,7 +37,7 @@ class Registros_denuncias extends CI_Controller {
 		$this->form_validation->set_rules('apellidoPa','Apelido Paterno','required');
 		$this->form_validation->set_rules('apellidoMa','Apelido Materno','required');
 		$this->form_validation->set_rules('calle','Calle','required');
-		$this->form_validation->set_rules('numExt','Numero Exterior','required');
+		$this->form_validation->set_rules('noExt','Numero Exterior','required');
 		$this->form_validation->set_rules('colonia','Colonia','required');
 		$this->form_validation->set_rules('cp','C.P.','required');
 		$this->form_validation->set_rules('localidad','Localidad','required');
@@ -49,19 +49,29 @@ class Registros_denuncias extends CI_Controller {
 			
 			$this->load->model('model_regiden');
 
-			if($this->model_dependencias->add_denuncia())
+			if($this->model_regiden->add_denuncia())
 			{
-				redirect('/registros_denuncias/');	
+				redirect('/regidenu/');	
 			}else{
 				echo "registro no exitoso";
 				
-				redirect('/registros_denuncias/');
+				redirect('/main/');
 			}
 
 		}else{
-			$this->load->view('template/header');
-			$this->load->view('LAY/registros');
-			$this->load->view('template/footer');
+			
+			//redirect('/regidenu');
+			$this->load->model('model_dependencias');
+		
+		$data = array(
+				'dependecias'=> $this->model_dependencias->show_all(),
+				'dump'=>0
+				);
+
+		$this->load->view('template/header');
+		$this->load->view('LAY/registros',$data);
+		$this->load->view('template/footer');
+
 		}
 
 

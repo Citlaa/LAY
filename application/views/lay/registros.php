@@ -131,9 +131,10 @@
 <!-- Add new Denuncia -->
                 <div class="tab-pane fade" id="addnew">
                 <h4>Nueva Denuncia</h4>
-                
-                <?php echo form_open('registros_denuncias/denuncia_validation');?>
+                                
+                <?php echo form_open('regidenu/denuncia_validation');?>
                 <?php echo validation_errors();?>
+
 
                   <div class="form-group row">
                     <label for="id" class="col-md-2 control-label">Id de registro:</label>
@@ -171,14 +172,16 @@
                     <label for="estatus" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Estatus:</label>
                     <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
                       <select class="form-control" name="estatus">
-                        <option value="0">Resuelto</option>
-                        <option value="1">Pendiente</option>                      
+                        <?php 
+                          echo "<option value='0'>Resuelto</option>";   
+                          echo "<option value='0'>Pendiente</option>";                              
+                        ?>
                       </select>
                     </div>
 
                     <label for="modr" class="col-md-2 control-label" style="width: 170px; padding-right: 5px;">Modo de recepción:</label>
                     <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
-                      <select class="form-control" name="">
+                      <select class="form-control" name="recepcion">
                         <option value="1">Llamada</option>
                         <option value="2">WhatsApp</option>                      
                         <option value="3">SMS</option>
@@ -217,7 +220,7 @@
                       <?php echo form_input('calle','',"class='form-control'", $this->input->post('calle'));?>
                     </div>
 
-                    <label for="nExt" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;">Nº Ext:</label>
+                    <label for="noExt" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;">Nº Ext:</label>
                     <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">                      
                       <?php echo form_input('noExt','',"class='form-control'", $this->input->post('noExt'));?>
                     </div>
@@ -265,14 +268,16 @@
                     </div>
                     <div style="padding-left: 770px;">
                         <button type="submit" class="btn btn-success">Nuevo asunto</button>
+
                     </div>
                   </div>
 
                   
                   <div class="form-group" style="padding-left: 665px;">
-                  <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" class="btn btn-info">Aceptar</button>
-                    <button type="submit" class="btn btn-default">Cancelar</button>
+                  <div class="col-md-offset-2 col-md-10">                    
+                   <!-- <?php echo form_submit('denuncia_submit','Aceptar',"class='btn btn-info'"); ?> -->                    
+                    <?php echo form_submit('denuncia_submit','Aceptar',"class='btn btn-info'"); ?>                                     
+                    <button type="buton" value="cancel" class="btn btn-default" onClick="<?php echo base_url()."registros"?>">Cancelar</button>
                   </div>
                   </div>
                 </form>
