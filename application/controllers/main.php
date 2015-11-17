@@ -25,13 +25,14 @@ class Main extends CI_Controller {
     	 $this->load->view ('ciudadanos', $data);    	 
 	}
 
-	
-
 	public function ciudadanos()
-	{
-		 $this->load->view('template/header');
+	{		
+		redirect('/ciudadanos/');
+		/*
+		$this->load->view('template/header');
 		$this->load->view('LAY/ciudadanos');
 		$this->load->view('template/footer');
+		*/
 	}
 
 }

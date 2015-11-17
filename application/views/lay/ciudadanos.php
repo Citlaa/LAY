@@ -115,43 +115,42 @@
                    <tr>
                      <th>Nº</th>
                      <th>Nombre</th>
-                     <th>Apellidos</th>
-                     <th>Calle</th>
-                     <th>Número</th>
-                     <th>Colonia</th>
-                     <th>Localidad</th>
-                     <th>C.P</th>
+                     <th>Apellido Paterno</th>
+                     <th>Apellido Materno</th>
                      <th>Teléfono 1</th>
                      <th>Teléfono 2</th>
-                     <th>Fecha</th>
-                     <th>Dependencia</th>
-                     <th>Modo de recepción</th>
-                     <th>Estatus</th>
                      <th>Opciones</th>
                    </tr>
                    </thead>
                    <tbody>
+                   
+                   <?php
+                   if($ciudadanos != false)
+                   {
+                      foreach($ciudadanos->result() as $row){
+                      echo "<tr>";
+                          echo "<td>".$row->idCiudadano."</td>";
+                          echo "<td>".$row->nombre."</td>";
+                          echo "<td>".$row->apellidoPa."</td>";
+                          echo "<td>".$row->apellidoMa."</td>";
+                          echo "<td>".$row->tel1."</td>";
+                          echo "<td>".$row->tel2."</td>";
+                          echo "<td>";                            
+                            echo "<a class='btn btn-xs btn-warning' href=".base_url()."dependencias/edit_dependencia/".$row->idCiudadano."><i class='fa fa-pencil'></i> </a> |";
+                            echo "<a class='btn btn-xs btn-danger' href=".base_url()."dependencias/delete_dependencia/".$row->idCiudadano."><i class='fa fa-times'></i> </a>";
+                            
+                          echo "</td>";
+                        echo "</tr>";
+                    }
+                     
+                   }else{
+                     echo "No hay registros";
+                   }
+                    
 
-                   <tr>
-                     <td>1</td>
-                     <td>Ravi</td>
-                     <td>Kumar</td>
-                     <td>knkjn</td>
-                     <td>jknknlk</td>
-                     <td>jknknlk</td>
-                     <td>1</td>
-                     <td>Ravi</td>
-                     <td>Kumar</td>
-                     <td>knkjn</td>
-                     <td>jknknlk</td>
-                     <td>jknknlk</td>
-                     <td>jknknlk</td>
-                     <td><span class="label label-success">Active</span></td>
-                     <td>
-                       <button class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i> </button>
-                       <button class="btn btn-xs btn-danger"><i class="fa fa-times"></i> </button>
-                     </td>
-                   </tr>
+                   ?>
+
+
                    </tbody>
                  </table>
                              </div>
