@@ -134,43 +134,36 @@
                                 
                 <?php echo form_open('regidenu/denuncia_validation');?>
                 <?php echo validation_errors();?>
+                <from class="form-horizontal" role="form">
 
 
                   <div class="form-group row">
-                    <label for="id" class="col-md-2 control-label">Id de registro:</label>
-                    <div class="col-md-2" style="margin-top: 20px">
-                      <input type="text" class="form-control" id="id" placeholder="ID" disabled>
-                    </div>
- 
-                    <div class="col-md-1" style="margin-top: 5px; padding-left: 5x; width: 25px;padding-right: 8px;">
+                    <div class="col-md-1" style= "padding-left: 55px; width: 25px; padding-top: 9px;padding-right: 8px;">
                       <i class="fa fa-calendar"></i>
                     </div>
+                    <label for="fecha" class="col-md-1 control-label" style="width: 80px; padding-right: 15px;padding-top: 7px;">Fecha:</label>
                     <div class="col-md-3">
                       <input type="date" class="form-control" id="fecha" style="margin-top: 15px;padding-left: 35px;padding-right: 10px;">                      
                       <?php echo form_input('fecha','',"class='form-control'", $this->input->post('fecha'));?>                      
                     </div>
           
-                    <label for="dependencia" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Dependencia:</label>
-                      <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
+                    <label for="Dependencia" class="col-md-2 control-label" style="width: 110px; padding-right: 15px;padding-top: 7px;">Dependencia:</label>
+                      <div class="col-md-3" style="margin-top: 15px; padding-left: 15px;  ">
                         
                         <select class="form-control" name="idDependencia">
                           <?php
                             foreach ($dependecias->result() as $row) {
                               echo "<option value='$row->idDependencia'>$row->dependencia</option>";                              
                             }
-
-                          ?>
-                          
+                          ?>                       
                         </select>
-
-                        
                       </div>
                   </div>
 
 
                   <div class="form-group row">
-                    <label for="estatus" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Estatus:</label>
-                    <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
+                    <label for="estatus" class="col-md-2 control-label" style="width: 120px; padding-right: 15px;padding-left: 25px;">Estatus:</label>
+                    <div class="col-md-3" style="margin-top: 10px; padding-left: 5px;">
                       <select class="form-control" name="estatus">
                         <?php 
                           echo "<option value='0'>Resuelto</option>";   
@@ -179,9 +172,10 @@
                       </select>
                     </div>
 
-                    <label for="modr" class="col-md-2 control-label" style="width: 170px; padding-right: 5px;">Modo de recepción:</label>
-                    <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
+                    <label for="modr" class="col-md-2 control-label" style="width: 160px; padding-right: 5px;">Modo de recepción:</label>
+                    <div class="col-md-3" style="margin-top: 10px; padding-left: 5px;">
                       <select class="form-control" name="recepcion">
+
                         <option value="1">Llamada</option>
                         <option value="2">WhatsApp</option>                      
                         <option value="3">SMS</option>
@@ -192,7 +186,7 @@
                   
 
                   <div class="form-group">
-                    <label for="nombre" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;">Nombre:</label>
+                    <label for="nombre" class="col-md-2 control-label" style="padding-left: 10px; width: 120px;padding-right: 11px;">Nombre:</label>
                     <div class="col-md-6" style="margin-top: 15px;">                      
                       <?php echo form_input('nombre','',"class='form-control'", $this->input->post('nombre'));?>
                     </div>
@@ -263,7 +257,7 @@
 
                   <div class="form-group">
                     <label class="col-md-2 control-label" style="padding-left: 10px; width: 115px;">Asunto:</label>
-                    <div class="col-md-10">                      
+                    <div class="col-md-10" style="margin-top: 15px;">                      
                       <?php echo form_input('descripcion','',"class='form-control'", $this->input->post('descripcion'));?>
                     </div>
                     <div style="padding-left: 770px;">

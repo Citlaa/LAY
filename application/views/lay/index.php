@@ -95,7 +95,11 @@
             <div class="row">
 
               <div class="col-md-4 col-sm-4">
+<<<<<<< Updated upstream
                 <a href="<?php echo base_url()."regidenu"?>">
+=======
+                <a href="<?php echo base_url()."registros_denuncias"?>">
+>>>>>>> Stashed changes
               <div class="well br-red">
                   <i class="fa fa-group"></i>
                 <h2>Denuncias</h2>                
