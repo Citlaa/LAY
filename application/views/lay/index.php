@@ -35,7 +35,7 @@
                          
                          <!-- Use the class "current" in main menu to hightlight current main menu -->
                          <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
-                         <li><a href="<?php echo base_url()."regidenu"?>"><i class="fa fa-group"></i>Denuncias</a></li>
+                         <li><a href="<?php echo base_url()."regidenu/buscar"?>"><i class="fa fa-group"></i>Denuncias</a></li>
                          <li class="has_submenu">
                              <a href="<?php echo base_url()."main/catalogo"?>">
                                  <i class="fa fa-folder-open"></i>Catálogo
@@ -96,12 +96,8 @@
 
               <div class="col-md-4 col-sm-4">
 
-                <a href="<?php echo base_url()."regidenu"?>">
-<<<<<<< Updated upstream
-=======
+                <a href="<?php echo base_url()."regidenu/buscar"?>">
 
-
->>>>>>> Stashed changes
               <div class="well br-red">
                   <i class="fa fa-group"></i>
                 <h2>Denuncias</h2>                
