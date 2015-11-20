@@ -96,40 +96,22 @@
             <div class="page-tabs">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
-                <li  class="active"><a href="#search" data-toggle="tab">Buscar</a></li>                
-                <li><a href="#addnew" data-toggle="tab">Añadir nueva denuncia</a></li>
+                <li  class="active"><a href="#addnew" data-toggle="tab">Añadir nueva denuncia</a></li>                                
+                <!--<li><a href="<?php echo base_url()."regidenu/buscar"?>" data-toggle="tab">Buscar</a></li> -->
+                <li><a href='<?php echo base_url()."regidenu/buscar"?>' class="btn btn-danger btn-xs">Buscar</a></li>               
                 
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
-                <div class="tab-pane fade active in" id="search">
-                <h4>Buscar registro</h4>
-                <!-- Search users -->
-                <div class="well">
-                  <!-- Advanced search Denuncia-->
-                    <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="name" placeholder="Nombre">
-                    </div>
-                    
-                    <div class="form-group">
-                    <label for="apellidoP">Apellido Paterno</label>
-                    <input type="text" class="form-control" id="apellidoP" placeholder="Apellido Paterno">
-                    </div>
+                <div class="tab-pane fade" id="search">
+                
+                </div>                
 
-                    <div class="form-group">
-                    <label for="apellidoM">Apellido Materno</label>
-                    <input type="text" class="form-control" id="apellidoM" placeholder="Apellido Materno">
-                    </div>
-
-                    <button type="submit" class="btn btn-default">Buscar</button>                  
-                  </form>
-                </div>
-                </div>
+              </div>
                 
 <!-- Add new Denuncia -->
-                <div class="tab-pane fade" id="addnew">
+                <div class="tab-pane fade active in" id="addnew">
                 <h4>Nueva Denuncia</h4>
                                 
                 <?php echo form_open('regidenu/denuncia_validation');?>

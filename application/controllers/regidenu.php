@@ -72,10 +72,43 @@ class Regidenu extends CI_Controller {
 		$this->load->view('LAY/registros',$data);
 		$this->load->view('template/footer');
 
+		}		
+
+
+
+	}
+
+	public function buscar()
+		{
+
+			//redirect('/regidenu');			
+
+		$this->load->view('template/header');
+		$this->load->view('LAY/buscar_denuncia');
+		$this->load->view('template/footer');
+
 		}
+	public function mostrar_busqueda()
+	{
+		$data=array('');
+			$query = $this->input->get('query',true);
+			
+			$this->load->model('model_regiden');
 
+			if($query)
+			{
+				$result= $this->model_regiden->buscar(trim($query));
+				if($result!= false)
+				{
+					$data = array ('result'=>$result);
+				}else{
+					$data = array ('result'=> '');
+				}
+			}
 
-
+		$this->load->view('template/header');
+		$this->load->view('LAY/mostrar_denuncia',$data);
+		$this->load->view('template/footer');
 	}
 }
 		
