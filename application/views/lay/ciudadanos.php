@@ -137,7 +137,8 @@
                           echo "<td>".$row->tel2."</td>";
                           echo "<td>";                            
                             echo "<a class='btn btn-xs btn-warning' href=".base_url()."dependencias/edit_dependencia/".$row->idCiudadano."><i class='fa fa-pencil'></i> </a> |";
-                            echo "<a class='btn btn-xs btn-danger' href=".base_url()."dependencias/delete_dependencia/".$row->idCiudadano."><i class='fa fa-times'></i> </a>";
+                            echo "<a class='btn btn-xs btn-danger' href=".base_url()."dependencias/delete_dependencia/".$row->idCiudadano."><i class='fa fa-times'></i> </a> |";
+                            echo "<a class='btn btn-xs btn-success' href=".base_url()."ciudadanos/info_ciudadanos/".$row->idCiudadano."><i class='fa fa-plus'></i> </a>";
                             
                           echo "</td>";
                         echo "</tr>";
