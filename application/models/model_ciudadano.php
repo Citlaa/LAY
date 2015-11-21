@@ -19,8 +19,7 @@ class Model_ciudadano extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('ciudadanos c');
-		$this->db->join('direcciones d', 'd.idDireccion=c.idCiudadano');
-		$query= $this->db->get();
+		$query= $this->db->get('ciudadanos');
 
 		if($query->num_rows()>0)
 		{
