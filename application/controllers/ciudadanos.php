@@ -46,6 +46,7 @@ class Ciudadanos extends CI_Controller {
 				);
 
 		$this->load->view('template/header');
+		$this->load->view('template/menu');
 		$this->load->view('LAY/ciudadanos',$data);
 		$this->load->view('template/footer');
 
@@ -60,6 +61,7 @@ class Ciudadanos extends CI_Controller {
 				);
 
 		$this->load->view('template/header');
+		$this->load->view('template/menu');
 		$this->load->view('LAY/info_ciudadanos',$data);
 		$this->load->view('template/footer');
 

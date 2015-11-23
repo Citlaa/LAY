@@ -15,7 +15,7 @@ class Login extends CI_Controller {
 
 	public function login()
 	{
-		$this->load->view('template/header');
+		$this->load->view('template/header');		
 		$this->load->view('LAY/login');
 		$this->load->view('template/footer');
 	}
@@ -30,6 +30,7 @@ class Login extends CI_Controller {
 	{
 		if($this->session->userdata('is_logged_in')){
 			$this->load->view('template/header');
+			$this->load->view('template/menu');
 			$this->load->view('LAY/index');
 			$this->load->view('template/footer');
 		}else{
@@ -56,7 +57,7 @@ class Login extends CI_Controller {
 			$this->session->set_userdata($data);
 			redirect('/login/members/');			
 		}else{
-			$this->load->view('template/header');
+			$this->load->view('template/header');			
 			$this->load->view('LAY/login');
 			$this->load->view('template/footer');
 		}

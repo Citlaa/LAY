@@ -21,6 +21,7 @@ class Regidenu extends CI_Controller {
 			//redirect('/regidenu');			
 
 		$this->load->view('template/header');
+		$this->load->view('template/menu');
 		$this->load->view('LAY/buscar_denuncia');			
 		$this->load->view('template/footer');
 

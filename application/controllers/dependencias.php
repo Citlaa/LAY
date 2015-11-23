@@ -41,6 +41,7 @@ class Dependencias extends CI_Controller {
 		{
 			
 			$this->load->view('template/header');
+			$this->load->view('template/menu');
 			$this->load->view('LAY/dependencias');
 			$this->load->view('template/footer');
 

@@ -10,7 +10,7 @@
             <!-- Sidebar ends -->
             
             <!-- Mainbar starts -->
-         <div class="mainbar">
+            <div class="mainbar">
                
           <!-- Page heading starts -->
         <div class="page-head">
