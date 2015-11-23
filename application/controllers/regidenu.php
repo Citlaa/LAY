@@ -6,8 +6,8 @@ class Regidenu extends CI_Controller {
 		parent::__construct();
 		 $this->load->database();
         $this->load->helper('url');
-        /* ------------------ */ 
- 
+        /* ------------------ */
+
         $this->load->library('grocery_CRUD');
 	}
 
@@ -18,18 +18,18 @@ class Regidenu extends CI_Controller {
 	public function buscar()
 		{
 
-			//redirect('/regidenu');			
+			//redirect('/regidenu');
 
 		$this->load->view('template/header');
 		$this->load->view('template/menu');
-		$this->load->view('LAY/buscar_denuncia');			
+		$this->load->view('LAY/buscar_denuncia');
 		$this->load->view('template/footer');
 
 		}
 		function _example_output($output = null)
- 
+
     {
-        $this->load->view('our_template.php',$output);    
+        $this->load->view('our_template.php',$output);
     }
 	public function mostrar_busqueda()
 	{
@@ -38,29 +38,37 @@ class Regidenu extends CI_Controller {
 		 $grocery->set_theme('bootstrap');
 		 $grocery->set_table('denuncias');
 		 $grocery->set_language('spanish');
+		 $grocery->set_subject('Denuncias');
 		 $grocery->set_relation('idEstatus','estaus','descripcion');
 		 $grocery->set_relation('idRecepcion','recepcion','descripcion');
 		 $grocery->set_relation('idDependencia','dependencias','dependencia');
-		 $grocery->set_relation('idCiudadano','ciudadanos','nombre');
+		 $grocery->set_relation('idCiudadano','ciudadanos','{nombre} \n{apellidoPa} \n{apellidoMa}');
 		 $grocery->set_relation('idDireccion','direcciones','colonia');
 		 $grocery->set_relation('idAsunto','asuntos','descripcion');
+
 		 $grocery->display_as('idDependencia','Dependencia');
 		 $grocery->display_as('idCiudadano','Ciudadano');
 		 $grocery->display_as('idDireccion','Direccion');
-		 $grocery->display_as('idAsunto','Asunto');	
-		 $grocery->field_type('idDependencia', 'text');
-		 $grocery->field_type('idAsunto', 'text');
-		 $grocery->columns('idCiudadano','idDependencia','idDireccion');
-		 //$grocery->columns()
+		 $grocery->display_as('idRecepcion','Recepcion');
+		 $grocery->display_as('idEstatus','Estatus');
+		 $grocery->display_as('idAsunto','Asunto');
 
-		 $grocery->fields('fecha','idDependencia','idEstatus','idRecepcion','idCiudadano','idDireccion','idAsunto');
+		 $grocery->unset_add();
+		 $grocery->unset_edit();
+
+		 $grocery->columns('fecha','idDependencia','idCiudadano','idEstatus','idRecepcion','idDireccion','idAsunto');
+
 		 $output = $grocery->render();
-		  $this->_example_output($output);
+		 $this->_example_output($output);
 	}
 
-	public function _callback_webpage_url($value, $row)
-{
-  return "<a href='".site_url('admin/sub_webpages/'.$row->id)."'>$value</a>";
-}
-}
+	public function add_denuncia()
+	{
 		
+	}
+
+	public function save_denuncia()
+	{
+		$this->model_denuncias->insert_denuncia();
+	}
+}

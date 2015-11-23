@@ -14,7 +14,7 @@ class Model_ciudadano extends CI_Model
 		}
 	}
 
-	
+
 	public function show_ciudadano()
 	{
 		$this->db->select('*');
@@ -28,5 +28,10 @@ class Model_ciudadano extends CI_Model
 			return false;
 		}
 	}
-	
+
+	public function get_ciudadano($id)
+	{
+		# code...
+	}
+
 }
