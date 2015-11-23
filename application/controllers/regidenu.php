@@ -2,113 +2,64 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Regidenu extends CI_Controller {
+	function __construct(){
+		parent::__construct();
+		 $this->load->database();
+        $this->load->helper('url');
+        /* ------------------ */ 
+ 
+        $this->load->library('grocery_CRUD');
+	}
 
 	public function index()
 	{
 		redirect('/regidenu/mostrar_dependencias');
 	}
-
-	public function mostrar_dependencias()
-	{
-		$this->load->model('model_dependencias');
-		
-		$data = array(
-				'dependecias'=> $this->model_dependencias->show_all(),
-				'dump'=>0
-				);
-
-		$this->load->view('template/header');
-		$this->load->view('LAY/registros',$data);
-		$this->load->view('template/footer');
-
-
-
-	}
-
-	public function denuncia_validation()
-	{
-		$this->load->library('form_validation');
-
-		$this->form_validation->set_rules('fecha','Fecha','required');
-		$this->form_validation->set_rules('idDependencia','Dependencia','required');
-		$this->form_validation->set_rules('estatus','Estatus','required');
-		$this->form_validation->set_rules('recepcion','recepcion','required');
-		$this->form_validation->set_rules('nombre','Nombre','required');
-		$this->form_validation->set_rules('apellidoPa','Apelido Paterno','required');
-		$this->form_validation->set_rules('apellidoMa','Apelido Materno','required');
-		$this->form_validation->set_rules('calle','Calle','required');
-		$this->form_validation->set_rules('noExt','Numero Exterior','required');
-		$this->form_validation->set_rules('colonia','Colonia','required');
-		$this->form_validation->set_rules('cp','C.P.','required');
-		$this->form_validation->set_rules('localidad','Localidad','required');
-		$this->form_validation->set_rules('tel1','Telefono 1','required');
-		
-
-		if($this->form_validation->run())
-		{
-			
-			$this->load->model('model_regiden');
-
-			if($this->model_regiden->add_denuncia())
-			{
-				redirect('/regidenu/');	
-			}else{
-				echo "registro no exitoso";
-				
-				redirect('/main/');
-			}
-
-		}else{
-			
-			//redirect('/regidenu');
-			$this->load->model('model_dependencias');
-		
-		$data = array(
-				'dependecias'=> $this->model_dependencias->show_all(),
-				'dump'=>0
-				);
-
-		$this->load->view('template/header');
-		$this->load->view('LAY/registros',$data);
-		$this->load->view('template/footer');
-
-		}		
-
-
-
-	}
-
 	public function buscar()
 		{
 
 			//redirect('/regidenu');			
 
 		$this->load->view('template/header');
-		$this->load->view('LAY/buscar_denuncia');
+		$this->load->view('LAY/buscar_denuncia');			
 		$this->load->view('template/footer');
 
 		}
+		function _example_output($output = null)
+ 
+    {
+        $this->load->view('our_template.php',$output);    
+    }
 	public function mostrar_busqueda()
 	{
-		$data=array('');
-			$query = $this->input->get('query',true);
-			
-			$this->load->model('model_regiden');
+		$grocery = new grocery_CRUD();
 
-			if($query)
-			{
-				$result= $this->model_regiden->buscar(trim($query));
-				if($result!= false)
-				{
-					$data = array ('result'=>$result);
-				}else{
-					$data = array ('result'=> '');
-				}
-			}
+		 $grocery->set_theme('bootstrap');
+		 $grocery->set_table('denuncias');
+		 $grocery->set_language('spanish');
+		 $grocery->set_relation('idEstatus','estaus','descripcion');
+		 $grocery->set_relation('idRecepcion','recepcion','descripcion');
+		 $grocery->set_relation('idDependencia','dependencias','dependencia');
+		 $grocery->set_relation('idCiudadano','ciudadanos','nombre');
+		 $grocery->set_relation('idDireccion','direcciones','colonia');
+		 $grocery->set_relation('idAsunto','asuntos','descripcion');
+		 $grocery->display_as('idDependencia','Dependencia');
+		 $grocery->display_as('idCiudadano','Ciudadano');
+		 $grocery->display_as('idDireccion','Direccion');
+		 $grocery->display_as('idAsunto','Asunto');	
+		 $grocery->field_type('idDependencia', 'text');
+		 $grocery->field_type('idAsunto', 'text');
+		 $grocery->columns('idCiudadano','idDependencia','idDireccion');
+		 //$grocery->columns()
 
-		$this->load->view('template/header');
-		$this->load->view('LAY/mostrar_denuncia',$data);
-		$this->load->view('template/footer');
+		 $grocery->fields('fecha','idDependencia','idEstatus','idRecepcion','idCiudadano','idDireccion','idAsunto');
+		 $output = $grocery->render();
+		  $this->_example_output($output);
 	}
+
+	public function _callback_webpage_url($value, $row)
+{
+  return "<a href='".site_url('admin/sub_webpages/'.$row->id)."'>$value</a>";
+}
 }
 		

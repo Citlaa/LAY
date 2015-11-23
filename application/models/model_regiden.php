@@ -88,9 +88,29 @@ class Model_regiden extends CI_Model
 
 	}
 
-	public function buscar($query)
+	public function buscar($keyword)
 	{
-		$this->db->like('nombre',$query);
+		$this->db->select('*');
+		$query= $this->db->get('ciudadanos');
+		if($query!=''){
+			 return $query;
+		}else{
+			return false;	
+		}
+	}
+}
+
+
+
+
+
+
+	/*
+
+	public function buscar_appa($query)
+	{
+		$this->db->like('apellidoPa',$query);
+		
 		$query= $this->db->get('ciudadanos');
 		if($query->num_rows()>0){
 			return $query;
@@ -98,5 +118,28 @@ class Model_regiden extends CI_Model
 			return false;	
 		}
 	}
+
+	public function buscar_apma($query)
+	{
+		$this->db->like('apellidoMa',$query);
+		
+		$query= $this->db->get('ciudadanos');
+		if($query->num_rows()>0){
+			return $query;
+		}else{
+			return false;	
+		}
+	}
+
+	public function buscar_nombre($query)
+	{
+		$this->db->like('nombre'.' '.'apellidoPa',$query);
+		
+		$query= $this->db->get('ciudadanos');
+		if($query->num_rows()>0){
+			return $query;
+		}else{
+			return false;	
+		}
+	}*/
 	
-}

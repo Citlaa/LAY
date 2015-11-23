@@ -104,59 +104,9 @@
                            <div class="widget-head">
                     <h5><i class="fa fa-group"></i>Ciudadanos</h5>
                   </div>
-                           <div id="data-table_filter" class="dataTables_filter">
-                              <label>Buscar:<input type="search" class placeholder aria-controls="data-table">
-                              </label>
-                           </div>
-                           <div class="widget-body no-padd">
-                <div class="table-responsive">
-                  <table class="table table-hover table-bordered ">
-                   <thead>
-                   <tr>
-                     <th>Nº</th>
-                     <th>Nombre</th>
-                     <th>Apellido Paterno</th>
-                     <th>Apellido Materno</th>
-                     <th>Teléfono 1</th>
-                     <th>Teléfono 2</th>
-                     <th>Opciones</th>
-                   </tr>
-                   </thead>
-                   <tbody>
-                   
-                   <?php
-                   if($ciudadanos != false)
-                   {
-                      foreach($ciudadanos->result() as $row){
-                      echo "<tr>";
-                          echo "<td>".$row->idCiudadano."</td>";
-                          echo "<td>".$row->nombre."</td>";
-                          echo "<td>".$row->apellidoPa."</td>";
-                          echo "<td>".$row->apellidoMa."</td>";
-                          echo "<td>".$row->tel1."</td>";
-                          echo "<td>".$row->tel2."</td>";
-                          echo "<td>";                            
-                            echo "<a class='btn btn-xs btn-warning' href=".base_url()."dependencias/edit_dependencia/".$row->idCiudadano."><i class='fa fa-pencil'></i> </a> |";
-                            echo "<a class='btn btn-xs btn-danger' href=".base_url()."dependencias/delete_dependencia/".$row->idCiudadano."><i class='fa fa-times'></i> </a> |";
-                            echo "<a class='btn btn-xs btn-success' href=".base_url()."ciudadanos/info_ciudadanos/".$row->idCiudadano."><i class='fa fa-plus'></i> </a>";
-                            
-                          echo "</td>";
-                        echo "</tr>";
-                    }
-                     
-                   }else{
-                     echo "No hay registros";
-                   }
-                    
-
-                   ?>
-
-
-                   </tbody>
-                 </table>
-                             </div>
-                           </div>
-               
+                           
+                
+               <iframe src="<?php echo base_url('ciudadanos/mostrar_ciudadanos2');?>" width="900px" height="900px"></iframe>
                <div class="widget-foot">
               
                 <ul class="pagination pull-right">

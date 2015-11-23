@@ -96,41 +96,21 @@
             <div class="page-tabs">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
-                <li  class="active"><a href="#search" data-toggle="tab">Buscar</a></li>                
+                <li  class="active"><a href="#search" data-toggle="tab">Denuncias</a></li>                
                 
-                <li><a href='<?php echo base_url()."regidenu"?>' class="btn btn-danger btn-xs">Añadir nueva denuncia</a></li>               
+              
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane fade active in" id="search">
-                <h4>Buscar registro</h4>
+                <h3>Denuncias</h3>
+                <h5>Busca o inserta un nuevo registro</h5>
                 <!-- Search users -->
-                <div class="well">
+                <div class="well" align="center">
                   <!-- Advanced search Denuncia-->
-                    <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="form-control" id="name" placeholder="Nombre">
-                    </div>
-                    
-                    <div class="form-group">
-                    <label for="apellidoP">Apellido Paterno</label>
-                    <input type="text" class="form-control" id="apellidoP" placeholder="Apellido Paterno">
-                    </div>
-
-                    <div class="form-group">
-                    <label for="apellidoM">Apellido Materno</label>
-                    <input type="text" class="form-control" id="apellidoM" placeholder="Apellido Materno">
-                    </div>
-
-                    <button type="submit" class="btn btn-default">Buscar</button>                  
-                  </form>
-                  <form id="formbuscar" method="GET" action="<?=base_url()?>regidenu/mostrar_busqueda">
-                      <input type="text" id="query" name="query" class="form-control" />
-                      <input type="submit" id="buscar" value="Buscar" class="btn btn-default" />
-                  </form>
-                </div>
-
+                                     
+                <iframe src="<?php echo base_url('regidenu/mostrar_busqueda');?>" width="800px" height="700px"></iframe>
                 
 
               </div>
@@ -157,4 +137,5 @@
       </div>  
      
   </body> 
+  
 </section>
