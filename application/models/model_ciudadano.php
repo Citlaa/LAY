@@ -31,7 +31,7 @@ class Model_ciudadano extends CI_Model
 
 	public function get_ciudadano($id)
 	{
-		# code...
+		
 	}
 
 }

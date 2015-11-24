@@ -8,8 +8,8 @@ class Ciudadanos extends CI_Controller {
 		 $this->load->database();
         $this->load->helper('url');
         $this->load->helper('date');
-        /* ------------------ */ 
- 
+        /* ------------------ */
+
         $this->load->library('grocery_CRUD');
 	}
 
@@ -19,9 +19,9 @@ class Ciudadanos extends CI_Controller {
 	}
 
 		function _example_output($output = null)
- 
+
     {
-        $this->load->view('our_template.php',$output);    
+        $this->load->view('our_template.php',$output);
     }
 
     public function mostrar_ciudadanos2()
@@ -29,12 +29,12 @@ class Ciudadanos extends CI_Controller {
 		$grocery = new grocery_CRUD();
 		// Asunto dependencia y direcciones del ciudada
 
-		 $grocery->set_theme('bootstrap');		 
+		 $grocery->set_theme('bootstrap');
 		 $grocery->set_language('spanish');
 		 $grocery->set_table('ciudadanos');
 		 $grocery->add_action('Denuncias','','ciudadanos/denuncias_por_ciudadano');
 		 $output = $grocery->render();
-		 $this->_example_output($output);    
+		 $this->_example_output($output);
 	}
 
 	public function mostrar_ciudadanos()
@@ -78,7 +78,7 @@ class Ciudadanos extends CI_Controller {
 		$crud->set_relation('idCiudadano','ciudadanos','{nombre}\n{apellidoPa}\n{apellidoMa}');
 		$crud->set_relation('idRecepcion','recepcion','descripcion');
 		$crud->set_relation('idDependencia','dependencias','dependencia');
-		$crud->set_relation('idEstatus','estaus','descripcion');
+		$crud->set_relation('idEstatus','estatus','descripcion');
 		$crud->set_relation('idDireccion','direcciones','Calle:{calle} \n #:{noExt} # Int:{noInt} Col:{colonia}, \n{localidad}, CP:{cp} ');
 		$crud->set_relation('idAsunto','asuntos','descripcion');
 		 $crud->display_as('idCiudadano','Ciudadano');
@@ -89,16 +89,16 @@ class Ciudadanos extends CI_Controller {
 		 $crud->display_as('idAsunto','Asunto');
 		 $crud->columns('idCiudadano','idAsunto','idDependencia','idEstatus','idDireccion','idRecepcion');
 		 $output = $crud->render();
-		 $this->_example_output($output);    
+		 $this->_example_output($output);
 	}
 // 	function encrypt_password_callback($post_array) {
 //   $this->load->library('encrypt');
 //   $key = 'super-secret-key';
 //   $post_array['password'] = $this->encrypt->encode($post_array['password'], $key);
- 
+
 //    $post_array['insert_date'] = date('Y-d-m');
 //    $post_array['updated_date'] = date('Y-d-m');
- 
+
 //   return $post_array;
 // }
 }

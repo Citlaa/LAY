@@ -31,15 +31,6 @@ CREATE TABLE IF NOT EXISTS `asuntos` (
   `descripcion` varchar(500) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
---
--- Volcado de datos para la tabla `asuntos`
---
-
-INSERT INTO `asuntos` (`idAsunto`, `descripcion`) VALUES
-(4, 'lkmlkmlkmlkmlkm'),
-(5, 'No mamen ya que salga esto.'),
-(6, 'hola y adios');
-
 -- --------------------------------------------------------
 
 --
@@ -54,15 +45,6 @@ CREATE TABLE IF NOT EXISTS `ciudadanos` (
   `tel1` varchar(20) NOT NULL,
   `tel2` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
-
---
--- Volcado de datos para la tabla `ciudadanos`
---
-
-INSERT INTO `ciudadanos` (`idCiudadano`, `nombre`, `apellidoPa`, `apellidoMa`, `tel1`, `tel2`) VALUES
-(15, 'Diana', 'Saucedo', 'Lopez', '4491832246', ''),
-(16, 'Annie', 'Herrera', 'Jara', '4499721225', ''),
-(17, 'maria', 'juarez', 'teran', '9873651', '4497371254');
 
 -- --------------------------------------------------------
 
@@ -81,14 +63,6 @@ CREATE TABLE IF NOT EXISTS `denuncias` (
   `idAsunto` int(11) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
---
--- Volcado de datos para la tabla `denuncias`
---
-
-INSERT INTO `denuncias` (`idRegistro`, `fecha`, `idDependencia`, `idEstatus`, `idRecepcion`, `idCiudadano`, `idDireccion`, `idAsunto`) VALUES
-(7, '2015-11-20', 1, 1, 1, 15, 0, 0),
-(8, '1999-10-26', 1, 1, 2, 15, 7, 5),
-(9, '1999-12-12', 1, 1, 1, 16, 8, 6);
 
 -- --------------------------------------------------------
 
@@ -114,12 +88,6 @@ CREATE TABLE IF NOT EXISTS `dependencias` (
 -- Volcado de datos para la tabla `dependencias`
 --
 
-INSERT INTO `dependencias` (`idDependencia`, `dependencia`, `titular`, `calle`, `numExt`, `numInt`, `colonia`, `localidad`, `cp`, `tel1`, `tel2`) VALUES
-(1, 'Salud- viva', 'kjlkjlk', '', 0, '', '', '', '', '9123441', ''),
-(2, 'Seguridad', 'iuhiuhiuh', 'iuiuh', 55, 'a', 'kjkjh', 'kjhkjhkjh', '', 'jkhkjhkjh', 'kjhkjhkj'),
-(3, 'Aiko', 'dayan saucedooooooooooo', 'los', 260, 'A-A', 'Parrassss', 'Aguascalientesn', '20000', '4491832246111', '1111'),
-(4, 'Buena', 'Sonia', 'aqui', 21, 'A', 'La salud', 'Aguascalientes', '20145', '4491832246', '9785623');
-
 -- --------------------------------------------------------
 
 --
@@ -136,34 +104,18 @@ CREATE TABLE IF NOT EXISTS `direcciones` (
   `cp` int(11) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
---
--- Volcado de datos para la tabla `direcciones`
---
-
-INSERT INTO `direcciones` (`idDireccion`, `calle`, `noExt`, `noInt`, `colonia`, `localidad`, `cp`) VALUES
-(5, 'joijoijoij', 55, 'ijoi', 'oioi', 'lkmlkm', 20157),
-(6, 'joijoijoij', 55, 'ijoi', 'oioi', 'lkmlkm', 20157),
-(7, 'Uva', 205, 'A', 'Uber', 'Jalisco', 20456),
-(8, 'av Constitucion', 1104, 'A', 'Constitucion', 'Aguascalientes', 20126);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `estaus`
+-- Estructura de tabla para la tabla `estatus`
 --
 
-CREATE TABLE IF NOT EXISTS `estaus` (
+CREATE TABLE IF NOT EXISTS `estatus` (
 `idEstatus` int(11) NOT NULL,
   `descripcion` varchar(50) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
---
--- Volcado de datos para la tabla `estaus`
---
-
-INSERT INTO `estaus` (`idEstatus`, `descripcion`) VALUES
-(1, 'pendiente'),
-(2, 'Resuelto');
 
 -- --------------------------------------------------------
 
@@ -175,17 +127,6 @@ CREATE TABLE IF NOT EXISTS `recepcion` (
 `idRecepcion` int(11) NOT NULL,
   `descripcion` varchar(50) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Volcado de datos para la tabla `recepcion`
---
-
-INSERT INTO `recepcion` (`idRecepcion`, `descripcion`) VALUES
-(1, 'llamada'),
-(2, 'sms'),
-(3, 'whatsapp'),
-(4, 'redes sociales'),
-(5, 'otros');
 
 -- --------------------------------------------------------
 
@@ -200,13 +141,6 @@ CREATE TABLE IF NOT EXISTS `temp_users` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
---
--- Volcado de datos para la tabla `temp_users`
---
-
-INSERT INTO `temp_users` (`id`, `email`, `key`, `password`) VALUES
-(3, 'hola', 'b959a725c15ad22a874d4801937ee5f1', '111'),
-(4, 'aiko', '8b08fac1987ac45f2622890b6f1c4a66', '698d51a19d8a121ce581499d7b701668');
 
 -- --------------------------------------------------------
 
@@ -219,22 +153,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
-
---
--- Volcado de datos para la tabla `users`
---
-
-INSERT INTO `users` (`id`, `email`, `password`) VALUES
-(1, 'citla', '81dc9bdb52d04dc20036dbd8313ed055'),
-(2, 'dayan', '4d186321c1a7f0f354b297e8914ab240'),
-(3, 'Aiko', '698d51a19d8a121ce581499d7b701668'),
-(6, 'lol', '698d51a19d8a121ce581499d7b701668'),
-(7, 'lal', '698d51a19d8a121ce581499d7b701668'),
-(8, 'll', '698d51a19d8a121ce581499d7b701668'),
-(9, 'pp', '698d51a19d8a121ce581499d7b701668'),
-(10, 'iii', '698d51a19d8a121ce581499d7b701668'),
-(11, 'yyy', '698d51a19d8a121ce581499d7b701668'),
-(12, 'tt', '6512bd43d9caa6e02c990b0a82652dca');
 
 --
 -- Índices para tablas volcadas
@@ -271,9 +189,9 @@ ALTER TABLE `direcciones`
  ADD PRIMARY KEY (`idDireccion`);
 
 --
--- Indices de la tabla `estaus`
+-- Indices de la tabla `estatus`
 --
-ALTER TABLE `estaus`
+ALTER TABLE `estatus`
  ADD PRIMARY KEY (`idEstatus`);
 
 --
@@ -324,9 +242,9 @@ MODIFY `idDependencia` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 ALTER TABLE `direcciones`
 MODIFY `idDireccion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT de la tabla `estaus`
+-- AUTO_INCREMENT de la tabla `estatus`
 --
-ALTER TABLE `estaus`
+ALTER TABLE `estatus`
 MODIFY `idEstatus` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `recepcion`

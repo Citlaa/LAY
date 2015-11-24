@@ -137,19 +137,19 @@ INSERT INTO `direcciones` (`idDireccion`, `calle`, `noExt`, `noInt`, `colonia`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `estaus`
+-- Estructura de tabla para la tabla `estatus`
 --
 
-CREATE TABLE `estaus` (
+CREATE TABLE `estatus` (
   `idEstatus` int(11) NOT NULL,
   `descripcion` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `estaus`
+-- Volcado de datos para la tabla `estatus`
 --
 
-INSERT INTO `estaus` (`idEstatus`, `descripcion`) VALUES
+INSERT INTO `estatus` (`idEstatus`, `descripcion`) VALUES
 (3, 'Pendiente'),
 (4, 'Atendido');
 
@@ -235,9 +235,9 @@ ALTER TABLE `direcciones`
   ADD PRIMARY KEY (`idDireccion`);
 
 --
--- Indices de la tabla `estaus`
+-- Indices de la tabla `estatus`
 --
-ALTER TABLE `estaus`
+ALTER TABLE `estatus`
   ADD PRIMARY KEY (`idEstatus`);
 
 --
@@ -288,9 +288,9 @@ ALTER TABLE `dependencias`
 ALTER TABLE `direcciones`
   MODIFY `idDireccion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
--- AUTO_INCREMENT de la tabla `estaus`
+-- AUTO_INCREMENT de la tabla `estatus`
 --
-ALTER TABLE `estaus`
+ALTER TABLE `estatus`
   MODIFY `idEstatus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `recepcion`

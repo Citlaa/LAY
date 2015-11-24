@@ -26,11 +26,11 @@ class Model_denuncias extends CI_Model {
       'colonia' => $this->input->post('colonia'),
       'localidad' => $this->input->post('localidad'),
       'cp' => $this->input->post('cp'),
-    )
+    );
 
     $asunto = array(
-      'descripcion' => $this->input->post('descripcion'),
-    )
+      'descripcion' => $this->input->post('asunto'),
+    );
 
 
 
@@ -41,15 +41,19 @@ class Model_denuncias extends CI_Model {
     $dId=$this->db->insert_id();
     $this->db->insert('asuntos', $asunto);
     $aId=$this->db->insert_id();
+    $estatus  = $this->db->get_where('estatus','descripcion','Pendiente');
+    $estatusPendiente = $estatus->result();
     $this->db->insert('denuncias', array(
-      'fecha'=>$this->input->post('fecha'),
+      'fecha'=>date("Y-m-d"),
       'idDependencia'=>$dId,
       'idEstatus'=>$this->input->post('idEstatus'),
       'idRecepcion'=>$this->input->post('idRecepcion'),
+      'idDependencia'=>$this->input->post('idDependencia'),
       'idDireccion'=>$dId,
+      'idCiudadano'=>$cId,
       'idAsunto'=>$aId
     ));
-    $this->db->trans_complete();
+    return $this->db->trans_complete();
   }
 
 }

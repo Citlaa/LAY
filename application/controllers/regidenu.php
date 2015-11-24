@@ -39,7 +39,7 @@ class Regidenu extends CI_Controller {
 		 $grocery->set_table('denuncias');
 		 $grocery->set_language('spanish');
 		 $grocery->set_subject('Denuncias');
-		 $grocery->set_relation('idEstatus','estaus','descripcion');
+		 $grocery->set_relation('idEstatus','estatus','descripcion');
 		 $grocery->set_relation('idRecepcion','recepcion','descripcion');
 		 $grocery->set_relation('idDependencia','dependencias','dependencia');
 		 $grocery->set_relation('idCiudadano','ciudadanos','{nombre} \n{apellidoPa} \n{apellidoMa}');
@@ -54,7 +54,6 @@ class Regidenu extends CI_Controller {
 		 $grocery->display_as('idAsunto','Asunto');
 
 		 $grocery->unset_add();
-		 $grocery->unset_edit();
 
 		 $grocery->columns('fecha','idDependencia','idCiudadano','idEstatus','idRecepcion','idDireccion','idAsunto');
 
@@ -64,7 +63,28 @@ class Regidenu extends CI_Controller {
 
 	public function add_denuncia()
 	{
-		
+		$this->load->model('model_recepcion');
+		$data['recepcion'] = $this->model_recepcion->get_all();
+		$this->load->model('model_dependencias');
+		$data['dependencias'] = $this->model_dependencias->get_all();
+		$this->load->model('model_estatus');
+		$data['estatus'] = $this->model_estatus->get_all();
+		$this->load->model('model_denuncias');
+		$this->load->helper('form');
+    $this->load->library('form_validation');
+		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
+		if ($this->form_validation->run() == FALSE)
+	 {
+			$this->load->view('template/header.php');
+			$this->load->view('forms/create_denuncia.php', $data);
+			$this->load->view('template/footer.php');
+	 }
+	 else
+	 {
+			 $this->model_denuncias->insert_denuncia();
+			 $this->load->view('denuncias/exito');
+	 }
+
 	}
 
 	public function save_denuncia()
