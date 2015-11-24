@@ -38,7 +38,6 @@ class Regidenu extends CI_Controller {
 		 $grocery->set_theme('bootstrap');
 		 $grocery->set_table('denuncias');
 		 $grocery->set_language('spanish');
-		 $grocery->set_subject('Denuncias');
 		 $grocery->set_relation('idEstatus','estatus','descripcion');
 		 $grocery->set_relation('idRecepcion','recepcion','descripcion');
 		 $grocery->set_relation('idDependencia','dependencias','dependencia');
@@ -54,6 +53,10 @@ class Regidenu extends CI_Controller {
 		 $grocery->display_as('idAsunto','Asunto');
 
 		 $grocery->unset_add();
+		 $grocery->unset_edit();
+
+		 $grocery->add_action('Editar ciudadano','','ciudadanos/editar_ciudadano');
+
 
 		 $grocery->columns('fecha','idDependencia','idCiudadano','idEstatus','idRecepcion','idDireccion','idAsunto');
 
@@ -76,7 +79,8 @@ class Regidenu extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 	 {
 			$this->load->view('template/header.php');
-			$this->load->view('forms/create_denuncia.php', $data);
+			// $this->load->view('template/menu.php', $data);
+			$this->load->view('denuncias/create_denuncia.php', $data);
 			$this->load->view('template/footer.php');
 	 }
 	 else

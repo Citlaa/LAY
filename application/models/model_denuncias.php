@@ -10,6 +10,13 @@ class Model_denuncias extends CI_Model {
     $this->load->database();
   }
 
+  public function get_denuncia($idDenuncia)
+  {
+    $this->db->where('idDenuncia', $idDenuncia);
+    return $this->db->get('denuncias', $idDenuncia);
+
+  }
+
   public function insert_denuncia()
   {
     $ciudadano = array(
