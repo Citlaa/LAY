@@ -59,13 +59,26 @@
                 <!-- Search users -->
                 <div class="well">
                   <!-- Advanced search -->
-                                      
-    
-</div>                                    
-                  <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="900px" height="700px"></iframe>                                  
-                </div>
-                </div>
-                
+
+                  <form class="form-horizontal">
+                                      <div class="form-group row">
+                    <label for="id" class="col-md-2 control-label">Fecha:</label>
+
+                    <div class="col-md-1" style="margin-top: 5px; padding-left: 5x; width: 25px;padding-right: 8px;">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="col-md-3">
+                      <input type="date" class="form-control" id="fecha" style="margin-top: 15px;padding-left: 35px;padding-right: 10px;">
+                    </div>
+
+                  </div>
+                  <div class="widget-head">
+         
+                           </div>
+                       </div>
+                       </div>
+                       
+>>>>>>> Stashed changes 
 <!-- Add new Registro -->
                 <div class="tab-pane fade" id="reporte">
                 <h4>Reporte</h4>

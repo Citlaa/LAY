@@ -32,7 +32,7 @@
                          <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
                          <li><a href="<?php echo base_url()."regidenu/buscar"?>"><i class="fa fa-group"></i>Denuncias</a></li>
                          <li class="has_submenu">
-                             <a href="<?php echo base_url()."main/catalogo"?>">
+                             <a href="#">
                                  <i class="fa fa-folder-open"></i>Catálogo
                                  <!-- Icon to show dropdown -->
                                  <span class="caret pull-right"></span>
@@ -40,13 +40,13 @@
                              <!-- Sub navigation -->
                              <ul>
                                  <!-- Use the class "active" in sub menu to hightlight current sub menu -->
-                                 <li><a href="dependencia.html"><i class="fa fa-angle-double-right"></i>Dependencia</a></li>
-                                 <li><a href="ciudadanos.html"><i class="fa fa-angle-double-right"></i>Ciudadanos</a></li>
+                                 <li><a href="<?php echo site_url('dependencias/show_dependencias')?>"><i class="fa fa-angle-double-right"></i>Dependencia</a></li>
+                                 <li><a href="<?php echo site_url('ciudadanos/mostrar_ciudadanos')?>"><i class="fa fa-angle-double-right"></i>Ciudadanos</a></li>
                              </ul>
 
                          </li>  
-                         <li><a href="<?php echo base_url()."dependencias/show_dependencias"?>"><i class="fa fa-group"></i>Dependencias</a></li>
-                         <li><a href="<?php echo base_url()."main/ciudadanos"?>"><i class="fa fa-group"></i>Ciudadanos</a></li>
+                         <!--<li><a href="<?php echo base_url()."dependencias/show_dependencias"?>"><i class="fa fa-group"></i>Dependencias</a></li>
+                         <li><a href="<?php echo base_url()."main/ciudadanos"?>"><i class="fa fa-group"></i>Ciudadanos</a></li> -->
                          <li><a href="<?php echo base_url()."reportes"?>"><i class="fa fa-bar-chart-o"></i>Reportes</a></li>
                       </ul>               
                   </div>

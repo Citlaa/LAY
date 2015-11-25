@@ -14,10 +14,12 @@ class Main extends CI_Controller {
 
 	public function reportes()
 	{
+
 		$this->load->view('template/header');
 		$this->load->view('template/menu');
 		$this->load->view('LAY/reportes');
 		$this->load->view('template/footer');
+
 	}
 
 	public function catalogo()
