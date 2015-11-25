@@ -100,7 +100,7 @@ class Regidenu extends CI_Controller {
 	}
 
 	
-}public function get_direccion_denuncia($idDenuncia)
+	public function get_direccion_denuncia($idDenuncia)
 	{
 		$this->db->select('direcciones.idDireccion, direcciones.calle, direcciones.noExt, direcciones.noInt, direcciones.colonia, direcciones.localidad, direcciones.cp');
 		$this->db->from('denuncias');
@@ -111,3 +111,4 @@ class Regidenu extends CI_Controller {
 		return $direccion->result_array();
 	}
 
+}
