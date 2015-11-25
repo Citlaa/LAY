@@ -15,7 +15,7 @@ class Dependencias extends CI_Controller {
 	public function index()
 	{
 		
-		redirect('/dependencias/show_dependencias');
+		redirect('/dependencias/show_dependencias2');
 	}
 
 	function _example_output($output = null)
@@ -24,17 +24,17 @@ class Dependencias extends CI_Controller {
         $this->load->view('our_template.php',$output);    
     }
 
- //    public function show_dependencias2()
-	// {
-	// 	$grocery = new grocery_CRUD();
+    public function show_dependencias2()
+	{
+		$grocery = new grocery_CRUD();
 
-	// 	 $grocery->set_theme('bootstrap');
-	// 	 $grocery->set_table('dependencias');
-	// 	 $grocery->set_language('spanish');		 		 
-	// 	 $grocery->columns('dependencia','titular','calle','tel1');
-	// 	 $output = $grocery->render();
-	// 	 $this->_example_output($output);   
-	// }
+		 $grocery->set_theme('bootstrap');
+		 $grocery->set_table('dependencias');
+		 $grocery->set_language('spanish');		 		 
+		 $grocery->columns('dependencia','titular','calle','tel1');
+		 $output = $grocery->render();
+		 $this->_example_output($output);   
+	}
 
 
 		public function show_dependencias()
@@ -44,7 +44,6 @@ class Dependencias extends CI_Controller {
 			$this->load->view('template/menu');
 			$this->load->view('lay/dependencias');
 			$this->load->view('template/footer');
-
 		}
 
 }
