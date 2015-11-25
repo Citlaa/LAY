@@ -53,10 +53,12 @@ class Regidenu extends CI_Controller {
 		 $grocery->display_as('idAsunto','Asunto');
 
 		 $grocery->unset_add();
-		 $grocery->unset_edit();
+		 //$grocery->unset_edit();
+		 $grocery->edit_fields();
 
 		 $grocery->add_action('Editar ciudadano','','ciudadanos/editar_ciudadano');
-		 $grocery->add_action('Exportar PDF','','ciudadanos/editar_ciudadano');
+		 $grocery->add_action('Editar Direccion','','direcciones/editar_direccion');
+		 $grocery->add_action('Editar Asunto','','asuntos/editar_asunto');
 
 
 		 $grocery->columns('fecha','idDependencia','idCiudadano','idEstatus','idRecepcion','idDireccion','idAsunto');
@@ -96,4 +98,17 @@ class Regidenu extends CI_Controller {
 	{
 		$this->model_denuncias->insert_denuncia();
 	}
+
+	
+	public function get_direccion_denuncia($idDenuncia)
+	{
+		$this->db->select('direcciones.idDireccion, direcciones.calle, direcciones.noExt, direcciones.noInt, direcciones.colonia, direcciones.localidad, direcciones.cp');
+		$this->db->from('denuncias');
+		$this->db->join('direcciones','denuncias.idDireccion = direcciones.idDireccion');
+		$this->db->where('denuncias.idRegistro', $idDenuncia);
+		$direccion = $this->db->get();
+
+		return $direccion->result_array();
+	}
+
 }
