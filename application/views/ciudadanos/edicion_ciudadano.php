@@ -7,7 +7,7 @@
     <div class="form-group">
       <label for="nombre" class="col-sm-2 control-label">Nombre</label>
       <div class="col-sm-10">
-        <input type="text" name="nombre" class="form-control">
+        <input type="text" name="nombre" class="form-control" value="<?php var_dump($ciudadano['apellidoMa']); ?>">
       </div>
     </div>
     <div class="form-group">

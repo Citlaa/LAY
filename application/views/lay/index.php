@@ -65,7 +65,7 @@
               </div>
 
               <div class="col-md-4 col-sm-4">
-                <a href="<?php echo base_url(). "main/reportes"?>">
+                <a href="<?php echo base_url(). "reportes"?>">
               <div class="well br-green">
                 <i class="fa fa-bar-chart-o"></i>
                 <h2>Reportes</h2>                

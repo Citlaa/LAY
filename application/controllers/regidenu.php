@@ -79,7 +79,7 @@ class Regidenu extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 	 {
 			$this->load->view('template/header.php');
-			// $this->load->view('template/menu.php', $data);
+			 $this->load->view('template/menu.php');
 			$this->load->view('denuncias/create_denuncia.php', $data);
 			$this->load->view('template/footer.php');
 	 }

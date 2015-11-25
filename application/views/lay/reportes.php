@@ -59,27 +59,10 @@
                 <!-- Search users -->
                 <div class="well">
                   <!-- Advanced search -->
-                                      <div class="form-group">
-                                  <label class="col-lg-2 control-label">Fecha:</label>
-<div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <input type='text' class="form-control" id='datetimepicker4' />
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                
-                $('#datetimepicker4').datetimepicker({
-                  minDate: moment(),
-                  format: "DD/MM/YYYY",
-                  locale: 'es'
-                });
-            });
-        </script>
-    </div>
-</div>
-                    <button type="submit" class="btn btn-default">Buscar</button>                  
-                  </form>
+                                      
+    
+</div>                                    
+                  <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="900px" height="700px"></iframe>                                  
                 </div>
                 </div>
                 

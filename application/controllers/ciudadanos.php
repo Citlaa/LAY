@@ -97,10 +97,12 @@ class Ciudadanos extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->model(array('model_ciudadano','model_denuncias'));
+
 		if ($this->form_validation->run() == FALSE)
 		{
+			$data['ciudadano']=$this->model_ciudadano->get_ciudadano_denuncia($idDenuncia);
 			$this->load->view('template/header.php');
-			$this->load->view('ciudadanos/edicion_ciudadano');
+			$this->load->view('ciudadanos/edicion_ciudadano', $data);
 			$this->load->view('template/footer.php');
 		}
 		 else

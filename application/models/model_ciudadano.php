@@ -29,9 +29,16 @@ class Model_ciudadano extends CI_Model
 		}
 	}
 
-	public function get_ciudadano($id)
+	public function get_ciudadano_denuncia($idDenuncia)
 	{
+		$this->db->select('ciudadanos.nombre, ciudadanos.apellidoPa, ciudadanos.apellidoMa, ciudadanos.tel1, ciudadanos.tel2');
+		// $this->db->select('idCiudadano');
+		$this->db->from('denuncias');
+		$this->db->join('ciudadanos','denuncias.idCiudadano = ciudadanos.idCiudadano');
+		$this->db->where('denuncias.idRegistro', $idDenuncia);
+		$ciudadano = $this->db->get();
 		
+		return $ciudadano->result();
 	}
 
 }
