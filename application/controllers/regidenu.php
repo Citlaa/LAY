@@ -56,6 +56,7 @@ class Regidenu extends CI_Controller {
 		 $grocery->unset_edit();
 
 		 $grocery->add_action('Editar ciudadano','','ciudadanos/editar_ciudadano');
+		 $grocery->add_action('Exportar PDF','','ciudadanos/editar_ciudadano');
 
 
 		 $grocery->columns('fecha','idDependencia','idCiudadano','idEstatus','idRecepcion','idDireccion','idAsunto');

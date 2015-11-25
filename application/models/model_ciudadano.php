@@ -48,9 +48,23 @@ class Model_ciudadano extends CI_Model
 			'apellidoMa'=> $this->input->post('apellidoMa'),
 			'tel1'=> $this->input->post('tel1'),
 			'tel2'=> $this->input->post('tel2'),
-
 		);
+
 		$this->db->where('idCiudadano', $this->input->post('idCiudadano'));
 		$this->db->update('ciudadanos', $data);
+	}
+
+	public function buscar_por_nombre($data)
+	{
+		$this->db->select('idCiudadano');
+		$this->db->where('nombre', $data['nombre']);
+		$this->db->where('apellidoPa', $data['apellidoPa']);
+		$this->db->where('apellidoMa', $data['apellidoMa']);
+		$query = $this->db->get('ciudadanos');
+		if ($query) {
+			return $query->result_array();
+		} else {
+			return false;
+		}
 	}
 }

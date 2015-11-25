@@ -100,7 +100,6 @@ class Ciudadanos extends CI_Controller {
 
 		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
 
-
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['ciudadano']=$this->model_ciudadano->get_ciudadano_denuncia($idDenuncia);
