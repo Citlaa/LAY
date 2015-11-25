@@ -24,7 +24,7 @@ class Model_denuncias extends CI_Model {
       'apellidoPa' => $this->input->post('apellidoPa'),
       'apellidoMa' => $this->input->post('apellidoMa'),
       'tel1' => $this->input->post('tel1'),
-      'tel2' => $this->input->post('nombre')
+      'tel2' => $this->input->post('tel1')
     );
     $direccion = array(
       'calle' => $this->input->post('calle'),

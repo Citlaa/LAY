@@ -92,11 +92,14 @@ class Ciudadanos extends CI_Controller {
 		$this->_example_output($output);
 	}
 
-	public function editar_ciudadano($idDenuncia)
+	public function editar_ciudadano($idDenuncia=null)
 	{
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->model(array('model_ciudadano','model_denuncias'));
+
+		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
+
 
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -107,9 +110,8 @@ class Ciudadanos extends CI_Controller {
 		}
 		 else
 		 {
-			 $idDenuncia = $this->model_denuncias->get_denuncia($idDenuncia);
-			 $this->model_ciudadano->insert_denuncia();
-				 $this->load->view('denuncias/exito');
+			 $this->model_ciudadano->update_ciudadano();
+				 $this->load->view('ciudadanos/exito');
 		 }
 
 	}
