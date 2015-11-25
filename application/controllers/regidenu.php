@@ -54,11 +54,12 @@ class Regidenu extends CI_Controller {
 
 		 $grocery->unset_add();
 		 //$grocery->unset_edit();
-		 $grocery->edit_fields();
+		 $grocery->edit_fields('fecha','idDependencia','idEstatus','idRecepcion');
 
 		 $grocery->add_action('Editar ciudadano','','ciudadanos/editar_ciudadano');
 		 $grocery->add_action('Editar Direccion','','direcciones/editar_direccion');
 		 $grocery->add_action('Editar Asunto','','asuntos/editar_asunto');
+		 $grocery->add_action('Agregar Asunto','','asuntos/add_asunto');
 
 
 		 $grocery->columns('fecha','idDependencia','idCiudadano','idEstatus','idRecepcion','idDireccion','idAsunto');
@@ -84,6 +85,7 @@ class Regidenu extends CI_Controller {
 			$this->load->view('template/header.php');
 			 $this->load->view('template/menu.php');
 			$this->load->view('denuncias/create_denuncia.php', $data);
+			$this->load->view('denuncias/form_denuncia.php', $data);
 			$this->load->view('template/footer.php');
 	 }
 	 else
