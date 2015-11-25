@@ -59,156 +59,16 @@
                 <!-- Search users -->
                 <div class="well">
                   <!-- Advanced search -->
-
-                  <form class="form-horizontal">
-                                      <div class="form-group row">
-                    <label for="id" class="col-md-2 control-label">Fecha:</label>
-
-                    <div class="col-md-1" style="margin-top: 5px; padding-left: 5x; width: 25px;padding-right: 8px;">
-                      <i class="fa fa-calendar"></i>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="date" class="form-control" id="fecha" style="margin-top: 15px;padding-left: 35px;padding-right: 10px;">
-                    </div>
-
-                  </div>
-                  <div class="widget-head">
-         
-                           </div>
-                       </div>
-                       </div>
-                       
->>>>>>> Stashed changes 
-<!-- Add new Registro -->
-                <div class="tab-pane fade" id="reporte">
-                <h4>Reporte</h4>
-                
-                <form class="form-horizontal" role="form">
-
-                  <div class="form-group row">
-                    <label for="id" class="col-md-2 control-label">Id de registro:</label>
-                    <div class="col-md-2" style="margin-top: 15px">
-                      <input type="text" class="form-control" id="id" placeholder="ID" disabled>
-                    </div>
- 
-                    <div class="col-md-1" style="margin-top: 5px; padding-left: 5x; width: 25px;padding-right: 8px;">
-                      <i class="fa fa-calendar"></i>
-                    </div>
-                    <div class="col-md-3">
-                      <input type="date" class="form-control" id="fecha" style="margin-top: 15px;padding-left: 35px;padding-right: 10px;">
-                    </div>
-          
-                    <label for="dependencia" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Dependencia:</label>
-                      <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
-                        <select class="form-control">
-                          <option>USA</option>
-                          <option>India</option>
-                          <option>Canada</option>
-                          <option>South Africa</option>
-                          <option>Pakistan</option>
-                        </select>
-                      </div>
-                  </div>
-
-
-                  <div class="form-group row">
-                    <label for="estatus" class="col-md-2 control-label" style="width: 110px; padding-right: 5px;">Estatus:</label>
-                    <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
-                      <select class="form-control">
-                        <option>Resuelto</option>
-                        <option>Pendiente</option>                      
-                      </select>
-                    </div>
-
-                    <label for="modr" class="col-md-2 control-label" style="width: 170px; padding-right: 5px;">Modo de recepción:</label>
-                    <div class="col-md-3" style="margin-top: 15px; padding-left: 5px;">
-                      <select class="form-control">
-                        <option>Llamada</option>
-                        <option>WhatsApp</option>                      
-                        <option>SMS</option>
-                        <option>Otros</option> 
-                      </select>
-                    </div>
-                  </div>
-                  
-
-                  <div class="form-group">
-                    <label for="nombre" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;">Nombre:</label>
-                    <div class="col-md-6" style="margin-top: 15px;">
-                      <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label for="apellidos" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;padding-right: 11px;">Apellidos:</label>
-                    <div class="col-md-6" style="margin-top: 15px;">
-                      <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group row">
-                    <label for="calle" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;">Calle:</label>
-                    <div class="col-md-3" style="margin-top: 15px;">
-                      <input type="text" class="form-control" id="calle" placeholder="Calle">
-                    </div>
-
-                    <label for="calle" class="col-md-2 control-label" style= "width: 25px; padding-right: 5px; padding-left: 5px;">Nº:</label>
-                    <div class="col-md-1" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="n" placeholder="Nº">
-                    </div>
-
-                    <label for="colonia" class="col-md-2 control-label" style= "width: 60px; padding-right: 5px; padding-left: 5px;">Colonia:</label>
-                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="colonia" placeholder="Colonia">
-                    </div>
-
-                    <label for="calle" class="col-md-2 control-label" style= "width: 25px; padding-right: 5px; padding-left: 5px;">CP:</label>
-                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="cp" placeholder="CP">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group row">
-                    <label for="localidad" class="col-md-2 control-label" style="padding-left: 10px; width: 125px;padding-right: 11px;">Localidad:</label>
-                    <div class="col-md-2" style="margin-top: 15px;">
-                      <input type="text" class="form-control" id="localidad" placeholder="Localidad">
-                    </div>
-
-                    <label for="t1" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 1:</label>
-                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="t1" placeholder="Teléfono 1">
-                    </div>
-
-                    <label for="t2" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 2:</label>
-                    <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                      <input type="text" class="form-control" id="t2" placeholder="Teléfono 2">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label class="col-md-2 control-label" style="padding-left: 10px; width: 125px;">Asunto:</label>
-                    <div class="col-md-10">
-                      <textarea class="form-control" rows="3" placeholder="Asunto"></textarea>
-                    </div>
-                    <div style="padding-left: 770px;">
-                        <button type="submit" class="btn btn-success">Nuevo asunto</button>
-                    </div>
-                  </div>
-
-                  
-                  <div class="form-group" style="padding-left: 665px;">
-                  <div class="col-md-offset-2 col-md-10">
-                    <button type="submit" class="btn btn-info">Aceptar</button>
-                    <button type="submit" class="btn btn-default">Cancelar</button>
-                  </div>
-                  </div>
-                </form>
-                
+                                      
+    
+</div>                                    
+                  <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="900px" height="700px"></iframe>                                  
                 </div>
+                </div>
+                
+<!-- Add new Registro -->
+                
+                  
 
 <!--hasta aqui -->
 

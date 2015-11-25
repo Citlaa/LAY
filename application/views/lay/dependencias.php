@@ -63,7 +63,7 @@
                            <div class="widget-body no-padd">
                 <div class="table-responsive">
               
-                   <iframe src="<?php echo site_url('dependencias/show_dependencias2');?>" width="900px" height="700px"></iframe>                                  
+                   <iframe src="<?php echo base_url('dependencias/show_dependencias2');?>" width="900px" height="700px"></iframe>                                  
 
                              </div>
                            </div>

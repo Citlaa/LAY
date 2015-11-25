@@ -41,7 +41,7 @@ class Reportes extends CI_Controller {
 		 $grocery->set_theme('bootstrap');
 		 $grocery->set_table('denuncias');
 		 $grocery->set_language('spanish');
-		 $grocery->set_relation('idEstatus','estaus','descripcion');
+		 $grocery->set_relation('idEstatus','estatus','descripcion');
 		 $grocery->set_relation('idRecepcion','recepcion','descripcion');
 		 $grocery->set_relation('idDependencia','dependencias','dependencia');
 		 $grocery->set_relation('idCiudadano','ciudadanos','nombre');
