@@ -49,6 +49,18 @@ class Direcciones extends CI_Controller {
 
 	}
 
+	public function edicion_direccion_ajax()
+	{
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('calle', 'Calle', 'required');
+		$this->load->model(array('model_direccion'));
+
+		$query = $this->model_direccion->update_direccion();
+		echo json_encode($query);
+	}
+
 	
 
 }

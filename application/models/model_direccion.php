@@ -17,15 +17,20 @@ class Model_direccion extends CI_Model
 
 	public function update_direccion()
 	{
-		$data = array(
-			'calle'=> $this->input->post('calle'),
-			'noExt'=> $this->input->post('noExt'),
-			'noInt'=> $this->input->post('noInt'),
-			'colonia'=> $this->input->post('colonia'),
-			'localidad'=> $this->input->post('localidad'),
-			'cp'=> $this->input->post('cp')
-		);
-		$this->db->where('idDireccion', $this->input->post('idDireccion'));
+		if ($this->input->get('idDireccion')) {
+			$data = array(
+				'calle'=> $this->input->get('calle'),
+				'noExt'=> $this->input->get('noExt'),
+				'noInt'=> $this->input->get('noInt'),
+				'colonia'=> $this->input->get('colonia'),
+				'localidad'=> $this->input->get('localidad'),
+				'cp'=> $this->input->get('cp')
+			);
+		$this->db->where('idDireccion', $this->input->get('idDireccion'));
 		$this->db->update('direcciones', $data);
+		return true;
+		}else {
+			return false;
+		}
 	}
 }

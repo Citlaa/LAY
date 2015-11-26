@@ -79,7 +79,7 @@
     </div>
   </form>
     <button class="btn btn-success" id="enviar">Editar</button>
-    <a  href="<?php echo site_url('regidenu/mostrar_busqueda');?>" class="btn btn-danger">Cancelar</a>
+    <a href="<?php echo site_url('regidenu/mostrar_busqueda');?>" class="btn btn-danger">Cancelar</a>
 </div>
 
             
