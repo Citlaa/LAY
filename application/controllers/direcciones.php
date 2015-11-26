@@ -37,9 +37,9 @@ class Direcciones extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['direccion']=$this->model_direccion->get_direccion_denuncia($idDenuncia);
-			$this->load->view('template/header.php');
+			//$this->load->view('template/header.php');
 			$this->load->view('direcciones/edicion_direccion', $data);			
-			$this->load->view('template/footer.php');
+			//$this->load->view('template/footer.php');
 		}
 		 else
 		 {
