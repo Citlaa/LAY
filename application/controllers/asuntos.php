@@ -37,9 +37,9 @@ class Asuntos extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['asunto']=$this->model_asunto->get_asunto_denuncia($idDenuncia);
-			$this->load->view('template/header.php');
+			//$this->load->view('template/header.php');
 			$this->load->view('asuntos/edicion_asunto', $data);			
-			$this->load->view('template/footer.php');
+			//$this->load->view('template/footer.php');
 		}
 		 else
 		 {
