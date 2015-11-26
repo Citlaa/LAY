@@ -85,7 +85,7 @@ class Regidenu extends CI_Controller {
 			$this->load->view('template/header.php');
 			 $this->load->view('template/menu.php');
 			$this->load->view('denuncias/create_denuncia.php', $data);
-			$this->load->view('denuncias/form_denuncia.php', $data);
+			// $this->load->view('denuncias/form_denuncia.php', $data);
 			$this->load->view('template/footer.php');
 	 }
 	 else
