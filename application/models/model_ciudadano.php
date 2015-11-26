@@ -42,16 +42,23 @@ class Model_ciudadano extends CI_Model
 
 	public function update_ciudadano()
 	{
-		$data = array(
-			'nombre'=> $this->input->post('nombre'),
-			'apellidoPa'=> $this->input->post('apellidoPa'),
-			'apellidoMa'=> $this->input->post('apellidoMa'),
-			'tel1'=> $this->input->post('tel1'),
-			'tel2'=> $this->input->post('tel2'),
-		);
+		if ($this->input->get('idCiudadano')) {
+				
+			$data = array(
+				'nombre'=> $this->input->get('nombre'),
+				'apellidoPa'=> $this->input->get('apellidoPa'),
+				'apellidoMa'=> $this->input->get('apellidoMa'),
+				'tel1'=> $this->input->get('tel1'),
+				'tel2'=> $this->input->get('tel2'),
+			);
 
-		$this->db->where('idCiudadano', $this->input->post('idCiudadano'));
-		$this->db->update('ciudadanos', $data);
+			$this->db->where('idCiudadano', $this->input->get('idCiudadano'));
+			$this->db->update('ciudadanos', $data);
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	public function buscar_por_nombre($data)

@@ -94,26 +94,26 @@ class Ciudadanos extends CI_Controller {
 
 	public function editar_ciudadano($idDenuncia=null)
 	{
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-		$this->load->model(array('model_ciudadano','model_denuncias'));
+		
+		$this->load->model(array('model_ciudadano'));
 
-		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
-
-		if ($this->form_validation->run() == FALSE)
-		{
+		
 			$data['ciudadano']=$this->model_ciudadano->get_ciudadano_denuncia($idDenuncia);
-		// $this->load->view('template/header.php');
+			// $this->load->view('template/header.php');
 			$this->load->view('ciudadanos/edicion_ciudadano', $data);
 			// $this->load->view('template/footer.php');
-		}
-		 else
-		 {
-			 $this->model_ciudadano->update_ciudadano();
-				 $this->load->view('ciudadanos/exito');
-		 }
-
 	}
 
+	public function edicion_ciudadano_ajax()
+	{
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
+		$this->load->model(array('model_ciudadano'));
+
+		$query = $this->model_ciudadano->update_ciudadano();
+		echo json_encode($query);
+	}
 
 }
