@@ -74,23 +74,26 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-12">
+              <div class="col-md-12" align="center">
               <hr />
               <hr />
-              <div class="col-md-4 col-sm-4">
+              <div class="col-md-4 col-sm-5">
+
+              </div>
+              <div class="col-md-4 col-sm-5">
                 <a href="<?php echo site_url('dependencias/show_dependencias')?>">
               <div class="well br-lblue">
-                  <i class="fa fa-folder-open"></i>
+                  <i class="fa fa-university"></i>
                 <h2>Dependencias</h2>                
               </div>
                 </a>
               </div>
 
-
-              <div class="col-md-4 col-sm-4">
+            
+              <div class="col-md-4 col-sm-5">
                 <a href="<?php echo site_url('ciudadanos/mostrar_ciudadanos')?>">
-              <div class="well br-lblue">
-                  <i class="fa fa-folder-open"></i>
+              <div class="well br-green">
+                  <i class="fa fa-group"></i>
                 <h2>Ciudadanos</h2>                
               </div>
                 </a>
