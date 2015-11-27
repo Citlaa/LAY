@@ -51,9 +51,8 @@
               <div class="tab-content">
                 <div class="tab-pane fade active in" id="search">
                 <h4>Buscar reporte</h4>
-                <!-- Search users -->    
-                <a type="button" name="button" class="btn btn-default" href="<?php echo base_url('reportes/periodo');?>">Periodo</a>                        
-                  <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="900px" height="700px"></iframe>                                  
+                <!-- Search users -->                            
+                  <iframe src="<?php echo base_url('reportes/periodo2');?>" width="900px" height="700px"></iframe>                                  
                 </div>
                 </div>
                 

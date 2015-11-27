@@ -32,6 +32,10 @@ class Ciudadanos extends CI_Controller {
 		$grocery->set_theme('bootstrap');
 		$grocery->set_language('spanish');
 		$grocery->set_table('ciudadanos');
+		$grocery->display_as('apellidoPa','Apelido Paterno');
+		 $grocery->display_as('apellidoMa','Apelido Materno');
+		 $grocery->display_as('tel1','Teléfono 1');
+		 $grocery->display_as('tel2','Télefono 2');
 		$grocery->add_action('Denuncias','','ciudadanos/denuncias_por_ciudadano');
 		$output = $grocery->render();
 		$this->_example_output($output);

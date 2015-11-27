@@ -77,6 +77,25 @@
               <div class="col-md-12">
               <hr />
               <hr />
+              <div class="col-md-4 col-sm-4">
+                <a href="<?php echo site_url('dependencias/show_dependencias')?>">
+              <div class="well br-lblue">
+                  <i class="fa fa-folder-open"></i>
+                <h2>Dependencias</h2>                
+              </div>
+                </a>
+              </div>
+
+
+              <div class="col-md-4 col-sm-4">
+                <a href="<?php echo site_url('ciudadanos/mostrar_ciudadanos')?>">
+              <div class="well br-lblue">
+                  <i class="fa fa-folder-open"></i>
+                <h2>Ciudadanos</h2>                
+              </div>
+                </a>
+              </div>
+
               </div>
             </div>
           </div>
