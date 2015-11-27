@@ -96,7 +96,7 @@
                       <div class="col-md-12 row">
                         <label for="localidad" class="col-md-2 control-label" style="padding-left: 35px; width: 111px;padding-right: 5px;">Localidad:</label>
                           <div class="col-md-3" style="margin-top: 15px;">
-                            <input type="text" class="form-control" name="localidad" placeholder="Localidad">
+                            <input type="text" class="form-control" name="localidad" value="Aguascalientes">
                           </div>
 
                         <label for="t1" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 1:</label>

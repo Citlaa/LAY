@@ -32,6 +32,7 @@ class Dependencias extends CI_Controller {
 		 $grocery->set_table('dependencias');
 		 $grocery->set_language('spanish');		 		 
 		 $grocery->columns('dependencia','titular','calle','tel1');
+		 
 		 $output = $grocery->render();
 		 $this->_example_output($output);   
 	}
