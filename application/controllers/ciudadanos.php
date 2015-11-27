@@ -120,4 +120,16 @@ class Ciudadanos extends CI_Controller {
 		echo json_encode($query);
 	}
 
+
+	public function agregar_denuncia_ajax()
+	{
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('descripcion', 'Descripcion', 'required');
+		$this->load->model(array('model_denuncias'));
+
+		$query = $this->model_denuncias->agregar_denuncia();
+		echo json_encode($query);
+	}
 }

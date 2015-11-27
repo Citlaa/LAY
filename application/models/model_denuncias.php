@@ -39,8 +39,6 @@ class Model_denuncias extends CI_Model {
       'descripcion' => $this->input->post('asunto'),
     );
 
-
-
     $this->db->trans_start();
     $this->db->insert('ciudadanos', $ciudadano);
     $cId=$this->db->insert_id();
@@ -63,4 +61,48 @@ class Model_denuncias extends CI_Model {
     return $this->db->trans_complete();
   }
 
+
+  public function agregar_denuncia()
+  {
+      $ciudadano = array(
+        'nombre' => $this->input->post('nombre'),
+        'apellidoPa' => $this->input->post('apellidoPa'),
+        'apellidoMa' => $this->input->post('apellidoMa'),
+        'tel1' => $this->input->post('tel1'),
+        'tel2' => $this->input->post('tel1')
+      );
+      $direccion = array(
+        'calle' => $this->input->get('calle'),
+        'noExt' => $this->input->get('noExt'),
+        'noInt' => $this->input->get('noInt'),
+        'colonia' => $this->input->get('colonia'),
+        'localidad' => $this->input->get('localidad'),
+        'cp' => $this->input->get('cp'),
+      );
+
+      $asunto = array(
+        'descripcion' => $this->input->get('asunto'),
+      );
+
+      $this->db->trans_start();
+      $this->db->insert('ciudadanos', $ciudadano);
+      $cId=$this->db->insert_id();
+      $this->db->insert('direcciones', $direccion);
+      $dId=$this->db->insert_id();
+      $this->db->insert('asuntos', $asunto);
+      $aId=$this->db->insert_id();
+      $estatus  = $this->db->get_where('estatus','descripcion','Pendiente');
+      $estatusPendiente = $estatus->result();
+      $this->db->insert('denuncias', array(
+        'fecha'=>date("Y-m-d"),
+        'idDependencia'=>$dId,
+        'idEstatus'=>$this->input->post('idEstatus'),
+        'idRecepcion'=>$this->input->post('idRecepcion'),
+        'idDependencia'=>$this->input->post('idDependencia'),
+        'idDireccion'=>$dId,
+        'idCiudadano'=>$cId,
+        'idAsunto'=>$aId
+      ));
+      return $this->db->trans_complete();
+    }
 }
