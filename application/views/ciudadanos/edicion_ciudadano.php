@@ -116,9 +116,6 @@ $(document).ready(function() {
     var tel1 = $("#tel1").val();
     var tel2 = $("#tel2").val();
 
-    console.log(idCiudadano);
-
-
     $.ajax({
     type: "GET",
     url: "<?php echo site_url(); ?>" + "ciudadanos/edicion_ciudadano_ajax",

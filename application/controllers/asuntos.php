@@ -44,7 +44,9 @@ class Asuntos extends CI_Controller {
 		 else
 		 {
 			 $this->model_asunto->update_asunto();
-				 $this->load->view('asuntos/exito');
+				$this->load->view('asuntos/exito');
+			$this->load->CI_Controller('regidenu/mostrar_busqueda');
+				
 		 }
 
 	}
@@ -83,5 +85,16 @@ class Asuntos extends CI_Controller {
 			 		$this->load->view('denuncias/exito');
 	 			}	 
 
-}
+	}
+	public function edicion_asunto_ajax()
+	{
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('descripcion', 'Descripcion', 'required');
+		$this->load->model(array('model_asunto'));
+
+		$query = $this->model_asunto->update_asunto();
+		echo json_encode($query);
+	}
 }

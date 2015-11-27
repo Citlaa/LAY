@@ -19,10 +19,15 @@ class Model_asunto extends CI_Model
 
 	public function update_asunto()
 	{
-		$data = array(
-			'descripcion'=> $this->input->post('descripcion')			
-		);
-		$this->db->where('idAsunto', $this->input->post('idAsunto'));
-		$this->db->update('asuntos', $data);
+		if($this->input->get('idAsunto')){
+			$data = array(
+				'descripcion'=> $this->input->get('descripcion')			
+			);
+			$this->db->where('idAsunto', $this->input->get('idAsunto'));
+			$this->db->update('asuntos', $data);
+			return true;
+		}else{
+			return false;
+		}
 	}
 }
