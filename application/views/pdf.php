@@ -35,9 +35,9 @@
         <p class="page"></p>
     <h2 id="top title">Reporte Generado</h2>
     <div id="table-responsive topTable">
-              
-        <iframe src="<?php echo site_url('pdf_ci/mostrar_reportes2');?>" width="900px" height="700px">grocery</iframe>                                  
-
+    <div>  
+        <iframe src="<?php echo site_url('reportes/mostrar_repotes2');?>" width="900px" height="700px">hey!</iframe>                                  
+    </div>
     </div>
     </div>
 </body>
