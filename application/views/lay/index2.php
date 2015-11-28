@@ -42,7 +42,7 @@
         
         <div class="container">
           <div class="page-content page-statement">
-            <div class="row">
+            <div class="text-center">
 
               <div class="col-md-4 col-sm-4">
 
@@ -73,14 +73,11 @@
                 </a>
               </div>
             </div>
-            <div class="row">
-             
-              <hr />
-              <hr />
-              <div class="col-md-4 col-sm-4">
 
+            <div class="text-center">     
+              <div class="col-md-2 col-sm-4">
               </div>
-              <div class="col-md-4 col-sm-5">
+              <div class="col-md-4 col-sm-5" style="margin-top: 30px;">
                 <a href="<?php echo site_url('dependencias/show_dependencias')?>">
               <div class="well br-lblue">
                   <i class="fa fa-university"></i>
@@ -88,18 +85,15 @@
               </div>
                 </a>
               </div>
-
             
-              <div class="col-md-4 col-sm-5">
+              <div class="col-md-4 col-sm-5" style="margin-top: 30px;">
                 <a href="<?php echo site_url('ciudadanos/mostrar_ciudadanos')?>">
               <div class="well br-green">
                   <i class="fa fa-group"></i>
                 <h2>Ciudadanos</h2>                
               </div>
                 </a>
-              </div>
-
-              </div>
+              </div>           
             </div>
           </div>
       </div>

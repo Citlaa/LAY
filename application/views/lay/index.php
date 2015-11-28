@@ -42,7 +42,7 @@
         
         <div class="container">
           <div class="page-content page-statement">
-            <div class="row">
+            <div class="text-center">
 
               <div class="col-md-4 col-sm-4">
 
