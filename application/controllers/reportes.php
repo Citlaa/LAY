@@ -5,7 +5,7 @@ class Reportes extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		 $this->load->database();
+		$this->load->database();
         $this->load->helper('url');
         $this->load->helper('date');
         /* ------------------ */ 
@@ -18,10 +18,16 @@ class Reportes extends CI_Controller {
 		redirect('/reportes/mostrar_reportes');
 	}
 
+	public function show_periodo2(){
+		$this->load->view('template/header');
+		$this->load->view('template/menu');
+		$this->load->view('LAY/periodo2');
+		$this->load->view('template/footer');
+	}
 		function _example_output($output = null)
  
     {
-        $this->load->view('our_template.php',$output);    
+        $this->load->view('our_template.php',$output);
     }
 
     	public function mostrar_reportes()
@@ -66,7 +72,7 @@ class Reportes extends CI_Controller {
 
 		 $grocery->fields('fecha','idDependencia','idEstatus','idRecepcion','idCiudadano','idDireccion','idAsunto');
 		 $output = $grocery->render();
-		  $this->_example_output($output);
+		 $this->_example_output($output);
 	}
 
 	public function periodo(){
@@ -124,9 +130,6 @@ class Reportes extends CI_Controller {
 		 $grocery->unset_delete();
 		 
 		 $output = $grocery->render();
-		  $this->_example_output($output);		
-	}
-
-
-
+		 $this->_example_output($output);		
+ 	}
 }
