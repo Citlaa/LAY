@@ -58,13 +58,12 @@
                 <div class="tab-pane fade active in" id="search">
           
                   <div class="widget">
-                           <div class="widget-head">
-                    <h5><i class="fa fa-university"></i>Periodos</h5>
-                  </div>
+                           <iframe src="<?php echo site_url('reportes/periodo2?date1=$inicio&date2=$fin');?>" width="900px" height="700px"></iframe>
                            <div class="widget-body no-padd">
+                            
                 <div class="table-responsive">
               
-                   <iframe src="<?php echo site_url('reportes/periodo2');?>" width="900px" height="700px"></iframe>                                  
+                                                    
 
                              </div>
                            </div>

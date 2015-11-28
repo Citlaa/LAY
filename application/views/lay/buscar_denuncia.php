@@ -58,7 +58,7 @@
                 <h3>Denuncias</h3>
                 <h5>Busca o inserta un nuevo registro</h5>
                 <!-- Search users -->
-                <a type="button" name="button" class="btn btn-default" href="<?php echo base_url('regidenu/add_denuncia');?>">Agregar denuncia</a>
+                <a type="button" name="button" class="btn btn-primary" href="<?php echo base_url('regidenu/add_denuncia');?>">Agregar denuncia</a>
                 <iframe src="<?php echo site_url('regidenu/mostrar_busqueda');?>" width="900px" height="700px"></iframe>
                 <div class="well" align="center">
                   <!-- Advanced search Denuncia-->
