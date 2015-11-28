@@ -20,7 +20,11 @@ class Pdf_ci extends CI_Controller
         }
     }
  
+    function _example_output($output = null)
  
+    {
+        $this->load->view('our_template.php',$output);
+    }
     public function index()
     {
     
@@ -146,7 +150,6 @@ class Pdf_ci extends CI_Controller
         $this->html2pdf->paper('a4', 'portrait');
         
         //datos que queremos enviar a la vista, lo mismo de siempre
-        redirect('/reportes/mostrar_reportes');
         
         //hacemos que coja la vista como datos a imprimir
         //importante utf8_decode para mostrar bien las tildes, ñ y demás
@@ -175,4 +178,3 @@ class Pdf_ci extends CI_Controller
         
     } 
 }
-/* End of file pdf_ci.php */
