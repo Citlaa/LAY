@@ -30,7 +30,7 @@ class Login extends CI_Controller {
 	{
 		if($this->session->userdata('is_logged_in')){
 			$this->load->view('template/header');
-			$this->load->view('template/menu');
+			$this->load->view('template/menu',$data);
 			$this->load->view('LAY/index');
 			$this->load->view('template/footer');
 		}else{

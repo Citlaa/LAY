@@ -17,13 +17,17 @@ class Regidenu extends CI_Controller {
 	}
 	public function buscar()
 		{
-
-			//redirect('/regidenu');
-
+			$data['user_id']	= $this->tank_auth->get_user_id();
+			$data['username']	= $this->tank_auth->get_username();	
+			if ($this->tank_auth->is_logged_in()) {
+			
 		$this->load->view('template/header');
-		$this->load->view('template/menu');
+		$this->load->view('template/menu',$data);
 		$this->load->view('LAY/buscar_denuncia');
 		$this->load->view('template/footer');
+		 }else{
+			echo "no permisos";
+		}
 
 		}
 		function _example_output($output = null)
@@ -72,6 +76,10 @@ class Regidenu extends CI_Controller {
 
 	public function add_denuncia()
 	{
+		$data1['user_id']	= $this->tank_auth->get_user_id();
+			$data1['username']	= $this->tank_auth->get_username();	
+			if ($this->tank_auth->is_logged_in()) {
+
 		$this->load->model('model_recepcion');
 		$data['recepcion'] = $this->model_recepcion->get_all();
 		$this->load->model('model_dependencias');
@@ -85,7 +93,7 @@ class Regidenu extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 	 {
 			$this->load->view('template/header.php');
-			 $this->load->view('template/menu.php');
+			 $this->load->view('template/menu.php',$data1);
 			$this->load->view('denuncias/create_denuncia.php', $data);
 			// $this->load->view('denuncias/form_denuncia.php', $data);
 			$this->load->view('template/footer.php');
@@ -95,6 +103,10 @@ class Regidenu extends CI_Controller {
 			 $this->model_denuncias->insert_denuncia();
 			 $this->load->view('denuncias/exito');
 	 }
+	  }else{
+			echo "no permisos";
+		}
+
 
 	}
 

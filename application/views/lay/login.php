@@ -76,8 +76,13 @@
             <?php echo form_submit('signup_submit','Registrate',"class='btn btn-danger btn-sm'"); ?>
             <button type="reset" class="btn btn-black btn-sm">Borrar</button>
           </form>
+
+
           
           </div>
+
+
+          
 
 
 

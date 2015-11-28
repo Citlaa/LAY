@@ -29,6 +29,7 @@
         <div class="blue-block">
           <div class="page-title">
             <h3 class="pull-left"><i class="fa fa-desktop"></i>Menú</h3>  
+            
             <div class="clearfix"></div>
           </div>
         </div>

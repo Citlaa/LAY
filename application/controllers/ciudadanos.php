@@ -33,16 +33,24 @@ class Ciudadanos extends CI_Controller {
 		$grocery->set_language('spanish');
 		$grocery->set_table('ciudadanos');
 		$grocery->display_as('apellidoPa','Apelido Paterno');
+
 		$grocery->display_as('apellidoMa','Apelido Materno');
 		$grocery->display_as('tel1','Teléfono 1');
 		$grocery->display_as('tel2','Télefono 2');
 		$grocery->add_action('Denuncias','','ciudadanos/denuncias_por_ciudadano', 'fa fa-university');
+
+
+		$grocery->required_fields('nombre','apellidoPa','tel1');
+
 		$output = $grocery->render();
 		$this->_example_output($output);
 	}
 
 	public function mostrar_ciudadanos()
 	{
+		$data1['user_id']	= $this->tank_auth->get_user_id();
+			$data1['username']	= $this->tank_auth->get_username();	
+		if ($this->tank_auth->is_logged_in()) {
 		$this->load->model('model_ciudadano');
 		$data = array(
 			'ciudadanos'=> $this->model_ciudadano->show_all(),
@@ -50,9 +58,12 @@ class Ciudadanos extends CI_Controller {
 		);
 
 		$this->load->view('template/header');
-		$this->load->view('template/menu');
+		$this->load->view('template/menu',$data1);
 		$this->load->view('LAY/ciudadanos',$data);
 		$this->load->view('template/footer');
+		}else{
+			echo "no permisos";
+		}
 
 	}
 
