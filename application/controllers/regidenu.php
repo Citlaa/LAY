@@ -77,37 +77,46 @@ class Regidenu extends CI_Controller {
 	public function add_denuncia()
 	{
 		$data1['user_id']	= $this->tank_auth->get_user_id();
-			$data1['username']	= $this->tank_auth->get_username();	
-			if ($this->tank_auth->is_logged_in()) {
+		$data1['username']	= $this->tank_auth->get_username();	
+		if ($this->tank_auth->is_logged_in()) {
 
-		$this->load->model('model_recepcion');
-		$data['recepcion'] = $this->model_recepcion->get_all();
-		$this->load->model('model_dependencias');
-		$data['dependencias'] = $this->model_dependencias->get_all();
-		$this->load->model('model_estatus');
-		$data['estatus'] = $this->model_estatus->get_all();
-		$this->load->model('model_denuncias');
-		$this->load->helper('form');
-    $this->load->library('form_validation');
-		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
-		if ($this->form_validation->run() == FALSE)
-	 {
-			$this->load->view('template/header.php');
-			 $this->load->view('template/menu.php',$data1);
-			$this->load->view('denuncias/create_denuncia.php', $data);
-			// $this->load->view('denuncias/form_denuncia.php', $data);
-			$this->load->view('template/footer.php');
-	 }
-	 else
-	 {
-			 $this->model_denuncias->insert_denuncia();
-			 $this->load->view('denuncias/exito');
-	 }
-	  }else{
+			$this->load->model('model_recepcion');	
+			$data['recepcion'] = $this->model_recepcion->get_all();
+			$this->load->model('model_dependencias');
+			$data['dependencias'] = $this->model_dependencias->get_all();
+			$this->load->model('model_estatus');
+			$data['estatus'] = $this->model_estatus->get_all();
+			$this->load->model('model_denuncias');
+			$this->load->helper('form');
+    		$this->load->library('form_validation');
+			$this->form_validation->set_rules('nombre', 'Nombre', 'required');
+			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required');
+			$this->form_validation->set_rules('calle', 'Calle', 'required');
+			$this->form_validation->set_rules('noExt', 'No. Exterior', 'required');
+			$this->form_validation->set_rules('cp', 'C.P.', 'required');
+			$this->form_validation->set_rules('colonia', 'Colonia', 'required');
+			$this->form_validation->set_rules('localidad', 'Localidad', 'required');
+			$this->form_validation->set_rules('tel1', 'Teléfono', 'required');
+			$this->form_validation->set_rules('asunto', 'Asunto', 'required');
+			if ($this->form_validation->run() == FALSE)
+	 		{
+				$this->load->view('template/header.php');
+				$this->load->view('template/menu.php',$data1);
+				$this->load->view('denuncias/create_denuncia.php', $data);
+				// $this->load->view('denuncias/form_denuncia.php', $data);
+				$this->load->view('template/footer.php');
+	 		}
+	 		else
+	 		{
+			 	$this->model_denuncias->insert_denuncia();
+			 	$this->load->view('template/header.php');
+				$this->load->view('template/menu.php',$data1);			
+			 	$this->load->view('denuncias/exito');
+			 	$this->load->view('template/footer.php');
+	 		}
+  		}else{
 			echo "no permisos";
 		}
-
-
 	}
 
 	public function save_denuncia()
@@ -125,6 +134,13 @@ class Regidenu extends CI_Controller {
 		$direccion = $this->db->get();
 
 		return $direccion->result_array();
+	}
+
+	public function registro_exitoso(){
+		$this->load->view('template/header');
+		$this->load->view('template/menu');
+		$this->load->view('denuncias/exito');
+		$this->load->view('template/footer');
 	}
 
 }

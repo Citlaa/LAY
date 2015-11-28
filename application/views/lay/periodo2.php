@@ -32,7 +32,7 @@
         <!-- Black block starts -->
         <div class="blue-block">
           <div class="page-title">
-            <h3 class="pull-left"><i class="fa fa-university"></i>Reportes</h3>  
+            <h3 class="pull-left"><i class="fa fa-bar-chart-o"></i>Reportes</h3>  
             <div class="clearfix"></div>
           </div>
         </div>
