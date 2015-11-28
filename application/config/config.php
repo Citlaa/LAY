@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://localhost:80/lay/';
+$config['base_url'] = 'http://localhost:8080/lay/';
 
 
 /*
@@ -311,7 +311,7 @@ $config['cache_query_string'] = FALSE;
 | http://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'LAY94';
 
 /*
 |--------------------------------------------------------------------------

@@ -88,12 +88,12 @@
                             <input type="text" style="width: 226px;" class="form-control" name="calle" placeholder="Calle">
                           </div>
 
-                        <label for="noExt" class="col-md-3 control-label" style= "width: 145px; padding-right: 5px; padding-left: 30px;">Núm. exterior:</label>
+                        <label for="noExt" class="col-md-3 control-label" style= "width: 145px; padding-right: 5px; padding-left: 30px;">No. Exterior:</label>
                           <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;width: 100px;">
                             <input type="text" class="form-control" name="noExt" placeholder="Número interior">
                           </div>
 
-                        <label for="noInt" class="col-md-3 control-label" style= "width: 100px; padding-right: 5px; padding-left: 5px;">Núm. interior:</label>
+                        <label for="noInt" class="col-md-3 control-label" style= "width: 100px; padding-right: 5px; padding-left: 5px;">No. Interior:</label>
                           <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;width: 100px;">
                             <input type="text" class="form-control" name="noInt" placeholder="Número interior">
                           </div>
