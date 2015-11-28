@@ -116,6 +116,9 @@ $(document).ready(function() {
     var tel1 = $("#tel1").val();
     var tel2 = $("#tel2").val();
 
+    
+    if(nombre && apellidoPa &&tel1 ){
+
     $.ajax({
     type: "GET",
     url: "<?php echo site_url(); ?>" + "ciudadanos/edicion_ciudadano_ajax",
@@ -136,6 +139,16 @@ $(document).ready(function() {
       alert('salió mal');
     }
   });
+  }else{
+    if(!nombre){
+      alert('El campo Nombre es necesario');
+    } if(!apellidoPa){
+      alert('El campo Apellido Paterno es necesario');
+    }if(!tel1){
+      alert('El campo Teléfono es necesario');
+    }
+    
+  }
   });
 })
 </script>

@@ -122,7 +122,7 @@
                         <div class="col-md-6" style="padding-left: 0px;width: 165px;margin-top: 5px;">
                           <select class="form-control" name="idRecepcion" style="margin-top: 15px;padding-left: 5px; weight: 150px;">
                             <?php foreach ($recepcion as $recepcion_item): ?>
-                            <option value="<?php echo $recepcion_item['idRecepcion']?>"><?php echo $recepcion_item['descripcion']?></option>
+                            <option id="recepcion" value="<?php echo $recepcion_item['idRecepcion']?>"><?php echo $recepcion_item['descripcion']?></option>
                             <?php endforeach;?>
                           </select>
                         </div>
@@ -135,7 +135,7 @@
                           <div class="col-md-6" style="padding-left: 5px;width: 165px;">
                             <select class="form-control" name="idDependencia" style="margin-top: 15px;padding-left: 5px; weight: 150px;">
                               <?php foreach ($dependencias as $dependencia_item): ?>
-                              <option value="<?php echo $dependencia_item['idDependencia']?>"><?php echo $dependencia_item['dependencia']?></option>
+                              <option id="dependencia" value="<?php echo $dependencia_item['idDependencia']?>"><?php echo $dependencia_item['dependencia']?></option>
                               <?php endforeach;?>
                             </select>
                           </div>
@@ -172,6 +172,7 @@ $(document).ready(function() {
   $("#enviar").click(function() {
     var idCiudadano = $("#idCiudadano").val();    
     var idDenuncia = $("#idDenuncia").val();
+    var idDenuncia = $("#idEstatus").val();
     var calle = $("#calle").val();
     var noExt = $("#noExt").val();
     var noInt = $("noInt").val();
@@ -180,6 +181,9 @@ $(document).ready(function() {
     var asunto = $("#asunto").val();
     var recepcion = $("#recepcion").val();
     var dependencia = $("#dependencia").val();
+    console.log(recepcion);
+
+    if(calle&&noExt&&cp&&colonia&&asunto&&recepcion&&dependencia){    
     
     $.ajax({
     type: "update",
@@ -205,6 +209,24 @@ $(document).ready(function() {
       alert('salió mal');
     }
   });
+  }else{
+    if(!calle){
+      alert('El campo Calle es necesario');
+    }if(!noExt){
+      alert('El campo Num. Exterior es necesario');
+    }if(!cp){
+      alert('El campo C.P. es necesario');
+    } if(!colonia){
+      alert('El campo Colonia es necesario');
+    }if(!asunto){
+      alert('El campo Asunto es necesario');
+    }if(!recepcion){
+      alert('El campo Recepcion es necesario');
+    }if(!dependencia){
+      alert('El campo Dependencia es necesario');
+    }
+
+  }
   });
 })
 </script>    
