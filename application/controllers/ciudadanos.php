@@ -98,10 +98,10 @@ class Ciudadanos extends CI_Controller {
 
 	public function editar_ciudadano($idDenuncia=null)
 	{
-		
+
 		$this->load->model(array('model_ciudadano'));
 
-		
+
 			$data['ciudadano']=$this->model_ciudadano->get_ciudadano_denuncia($idDenuncia);
 			// $this->load->view('template/header.php');
 			$this->load->view('ciudadanos/edicion_ciudadano', $data);
@@ -131,5 +131,17 @@ class Ciudadanos extends CI_Controller {
 
 		$query = $this->model_denuncias->agregar_denuncia();
 		echo json_encode($query);
+	}
+
+	public function autocomplete_ciudadanos()
+	{
+		$this->load->model(array('model_ciudadano'));
+		if ($this->input->get('term')) {
+			$q = $this->input->get('term');
+			$this->model_ciudadano->ciudadano_autocomplete($q);
+		}
+		// }else{
+		// 	return json_encode(array('error' => 'No se encontó en la bd'));
+		// }
 	}
 }

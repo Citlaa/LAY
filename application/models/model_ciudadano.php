@@ -43,7 +43,7 @@ class Model_ciudadano extends CI_Model
 	public function update_ciudadano()
 	{
 		if ($this->input->get('idCiudadano')) {
-				
+
 			$data = array(
 				'nombre'=> $this->input->get('nombre'),
 				'apellidoPa'=> $this->input->get('apellidoPa'),
@@ -61,17 +61,12 @@ class Model_ciudadano extends CI_Model
 
 	}
 
-	public function buscar_por_nombre($data)
+	public function ciudadano_autocomplete($q)
 	{
-		$this->db->select('idCiudadano');
-		$this->db->where('nombre', $data['nombre']);
-		$this->db->where('apellidoPa', $data['apellidoPa']);
-		$this->db->where('apellidoMa', $data['apellidoMa']);
+		$this->db->or_like('nombre', $q);
+		$this->db->or_like('apellidoPa', $q);
+		$this->db->or_like('apellidoMa', $q);
 		$query = $this->db->get('ciudadanos');
-		if ($query) {
-			return $query->result_array();
-		} else {
-			return false;
-		}
+		echo json_encode($query->result_array());
 	}
 }

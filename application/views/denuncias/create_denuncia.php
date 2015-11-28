@@ -1,18 +1,18 @@
 <section>
 
-<body>                      
-                              
+<body>
+
     <!-- Quick setting box starts -->
-      <div class="quick-slide hidden-xs"></div>         
+      <div class="quick-slide hidden-xs"></div>
       <div class="out-container">
          <div class="outer">
             <!-- Sidebar starts -->
-            
+
             <!-- Sidebar ends -->
-            
+
             <!-- Mainbar starts -->
             <div class="mainbar">
-               
+
           <!-- Page heading starts -->
         <div class="page-head">
           <div class="container">
@@ -24,47 +24,47 @@
           </div>
         </div>
         <!-- Page heading ends -->
-        
-              
+
+
         <!-- Black block starts -->
         <div class="blue-block">
           <div class="page-title">
-            <h3 class="pull-left"><i class="fa fa-university"></i>Denuncias</h3>  
+            <h3 class="pull-left"><i class="fa fa-university"></i>Denuncias</h3>
             <div class="clearfix"></div>
           </div>
         </div>
         <!-- Black block ends -->
-        
+
         <!-- Content starts -->
-        
+
         <div class="container">
           <div class="page-content">
             <!-- Content starts -->
-        
+
         <div class="container">
         <div class="page-content page-users">
             <div class="page-tabs">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
-                <li  class="active"><a href="#addnew" data-toggle="tab">Nueva Denuncia</a></li>                                              
+                <li  class="active"><a href="#addnew" data-toggle="tab">Nueva Denuncia</a></li>
               </ul>
 
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane fade active in" id="search">
-          
-                  <div class="widget">
-                  
-                    
-              
-                    <div class="clearfix"></div>    
 
-                    <?php echo validation_errors(); ?>                                
-                    <?php echo form_open('regidenu/add_denuncia', array('class'=>'form-horizontal')); ?>                                
+                  <div class="widget">
+
+
+
+                    <div class="clearfix"></div>
+
+                    <?php echo validation_errors(); ?>
+                    <?php echo form_open('regidenu/add_denuncia', array('class'=>'form-horizontal')); ?>
                       <div class="form-group">
                         <label for="nombre" class="col-md-4 control-label" style="padding-left: 10px; width: 125px;padding-right: 5px;">Nombre:</label>
                           <div class="col-md-6" style="margin-top: 15px;">
-                           <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                           <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="nombre">
                           </div>
                       </div>
 
@@ -161,18 +161,18 @@
                       </div>
                       <input type="submit" value="Enviar" class="btn btn-success">
                         <a class="btn btn-danger" href="<?php echo site_url('regidenu/buscar')?>">Cancelar</a>
-                </form>              
-                </div>                                     
+                </form>
                 </div>
-                
+                </div>
+
 <!-- Add new Registro -->
                 <div class="tab-pane fade" id="addnew">
                 <h4>Nueva Dependencia</h4>
-                
-                
+
+
                 <!--<form class="form-horizontal" role="form">-->
-                
-                
+
+
                 </div>
 
 <!--hasta aqui -->
@@ -183,14 +183,21 @@
       </div>
           </div>
         </div>
-        <!-- Content ends -->       
+        <!-- Content ends -->
         </div>
             <!-- Mainbar ends -->
-            
+
             <div class="clearfix"></div>
          </div>
-      </div>  
+      </div>
 
-     
-  </body>      
+
+  </body>
+  <script type="text/javascript">
+    $(function(){
+      $("#nombre").autocomplete({
+        source: '/lay/ciudadanos/autocomplete_ciudadanos'
+      });
+    });
+  </script>
 </section>
