@@ -41,7 +41,7 @@ class Reportes extends CI_Controller {
 		$this->load->view('template/footer');
 
 	}
-
+	
     public function mostrar_reportes2()
 	{
 		$grocery = new grocery_CRUD();
@@ -70,7 +70,8 @@ class Reportes extends CI_Controller {
 		 $grocery->unset_add();
 		 $grocery->unset_read();
 		 $grocery->unset_delete();
-		 
+		 $grocery->unset_export();
+		 $grocery->unset_print();
 
 		 $grocery->fields('fecha','idDependencia','idEstatus','idRecepcion','idCiudadano','idDireccion','idAsunto');
 		 $output = $grocery->render();
