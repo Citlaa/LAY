@@ -19,9 +19,11 @@ class Reportes extends CI_Controller {
 	}
 
 	public function show_periodo2(){
+		$data['inicio'] = $this->input->get('date1');
+		$data['fin'] = $this->input->get('date2');
 		$this->load->view('template/header');
 		$this->load->view('template/menu');
-		$this->load->view('LAY/periodo2');
+		$this->load->view('LAY/periodo2', $data);
 		$this->load->view('template/footer');
 	}
 		function _example_output($output = null)
@@ -98,9 +100,10 @@ class Reportes extends CI_Controller {
 
 	public function periodo2()
 	{
-		$date1 = $this->input->post('date1');
-		$date2 = $this->input->post('date2');
-
+		$date1 = $this->input->get('date1');
+		$date2 = $this->input->get('date2');
+		// var_dump($date1);
+		// var_dump($date2); exit;
 		$grocery = new grocery_CRUD();
 		$grocery->set_theme('bootstrap');
 		$grocery-> where('fecha >=',$date1);

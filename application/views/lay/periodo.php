@@ -1,4 +1,8 @@
 <section>
+<head>
+    <link href="<?php echo base_url("assets/css/bootstrap.min.css");?>" rel="stylesheet">
+    <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js')?>"></script>
+</head>
 <body>
 
                         
@@ -50,42 +54,36 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane fade active in" id="search">
-                <h4>Buscar reporte</h4>
-                <!-- Search users -->   <div class="container-fluid">
-    <?php echo validation_errors(); ?>
-    <?php echo form_open('reportes/show_periodo2'); ?>
+                <h4>Seleccionar periodo</h4>
+                <!-- Search users -->   
+                <div class="container-fluid">
+                <?php echo validation_errors(); ?>
+                <?php echo form_open('reportes/show_periodo2', 'get'); ?>
     
-    <div class="col-md-8" style="margin-bottom: 30px;">
-      <div class="col-md-4">
-        <label for="nombre" class="control-label">Fecha 1:</label>
+    <div class="col-md-12 form-group">
+      <div class="col-md-2" style="padding-right: 5px; width: 75px;">
+        <label for="nombre" class="control-label">De:</label>
       </div>
 
       <div class="col-md-4">
-      <input type="date" name="date1" class="form-control" id="date1">
+      <input type="date" name="date1" class="form-control" id="date1" style="border-top-width: 1.111; border-top-width: 2px; padding-left: 6px; padding-right: 6px; margin-top: 8px;">
       </div>
-    </div>
 
-    <div class="col-md-8">
-      <div class="col-md-4">
-        <label for="nombre" class="control-label">Fecha 2:</label>
+      <div class="col-md-2" style="padding-left: 10px; width: 75px;padding-right: 5px;">
+        <label for="Fecha 2" class="control-label" style="padding-left: 25px;">a:</label>
       </div>
 
       <div class="col-md-4" style="margin-bottom: 30px;">
-      <input type="date" name="date2" class="form-control" id="date2">
+      <input type="date" name="date2" class="form-control" id="date2" style="border-top-width: 1.111; border-top-width: 2px; padding-left: 6px; padding-right: 6px; margin-top: 8px;">
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-8">
+      <div>
+        <input type="submit" value="Enviar" class="btn btn-success" style="margin-bottom: 10px; margin-left: 20px;">
       </div>
-      <div class="col-md-4">
-          <input type="submit" value="Enviar" class="btn btn-success">
-        </div>
     </div>
 </div> 
-                                         
-                </div>
-                </div>
+</div>
+</div>
                 
 <!-- Add new Registro -->        
 

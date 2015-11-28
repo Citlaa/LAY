@@ -1,8 +1,5 @@
 <section>
 <body>
-
-                        
-                              
     <!-- Quick setting box starts -->
       <div class="quick-slide hidden-xs"></div>         
       <div class="out-container">
