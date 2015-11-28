@@ -51,7 +51,7 @@
     <div class="form-group">
       <label for="descripcion" class="col-sm-2 control-label">Descripcion:</label>
       <div class="col-sm-10">
-        <input type="text" name="descripcion" class="form-control" value="<?php echo $asunto[0]['descripcion']; ?>" id="descripcion">
+        <input type="text" name="descripcion" class="form-control" value="<?php echo $asunto[0]['descripcion']; ?>" id="descripcion" required>
       </div>
     </div>
      </form>
@@ -85,6 +85,8 @@ $(document).ready(function() {
     var idAsunto = $("#idAsunto").val();
     var descripcion = $("#descripcion").val();
 
+    if(descripcion){
+
     $.ajax({
     type: "GET",
     url: "<?php echo site_url(); ?>" + "asuntos/edicion_asunto_ajax",
@@ -101,6 +103,9 @@ $(document).ready(function() {
       alert('salió mal');
     }
   });
+  }else{
+    alert('El campo Descripción es necesario');
+  }
   });
 })
 </script>  

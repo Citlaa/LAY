@@ -118,6 +118,8 @@ $(document).ready(function() {
     var localidad = $("#localidad").val();
     var cp = $("#cp").val();
 
+    if(calle&&noExt&&colonia&&localidad&&cp){
+
     $.ajax({
     type: "GET",
     url: "<?php echo site_url(); ?>" + "direcciones/edicion_direccion_ajax",
@@ -139,6 +141,17 @@ $(document).ready(function() {
       alert('salió mal');
     }
   });
+  }else{
+    if(!calle){
+      alert('El campo Calle es necesario');
+    }if(!noExt){
+      alert('El campo Num. Exterior es necesario');
+    }if(!cp){
+      alert('El campo C.P. es necesario');
+    } if(!colonia){
+      alert('El campo Colonia es necesario');
+    }
+  }
   });
 })
 </script>     

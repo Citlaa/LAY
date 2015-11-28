@@ -10,6 +10,8 @@ class Model_asunto extends CI_Model
 		$this->db->from('asuntos');
 		$this->db->join('denuncias','denuncias.idAsunto = asuntos.idAsunto');
 		$this->db->where('denuncias.idRegistro', $idDenuncia);
+
+		
 		$direccion = $this->db->get();
 
 		return $direccion->result_array();
