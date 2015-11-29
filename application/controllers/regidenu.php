@@ -78,9 +78,10 @@ class Regidenu extends CI_Controller {
 	{
 		$data1['user_id']	= $this->tank_auth->get_user_id();
 		$data1['username']	= $this->tank_auth->get_username();	
+		
 		if ($this->tank_auth->is_logged_in()) {
+			$this->load->model('model_recepcion');
 
-			$this->load->model('model_recepcion');	
 			$data['recepcion'] = $this->model_recepcion->get_all();
 			$this->load->model('model_dependencias');
 			$data['dependencias'] = $this->model_dependencias->get_all();
@@ -89,21 +90,29 @@ class Regidenu extends CI_Controller {
 			$this->load->model('model_denuncias');
 			$this->load->helper('form');
     		$this->load->library('form_validation');
-			$this->form_validation->set_rules('nombre', 'Nombre', 'required');
-			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required');
+			
+			$this->form_validation->set_rules('nombre', 'Nombre', 'required|alpha');
+			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|alpha');
+			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|alpha');
 			$this->form_validation->set_rules('calle', 'Calle', 'required');
-			$this->form_validation->set_rules('noExt', 'No. Exterior', 'required');
-			$this->form_validation->set_rules('cp', 'C.P.', 'required');
-			$this->form_validation->set_rules('colonia', 'Colonia', 'required');
-			$this->form_validation->set_rules('localidad', 'Localidad', 'required');
-			$this->form_validation->set_rules('tel1', 'Teléfono', 'required');
-			$this->form_validation->set_rules('asunto', 'Asunt', 'required');
+
+			$this->form_validation->set_rules('noExt', 'No. Exterior', 'required|integer');
+			$this->form_validation->set_rules('cp', 'C.P.', 'required|integer');
+			$this->form_validation->set_rules('colonia', 'Colonia', 'required|alpha');
+			$this->form_validation->set_rules('localidad', 'Localidad', 'required|alpha');
+			$this->form_validation->set_rules('tel1', 'Teléfono', 'required|integer');
+			$this->form_validation->set_rules('tel2', 'Teléfono', 'integer');
+			$this->form_validation->set_rules('asunto', 'Asunto', 'required');
+
+			$this->form_validation->set_message('alpha','El campo %s debe estar compuesto solo por letras');
+			$this->form_validation->set_message('required','El campo %s es obligatorio');
+			$this->form_validation->set_message('integer','El campo %s debe estar compuesto por numeros enteros');
+
 			if ($this->form_validation->run() == FALSE)
 	 		{
 				$this->load->view('template/header.php');
 				$this->load->view('template/menu.php',$data1);
-				$this->load->view('denuncias/create_denuncia.php', $data);
-				// $this->load->view('denuncias/form_denuncia.php', $data);
+				$this->load->view('denuncias/create_denuncia.php', $data);				
 				$this->load->view('template/footer.php');
 	 		}
 	 		else
@@ -115,6 +124,7 @@ class Regidenu extends CI_Controller {
 			 	$this->load->view('template/footer.php');
 	 		}
   		}else{
+
 			echo "no permisos";
 		}
 	}

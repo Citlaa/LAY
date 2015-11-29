@@ -31,7 +31,7 @@ class Direcciones extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->model(array('model_direccion','model_denuncias'));
 
-		$this->form_validation->set_rules('colonia', 'Colonia', 'required');
+		$this->form_validation->set_rules('colonia', 'Colonia', 'required');	
 
 
 		if ($this->form_validation->run() == FALSE)

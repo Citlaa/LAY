@@ -39,6 +39,8 @@ class Ciudadanos extends CI_Controller {
 		$grocery->display_as('tel2','Télefono 2');
 		$grocery->add_action('Denuncias','','ciudadanos/denuncias_por_ciudadano', 'fa fa-university');
 
+		$grocery->field_type('tel2','integer');
+		$grocery->field_type('tel1','integer');
 
 		$grocery->required_fields('nombre','apellidoPa','tel1');
 
@@ -114,21 +116,30 @@ class Ciudadanos extends CI_Controller {
 
 
 			$data['ciudadano']=$this->model_ciudadano->get_ciudadano_denuncia($idDenuncia);
-			// $this->load->view('template/header.php');
+			
 			$this->load->view('ciudadanos/edicion_ciudadano', $data);
-			// $this->load->view('template/footer.php');
+			
 	}
 
 	public function edicion_ciudadano_ajax()
 	{
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-
-		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
 		$this->load->model(array('model_ciudadano'));
 
-		$query = $this->model_ciudadano->update_ciudadano();
-		echo json_encode($query);
+		$this->form_validation->set_rules('nombre', 'Nombre', 'required');		
+
+		$this->form_validation->set_message('required','El campo %s es obligatorio');
+
+		 // if ($this->form_validation->run()==FALSE)
+		 // {
+			// $query=error;
+			// echo json_encode($query);
+		 // }else{
+			
+			$query = $this->model_ciudadano->update_ciudadano();			
+			echo json_encode($query);
+		// }
 	}
 
 

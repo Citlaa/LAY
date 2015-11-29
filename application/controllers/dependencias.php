@@ -36,6 +36,12 @@ class Dependencias extends CI_Controller {
 		 $grocery->display_as('cp','C.P.');
 		 $grocery->display_as('tel1','Teléfono 1');
 		 $grocery->display_as('tel2','Télefono 2');
+
+		 $grocery->field_type('numExt','integer');
+		 $grocery->field_type('tel1','integer');
+		 $grocery->field_type('tel2','integer');
+		 $grocery->field_type('nombre','string');
+		 
 		 
 		 $grocery->required_fields('dependencia','titular','calle','numExt','cp','colonia','localidad','tel1');
 		 $grocery->columns('dependencia','titular','calle','tel1');		 

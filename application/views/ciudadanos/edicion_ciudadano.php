@@ -116,39 +116,50 @@ $(document).ready(function() {
     var tel1 = $("#tel1").val();
     var tel2 = $("#tel2").val();
 
+    var numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
     
-    if(nombre && apellidoPa &&tel1 ){
-
-    $.ajax({
-    type: "GET",
-    url: "<?php echo site_url(); ?>" + "ciudadanos/edicion_ciudadano_ajax",
-    dataType: 'json',
-    data: {
-      'idCiudadano': idCiudadano, 
-      'nombre': nombre,
-      'apellidoPa': apellidoPa, 
-      'apellidoMa': apellidoMa,
-      'tel1': tel1, 
-      'tel2': tel2, 
-    },
-    success: function(res) {
-      alert('Ciudadano actualizado');
-      location.href="<?php echo site_url('regidenu/mostrar_busqueda')?>"
-    },
-    error: function(res){
-      alert('salió mal');
+    if(nombre && apellidoPa &&tel1 )
+    {
+      if(!numberRegex.test(nombre) && !numberRegex.test(apellidoPa) && !numberRegex.test(apellidoMa)) 
+      {                        
+            if(numberRegex.test(tel1) && numberRegex.test(tel2)) 
+            {              
+                $.ajax({
+                  type: "GET",
+                  url: "<?php echo site_url(); ?>" + "ciudadanos/edicion_ciudadano_ajax",
+                  dataType: 'json',
+                  data: {
+                    'idCiudadano': idCiudadano, 
+                    'nombre': nombre,
+                    'apellidoPa': apellidoPa, 
+                    'apellidoMa': apellidoMa,
+                    'tel1': tel1, 
+                    'tel2': tel2, 
+                  },  
+                  success: function(res) {
+                    alert('Ciudadano actualizado');
+                    location.href="<?php echo site_url('regidenu/mostrar_busqueda')?>"
+                  },
+                  error: function(res){
+                    alert('salió mal');
+                  }
+                });
+              
+            }else{
+              alert('El campo Teléfono debe estar compuesto solo por números');
+            }        
+      }else{
+        alert('El Nombre debe estar compuesto solo por letras');
+      }
+    }else{
+      if(!nombre){
+        alert('El campo Nombre es necesario');
+      } if(!apellidoPa){
+        alert('El campo Apellido Paterno es necesario');
+      }if(!tel1){
+        alert('El campo Teléfono es necesario');
+      }
     }
-  });
-  }else{
-    if(!nombre){
-      alert('El campo Nombre es necesario');
-    } if(!apellidoPa){
-      alert('El campo Apellido Paterno es necesario');
-    }if(!tel1){
-      alert('El campo Teléfono es necesario');
-    }
-    
-  }
   });
 })
 </script>
