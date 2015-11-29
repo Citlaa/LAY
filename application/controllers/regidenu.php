@@ -97,7 +97,7 @@ class Regidenu extends CI_Controller {
 			$this->form_validation->set_rules('colonia', 'Colonia', 'required');
 			$this->form_validation->set_rules('localidad', 'Localidad', 'required');
 			$this->form_validation->set_rules('tel1', 'Teléfono', 'required');
-			$this->form_validation->set_rules('asunto', 'Asunto', 'required');
+			$this->form_validation->set_rules('asunto', 'Asunt', 'required');
 			if ($this->form_validation->run() == FALSE)
 	 		{
 				$this->load->view('template/header.php');

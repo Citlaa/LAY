@@ -1,3 +1,40 @@
+<style type="text/css">
+	body{
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background-color: #f5f5f5;
+		font-family: "Open Sans", sans-serif;
+	}
+
+	.form-signin{
+		max-width: 320px;
+		padding: 15px;
+		margin: 0 auto 20px;
+		background-color: #fff;
+		border: 1px solid #e5e5e5;
+		-webkit-border-radius: 5px;
+		   -moz-border-radius: 5px;
+		        border-radius: 5px;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+		   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+		        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+	}
+
+	.form-signin .form-signin-heading,
+	.form-signin .checkbox{
+		margin-bottom: 10px;
+
+	}
+
+	.form-signin input[type="text"],
+	.form-signin input[type="password"]{
+		font-size: 16px;
+		height: auto;
+		margin-bottom: 15px;
+		padding: 7px 9px;
+	}
+
+</style>
 <?php
 $login = array(
 	'name'	=> 'login',
@@ -5,6 +42,9 @@ $login = array(
 	'value' => set_value('login'),
 	'maxlength'	=> 80,
 	'size'	=> 30,
+	'class' => 'form-signin',
+	'placeholder' => 'Usuario',
+	'required'
 );
 if ($login_by_username AND $login_by_email) {
 	$login_label = 'Email or login';
@@ -17,6 +57,9 @@ $password = array(
 	'name'	=> 'password',
 	'id'	=> 'password',
 	'size'	=> 30,
+	'class' => 'form-signin',
+	'placeholder' => 'Contraseña',
+	'required'
 );
 $remember = array(
 	'name'	=> 'remember',
@@ -30,18 +73,26 @@ $captcha = array(
 	'id'	=> 'captcha',
 	'maxlength'	=> 8,
 );
+
+$atributes = array('class' => 'form-signin', 'id' => 'form-signin');
+
 ?>
-<?php echo form_open($this->uri->uri_string()); ?>
+<?php echo form_open($this->uri->uri_string(), $atributes); ?>
+<h2 class="form-signin-heading" align="center">Bienvenido</h2>
 <table>
 	<tr>
-		<td><?php echo form_label($login_label, $login['id']); ?></td>
-		<td><?php echo form_input($login); ?></td>
 		<td style="color: red;"><?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?></td>
 	</tr>
 	<tr>
-		<td><?php echo form_label('Password', $password['id']); ?></td>
-		<td><?php echo form_password($password); ?></td>
+		<td><?php echo form_input($login); ?></td>
+		
+	</tr>
+
+	<tr>
 		<td style="color: red;"><?php echo form_error($password['name']); ?><?php echo isset($errors[$password['name']])?$errors[$password['name']]:''; ?></td>
+	</tr>
+	<tr>
+		<td><?php echo form_password($password); ?></td>		
 	</tr>
 
 	<?php if ($show_captcha) {
@@ -82,12 +133,14 @@ $captcha = array(
 
 	<tr>
 		<td colspan="3">
-			<?php echo form_checkbox($remember); ?>
+			<!--<?php echo form_checkbox($remember); ?>
 			<?php echo form_label('Remember me', $remember['id']); ?>
-			<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?>
-			<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?>
+			<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?> -->
+			<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Registrar'); ?>
 		</td>
 	</tr>
 </table>
-<?php echo form_submit('submit', 'Entrar'); ?>
+<br />
+<?php echo form_submit('submit', 'Entrar', "class = 'btn btn-lg btn-primary' style='width: 284px;'"); ?>
 <?php echo form_close(); ?>
+</body>
