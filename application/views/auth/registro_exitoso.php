@@ -7,7 +7,7 @@
 	}
 
 	.form-signin{
-		max-width: 320px;
+		max-width: 400px;
 		padding: 15px;
 		margin: 0 auto 20px;
 		background-color: #fff;
@@ -36,5 +36,10 @@
 
 </style>
 
+<?php
+$atributes = array('class' => 'form-signin', 'id' => 'form-signin');
+?>
+<?php echo form_open($this->uri->uri_string(), $atributes); ?>
+
 <h2 class="form-signin-heading" align="center">Registro exitoso</h2>
-<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/login/', 'Entrar'); ?>
+<a class="btn btn-primary btn-block btn-lg" href= "<?php echo site_url('/auth/login/') ?>">Entrar</a>

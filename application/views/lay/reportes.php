@@ -79,15 +79,10 @@
         </div>
         <!-- Content ends -->       
         </div>
-            <!-- Mainbar ends -->
-            
+            <!-- Mainbar ends -->            
             <div class="clearfix"></div>
          </div>
       </div>  
-
       <!-- Scroll to top -->
-      <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
-    
-    
   </body> 
 </section>

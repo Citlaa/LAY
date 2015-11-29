@@ -176,7 +176,8 @@ class Auth extends CI_Controller
 						}
 						unset($data['password']); // Clear password (just for any case)
 
-						$this->_show_message($this->lang->line('auth_message_registration_completed_2').' '.anchor('/auth/login/', 'Login'));
+						redirect('/auth/registro');
+
 					}
 				} else {
 					$errors = $this->tank_auth->get_error_message();
@@ -370,6 +371,14 @@ class Auth extends CI_Controller
 			$this->load->view('auth/change_password_form', $data);
 		}
 	}
+
+	public function registro(){
+
+		$this->load->view('template/header');
+		$this->load->view('auth/registro_exitoso');
+		$this->load->view('template/footer');
+	}
+
 
 	/**
 	 * Change user email
