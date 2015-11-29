@@ -9,7 +9,7 @@ class Reportes extends CI_Controller {
         $this->load->helper('url');
         $this->load->helper('date');
         /* ------------------ */ 
- 
+ 		$this->load->library('word');
         $this->load->library('grocery_CRUD');
 	}
 
