@@ -117,10 +117,11 @@ $(document).ready(function() {
     var tel2 = $("#tel2").val();
 
     var numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
-    
+    var caracterRegex = /^[a-zA-Z]+$/;
+
     if(nombre && apellidoPa &&tel1 )
     {
-      if(!numberRegex.test(nombre) && !numberRegex.test(apellidoPa) && !numberRegex.test(apellidoMa)) 
+      if(caracterRegex.test(nombre) && caracterRegex.test(apellidoPa) && caracterRegex.test(apellidoMa)) 
       {                        
             if(numberRegex.test(tel1) && numberRegex.test(tel2)) 
             {              

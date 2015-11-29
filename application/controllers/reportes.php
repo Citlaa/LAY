@@ -9,7 +9,7 @@ class Reportes extends CI_Controller {
         $this->load->helper('url');
         $this->load->helper('date');
         /* ------------------ */ 
- 		$this->load->library('word');
+ 		// $this->load->library('word');
         $this->load->library('grocery_CRUD');
 	}
 
@@ -19,12 +19,18 @@ class Reportes extends CI_Controller {
 	}
 
 	public function show_periodo2(){
-		$data['inicio'] = $this->input->get('date1');
-		$data['fin'] = $this->input->get('date2');
-		$this->load->view('template/header');
-		$this->load->view('template/menu');
-		$this->load->view('LAY/periodo2', $data);
-		$this->load->view('template/footer');
+		$data1['user_id']	= $this->tank_auth->get_user_id();
+		$data1['username']	= $this->tank_auth->get_username();	
+		if ($this->tank_auth->is_logged_in()) {
+			$data['inicio'] = $this->input->get('date1');
+			$data['fin'] = $this->input->get('date2');
+			$this->load->view('template/header');
+			$this->load->view('template/menu',$data1);
+			$this->load->view('LAY/periodo2', $data);
+			$this->load->view('template/footer');
+		}else{
+			echo "no permisos";
+		}
 	}
 		function _example_output($output = null)
  

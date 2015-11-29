@@ -119,11 +119,11 @@ $(document).ready(function() {
     var cp = $("#cp").val();
 
     var numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
-
+    var caracterRegex = /^[a-zA-Z]+$/;
 
     if(calle&&noExt&&colonia&&localidad&&cp)
     {
-       if(!numberRegex.test(localidad)) 
+       if(caracterRegex.test(localidad)) 
         {
         if(numberRegex.test(noExt) && numberRegex.test(cp)) 
         {                        
