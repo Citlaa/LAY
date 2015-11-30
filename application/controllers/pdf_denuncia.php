@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Pdf_ci extends CI_Controller
+class Pdf_denuncia extends CI_Controller
 {
 
    public function __construct()
@@ -21,8 +21,7 @@ class Pdf_ci extends CI_Controller
        }
    }
 
-
-   public function index()
+   public function index($idDireccion = 1)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
@@ -42,13 +41,12 @@ class Pdf_ci extends CI_Controller
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'title' => 'Listado de las provincias españolas en pdf',
-           'denuncias' => $this->model_denuncias->get_all()
+           'denuncias' => $this->model_denuncias->order_denuncia($idDireccion)
        );
 
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_decode($this->load->view('pdf', $data, true)));
+       $this->html2pdf->html(utf8_decode($this->load->view('pdf_denuncia/pdf_direccion', $data, true)));
 
        //si el pdf se guarda correctamente lo mostramos en pantalla
        if($this->html2pdf->create('save'))
@@ -114,17 +112,16 @@ class Pdf_ci extends CI_Controller
        $this->html2pdf->filename('test.pdf');
 
        //establecemos el tipo de papel
-       $this->html2pdf->paper('a4', 'portrait');
+       $this->load->model(array('model_denuncias'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'title' => 'Listado de las provincias españolas en pdf',
-           'provincias' => $this->pdf_model->getProvincias()
+           'denuncias' => $this->model_denuncias->order_denuncia($idCiudadano)
        );
 
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_decode($this->load->view('pdf', $data, true)));
+       $this->html2pdf->html(utf8_decode($this->load->view('pdf_denuncia/pdf_direccion', $data, true)));
 
 
        //Check that the PDF was created before we send it

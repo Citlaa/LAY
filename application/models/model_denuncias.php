@@ -45,7 +45,7 @@ class Model_denuncias extends CI_Model {
       $this->db->update('ciudadanos',$ciudadano);
       $cId=$idCiudadano;
     } else {
-      $this->db->insert('ciudadanos', $ciudadano); 
+      $this->db->insert('ciudadanos', $ciudadano);
       $cId=$this->db->insert_id();
     }
     $this->db->insert('direcciones', $direccion);
@@ -76,5 +76,20 @@ class Model_denuncias extends CI_Model {
       $this->db->join('asuntos', 'denuncias.idAsunto = asuntos.idAsunto', 'left');
       $query = $this->db->get();
       return $query->result_array();
+    }
+
+    public function order_denuncia($idDireccion)
+    {
+      $this->db->select('CONCAT(c.nombre, " ", c.apellidoPa, " ", c.apellidoMa) as nombre, colonia, d.fecha, e.descripcion, r.descripcion, a.descripcion, de.dependencia', FALSE);
+      $this->db->from('ciudadanos c, denuncias d, dependencias de, estatus e, recepcion r, asuntos a');
+      $this->db->where('d.idCiudadano = c.idCiudadano');
+      $this->db->where('d.idDependencia = de.idDependencia');
+      $this->db->where('d.idEstatus = e.idEstatus');
+      $this->db->where('d.idRecepcion = r.idRecepcion');
+      $this->db->where('d.idEstatus = e.idEstatus');
+      $this->db->where('d.idDireccion', $idDireccion);
+
+      $direccion= $this->db->get();
+      return $direccion->result_array();
     }
 }
