@@ -1,8 +1,10 @@
 <style type="text/css">
 	body{
 		padding-top: 40px;
-		padding-bottom: 40px;
-		background-color: #f5f5f5;
+		padding-bottom: 40px;		
+		background-color: #fff;
+		background-image: url("<?php echo base_url("assets/img/a.png");?>");
+		background-repeat: no-repeat;
 		font-family: "Open Sans", sans-serif;
 	}
 
@@ -88,7 +90,10 @@ $atributes = array('class' => 'form-signin', 'id' => 'form-signin');
 
 ?>
 <?php echo form_open($this->uri->uri_string(), $atributes); ?>
-<h2 class="form-signin-heading" align="center">Nuevo Usuario</h2>
+<div class="logo">
+    <img src="<?php echo base_url("assets/img/LA_firma.fw.png");?>" widht="100px" height="80px" align="center">
+</div>
+<h3 class="form-signin-heading" align="center">Nuevo Usuario</h3>
 <table>
 	<?php if ($use_username) { ?>
 	<tr>
@@ -156,5 +161,5 @@ $atributes = array('class' => 'form-signin', 'id' => 'form-signin');
 	<?php }
 	} ?>
 </table>
-<?php echo form_submit('register', 'Registrar', "class = 'btn btn-lg btn-primary' style='width: 284px;'"); ?>
+<?php echo form_submit('register', 'Registrar', "class = 'btn btn-enter btn-lg' style='width: 284px;height:38px;font-size:15px;'"); ?>
 <?php echo form_close(); ?>
