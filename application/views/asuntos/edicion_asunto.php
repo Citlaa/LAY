@@ -49,7 +49,7 @@
     <?php echo form_open('asuntos/editar_asunto', array('class'=>'form-horizontal')); ?>
     <input type="hidden" name="idAsunto" value="<?php echo $asunto[0]['idAsunto'];?>" id="idAsunto">
     <div class="form-group">
-      <label for="descripcion" class="col-sm-2 control-label">Descripcion:</label>
+      <label for="descripcion" class="col-sm-2 control-label">Descripción:</label>
       <div class="col-sm-10">
         <input type="text" name="descripcion" class="form-control" value="<?php echo $asunto[0]['descripcion']; ?>" id="descripcion" required>
       </div>

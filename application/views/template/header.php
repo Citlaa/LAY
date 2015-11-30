@@ -19,7 +19,6 @@
     <!--<script src="<?php echo base_url("assets/js/jquery-ui.min.js");?>"></script>   -->
     <script src="<?php echo base_url('assets/js/bootstrap.min.js');?>"></script>
     <script src="<?php echo base_url('assets/js/autocomplete.min.js');?>"></script>
-    <script src="<?php echo base_url('assets/js/autocomplete.min.js');?>"></script>
 
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css');?>"/>
@@ -28,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/font-awesome.min.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/jquery-ui.css");?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery-ui.structure.min.css');?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery-ui.theme.min.css');?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/jquery.gritter.css");?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/jquery.dataTables.css");?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/prettyPhoto.css");?>"/>

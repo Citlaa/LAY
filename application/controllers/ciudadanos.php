@@ -36,7 +36,7 @@ class Ciudadanos extends CI_Controller {
 
 		$grocery->display_as('apellidoMa','Apelido Materno');
 		$grocery->display_as('tel1','Teléfono 1');
-		$grocery->display_as('tel2','Télefono 2');
+		$grocery->display_as('tel2','Teléfono 2');
 		$grocery->add_action('Denuncias','','ciudadanos/denuncias_por_ciudadano', 'fa fa-university');
 
 		$grocery->field_type('tel2','integer');

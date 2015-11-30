@@ -21,24 +21,53 @@
         }
         #top{
             padding-top: 150px;
+            align-items: center;
         }
         #topTable{
             padding-top: 30px;
         }
-        
+
     </style>
     </head>
 
     <body>
-    <div id="footer">
-        <!--aqui se muestra el numero de la pagina en numeros romanos-->
-        <p class="page"></p>
-    <h2 id="top title">Reporte Generado</h2>
-    <div id="table-responsive topTable">
-    <div>  
-        <iframe src="<?php echo site_url('reportes/mostrar_repotes2');?>" width="900px" height="700px">hey!</iframe>                                  
-    </div>
-    </div>
+    <div class="table" id="top">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              Fecha
+            </th>
+            <th>
+              Dependencia
+            </th>
+            <th>
+              Estatus
+            </th>
+            <th>
+              Recepción
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($denuncias as $denuncia): ?>
+            <tr>
+                <td>
+                  <?php echo $denuncia['fecha'] ?>
+                </td>
+                <td>
+                  <?php echo $denuncia['idDependencia'] ?>
+                </td>
+                <td>
+                  <?php echo $denuncia['idEstatus'] ?>
+                </td>
+                <td>
+                  <?php echo $denuncia['calle'] ?>
+                </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
     </div>
 </body>
 </html>

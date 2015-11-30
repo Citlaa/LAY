@@ -142,14 +142,14 @@ table th{
 /* Button danger */
 
 .btn-danger{
-   background:#781C22;
+   background:#99173C;
    color:#fff !important;
    border:1px solid #700d19 !important;
 }
 
 .btn-danger:hover{
    color:#fff !important;
-   background:#9a1020 !important;
+   background:#E1123B !important;
 }
 
 /* Button warning */
@@ -364,7 +364,7 @@ table th{
    width:250px;
    float:left;
    /*background:#c22234;*/
-   background:#b5565d;   
+   background:#8B103E;   
    padding-top:10px;
    display:block;
    position:absolute;
@@ -537,7 +537,7 @@ table th{
 }
 
 .sidey .nav > li:last-child > a {
-   border-bottom:1px solid #B5565D;
+   border-bottom:1px solid #8B103E;
 }
 
 .sidey .label-darky{
@@ -547,18 +547,18 @@ table th{
    border-radius:5px;
    background:#555;
 }
-
+/* circulo del icono de menu*/
 .sidey .nav > li > a > i{
    margin-right:5px;
    font-size:13px;
    border-radius:100px;
-   background:#B5565D;
+   background:#8B103E;
    display:inline-block;
    width:32px;
    height:32px;
    line-height:32px;
    text-align:center;
-   border:1px solid #7e0b18;
+   border:1px solid #7DA087;
 }
 
 .sidey .nav > li > ul > li > a {
@@ -599,7 +599,7 @@ table th{
 }
 
 .sidey .nav li a:hover, .sidey .nav li.current > a {
-	background: #b81c2d;
+	background: #CA5B5B;
 	color: #fff;
 }
 
@@ -813,7 +813,7 @@ table th{
 	height: 28px;
 	line-height: 28px;
 	font-size:12px;
-	background: #b81c2d;
+	background: #99173C;
 	border-radius: 5px;
 	text-align: center;
 	color: #fff;
@@ -2688,7 +2688,7 @@ table th{
 }
 
 .login-page .nav-tabs li  a{
-   background:#c22234 !important;
+   background:#99173C !important;
    border:0px !important;
    margin:0px !important;
    color:#fff;
@@ -2717,7 +2717,7 @@ table th{
 }
 
 .login-page .nav-tabs li  a:hover{
-   background:#b81c2d !important;
+   background:#99173C !important;
    -webkit-transition: background 0.7s ease;
    -moz-transition: background 0.7s ease;
    -o-transition: background 0.7s ease;
@@ -2726,7 +2726,7 @@ table th{
 }
 
 .login-page .nav-tabs li.active a{
-   background:#b81c2d !important;
+   background:#99173C !important;
    color:#fff !important;
 }
 
@@ -3146,7 +3146,7 @@ table th{
    margin-top:4px;
    margin-left:4px;
    display:inline-block;
-   background:#b81c2d;
+   background:#99173C;
    height:25px;
    width:25px;
    border-radius:100px;
@@ -3340,7 +3340,7 @@ table th{
 	width:31px;
 	height:31px;
 	line-height:28px;
-	background:#b81c2d;
+	background:#99173C;
 	border-radius:5px;
 	text-align:center;
 	color:#fff;

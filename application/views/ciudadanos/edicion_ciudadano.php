@@ -48,31 +48,31 @@
     <form class="form-horizontal">
     <input type="hidden" name="idCiudadano" value="<?php echo $ciudadano[0]['idCiudadano'];?>" id="idCiudadano">
     <div class="form-group">
-      <label for="nombre" class="col-sm-2 control-label">Nombre:</label>
+      <label for="nombre" class="col-sm-2 control-label" style="padding-left: 30px;padding-right: 0px;">Nombre:</label>
       <div class="col-sm-10">
         <input type="text" name="nombre" class="form-control" value="<?php echo $ciudadano[0]['nombre']; ?>" id="nombre">
       </div>
     </div>
     <div class="form-group">
-      <label for="apellidoPa" class="col-sm-2 control-label">Apellido paterno:</label>
+      <label for="apellidoPa" class="col-sm-2 control-label" style="width: 120px;padding-left: 0px;padding-right: 0px;">Apellido paterno:</label>
       <div class="col-sm-10">
         <input type="text" name="apellidoPa" class="form-control" value="<?php echo $ciudadano[0]['apellidoPa']; ?>" id="apellidoPa">
       </div>
     </div>
     <div class="form-group">
-      <label for="apellidoMa" class="col-sm-2 control-label" >Apellido materno:</label>
+      <label for="apellidoMa" class="col-sm-2 control-label" style="width: 120px;padding-left: 0px;padding-right: 0px;">Apellido materno:</label>
       <div class="col-sm-10">
         <input type="text" name="apellidoMa" class="form-control" value="<?php echo $ciudadano[0]['apellidoMa']; ?>" id="apellidoMa">
       </div>
     </div>
     <div class="form-group">
-      <label for="tel1" class="col-sm-2 control-label">Teléfono:</label>
+      <label for="tel1" class="col-sm-2 control-label" style="padding-right: 0px;">Teléfono 1:</label>
       <div class="col-sm-10">
         <input type="text" name="tel1" class="form-control" value="<?php echo $ciudadano[0]['tel1']; ?>" id="tel1">
       </div>
     </div>
     <div class="form-group">
-      <label for="tel1" class="col-sm-2 control-label">Teléfono alt:</label>
+      <label for="tel1" class="col-sm-2 control-label" style="padding-right: 0px;">Teléfono 2:</label>
       <div class="col-sm-10">
         <input type="text" name="tel2" class="form-control" value="<?php echo $ciudadano[0]['tel2']; ?>" id="tel2">
       </div>
