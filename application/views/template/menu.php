@@ -4,7 +4,7 @@
         <div class="sidebar">
                   <!-- Logo starts -->
                   <div class="logo">
-                    <img src="<?php echo base_url("assets/img/LogoLAY.jpg");?>" widht="178px" height="180px">
+                    <img src="<?php echo base_url("assets/img/LogoLAY.jpg");?>" width="180px" height="180px">
                      
                   </div>
                   <!-- Logo ends -->

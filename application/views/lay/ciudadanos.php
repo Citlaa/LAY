@@ -59,26 +59,7 @@
                            
                 
                <iframe src="<?php echo base_url('ciudadanos/mostrar_ciudadanos2');?>" width="900px" height="900px"></iframe>
-               <div class="widget-foot">
-              
-                <ul class="pagination pull-right">
-                                <li><a href="#">&laquo;</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                              </ul>
-                               
-                               <div class="clearfix"></div>           
-               </div>
-            
-                    <div class="pull-right">
-                      <a href="registros.html" class="btn btn-info" role="button">Nuevo Cuidadano</a>
-                    </div>
-                    <div class="clearfix"></div>                  
-                </div>                                     
+                                                  
                 </div>
               </div>
             </div>
