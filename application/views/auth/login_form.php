@@ -2,7 +2,9 @@
 	body{
 		padding-top: 40px;
 		padding-bottom: 40px;
-		background-color: #f5f5f5;
+		background-color: #fff;
+		background-image: url("<?php echo base_url("assets/img/a.png");?>");
+		background-repeat: no-repeat;
 		font-family: "Open Sans", sans-serif;
 	}
 
@@ -77,8 +79,13 @@ $captcha = array(
 $atributes = array('class' => 'form-signin', 'id' => 'form-signin');
 
 ?>
+
 <?php echo form_open($this->uri->uri_string(), $atributes); ?>
-<h2 class="form-signin-heading" align="center">Bienvenido</h2>
+<!--<h2 class="form-signin-heading" align="center">Bienvenido</h2>-->
+<div class="logo">
+    <img src="<?php echo base_url("assets/img/LA_firma.fw.png");?>" widht="100px" height="80px" align="center">
+</div>
+</br>
 <table>
 	<tr>
 		<td style="color: red;"><?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?></td>
@@ -141,6 +148,9 @@ $atributes = array('class' => 'form-signin', 'id' => 'form-signin');
 	</tr>
 </table>
 <br />
-<?php echo form_submit('submit', 'Entrar', "class = 'btn btn-lg btn-primary' style='width: 284px;'"); ?>
+
+<?php echo form_submit('submit', 'Entrar', "class = 'btn btn-enter btn-lg' style='width: 284px;height:38px;font-size:15px;'"); ?>
 <?php echo form_close(); ?>
+
+
 </body>

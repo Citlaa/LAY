@@ -176,6 +176,17 @@ table th{
 .btn-info:hover{
    color:#fff !important;
    background:#41aec2 !important;
+   font-size: 10px;
+}
+.btn-enter{
+   background:#8B103E;
+   color:#fff !important;
+   border:2px solid #651433 !important;
+}
+
+.btn-enter:hover{
+   color:#fff !important;
+   background:#651433 !important;
 }
 
 /* Button success */
