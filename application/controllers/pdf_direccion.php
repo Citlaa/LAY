@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Pdf_denuncia extends CI_Controller
+class Pdf_direccion extends CI_Controller
 {
 
    public function __construct()
@@ -41,7 +41,7 @@ class Pdf_denuncia extends CI_Controller
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_denuncias->order_denuncia($idDireccion)
+           'denuncias' => $this->model_denuncias->order_direccion($idDireccion)
        );
 
        //hacemos que coja la vista como datos a imprimir
@@ -116,7 +116,7 @@ class Pdf_denuncia extends CI_Controller
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_denuncias->order_denuncia($idCiudadano)
+           'denuncias' => $this->model_denuncias->order_direccion($idCiudadano)
        );
 
        //hacemos que coja la vista como datos a imprimir
