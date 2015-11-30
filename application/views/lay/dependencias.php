@@ -47,12 +47,7 @@
         <div class="container">
         <div class="page-content page-users">
             <div class="page-tabs">
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs">
-                <li  class="active"><a href="#search" data-toggle="tab">Dependencias</a></li>                                              
-                
-              </ul>
-
+              <!-- Nav tabs -->         
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane fade active in" id="search">
