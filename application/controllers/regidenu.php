@@ -107,7 +107,7 @@ class Regidenu extends CI_Controller {
 			$this->form_validation->set_message('required','El campo %s es obligatorio');
 			$this->form_validation->set_message('integer','El campo %s debe estar compuesto por numeros enteros');
 
-			if ($this->form_validation->run() == FALSE)
+			if ($this->form_validation->run() === FALSE)
 	 		{
 				$this->load->view('template/header.php');
 				$this->load->view('template/menu.php',$data1);
@@ -115,7 +115,7 @@ class Regidenu extends CI_Controller {
 				$this->load->view('template/footer.php');
 	 		}
 	 		else
-	 		{
+	 		{	
 			 	$this->model_denuncias->insert_denuncia();
 			 	$this->load->view('template/header.php');
 				$this->load->view('template/menu.php',$data1);			
