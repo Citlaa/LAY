@@ -3,6 +3,13 @@
     <link href="<?php echo base_url("assets/css/bootstrap.min.css");?>" rel="stylesheet">
     <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js')?>"></script>
 </head>
+<style>
+.btn-success {
+    background: #29c635;
+    color: #fff !important;
+    border: 1px solid #1fae29 !important;
+}
+</style>
 <body>
 
                         

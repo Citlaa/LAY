@@ -2,7 +2,20 @@
 <head>
     <link href="<?php echo base_url("assets/css/bootstrap.min.css");?>" rel="stylesheet">
     <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.js')?>"></script>
-</head>               
+</head>   
+<style>
+.btn-success {
+    background: #29c635;
+    color: #fff !important;
+    border: 1px solid #1fae29 !important;
+}
+
+.btn-danger{
+   background:#8B103E;
+   color:#fff !important;
+   border:1px solid #700d19 !important;
+}
+</style>            
 <body>       
 
                               
@@ -78,8 +91,8 @@
       </div>
     </div>
   </form>
-    <button class="btn btn-success" id="enviar">Editar</button>
-    <a href="<?php echo site_url('regidenu/mostrar_busqueda');?>" class="btn btn-danger">Cancelar</a>
+    <input type="submit" value="Editar" class="btn btn-success">
+    <a class="btn btn-danger" href="<?php echo site_url('regidenu/mostrar_busqueda');?>">Cancelar</a>
 </div>
 
             
