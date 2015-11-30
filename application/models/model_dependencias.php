@@ -9,9 +9,14 @@ class Model_dependencias extends CI_Model{
     //Codeigniter : Write Less Do More
     $this->load->database();
   }
-  public function get_all()
-  {
+  public function get_all(){
     $query=$this->db->get('dependencias');
     return $query->result_array();
   }
+  //nombre dependencia
+  //direccion
+  //fecha
+  //estatus
+  //modo de recepcion
+  //asuntos
 }
