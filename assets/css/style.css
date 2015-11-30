@@ -7,7 +7,7 @@ Designed by : http://responsivewebinc.com
 /* Basic CSS starts */
 
 body{
-   background:#ead5b6;
+   background:#fff;   
    font-family:"Open Sans", sans-serif;
    font-size:13px;
    line-height:23px;
@@ -142,7 +142,7 @@ table th{
 /* Button danger */
 
 .btn-danger{
-   background:#C04F5C;
+   background:#8B103E;
    color:#fff !important;
    border:1px solid #700d19 !important;
 }
@@ -263,6 +263,7 @@ table th{
 
 .br-red{
 	background:#ACB884;
+	border-color:#FC4465 ;
 }
 
 .br-orange{
@@ -572,19 +573,19 @@ table th{
    text-align:center;
    border:1px solid #fff;
 }
-
+/*sub menu*/
 .sidey .nav > li > ul > li > a {
 	font-size: 13px;
 	line-height: 20px;
 	padding: 10px 10px 10px 30px;
 	color: #fff;
-   background:#260411;
+   background:#393939;
 	display: block;
 	text-decoration: none;
-   border-bottom:1px solid #87103D;
-   border-top:1px solid #87103D;
-   border-left:1px solid #87103D;
-   border-right:1px solid #87103D;
+   border-bottom:1px solid #393939;
+   border-top:1px solid #393939;
+   border-left:1px solid #393939;
+   border-right:1px solid #393939;
 }
 
 
@@ -611,7 +612,7 @@ table th{
 }
 
 .sidey .nav li a:hover, .sidey .nav li.current > a {
-	background: #6B2C4F;
+	background: #393939;
 	color: #fff;
 }
 
@@ -788,6 +789,7 @@ table th{
    min-height:1700px;
    margin-left:250px;
    background:#fff;
+   /*background-image: url("<?php echo base_url("assets/img/a.png");?>");*/
 }
 
 .mainbar .container{
@@ -1106,8 +1108,7 @@ table th{
 /* Blue block */
 
 .blue-block{
-	background: #393939;
-	background-image: url("<?php echo base_url("assets/img/a.png");?>");
+	background: #393939;	
 	border:1px solid #fff;
 	border-top:0px;
 	padding:20px 15px;
