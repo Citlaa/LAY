@@ -59,8 +59,10 @@
       <button id="buscarDenCiu" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
-      <h1>Denuncias por denuncias</h1>
+      <h1>Denuncias por dependencia</h1>
+      <input type="hidden" name="idDependencia" id="idDependencia">
       <input type="text" name="dependenciai" class="form-control" id="dependenciai">
+      <button id="buscarDenDep" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
@@ -90,20 +92,7 @@
 
 
               <!-- Tab panes -->
-              <div class="tab-content">
-                <div class="tab-pane fade active in" id="search">
-                  <div class="row">
-                <div class="col-md-1">
-                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('reportes/periodo');?>">Periodo</a></div>
-                <div class="col-md-2" style="width: 130px;">
-                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('pdf_ci');?>">Exportar a PDF</a></div>
-                <div class="col-md-2">
-                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('reportes/periodo');?>">Exportar a DOC</a></div>
-                </div>
-                <div class="widget">
-                           <div class="widget-head">
-                    <h5><i class="fa fa-university"></i>Reportes</h5>
-                  </div>
+
                 <!-- Search users -->
 
                 <!-- <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="900px" height="700px">
@@ -145,6 +134,16 @@
       $('#buscarDenCiu').click(function () {
         // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:82/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
+      });
+      $('#dependenciai').autocomplete({
+        source:'/lay/dependencias/dependencia_autocomplete_descripcion', //hacer
+        select: function (event, ui) {
+          $('#idDependencia').val(ui.item.id);
+        }
+      });
+      $('#buscarDenDep').click(function () {
+        // console.log($('#idCiudadano').val());
+        window.location.replace("http://localhost:82/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
       });
     });
   </script>
