@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Fechas</title>
     <style type="text/css">
        body{
         font-family: sans-serif;
@@ -31,21 +31,31 @@
     </head>
 
     <body>
-    <div class="table" id="top">
+      <h2 id=" top title">Reporte Generado</h2>
+    <div class="table" id="topTable">
       <table class="table table-striped">
         <thead>
           <tr>
             <th>
-              Fecha
+              Nombre
             </th>
             <th>
-              Dependencia
+              Direccion
+            </th>
+            <th>
+              Fecha
             </th>
             <th>
               Estatus
             </th>
             <th>
-              Recepción
+              Recepcion
+            </th>
+            <th>
+              Asunto
+            </th>
+            <th>
+              Dependencia
             </th>
           </tr>
         </thead>
@@ -53,16 +63,25 @@
           <?php foreach ($denuncias as $denuncia): ?>
             <tr>
                 <td>
+                  <?php echo $denuncia['nombre'] ?>
+                </td>
+                <td>
+                  <?php echo $denuncia['colonia'] ?>
+                </td>
+                <td>
                   <?php echo $denuncia['fecha'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['idDependencia'] ?>
+                  <?php echo $denuncia['descripcion'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['idEstatus'] ?>
+                  <?php echo $denuncia['descripcion'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['calle'] ?>
+                  <?php echo $denuncia['descripcion'] ?>
+                </td>
+                <td>
+                  <?php echo $denuncia['descripcion'] ?>
                 </td>
             </tr>
           <?php endforeach; ?>

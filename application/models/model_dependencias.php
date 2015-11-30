@@ -13,7 +13,22 @@ class Model_dependencias extends CI_Model{
     $query=$this->db->get('dependencias');
     return $query->result_array();
   }
-  //nombre dependencia
+
+  public function order_dependencia($idDependencia)
+  {
+    $this->db->select('CONCAT(c.nombre, " ", c.apellidoPa, " ", c.apellidoMa) as nombre, colonia, d.fecha, e.descripcion, r.descripcion, a.descripcion, de.dependencia', FALSE);
+    $this->db->from('ciudadanos c, denuncias d, dependencias de, estatus e, recepcion r, asuntos a');
+    $this->db->where('d.idCiudadano = c.idCiudadano');
+    $this->db->where('d.idDependencia = de.idDependencia');
+    $this->db->where('d.idEstatus = e.idEstatus');
+    $this->db->where('d.idRecepcion = r.idRecepcion');
+    $this->db->where('d.idEstatus = e.idEstatus');
+    $this->db->where('d.idAsunto = a.idAsunto');
+    $this->db->where('de.idDependencia', $idDependencia);
+
+    $direccion= $this->db->get();
+    return $direccion->result_array();
+  }
   //direccion
   //fecha
   //estatus

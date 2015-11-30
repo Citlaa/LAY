@@ -19,7 +19,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost:80/lay/';
+=======
+$config['base_url'] = 'http://localhost:82/lay/';
+>>>>>>> 6b050e81e632ebf1cccaf4be89fc9d54efd7e22b
 
 
 

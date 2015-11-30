@@ -139,11 +139,13 @@ $atributes = array('class' => 'form-signin', 'id' => 'form-signin');
 	} ?>
 
 	<tr>
-		<td colspan="3">
+		<td colspan="3" align="center">
 			<!--<?php echo form_checkbox($remember); ?>
 			<?php echo form_label('Remember me', $remember['id']); ?>
 			<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?> -->
+			<p style="color:#8B103E; font-size:110%;text-align:center;font-family:open sans">
 			<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Registrar'); ?>
+			</p>
 		</td>
 	</tr>
 </table>

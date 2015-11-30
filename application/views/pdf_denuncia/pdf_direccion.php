@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Ciudadanos</title>
+    <title>Direcciones</title>
     <style type="text/css">
        body{
         font-family: sans-serif;
