@@ -23,7 +23,7 @@ class Direcciones extends CI_Controller {
 	{
 		$this->load->view('our_template.php',$output);
 	}
-	
+
 
 	public function editar_direccion($idDenuncia=null)
 	{
@@ -31,14 +31,14 @@ class Direcciones extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->model(array('model_direccion','model_denuncias'));
 
-		$this->form_validation->set_rules('colonia', 'Colonia', 'required');	
+		$this->form_validation->set_rules('colonia', 'Colonia', 'required');
 
 
 		if ($this->form_validation->run() == FALSE)
 		{
 			$data['direccion']=$this->model_direccion->get_direccion_denuncia($idDenuncia);
 			//$this->load->view('template/header.php');
-			$this->load->view('direcciones/edicion_direccion', $data);			
+			$this->load->view('direcciones/edicion_direccion', $data);
 			//$this->load->view('template/footer.php');
 		}
 		 else
@@ -61,6 +61,13 @@ class Direcciones extends CI_Controller {
 		echo json_encode($query);
 	}
 
-	
+	public function	direccion_autocomplete_colonia(){
+		$this->load->model(array('model_direccion'));
+		if ($this->input->get('term')) {
+			$q = $this->input->get('term');
+			$query = $this->model_direccion->direccion_autocomplete_colonia($q);
+		}
+		echo json_encode($query);
+	}
 
 }

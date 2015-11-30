@@ -66,7 +66,9 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
+      <input type="hidden" name="idDireccion" id="idDireccion">
       <input type="text" name="coloniai" class="form-control" id="coloniai">
+      <button id="buscarDenCol" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
@@ -136,7 +138,7 @@
         window.location.replace("http://localhost:82/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
       });
       $('#dependenciai').autocomplete({
-        source:'/lay/dependencias/dependencia_autocomplete_descripcion', //hacer
+        source:'/lay/dependencias/dependencia_autocomplete_descripcion',
         select: function (event, ui) {
           $('#idDependencia').val(ui.item.id);
         }
@@ -144,6 +146,16 @@
       $('#buscarDenDep').click(function () {
         // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:82/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
+      });
+      $('#coloniai').autocomplete({
+        source:'/lay/direcciones/direccion_autocomplete_colonia',
+        select: function (event, ui) {
+          $('#idDireccion').val(ui.item.id);
+        }
+      });
+      $('#buscarDenCol').click(function () {
+        // console.log($('#idCiudadano').val());
+        window.location.replace("http://localhost:82/lay/pdf_direccion/index/"+  $('#idDireccion').val());
       });
     });
   </script>

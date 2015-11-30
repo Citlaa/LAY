@@ -24,7 +24,8 @@
             align-items: center;
         }
         #topTable{
-            padding-top: 30px;
+          margin-top: 130px;
+          margin-bottom: 100px;
         }
 
     </style>

@@ -14,26 +14,24 @@
         background-size: cover;
        }
        #title{
+            padding-top: 70px;
             text-align: center;
             font-family: Lucida Grande, Verdana, Sans-serif;
             font-size: 22px;
             color: #3B0B17;
         }
         #top{
-            padding-top: 150px;
-            align-items: center;
-        }
-        #topTable{
-            padding-top: 30px;
+          margin-top: 90px;
+          margin-bottom: 100px
         }
 
     </style>
     </head>
 
     <body>
-      <h2 id=" top title">Reporte Generado</h2>
-    <div class="table" id="topTable">
-      <table class="table table-striped">
+    <h2 id="title">Reporte Generado</h2>
+    <div id="top">
+      <table class="top table table-striped" >
         <thead>
           <tr>
             <th>
