@@ -47,9 +47,7 @@
               <!-- Tab panes -->
               <div class="tab-content">
                 <div class="tab-pane fade active in" id="search">
-                <h4>Buscar reporte</h4>
-                <!-- Search users -->    
-                <div class="row">
+                  <div class="row">
                 <div class="col-md-1">
                 <a type="button" name="button" class="btn btn-primary" href="<?php echo base_url('reportes/periodo');?>">Periodo</a></div>
                 <div class="col-md-2" style="width: 130px;">
@@ -57,6 +55,12 @@
                 <div class="col-md-2">
                 <a type="button" name="button" class="btn btn-primary" href="<?php echo base_url('reportes/periodo');?>">Exportar a DOC</a></div>
                 </div>
+                <div class="widget">
+                           <div class="widget-head">
+                    <h5><i class="fa fa-university"></i>Reportes</h5>
+                  </div>
+                <!-- Search users -->    
+                
                 <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="900px" height="700px">
                   </iframe> 
                 </div>
