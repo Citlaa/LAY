@@ -33,9 +33,9 @@ class Dependencias extends CI_Controller {
 		 $grocery->set_language('spanish');		 		 
 		 $grocery->display_as('numExt','No. Exterior');
 		 $grocery->display_as('numInt','No. Interior');
-		 $grocery->display_as('cp','C.P.');
+		 $grocery->display_as('cp','C.P');
 		 $grocery->display_as('tel1','Teléfono 1');
-		 $grocery->display_as('tel2','Télefono 2');
+		 $grocery->display_as('tel2','Teléfono 2');
 
 		 $grocery->field_type('numExt','integer');
 		 $grocery->field_type('tel1','integer');
