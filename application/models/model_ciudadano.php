@@ -67,6 +67,20 @@ class Model_ciudadano extends CI_Model
 		$this->db->or_like('apellidoPa', $q);
 		$this->db->or_like('apellidoMa', $q);
 		$query = $this->db->get('ciudadanos');
-		echo json_encode($query->result_array());
+		$ciudadanos =  $query->result_array();
+		$resultados=array();
+		foreach ($ciudadanos as $ciudadano) {
+			 array_push($resultados,array(
+				'label'=>$ciudadano['nombre'].' '.$ciudadano['apellidoPa'].' '.$ciudadano['apellidoMa'],
+				'id'=>$ciudadano['idCiudadano'],
+				'value'=>$ciudadano['nombre'],
+				'apellidoPa'=>$ciudadano['apellidoPa'],
+				'apellidoMa'=>$ciudadano['apellidoMa'],
+				'tel1'=>$ciudadano['tel1'],
+				'tel2'=>$ciudadano['tel2']
+			));
+		}
+
+		return $resultados;
 	}
 }

@@ -160,10 +160,8 @@ class Ciudadanos extends CI_Controller {
 		$this->load->model(array('model_ciudadano'));
 		if ($this->input->get('term')) {
 			$q = $this->input->get('term');
-			$this->model_ciudadano->ciudadano_autocomplete($q);
+			$query = $this->model_ciudadano->ciudadano_autocomplete($q);
 		}
-		// }else{
-		// 	return json_encode(array('error' => 'No se encontó en la bd'));
-		// }
+		echo json_encode($query);
 	}
 }

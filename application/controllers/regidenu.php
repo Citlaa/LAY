@@ -58,7 +58,6 @@ class Regidenu extends CI_Controller {
 
 		 $grocery->unset_add();
 		 $grocery->unset_export();
-		 $grocery->unset_print();
 		 //$grocery->unset_edit();
 		 $grocery->edit_fields('fecha','idDependencia','idEstatus','idRecepcion');
 

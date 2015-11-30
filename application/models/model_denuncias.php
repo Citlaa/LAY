@@ -64,13 +64,15 @@ class Model_denuncias extends CI_Model {
 
   public function agregar_denuncia()
   {
+
       $ciudadano = array(
-        'nombre' => $this->input->get('nombre'),
-        'apellidoPa' => $this->input->get('apellidoPa'),
-        'apellidoMa' => $this->input->get('apellidoMa'),
-        'tel1' => $this->input->get('tel1'),
-        'tel2' => $this->input->get('tel1')
-      );
+          'nombre' => $this->input->get('nombre'),
+          'apellidoPa' => $this->input->get('apellidoPa'),
+          'apellidoMa' => $this->input->get('apellidoMa'),
+          'tel1' => $this->input->get('tel1'),
+          'tel2' => $this->input->get('tel1')
+        );
+
       $direccion = array(
         'calle' => $this->input->get('calle'),
         'noExt' => $this->input->get('noExt'),
@@ -83,9 +85,14 @@ class Model_denuncias extends CI_Model {
       $asunto = array(
         'descripcion' => $this->input->get('asunto'),
       );
-
+      $idCiudadano = $this->input->post('idCiudadano');
       $this->db->trans_start();
-      $this->db->insert('ciudadanos', $ciudadano);
+      if ($idCiudadano){
+        $this->db->where('idCiudadano', $idCiudadano);
+        $this->db->update('ciudadanos',$ciudadano);
+      } else {
+        $this->db->insert('ciudadanos', $ciudadano); 
+      }
       $cId=$this->db->insert_id();
       $this->db->insert('direcciones', $direccion);
       $dId=$this->db->insert_id();

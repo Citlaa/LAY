@@ -60,7 +60,8 @@
                     <div class="clearfix"></div>
 
                     <?php echo validation_errors(); ?>
-                    <?php echo form_open('regidenu/add_denuncia', array('class'=>'form-horizontal')); ?>
+                    <?php echo form_open('regidenu/add_denuncia', array('class'=>'form-horizontal'), 'get'); ?>
+                    <input type="hidden" id="idCiudadano" value="null" name="idCiudadano">
                       <div class="form-group">
                         <label for="nombre" class="col-md-4 control-label" style="padding-left: 10px; width: 125px;padding-right: 5px;">Nombre:</label>
                           <div class="col-md-6" style="margin-top: 15px;">
@@ -71,59 +72,59 @@
                       <div class="form-group">
                         <label for="apellidoPa" class="col-md-4 control-label" style="padding-left: 5px; width: 125px;padding-right: 5px;">Apellido Paterno:</label>
                           <div class="col-md-6" style="margin-top: 15px;">
-                            <input type="text" class="form-control" name="apellidoPa" placeholder="Apellidos">
+                            <input type="text" class="form-control" name="apellidoPa" placeholder="Apellidos" id="apellidoPa">
                           </div>
                       </div>
 
                       <div class="form-group">
                         <label for="apellidoMa" class="col-md-4 control-label" style="padding-left: 5px; width: 125px;padding-right: 5px;">Apellido Materno:</label>
                           <div class="col-md-6" style="margin-top: 15px;">
-                            <input type="text" class="form-control" name="apellidoMa" placeholder="Apellidos">
+                            <input type="text" class="form-control" name="apellidoMa" placeholder="Apellidos" id="apellidoMa">
                           </div>
                       </div>
 
                       <div class="col-md-12 row">
-                        <label for="calle" class="col-md-2 control-label" style="padding-left: 10px; width: 110px; padding-right: 5px;">Calle:</label>
+                        <label for="calle" class="col-md-2 control-label" style="padding-left: 10px; width: 110px; padding-right: 5px;" >Calle:</label>
                           <div class="col-md-3" style="margin-top: 15px;">
-                            <input type="text" style="width: 226px;" class="form-control" name="calle" placeholder="Calle">
+                            <input type="text" style="width: 226px;" class="form-control" name="calle" placeholder="Calle" id="calle">
                           </div>
 
                         <label for="noExt" class="col-md-3 control-label" style= "width: 145px; padding-right: 5px; padding-left: 30px;">No. Exterior:</label>
                           <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;width: 100px;">
-                            <input type="text" class="form-control" name="noExt" placeholder="Número interior">
+                            <input type="text" class="form-control" name="noExt" placeholder="Número interior" id="noExt">
                           </div>
 
                         <label for="noInt" class="col-md-3 control-label" style= "width: 100px; padding-right: 5px; padding-left: 5px;">No. Interior:</label>
                           <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;width: 100px;">
-                            <input type="text" class="form-control" name="noInt" placeholder="Número interior">
+                            <input type="text" class="form-control" name="noInt" placeholder="Número interior" id="noInt">
                           </div>
                       </div>
 
                       <div class="col-md-12 row">
                          <label for="cp" class="col-md-2 control-label" style= "width: 110px; padding-right: 5px; padding-left: 50px;">CP:</label>
                           <div class="col-md-2" style="margin-top: 15px;padding-left: 15px;width: 150px;">
-                            <input type="text" class="form-control" name="cp" placeholder="CP">
+                            <input type="text" class="form-control" name="cp" placeholder="CP" id="cp">
                           </div>
 
                         <label for="colonia" class="col-md-2 control-label" style="padding-left: 5px; width: 71px;padding-right: 11px;">Colonia:</label>
                           <div class="col-md-4" style="margin-top: 15px;padding-left: 5px;">
-                            <input type="text" class="form-control" name="colonia" placeholder="Colonia">
+                            <input type="text" class="form-control" name="colonia" placeholder="Colonia" id="colonia">
                           </div>
                       </div>
                       <div class="col-md-12 row">
                         <label for="localidad" class="col-md-2 control-label" style="padding-left: 35px; width: 111px;padding-right: 5px;">Localidad:</label>
                           <div class="col-md-3" style="margin-top: 15px;">
-                            <input type="text" class="form-control" name="localidad" value="Aguascalientes">
+                            <input type="text" class="form-control" name="localidad" value="Aguascalientes" id="localidad">
                           </div>
 
                         <label for="t1" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 1:</label>
                           <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                            <input type="text" class="form-control" name="tel1" placeholder="Teléfono 1">
+                            <input type="text" class="form-control" name="tel1" placeholder="Teléfono 1" id="tel1">
                           </div>
 
                         <label for="t2" class="col-md-2 control-label" style= "width: 85px; padding-right: 5px; padding-left: 5px;">Teléfono 2:</label>
                           <div class="col-md-2" style="margin-top: 15px;padding-left: 5px;">
-                            <input type="text" class="form-control" name="tel2" placeholder="Teléfono 2">
+                            <input type="text" class="form-control" name="tel2" placeholder="Teléfono 2" id="tel2">
                           </div>
                       </div>
                       <div class="col-md-12 row">
@@ -191,12 +192,24 @@
          </div>
       </div>
 
-
+ 
   </body>
   <script type="text/javascript">
     $(function(){
       $("#nombre").autocomplete({
-        source: '/lay/ciudadanos/autocomplete_ciudadanos'
+        source: '/lay/ciudadanos/autocomplete_ciudadanos',
+        response: function(event, ui){
+          ui.label
+        }, 
+        select: function(event, ui){
+          ui.item.label = ui.item.nombre;
+          $('#idCiudadano').val(ui.item.id);
+          $('#nombre').val(ui.item.nombre);
+          $('#apellidoMa').val(ui.item.apellidoMa);
+          $('#apellidoPa').val(ui.item.apellidoPa);
+          $('#tel1').val(ui.item.tel1);
+          $('#tel2').val(ui.item.tel2);
+        }
       });
     });
   </script>
