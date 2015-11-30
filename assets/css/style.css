@@ -608,11 +608,11 @@ table th{
 }
 
 .sidey .nav > li > ul > li > a:hover{
-   background:#090004;
+   background:#2C2C2C;
 }
 
 .sidey .nav li a:hover, .sidey .nav li.current > a {
-	background: #393939;
+	background: #6B2C4F;
 	color: #fff;
 }
 

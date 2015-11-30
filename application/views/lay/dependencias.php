@@ -56,20 +56,11 @@
                            <div class="widget-head">
                     <h5><i class="fa fa-university"></i>Dependencias</h5>
                   </div>
-                           <div class="widget-body no-padd">
-                <div class="table-responsive">
+                
               
-                   <iframe src="<?php echo site_url('dependencias/show_dependencias2');?>" width="900px" height="700px"></iframe>                                  
+                   <iframe src="<?php echo site_url('dependencias/show_dependencias2');?>" width="897px" height="700px"></iframe>                                  
 
-                             </div>
-                           </div>
-               
-               <div class="widget-foot">
-                              
-                               
-                               <div class="clearfix"></div>           
-               </div>            
-                    <div class="clearfix"></div>                  
+                                                            
                 </div>                                     
                 </div>              
 

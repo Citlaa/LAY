@@ -58,13 +58,8 @@
                     </div>
                 <!-- Search users -->
                 
-                <iframe src="<?php echo site_url('regidenu/mostrar_busqueda');?>" width="900px" height="700px"></iframe>
-                <div class="well" align="center">
-                  <!-- Advanced search Denuncia-->
-
-
-
-              </div>
+                <iframe src="<?php echo site_url('regidenu/mostrar_busqueda');?>" width="897px" height="700px"></iframe>
+              
 
 <!-- Add new Denuncia -->
                 <div class="tab-pane fade" id="addnew">
