@@ -1,4 +1,4 @@
-<section>
+  <section>
 <body>
     <!-- Quick setting box starts -->
       <div class="quick-slide hidden-xs"></div>         
@@ -78,8 +78,7 @@
           </div>
         </div>
         <!-- Content ends -->       
-        </div>
-            <!-- Mainbar ends -->            
+        </div>            
             <div class="clearfix"></div>
          </div>
       </div>  

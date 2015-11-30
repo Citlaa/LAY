@@ -49,7 +49,7 @@
                 <a href="<?php echo base_url()."regidenu/buscar"?>">
 
               <div class="well br-red">
-                  <i class="fa fa-group"></i>
+                  <i class="fa fa-gavel"></i>
                 <h2>Denuncias</h2>                
               </div>
                 </a>
