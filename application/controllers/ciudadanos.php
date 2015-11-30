@@ -32,9 +32,9 @@ class Ciudadanos extends CI_Controller {
 		$grocery->set_theme('bootstrap');
 		$grocery->set_language('spanish');
 		$grocery->set_table('ciudadanos');
-		$grocery->display_as('apellidoPa','Apelido Paterno');
+		$grocery->display_as('apellidoPa','Apellido Paterno');
 
-		$grocery->display_as('apellidoMa','Apelido Materno');
+		$grocery->display_as('apellidoMa','Apellido Materno');
 		$grocery->display_as('tel1','Teléfono 1');
 		$grocery->display_as('tel2','Teléfono 2');
 		$grocery->add_action('Denuncias','','ciudadanos/denuncias_por_ciudadano', 'fa fa-university');

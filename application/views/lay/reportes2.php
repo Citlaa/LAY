@@ -52,7 +52,7 @@
                 <div class="tab-pane fade active in" id="search">
                 <h4>Buscar reporte</h4>
                 <!-- Search users -->                            
-                  <iframe src="<?php echo base_url('reportes/periodo2');?>" width="900px" height="700px"></iframe>                                  
+                  <iframe src="<?php echo base_url('reportes/periodo2');?>" width="885px" height="700px"></iframe>                                  
                 </div>
                 </div>
                 

@@ -61,7 +61,7 @@
                   </div>
                 <!-- Search users -->    
                 
-                <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="900px" height="700px">
+                <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="897px" height="700px">
                   </iframe> 
                 </div>
                   <div>                      

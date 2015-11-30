@@ -56,10 +56,9 @@
                            <div class="widget-head">
                     <h5><i class="fa fa-group"></i>Ciudadanos</h5>
                   </div>
-                           
-                
+                        
                <iframe src="<?php echo base_url('ciudadanos/mostrar_ciudadanos2');?>" width="900px" height="900px"></iframe>
-                                                  
+                       
                 </div>
               </div>
             </div>
