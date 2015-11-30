@@ -142,14 +142,14 @@ table th{
 /* Button danger */
 
 .btn-danger{
-   background:#99173C;
+   background:#C04F5C;
    color:#fff !important;
    border:1px solid #700d19 !important;
 }
 
 .btn-danger:hover{
    color:#fff !important;
-   background:#E1123B !important;
+   background:#6B2C4F !important;
 }
 
 /* Button warning */
@@ -246,11 +246,12 @@ table th{
 }
 
 .br-green{
-	background:#29c635;
+	/*background:#29c635;*/
+	background:#8D596D;
 }
 
 .br-red{
-	background:#d9534f;
+	background:#ACB884;
 }
 
 .br-orange{
@@ -346,7 +347,7 @@ table th{
 }
 
 .outer{
-   background:#B5565D;
+   background:#8B103E;
    border-left:1px solid #781C22;
    border-right:1px solid #aaa;
 }
@@ -520,7 +521,7 @@ table th{
 .sidey .nav > li li a{
    padding-left:25px;
 }
-
+/*lineas delimitantes de menu*/
 .sidey .nav > li > a {
 	font-size: 14px;
 	line-height: 20px;
@@ -529,7 +530,7 @@ table th{
 	display: block;
    font-weight:600;
 	text-decoration: none;
-   border-top:1px solid #B5565D;
+   border-top:1px solid #8B103E;
 }
 
 .sidey .nav > li > a:focus {
@@ -558,7 +559,7 @@ table th{
    height:32px;
    line-height:32px;
    text-align:center;
-   border:1px solid #7DA087;
+   border:1px solid #fff;
 }
 
 .sidey .nav > li > ul > li > a {
@@ -566,19 +567,19 @@ table th{
 	line-height: 20px;
 	padding: 10px 10px 10px 30px;
 	color: #fff;
-   background:#333;
+   background:#260411;
 	display: block;
 	text-decoration: none;
-   border-bottom:1px solid #222;
-   border-top:1px solid #444;
-   border-left:1px solid #222;
-   border-right:1px solid #222;
+   border-bottom:1px solid #87103D;
+   border-top:1px solid #87103D;
+   border-left:1px solid #87103D;
+   border-right:1px solid #87103D;
 }
 
 
 .sidey .nav > li > ul > li.active > a{
-   background:#292929;
-   border-top:1px solid #222;
+   background:#ED6397;
+   border-top:1px solid #ED6397;
 }
 
 .sidey .nav > li > ul > li:last-child > a {
@@ -595,17 +596,17 @@ table th{
 }
 
 .sidey .nav > li > ul > li > a:hover{
-   background:#393939;
+   background:#090004;
 }
 
 .sidey .nav li a:hover, .sidey .nav li.current > a {
-	background: #CA5B5B;
+	background: #6B2C4F;
 	color: #fff;
 }
 
 .sidey .nav li.open > a{
-   background:#B5565D;
-   border-color:#B5565D;
+   background:#8B103E;
+   border-color:#8B103E;
 }
 
 .sidey .nav li.open > a{
@@ -736,7 +737,7 @@ table th{
    width:100%;
    font-size:12px;
    line-height:35px;
-   border-top:1px solid #50bccf;
+   border-top:1px solid #8B103E;
 }
 
 /* Sidebar status */
@@ -813,7 +814,7 @@ table th{
 	height: 28px;
 	line-height: 28px;
 	font-size:12px;
-	background: #99173C;
+	background: #8B103E;
 	border-radius: 5px;
 	text-align: center;
 	color: #fff;
@@ -1094,7 +1095,7 @@ table th{
 /* Blue block */
 
 .blue-block{
-	background: #5fcbde;
+	background: #349EAF;
 	border:1px solid #fff;
 	border-top:0px;
 	padding:20px 15px;
@@ -2856,14 +2857,14 @@ table th{
 
 .quick-slide .quick-button .quick-button-arrow{
    display:inline-block;
-   background:#b5565d;
+   background:#8B103E;
    height:30px;
    width:30px;
    margin:0 auto;
    border-radius:100px;
    line-height:30px;
    text-align:center;
-   border:1px solid #B5565D;
+   border:1px solid #8B103E;
    font-size:14px;
    color:#fff;
 }
@@ -3508,7 +3509,7 @@ table th{
 	color: #fff;
 	text-align: center;
 	line-height: 30px;
-	background: #B5565D;
+	background: #8B103E;
 }
 
 .totop a:hover {

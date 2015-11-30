@@ -10,7 +10,7 @@
                   <!-- Logo ends -->
                   
                   <!-- Sidebar buttons starts -->
-                  Hola, <strong><?php echo $username; ?></strong>! 
+                  <p style="color:white; font-size:160%;text-align:center;font-family:open sans">Hola <strong><?php echo $username; ?></strong>! </p>
                   <div class="sidebar-buttons text-left">
                      
                      <!-- Logout button -->

@@ -79,7 +79,7 @@
               </div>
               <div class="col-md-4 col-sm-5" style="margin-top: 30px;">
                 <a href="<?php echo site_url('dependencias/show_dependencias')?>">
-              <div class="well br-lblue">
+              <div class="well br-orange">
                   <i class="fa fa-university"></i>
                 <h2>Dependencias</h2>                
               </div>
