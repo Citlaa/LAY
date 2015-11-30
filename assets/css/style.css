@@ -379,9 +379,9 @@ table th{
    background:#8B103E;   
    padding-top:10px;
    display:block;
-   position:absolute;
-   height:100%;
-   min-height:1700px;
+   position:fixed;
+   height:1000px;
+   min-height:1000px;
    z-index:100;
 }
 
@@ -785,7 +785,7 @@ table th{
 .mainbar{
    position:relative;
    width:auto;
-   min-height:1700px;
+   min-height:766px;
    margin-left:250px;
    background:#fff;
 }
@@ -3564,7 +3564,7 @@ table th{
 	  float:none !important;
 	  width:100% !important;
 	  position:static !important;
-	  min-height:100% !important;
+	  min-height:10px !important;
    }
 	.sidebar .sidebar-dropdown{
 		display:block;
