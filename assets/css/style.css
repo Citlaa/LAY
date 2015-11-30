@@ -1106,7 +1106,8 @@ table th{
 /* Blue block */
 
 .blue-block{
-	background: #349EAF;
+	background: #393939;
+	background-image: url("<?php echo base_url("assets/img/a.png");?>");
 	border:1px solid #fff;
 	border-top:0px;
 	padding:20px 15px;
