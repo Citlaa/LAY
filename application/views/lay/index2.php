@@ -88,7 +88,7 @@
             
               <div class="col-md-4 col-sm-5" style="margin-top: 30px;">
                 <a href="<?php echo site_url('ciudadanos/mostrar_ciudadanos')?>">
-              <div class="well br-green">
+              <div class="well br-orange">
                   <i class="fa fa-group"></i>
                 <h2>Ciudadanos</h2>                
               </div>
