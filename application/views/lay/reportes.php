@@ -49,11 +49,11 @@
                 <div class="tab-pane fade active in" id="search">
                   <div class="row">
                 <div class="col-md-1">
-                <a type="button" name="button" class="btn btn-primary" href="<?php echo base_url('reportes/periodo');?>">Periodo</a></div>
+                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('reportes/periodo');?>">Periodo</a></div>
                 <div class="col-md-2" style="width: 130px;">
-                <a type="button" name="button" class="btn btn-primary" href="<?php echo base_url('pdf_ci');?>">Exportar a PDF</a></div>
+                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('pdf_ci');?>">Exportar a PDF</a></div>
                 <div class="col-md-2">
-                <a type="button" name="button" class="btn btn-primary" href="<?php echo base_url('reportes/periodo');?>">Exportar a DOC</a></div>
+                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('reportes/periodo');?>">Exportar a DOC</a></div>
                 </div>
                 <div class="widget">
                            <div class="widget-head">
