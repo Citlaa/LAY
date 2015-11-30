@@ -77,6 +77,7 @@ class Reportes extends CI_Controller {
 		$grocery->unset_delete();
 		$grocery->unset_export();
 		$grocery->unset_print();
+		$grocery->add_action('Por Ciudadano', '', 'cad');
 
 		$grocery->fields('fecha','idDependencia','idEstatus','idRecepcion','idCiudadano','idDireccion','idAsunto');
 		$output = $grocery->render();

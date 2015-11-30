@@ -51,7 +51,7 @@ class Ciudadanos extends CI_Controller {
 	public function mostrar_ciudadanos()
 	{
 		$data1['user_id']	= $this->tank_auth->get_user_id();
-			$data1['username']	= $this->tank_auth->get_username();	
+			$data1['username']	= $this->tank_auth->get_username();
 		if ($this->tank_auth->is_logged_in()) {
 		$this->load->model('model_ciudadano');
 		$data = array(
@@ -116,9 +116,9 @@ class Ciudadanos extends CI_Controller {
 
 
 			$data['ciudadano']=$this->model_ciudadano->get_ciudadano_denuncia($idDenuncia);
-			
+
 			$this->load->view('ciudadanos/edicion_ciudadano', $data);
-			
+
 	}
 
 	public function edicion_ciudadano_ajax()
@@ -127,7 +127,7 @@ class Ciudadanos extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->model(array('model_ciudadano'));
 
-		$this->form_validation->set_rules('nombre', 'Nombre', 'required');		
+		$this->form_validation->set_rules('nombre', 'Nombre', 'required');
 
 		$this->form_validation->set_message('required','El campo %s es obligatorio');
 
@@ -136,8 +136,8 @@ class Ciudadanos extends CI_Controller {
 			// $query=error;
 			// echo json_encode($query);
 		 // }else{
-			
-			$query = $this->model_ciudadano->update_ciudadano();			
+
+			$query = $this->model_ciudadano->update_ciudadano();
 			echo json_encode($query);
 		// }
 	}
@@ -161,6 +161,16 @@ class Ciudadanos extends CI_Controller {
 		if ($this->input->get('term')) {
 			$q = $this->input->get('term');
 			$query = $this->model_ciudadano->ciudadano_autocomplete($q);
+		}
+		echo json_encode($query);
+	}
+
+	public function autocomplete_ciudadanos_nombre()
+	{
+		$this->load->model(array('model_ciudadano'));
+		if ($this->input->get('term')) {
+			$q = $this->input->get('term');
+			$query = $this->model_ciudadano->ciudadano_autocomplete_nombre($q);
 		}
 		echo json_encode($query);
 	}
