@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Dependencias</title>
+    <title>Recepcion</title>
     <style type="text/css">
        body{
         font-family: sans-serif;

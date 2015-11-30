@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Pdf_ciudadano extends CI_Controller
+class Pdf_recepcion extends CI_Controller
 {
 
    public function __construct()
@@ -9,7 +9,7 @@ class Pdf_ciudadano extends CI_Controller
        //cargamos la libreria html2pdf
        $this->load->library('html2pdf');
        //cargamos el modelo pdf_model
-       $this->load->model('model_ciudadano');
+       $this->load->model('model_recepcion');
    }
 
    private function createFolder()
@@ -21,7 +21,7 @@ class Pdf_ciudadano extends CI_Controller
        }
    }
 
-   public function index($idCiudadano = 1)
+   public function index($idRecepcion = 1)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
@@ -37,16 +37,16 @@ class Pdf_ciudadano extends CI_Controller
        //establecemos el tipo de papel
        $this->html2pdf->paper('a4', 'portrait');
 
-       $this->load->model(array('model_ciudadano'));
+       $this->load->model(array('model_recepcion'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_ciudadano->order_ciudadano($idCiudadano)
+           'denuncias' => $this->model_recepcion->order_recepcion($idRecepcion)
        );
 
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_decode($this->load->view('pdf_ciudadano', $data, true)));
+       $this->html2pdf->html(utf8_decode($this->load->view('pdf_denuncia/pdf_recepcion', $data, true)));
 
        //si el pdf se guarda correctamente lo mostramos en pantalla
        if($this->html2pdf->create('save'))
@@ -112,16 +112,16 @@ class Pdf_ciudadano extends CI_Controller
        $this->html2pdf->filename('test.pdf');
 
        //establecemos el tipo de papel
-       $this->load->model(array('model_ciudadano'));
+       $this->load->model(array('model_recepcion'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_ciudadano->order_ciudadano($idCiudadano)
+           'denuncias' => $this->model_recepcion->order_recepcion($idRecepcion)
        );
 
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_decode($this->load->view('pdf_ciudadano', $data, true)));
+       $this->html2pdf->html(utf8_decode($this->load->view('pdf_denuncia/pdf_recepcion', $data, true)));
 
 
        //Check that the PDF was created before we send it

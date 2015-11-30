@@ -75,6 +75,7 @@ class Reportes extends CI_Controller {
 		$grocery->unset_add();
 		$grocery->unset_read();
 		$grocery->unset_delete();
+		$grocery->unset_export();
 		$grocery->unset_print();
 
 		$grocery->fields('fecha','idDependencia','idEstatus','idRecepcion','idCiudadano','idDireccion','idAsunto');
