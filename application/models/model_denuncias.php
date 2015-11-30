@@ -14,7 +14,6 @@ class Model_denuncias extends CI_Model {
   {
     $this->db->where('idDenuncia', $idDenuncia);
     return $this->db->get('denuncias', $idDenuncia);
-
   }
 
   public function insert_denuncia()
@@ -104,5 +103,16 @@ class Model_denuncias extends CI_Model {
         'idAsunto'=>$aId
       ));
       return $this->db->trans_complete();
+    }
+
+    public function get_all(){
+      $this->db->from('denuncias');
+      $this->db->join('ciudadanos', 'denuncias.idCiudadano = ciudadanos.idCiudadano', 'left');
+      $this->db->join('estatus', 'denuncias.idEstatus = estatus.idEstatus', 'left');
+      $this->db->join('recepcion', 'denuncias.idRecepcion = recepcion.idRecepcion', 'left');
+      $this->db->join('direcciones', 'denuncias.idDireccion = direcciones.idDireccion', 'left');
+      $this->db->join('asuntos', 'denuncias.idAsunto = asuntos.idAsunto', 'left');
+      $query = $this->db->get();
+      return $query->result_array();
     }
 }

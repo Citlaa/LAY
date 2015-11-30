@@ -196,7 +196,27 @@
   <script type="text/javascript">
     $(function(){
       $("#nombre").autocomplete({
-        source: '/lay/ciudadanos/autocomplete_ciudadanos'
+        source: function (request, response) {
+           $.ajax({
+             url:"/lay/ciudadanos/autocomplete_ciudadanos",
+             dadtaType: 'json',
+             data: request,
+             success: function (data) {
+               var out = $.parseJSON(data);
+                       response($.each(out, function(i, item) {
+
+                          return {
+
+                              label: item.nombre,
+                              value: item.idCiudadano
+                          };
+                      }));
+             },
+            //  response:function (data) {
+            //    response(data);
+            //  }
+           });
+        },
       });
     });
   </script>
