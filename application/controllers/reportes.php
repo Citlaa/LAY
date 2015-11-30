@@ -63,17 +63,21 @@ class Reportes extends CI_Controller {
 		// $grocery->add_action('Periodo','','reportes/periodo');
 		 $grocery->set_relation('idEstatus','estatus','descripcion');
 		 $grocery->set_relation('idRecepcion','recepcion','descripcion');
-		 $grocery->set_relation('idDependencia','dependencias','dependencia');
-		 $grocery->set_relation('idCiudadano','ciudadanos','nombre');
+		 $grocery->set_relation('idDependencia','dependencias','dependencia');		 
+		 $grocery->set_relation('idCiudadano','ciudadanos','{nombre} \n{apellidoPa} \n{apellidoMa}');
 		 $grocery->set_relation('idDireccion','direcciones','colonia');
 		 $grocery->set_relation('idAsunto','asuntos','descripcion');
+		 
 		 $grocery->display_as('idDependencia','Dependencia');
 		 $grocery->display_as('idCiudadano','Ciudadano');
 		 $grocery->display_as('idDireccion','Direccion');
 		 $grocery->display_as('idAsunto','Asunto');	
+		 $grocery->display_as('idEstatus','Estatus');
+		 $grocery->display_as('idRecepcion','Modo de recepción');
+
 		 $grocery->field_type('idDependencia', 'text');
 		 $grocery->field_type('idAsunto', 'text');
-		 $grocery->columns('idCiudadano','idDependencia','idDireccion','fecha','idEstatus');
+		 $grocery->columns('idCiudadano','idDependencia','idDireccion','fecha','idEstatus','idRecepcion','idAsunto');
 		 
 		 
 		 
@@ -81,7 +85,7 @@ class Reportes extends CI_Controller {
 		 $grocery->unset_add();
 		 $grocery->unset_read();
 		 $grocery->unset_delete();
-		 $grocery->unset_export();
+		// $grocery->unset_export();
 		 $grocery->unset_print();
 
 		 $grocery->fields('fecha','idDependencia','idEstatus','idRecepcion','idCiudadano','idDireccion','idAsunto');

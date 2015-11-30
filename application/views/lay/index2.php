@@ -56,7 +56,7 @@
               </div>
 
               <div class="col-md-4 col-sm-4">
-                <a href="<?php echo base_url(). "main/catalogo2"?>">
+                <a href="<?php echo base_url(). "main"?>">
               <div class="well br-lblue">
                   <i class="fa fa-folder-open"></i>
                 <h2>Catálogo</h2>                

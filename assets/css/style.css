@@ -110,7 +110,7 @@ table th{
 }
 
 .pagination>li>a:hover{
-	color:#555;
+	color:#4D3131;
 }
 
 /* Sparkline tooltip */
@@ -142,7 +142,7 @@ table th{
 /* Button danger */
 
 .btn-danger{
-   background:#ad1627;
+   background:#781C22;
    color:#fff !important;
    border:1px solid #700d19 !important;
 }
@@ -346,8 +346,8 @@ table th{
 }
 
 .outer{
-   background:#c22234;
-   border-left:1px solid #a61223;
+   background:#B5565D;
+   border-left:1px solid #781C22;
    border-right:1px solid #aaa;
 }
 
@@ -363,7 +363,8 @@ table th{
 .sidebar{
    width:250px;
    float:left;
-   background:#c22234;
+   /*background:#c22234;*/
+   background:#b5565d;   
    padding-top:10px;
    display:block;
    position:absolute;
@@ -528,7 +529,7 @@ table th{
 	display: block;
    font-weight:600;
 	text-decoration: none;
-   border-top:1px solid #a61223;
+   border-top:1px solid #B5565D;
 }
 
 .sidey .nav > li > a:focus {
@@ -536,7 +537,7 @@ table th{
 }
 
 .sidey .nav > li:last-child > a {
-   border-bottom:1px solid #a61223;
+   border-bottom:1px solid #B5565D;
 }
 
 .sidey .label-darky{
@@ -551,7 +552,7 @@ table th{
    margin-right:5px;
    font-size:13px;
    border-radius:100px;
-   background:#a61223;
+   background:#B5565D;
    display:inline-block;
    width:32px;
    height:32px;
@@ -603,8 +604,8 @@ table th{
 }
 
 .sidey .nav li.open > a{
-   background:#c22234;
-   border-color:#a61223;
+   background:#B5565D;
+   border-color:#B5565D;
 }
 
 .sidey .nav li.open > a{
@@ -2479,7 +2480,7 @@ table th{
 	max-width:500px;
 	min-height:250px;
 	margin:150px auto 20px auto;
-	background:#c22234;
+	background:#;
 	border-radius:5px;
 	padding:5px;
 }
@@ -2855,14 +2856,14 @@ table th{
 
 .quick-slide .quick-button .quick-button-arrow{
    display:inline-block;
-   background:#c22234;
+   background:#b5565d;
    height:30px;
    width:30px;
    margin:0 auto;
    border-radius:100px;
    line-height:30px;
    text-align:center;
-   border:1px solid #a61223;
+   border:1px solid #B5565D;
    font-size:14px;
    color:#fff;
 }
@@ -3507,7 +3508,7 @@ table th{
 	color: #fff;
 	text-align: center;
 	line-height: 30px;
-	background: #c22234;
+	background: #B5565D;
 }
 
 .totop a:hover {
