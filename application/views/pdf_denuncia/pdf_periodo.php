@@ -38,13 +38,13 @@
         <thead>
           <tr>
             <th>
-              Nombre
-            </th>
-            <th>
-              Direccion
-            </th>
-            <th>
               Fecha
+            </th>
+            <th>
+              Dependencia
+            </th>
+            <th>
+              Ciudadano
             </th>
             <th>
               Estatus
@@ -53,37 +53,37 @@
               Recepcion
             </th>
             <th>
-              Asunto
+              Direccion
             </th>
             <th>
-              Dependencia
+              Asunto
             </th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($denuncias as $denuncia): ?>
             <tr>
-                <td>
-                  <?php echo $denuncia['nombre'] ?>
-                </td>
-                <td>
-                  <?php echo $denuncia['colonia'] ?>
-                </td>
-                <td>
-                  <?php echo $denuncia['fecha'] ?>
-                </td>
-                <td>
-                  <?php echo $denuncia['descripcion'] ?>
-                </td>
-                <td>
-                  <?php echo $denuncia['descripcion'] ?>
-                </td>
-                <td>
-                  <?php echo $denuncia['descripcion'] ?>
-                </td>
-                <td>
-                  <?php echo $denuncia['descripcion'] ?>
-                </td>
+              <td>
+                <?php echo $denuncia['fecha'] ?>
+              </td>
+              <td>
+                <?php echo $denuncia['dependencia'] ?>
+              </td>
+              <td>
+                <?php echo $denuncia['ciudadano'] ?>
+              </td>
+              <td>
+                <?php echo $denuncia['estatus'] ?>
+              </td>
+              <td>
+                <?php echo $denuncia['recepcion'] ?>
+              </td>
+              <td>
+                <?php echo $denuncia['direccion'] ?>
+              </td>
+              <td>
+                <?php echo $denuncia['asunto'] ?>
+              </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
