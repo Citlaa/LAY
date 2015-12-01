@@ -12,8 +12,7 @@
 	},
 	"require": {
 		"php": ">=5.2.4",
-		"zendframework/zend-validator": "^2.5",
-		"phpoffice/phpword": "dev-develop"
+		"zendframework/zend-validator": "^2.5"
 	},
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*"
