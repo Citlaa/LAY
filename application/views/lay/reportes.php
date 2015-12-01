@@ -98,10 +98,18 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="estatus">
       <h1>Denuncias por estatus</h1>
-      <input type="text" name="estatusi" class="form-control" id="estatusi">
+      <div class="col-md-12">
+      <select class="col-md-4">
+      <?php foreach ($estatuses as $estatus): ?>
+        <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['descripcion'] ?></option>
+      <?php endforeach ?>
+      </select>
+      </div>
+      <div>
       <input type="radio" name="formato" value="pdf" class="formato"> PDF
       <input type="radio" name="formato" value="docx" class="formato"> Word <br>
-      <button id="buscarDenFecha" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      </div>
+      <button id="buscarDenEst" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepcion</h1>
@@ -118,32 +126,6 @@
 
 
               <!-- Tab panes -->
-<<<<<<< HEAD
-              <div class="tab-content">
-                <div class="tab-pane fade active in" id="search">
-                  <div class="row">
-                <div class="col-md-1">
-                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('reportes/periodo');?>">Periodo</a></div>
-                <div class="col-md-2" style="width: 130px;">
-                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('pdf_ci');?>">Exportar a PDF</a></div>
-                <div class="col-md-2">
-                <a type="button" name="button" class="btn btn-enter" href="<?php echo base_url('reportes/periodo');?>">Exportar a DOC</a></div>
-                </div>
-                <div class="widget">
-                           <div class="widget-head">
-                    <h5><i class="fa fa-university"></i>Reportes</h5>
-                  </div>
-                <!-- Search users -->    
-                
-                <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="897px" height="700px">
-                  </iframe> 
-=======
-
-                <!-- Search users -->
-
-                <!-- <iframe src="<?php echo base_url('reportes/mostrar_reportes2');?>" width="900px" height="700px">
-                  </iframe>  -->
->>>>>>> 251fe6e711b475211c16fa9336977e480d404d5e
                 </div>
                   <div>
 
@@ -204,6 +186,10 @@
         // console.log($('#idCiudadano').val());
         console.log('clic');
         window.location.replace("http://localhost:82/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+      });
+      $('#buscarDenEst').click(function () {
+        // console.log($('#idCiudadano').val());
+        window.location.replace("http://localhost:82/lay/pdf_fecha/index/"+  $('#estatusi').val());
       });
     });
   </script>

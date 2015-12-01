@@ -38,6 +38,8 @@ class Reportes extends CI_Controller {
 		$data['user_id']	= $this->tank_auth->get_user_id();
 		$data['username']	= $this->tank_auth->get_username();
 		if ($this->tank_auth->is_logged_in()) {
+			$this->load->model('model_estatus');
+			$data['estatuses'] = $this->model_estatus->get_all();
 			$this->load->view('template/header');
 			$this->load->view('template/menu',$data);
 			$this->load->view('LAY/reportes');
@@ -73,45 +75,6 @@ class Reportes extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-
-
-	public function periodo2()
-	{
-		$date1 = $this->input->get('date1');
-		$date2 = $this->input->get('date2');
-		// var_dump($date1);
-		// var_dump($date2); exit;
-		$grocery = new grocery_CRUD();
-		$grocery->set_theme('bootstrap');
-		$grocery-> where('fecha >=',$date1);
-		$grocery-> where('fecha <=',$date2);
-
-
-		$grocery->set_table('denuncias');
-		$grocery->set_language('spanish');
-
-		$grocery->set_relation('idEstatus','estatus','descripcion');
-		$grocery->set_relation('idRecepcion','recepcion','descripcion');
-		$grocery->set_relation('idDependencia','dependencias','dependencia');
-		$grocery->set_relation('idCiudadano','ciudadanos','nombre');
-		$grocery->set_relation('idDireccion','direcciones','colonia');
-		$grocery->set_relation('idAsunto','asuntos','descripcion');
-		$grocery->display_as('idDependencia','Dependencia');
-		$grocery->display_as('idCiudadano','Ciudadano');
-		$grocery->display_as('idDireccion','Direccion');
-		$grocery->display_as('idAsunto','Asunto');
-		$grocery->field_type('idDependencia', 'text');
-		$grocery->field_type('idAsunto', 'text');
-		$grocery->columns('idCiudadano','idDependencia','idDireccion','fecha','idEstatus');
-
-		$grocery->unset_edit();
-		$grocery->unset_add();
-		$grocery->unset_read();
-		$grocery->unset_delete();
-
-		$output = $grocery->render();
-		$this->_example_output($output);
-	}
 	function _example_output($output = null)
 	{
 		$this->load->view('our_template.php',$output);
