@@ -71,7 +71,7 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
-      <input type="date " name="fechai" class="form-control date" id="fechai">
+      <input type="date" name="fechai" class="form-control date" id="fechai">
       <button id="buscarDenFecha" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
