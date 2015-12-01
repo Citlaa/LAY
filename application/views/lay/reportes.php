@@ -71,7 +71,8 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
-      <input type="text" name="fechai" class="form-control" id="fechai">
+      <input type="date " name="fechai" class="form-control date" id="fechai">
+      <button id="buscarDenFecha" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
       <h1>Denuncias por periodo</h1>
@@ -146,15 +147,13 @@
         // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:82/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
       });
-      // $('#coloniai').autocomplete({
-      //   source:'/lay/direcciones/direccion_autocomplete_colonia',
-      //   select: function (event, ui) {
-      //     $('#idDireccion').val(ui.item.id);
-      //   }
-      // });
       $('#buscarDenCol').click(function () {
         // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:82/lay/pdf_direccion/index/"+  $('#coloniai').val());
+      });
+      $('#buscarDenFecha').click(function () {
+        // console.log($('#idCiudadano').val());
+        window.location.replace("http://localhost:82/lay/pdf_fecha/index/"+  $('#fechai').val());
       });
     });
   </script>
