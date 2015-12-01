@@ -132,6 +132,23 @@ class Model_denuncias extends CI_Model {
       $this->db->from('ciudadanos c, denuncias d, dependencias de, estatus e, recepcion r, asuntos a, direcciones dir');
       $this->db->where('d.idCiudadano', $idCiudadano);
       $this->db->where('d.idRecepcion = r.idRecepcion');
+      $this->db->where('d.idDependencia = de.idDependencia');
+      $this->db->where('d.idCiudadano = c.idCiudadano');
+      $this->db->where('d.idDireccion = dir.idDireccion');
+      $this->db->where('a.idAsunto = a.idAsunto');
+      $resultados= $this->db->get();
+
+      return $resultados->result_array();
+    }
+
+    public function by_dependencia($idDependencia)
+    {
+      $this->db->select(
+        'idRegistro, d.fecha, CONCAT(c.nombre, " ", c.apellidoPa, " ", c.apellidoMa) as ciudadano, e.descripcion as estatus, r.descripcion as recepcion, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, a.descripcion as asunto'
+      );
+      $this->db->from('ciudadanos c, denuncias d, dependencias de, estatus e, recepcion r, asuntos a, direcciones dir');
+      $this->db->where('d.idDependencia', $idDependencia);
+      $this->db->where('d.idRecepcion = r.idRecepcion');
       $this->db->where('d.idCiudadano = c.idCiudadano');
       $this->db->where('d.idDireccion = dir.idDireccion');
       $this->db->where('a.idAsunto = a.idAsunto');

@@ -38,9 +38,6 @@
         <thead>
           <tr>
             <th>
-              Registro
-            </th>
-            <th>
               Fecha
             </th>
             <th>
@@ -63,9 +60,6 @@
         <tbody>
           <?php foreach ($denuncias as $denuncia): ?>
             <tr>
-                <td>
-                  <?php echo $denuncia['idRegistro'] ?>
-                </td>
                 <td>
                   <?php echo $denuncia['fecha'] ?>
                 </td>
