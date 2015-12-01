@@ -29,7 +29,7 @@
         <!-- Black block starts -->
         <div class="blue-block">
           <div class="page-title">
-            <h3 class="pull-left"><i class="fa fa-group"></i>Denuncias</h3>
+            <h3 class="pull-left"><i class="fa fa-gavel"></i>Denuncias</h3>
             <div class="clearfix"></div>
           </div>
         </div>
