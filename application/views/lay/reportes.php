@@ -45,9 +45,9 @@
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Dependencia</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Colonia</a></li>
     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Fecha</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="periodo" role="tab" data-toggle="tab">Periodo</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="estatus" role="tab" data-toggle="tab">Estatus</a></li>
-    <li role="presentation"><a href="#settings" aria-controls="recepcion" role="tab" data-toggle="tab">Modo de recepción</a></li>
+    <li role="presentation"><a href="#periodo" aria-controls="periodo" role="tab" data-toggle="tab">Periodo</a></li>
+    <li role="presentation"><a href="#estatus" aria-controls="estatus" role="tab" data-toggle="tab">Estatus</a></li>
+    <li role="presentation"><a href="#recepcion" aria-controls="recepcion" role="tab" data-toggle="tab">Modo de recepción</a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -56,35 +56,59 @@
       <h1>Denuncias por ciudadano</h1>
       <input type="hidden" name="idCiudadano" id="idCiudadano">
       <input type="text" name="nombrei" class="form-control" id="nombrei">
+      <input type="radio" name="formato" value="pdf" class="formato"> PDF
+      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
       <button id="buscarDenCiu" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
       <h1>Denuncias por dependencia</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
       <input type="text" name="dependenciai" class="form-control" id="dependenciai">
+      <input type="radio" name="formato" value="pdf" class="formato"> PDF
+      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
       <button id="buscarDenDep" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
       <input type="text" name="coloniai" class="form-control" id="coloniai">
+      <input type="radio" name="formato" value="pdf" class="formato"> PDF
+      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
       <button id="buscarDenCol" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
       <input type="date" name="fechai" class="form-control date" id="fechai">
+      <input type="radio" name="formato" value="pdf" class="formato"> PDF
+      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
       <button id="buscarDenFecha" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
       <h1>Denuncias por periodo</h1>
-      <input type="text" name="periodoi" class="form-control" id="periodoi">
+      <form class="form-inline">
+        <div class="form-group">
+          <input type="date" class="form-control" id="periodoi">
+        </div>
+        <div class="form-group">
+          <input type="date" class="form-control" id="periodof">
+        </div>
+      </form>
+      <input type="radio" name="formato" value="pdf" class="formato"> PDF
+      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
+      <button id="buscarDenPeriodo" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="estatus">
       <h1>Denuncias por estatus</h1>
       <input type="text" name="estatusi" class="form-control" id="estatusi">
+      <input type="radio" name="formato" value="pdf" class="formato"> PDF
+      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
+      <button id="buscarDenFecha" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepcion</h1>
       <input type="text" name="recepcioni" class="form-control" id="recepcioni">
+      <input type="radio" name="formato" value="pdf" class="formato"> PDF
+      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
+      <button id="buscarDenFecha" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
   </div>
 

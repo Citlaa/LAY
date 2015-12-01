@@ -21,7 +21,7 @@ class Pdf_ciudadano extends CI_Controller
        }
    }
 
-   public function index($idCiudadano = 1)
+   public function index($fechai, $fechaf)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
@@ -37,11 +37,11 @@ class Pdf_ciudadano extends CI_Controller
        //establecemos el tipo de papel
        $this->html2pdf->paper('a4', 'portrait');
 
-       $this->load->model(array('model_ciudadano'));
+       $this->load->model(array('model_denuncias'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_ciudadano->order_ciudadano($idCiudadano)
+           'denuncias' => $this->model_denuncias->by_periodo($fechai, $fechaf)
        );
 
        //hacemos que coja la vista como datos a imprimir
