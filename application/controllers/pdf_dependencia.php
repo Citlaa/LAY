@@ -9,7 +9,6 @@ class Pdf_dependencia extends CI_Controller
        //cargamos la libreria html2pdf
        $this->load->library('html2pdf');
        //cargamos el modelo pdf_model
-       $this->load->model('model_dependencias');
    }
 
    private function createFolder()
@@ -37,11 +36,11 @@ class Pdf_dependencia extends CI_Controller
        //establecemos el tipo de papel
        $this->html2pdf->paper('a4', 'portrait');
 
-       $this->load->model(array('model_dependencias'));
+       $this->load->model(array('model_denuncias'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_dependencias->order_dependencia($idDependencia)
+           'denuncias' => $this->model_denuncias->by_dependencia($idDependencia)
        );
 
        //hacemos que coja la vista como datos a imprimir
