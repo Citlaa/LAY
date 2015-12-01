@@ -38,8 +38,9 @@ class Reportes extends CI_Controller {
 		$data['user_id']	= $this->tank_auth->get_user_id();
 		$data['username']	= $this->tank_auth->get_username();
 		if ($this->tank_auth->is_logged_in()) {
-			$this->load->model('model_estatus');
+			$this->load->model(array('model_estatus', 'model_recepcion'));
 			$data['estatuses'] = $this->model_estatus->get_all();
+			$data['recepciones'] = $this->model_recepcion->get_all();
 			$this->load->view('template/header');
 			$this->load->view('template/menu',$data);
 			$this->load->view('LAY/reportes');

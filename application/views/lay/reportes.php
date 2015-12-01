@@ -113,10 +113,18 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepcion</h1>
-      <input type="text" name="recepcioni" class="form-control" id="recepcioni">
+      <div class="col-md-12">
+      <select class="col-md-4">
+      <?php foreach ($recepciones as $recepcion): ?>
+        <option value="<?php echo $recepcion['idRecepcion'] ?>"><?php echo $recepcion['descripcion'] ?></option>
+      <?php endforeach ?>
+      </select>
+      </div>
+      <div>
       <input type="radio" name="formato" value="pdf" class="formato"> PDF
       <input type="radio" name="formato" value="docx" class="formato"> Word <br>
-      <button id="buscarDenFecha" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      </div>
+      <button id="buscarDenRec" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
     </div>
   </div>
 
@@ -189,7 +197,11 @@
       });
       $('#buscarDenEst').click(function () {
         // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:82/lay/pdf_fecha/index/"+  $('#estatusi').val());
+        window.location.replace("http://localhost:82/lay/pdf_estatus/index/"+  $('#estatusi').val());
+      });
+      $('#buscarDenRec').click(function () {
+        // console.log($('#idCiudadano').val());
+        window.location.replace("http://localhost:82/lay/pdf_recepcion/index/"+  $('#recepcioni').val());
       });
     });
   </script>
