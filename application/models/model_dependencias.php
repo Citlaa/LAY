@@ -14,24 +14,19 @@ class Model_dependencias extends CI_Model{
     return $query->result_array();
   }
 
-  public function order_dependencia($idDependencia)
-  {
-    $this->db->select('CONCAT(c.nombre, " ", c.apellidoPa, " ", c.apellidoMa) as nombre, colonia, d.fecha, e.descripcion, r.descripcion, a.descripcion, de.dependencia', FALSE);
-    $this->db->from('ciudadanos c, denuncias d, dependencias de, estatus e, recepcion r, asuntos a');
-    $this->db->where('d.idCiudadano = c.idCiudadano');
-    $this->db->where('d.idDependencia = de.idDependencia');
-    $this->db->where('d.idEstatus = e.idEstatus');
-    $this->db->where('d.idRecepcion = r.idRecepcion');
-    $this->db->where('d.idEstatus = e.idEstatus');
-    $this->db->where('d.idAsunto = a.idAsunto');
-    $this->db->where('de.idDependencia', $idDependencia);
-
-    $direccion= $this->db->get();
-    return $direccion->result_array();
-  }
-  //direccion
-  //fecha
-  //estatus
-  //modo de recepcion
-  //asuntos
+  public function dependencia_autocomplete_descripcion($q)
+	{
+		$this->db->or_like('dependencia', $q);
+	  $query = $this->db->get('dependencias');
+		$dependencias =  $query->result_array();
+		$resultados=array();
+		foreach ($dependencias as $dependencia) {
+			 array_push($resultados,array(
+				'label'=>$dependencia['dependencia'],
+				'id'=>$dependencia['idDependencia'],
+				'value'=>$dependencia['dependencia']
+			));
+    }
+    return $resultados;
+		}
 }

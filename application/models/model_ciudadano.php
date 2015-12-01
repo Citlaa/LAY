@@ -81,6 +81,30 @@ class Model_ciudadano extends CI_Model
 			));
 		}
 
+
+		return $resultados;
+	}
+
+	public function ciudadano_autocomplete_nombre($q)
+	{
+		$this->db->or_like('nombre', $q);
+		$this->db->or_like('apellidoPa', $q);
+		$this->db->or_like('apellidoMa', $q);
+		$query = $this->db->get('ciudadanos');
+		$ciudadanos =  $query->result_array();
+		$resultados=array();
+		foreach ($ciudadanos as $ciudadano) {
+			 array_push($resultados,array(
+				'label'=>$ciudadano['nombre'].' '.$ciudadano['apellidoPa'].' '.$ciudadano['apellidoMa'],
+				'id'=>$ciudadano['idCiudadano'],
+				'value'=>$ciudadano['nombre'].' '.$ciudadano['apellidoPa'].' '.$ciudadano['apellidoMa'],
+				'apellidoPa'=>$ciudadano['apellidoPa'],
+				'apellidoMa'=>$ciudadano['apellidoMa'],
+				'tel1'=>$ciudadano['tel1'],
+				'tel2'=>$ciudadano['tel2']
+			));
+		}
+
 		return $resultados;
 	}
 
@@ -99,5 +123,5 @@ class Model_ciudadano extends CI_Model
 		$direccion= $this->db->get();
 		return $direccion->result_array();
 	}
-	
+
 }

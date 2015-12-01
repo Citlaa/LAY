@@ -21,7 +21,7 @@ class Pdf_direccion extends CI_Controller
        }
    }
 
-   public function index($idDireccion = 1)
+   public function index($colonia)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
@@ -41,7 +41,7 @@ class Pdf_direccion extends CI_Controller
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_denuncias->order_direccion($idDireccion)
+           'denuncias' => $this->model_denuncias->by_colonia($colonia)
        );
 
        //hacemos que coja la vista como datos a imprimir

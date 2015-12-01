@@ -24,7 +24,8 @@
             align-items: center;
         }
         #topTable{
-            padding-top: 30px;
+          margin-top: 130px;
+          margin-bottom: 100px;
         }
 
     </style>
@@ -36,52 +37,47 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>
-              Nombre
-            </th>
-            <th>
-              Direccion
-            </th>
-            <th>
-              Fecha
-            </th>
-            <th>
-              Estatus
-            </th>
-            <th>
-              Recepcion
-            </th>
-            <th>
-              Asunto
-            </th>
-            <th>
-              Dependencia
-            </th>
+            <tr>
+              <th>
+                Fecha
+              </th>
+              <th>
+                Dependencia
+              </th>
+              <th>
+                Estatus
+              </th>
+              <th>
+                Recepcion
+              </th>
+              <th>
+                Direccion
+              </th>
+              <th>
+                Asunto
+              </th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($denuncias as $denuncia): ?>
             <tr>
                 <td>
-                  <?php echo $denuncia['nombre'] ?>
-                </td>
-                <td>
-                  <?php echo $denuncia['colonia'] ?>
-                </td>
-                <td>
                   <?php echo $denuncia['fecha'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['descripcion'] ?>
+                  <?php echo $denuncia['ciudadano'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['descripcion'] ?>
+                  <?php echo $denuncia['estatus'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['descripcion'] ?>
+                  <?php echo $denuncia['recepcion'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['descripcion'] ?>
+                  <?php echo $denuncia['direccion'] ?>
+                </td>
+                <td>
+                  <?php echo $denuncia['asunto'] ?>
                 </td>
             </tr>
           <?php endforeach; ?>

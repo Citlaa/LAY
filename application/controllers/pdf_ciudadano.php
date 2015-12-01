@@ -37,16 +37,18 @@ class Pdf_ciudadano extends CI_Controller
        //establecemos el tipo de papel
        $this->html2pdf->paper('a4', 'portrait');
 
-       $this->load->model(array('model_ciudadano'));
+       $this->load->model(array('model_denuncias'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_ciudadano->order_ciudadano($idCiudadano)
+           'denuncias' => $this->model_denuncias->by_ciudadano($idCiudadano)
        );
+
+      //  var_dump($data);exit;
 
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_decode($this->load->view('pdf_ciudadano', $data, true)));
+       $this->html2pdf->html(utf8_encode($this->load->view('pdf_ciudadano', $data, true)));
 
        //si el pdf se guarda correctamente lo mostramos en pantalla
        if($this->html2pdf->create('save'))
