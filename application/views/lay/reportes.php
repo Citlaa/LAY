@@ -114,7 +114,7 @@
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepcion</h1>
       <div class="col-md-12">
-      <select class="col-md-4">
+      <select class="col-md-4" class="form-control" id="idRecepcion">
       <?php foreach ($recepciones as $recepcion): ?>
         <option value="<?php echo $recepcion['idRecepcion'] ?>"><?php echo $recepcion['descripcion'] ?></option>
       <?php endforeach ?>
@@ -195,7 +195,7 @@
         window.location.replace("http://localhost:82/lay/pdf_estatus/index/"+  $('#idEstatus').val());
       });
       $('#buscarDenRec').click(function () {
-        window.location.replace("http://localhost:82/lay/pdf_recepcion/index/"+  $('#idEstatus').val());
+        window.location.replace("http://localhost:82/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
       });
     });
   </script>

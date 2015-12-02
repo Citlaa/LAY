@@ -9,7 +9,7 @@ class Pdf_recepcion extends CI_Controller
        //cargamos la libreria html2pdf
        $this->load->library('html2pdf');
        //cargamos el modelo pdf_model
-       $this->load->model('model_recepcion');
+       $this->load->model('model_denuncias');
    }
 
    private function createFolder()
@@ -37,11 +37,10 @@ class Pdf_recepcion extends CI_Controller
        //establecemos el tipo de papel
        $this->html2pdf->paper('a4', 'portrait');
 
-       $this->load->model(array('model_recepcion'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_recepcion->order_recepcion($idRecepcion)
+           'denuncias' => $this->model_denuncias->by_recepcion($idRecepcion)
        );
 
        //hacemos que coja la vista como datos a imprimir
