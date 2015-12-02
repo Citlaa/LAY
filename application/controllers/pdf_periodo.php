@@ -48,7 +48,7 @@ class Pdf_periodo extends CI_Controller
 
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_decode($this->load->view('pdf_denuncia/pdf_periodo', $data, true)));
+       $this->html2pdf->html(utf8_encode($this->load->view('pdf_denuncia/pdf_periodo', $data, true)));
 
        //si el pdf se guarda correctamente lo mostramos en pantalla
        if($this->html2pdf->create('save'))
@@ -123,7 +123,7 @@ class Pdf_periodo extends CI_Controller
 
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_decode($this->load->view('pdf_ciudadano', $data, true)));
+       $this->html2pdf->html(utf8_encode($this->load->view('pdf_ciudadano', $data, true)));
 
 
        //Check that the PDF was created before we send it

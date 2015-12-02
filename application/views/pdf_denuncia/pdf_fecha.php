@@ -26,7 +26,7 @@
 
 <body>
   <h2 id="title">Reporte Generado</h2>
-  <h3>Reporte del día <?php echo $denuncias[0]['fecha'] ?></h3>
+  <h3>Reporte del día <?php echo utf8_decode($denuncias[0]['fecha'] );?></h3>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -40,11 +40,11 @@
             Estatus
           </th>
           <th>
-            Recepcion
-          </th>
-          <th>
-            Direccion
-          </th>
+              <?php echo utf8_decode('Recepción'); ?>
+            </th>
+            <th>              
+              <?php echo utf8_decode('Dirección'); ?>
+            </th>
           <th>
             Asunto
           </th>
@@ -54,22 +54,22 @@
         <?php foreach ($denuncias as $denuncia): ?>
           <tr>
             <td>
-              <?php echo $denuncia['dependencia'] ?>
+              <?php echo utf8_decode($denuncia['dependencia']); ?>
             </td>
             <td>
               <?php echo $denuncia['ciudadano'] ?>
             </td>
             <td>
-              <?php echo $denuncia['estatus'] ?>
+              <?php echo utf8_decode($denuncia['estatus']); ?>
             </td>
             <td>
-              <?php echo $denuncia['recepcion'] ?>
+              <?php echo utf8_decode($denuncia['recepcion']); ?>
             </td>
             <td>
-              <?php echo $denuncia['direccion'] ?>
+              <?php echo utf8_decode($denuncia['direccion']); ?>
             </td>
             <td>
-              <?php echo $denuncia['asunto'] ?>
+              <?php echo utf8_decode($denuncia['asunto']); ?>
             </td>
           </tr>
         <?php endforeach; ?>
