@@ -25,8 +25,8 @@
     </head>
 
     <body>
-      <h2 id=" top title">Reporte Generado</h2>
-    <h3>Reporte de <?php echo $denuncias[0]['dependencia'] ?></h3>
+    <h2 id=" top title">Reporte Generado</h2>
+    <h3>Reporte de: <?php echo $denuncias[0]['dependencia'] ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -34,7 +34,7 @@
               Fecha
             </th>
             <th>
-              Dependencia
+              Ciudadano
             </th>
             <th>
               Estatus

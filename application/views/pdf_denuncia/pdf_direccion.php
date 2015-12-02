@@ -26,7 +26,7 @@
 
     <body>
     <h2 id="title">Reporte Generado</h2>
-    <div id="top">
+    <h3>Reporte de la colonia: <?php echo $colonia ?></h3>
       <table class="top table table-striped" >
         <thead>
           <tr>
@@ -75,6 +75,5 @@
           <?php endforeach; ?>
         </tbody>
       </table>
-    </div>
-</body>
+    </body>
 </html>

@@ -25,8 +25,8 @@
     </head>
 
     <body>
-      <h2 id=" top title">Reporte Generado</h2>
-    <div class="table" id="topTable">
+    <h2 id=" top title">Reporte Generado</h2>
+    <h3>Reporte de denuncias de <?php echo $fechai.' a '. $fechaf ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -81,6 +81,5 @@
           <?php endforeach; ?>
         </tbody>
       </table>
-    </div>
 </body>
 </html>

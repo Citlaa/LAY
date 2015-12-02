@@ -41,7 +41,9 @@ class Pdf_periodo extends CI_Controller
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_denuncias->by_periodo($fechai, $fechaf)
+           'denuncias' => $this->model_denuncias->by_periodo($fechai, $fechaf),
+           'fechai' => $fechai,
+           'fechaf' => $fechaf
        );
 
        //hacemos que coja la vista como datos a imprimir

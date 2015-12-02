@@ -41,7 +41,8 @@ class Pdf_direccion extends CI_Controller
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_denuncias->by_colonia($colonia)
+           'denuncias' => $this->model_denuncias->by_colonia($colonia),
+           'colonia' => $colonia
        );
 
        //hacemos que coja la vista como datos a imprimir

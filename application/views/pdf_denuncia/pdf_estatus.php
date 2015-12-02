@@ -24,8 +24,8 @@
     </head>
 
     <body>
-      <h2 id=" top title">Reporte Generado</h2>
-    <div class="table" id="topTable">
+    <h2 id="title">Reporte Generado</h2>
+    <h3>Reporte de denuncias: <?php echo $denuncias[0]['estatus'].'s'?></h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -74,6 +74,5 @@
           <?php endforeach; ?>
         </tbody>
       </table>
-    </div>
 </body>
 </html>

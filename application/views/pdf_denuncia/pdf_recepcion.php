@@ -25,8 +25,7 @@
     </head>
 
     <body>
-      <h2 id=" top title">Reporte Generado</h2>
-    <div class="table" id="topTable">
+      <h2 id="title">Reporte Generado</h2>
       <table class="table table-striped">
         <thead>
           <tr>
