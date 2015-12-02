@@ -14,16 +14,12 @@
         background-size: cover;
        }
        #title{
-            padding-top: 70px;
-            text-align: center;
-            font-family: Lucida Grande, Verdana, Sans-serif;
-            font-size: 22px;
-            color: #3B0B17;
-        }
-        #top{
-          margin-top: 90px;
-          margin-bottom: 100px
-        }
+    padding-top: 70px;
+    text-align: center;
+    font-family: Lucida Grande, Verdana, Sans-serif;
+    font-size: 22px;
+    color: #3B0B17;
+  }
 
     </style>
     </head>
