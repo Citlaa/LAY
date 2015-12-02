@@ -103,7 +103,7 @@ class Model_denuncias extends CI_Model {
       $this->db->where('d.idRecepcion = r.idRecepcion');
       $this->db->where('d.idDireccion = dir.idDireccion');
       $this->db->where('d.idAsunto = a.idAsunto');
-      $this->db->where('d.fecha', $fecha);
+      $this->db->where("d.fecha", $fecha);
 
       $direccion= $this->db->get();
       return $direccion->result_array();

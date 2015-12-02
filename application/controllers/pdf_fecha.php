@@ -21,7 +21,7 @@ class Pdf_fecha extends CI_Controller
        }
    }
 
-   public function index($fecha = 2)
+   public function index($fecha)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
