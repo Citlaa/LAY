@@ -160,7 +160,7 @@
       <!-- Scroll to top -->
   </body>
   <script type="text/javascript">
-    $(function () {
+    $(function () {      
       $('#nombrei').autocomplete({
         source:'/lay/ciudadanos/autocomplete_ciudadanos_nombre',
         select: function (event, ui) {
@@ -168,7 +168,10 @@
         }
       });
       $('#buscarDenCiu').click(function () {
-        window.location.replace("http://localhost:82/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
+        var nombrei = $("#nombrei").val();
+        if(nombrei){
+          window.location.replace("http://localhost:8080/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
+        }  
       });
       $('#dependenciai').autocomplete({
         source:'/lay/dependencias/dependencia_autocomplete_descripcion',
@@ -177,18 +180,30 @@
         }
       });
       $('#buscarDenDep').click(function () {
-        // console.log($('#idCiudadano').val());
+        var dependenciai = $("#dependenciai").val();
+        if(dependenciai){
         window.location.replace("http://localhost:8080/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
+        }
       });
       $('#buscarDenCol').click(function () {
+        var coloniai = $("#coloniai").val();
+        if(coloniai){
         window.location.replace("http://localhost:8080/lay/pdf_direccion/index/"+  $('#coloniai').val());
+        }
       });
       $('#buscarDenFecha').click(function () {
+        var fechai = $("#fechai").val();
+        if(fechai){
         window.location.replace("http://localhost:8080/lay/pdf_fecha/index/"+  $('#fechai').val());
+       }
       });
       $('#buscarDenPeriodo').click(function () {
+        var periodoi = $("#periodoi").val();
+        var periodof = $("#periodof").val();
+        if(periodoi && periodof){
         console.log('clic');
         window.location.replace("http://localhost:8080/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+      }
       });
       $('#buscarDenEst').click(function () {
         window.location.replace("http://localhost:8080/lay/pdf_estatus/index/"+  $('#idEstatus').val());
