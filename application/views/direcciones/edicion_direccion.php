@@ -55,7 +55,7 @@
               
                     <div class="clearfix"></div>    
   <div class="container-fluid">
-  <h2>Editar de direccion</h2>
+  <h2>Edición de dirección</h2>
   <div class="container-fluid">
 
     <?php echo validation_errors(); ?>
