@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Dependencias</title>
+    <title>Ciudadanos</title>
     <style type="text/css">
        body{
         font-family: sans-serif;
@@ -32,31 +32,30 @@
     </head>
 
     <body>
-    <h2 id=" top title">Reporte Generado</h2>
+      <h2 id=" top title">Reporte Generado</h2>
     <h3>Reporte de <?php echo $denuncias[0]['dependencia'] ?></h3>
-    <div class="top table">
+    <div class="table">
       <table class="table table-striped">
         <thead>
           <tr>
-            <tr>
-              <th>
-                Fecha
-              </th>
-              <th>
-                Dependencia
-              </th>
-              <th>
-                Estatus
-              </th>
-              <th>
-                Recepcion
-              </th>
-              <th>
-                Direccion
-              </th>
-              <th>
-                Asunto
-              </th>
+            <th>
+              Fecha
+            </th>
+            <th>
+              Dependencia
+            </th>
+            <th>
+              Estatus
+            </th>
+            <th>
+              Recepcion
+            </th>
+            <th>
+              Direccion
+            </th>
+            <th>
+              Asunto
+            </th>
           </tr>
         </thead>
         <tbody>
