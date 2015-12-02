@@ -1,9 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-
-
-class Exportar_Word extends CI_Controller{
+class Word_Ciudadanos extends CI_Controller{
 
   public function __construct()
   {
@@ -11,7 +9,7 @@ class Exportar_Word extends CI_Controller{
 
   }
 
-  function index()
+  function index($idCiudadano)
   {
     $this->load->library('word');
     //our docx will have 'lanscape' paper orientation
@@ -42,25 +40,30 @@ class Exportar_Word extends CI_Controller{
     // Add row
     $table->addRow(900);
 
-    $table->addCell(2000, $styleCell)->addText('Row 1', $fontStyle);
-    $table->addCell(2000, $styleCell)->addText('Row 2', $fontStyle);
-    $table->addCell(2000, $styleCell)->addText('Row 3', $fontStyle);
-    $table->addCell(2000, $styleCell)->addText('Row 4', $fontStyle);
-    $table->addCell(500, $styleCellBTLR)->addText('Row 5', $fontStyle);
+    $table->addCell(2000, $styleCell)->addText('Fecha', $fontStyle);
+    $table->addCell(2000, $styleCell)->addText('Ciudadano', $fontStyle);
+    $table->addCell(2000, $styleCell)->addText('Dependencia', $fontStyle);
+    $table->addCell(2000, $styleCell)->addText('Estatus', $fontStyle);
+    $table->addCell(2000, $styleCell)->addText('Recepcion', $fontStyle);
+    $table->addCell(500, $styleCell)->addText('Asunto', $fontStyle);
+    $table->addCell(500, $styleCell)->addText('Direccion', $fontStyle);
 
-    // Add more rows / cells
-    for($i = 1; $i <= 10; $i++) {
-    	$table->addRow();
-    	$table->addCell(2000)->addText("Cell $i");
-    	$table->addCell(2000)->addText("Cell $i");
-    	$table->addCell(2000)->addText("Cell $i");
-    	$table->addCell(2000)->addText("Cell $i");
+    $this->load->model(array('model_denuncias'));
 
-    	$text = ($i % 2 == 0) ? 'X' : '';
-    	$table->addCell(500)->addText($text);
+    $resultados = $this->model_denuncias->by_ciudadano($idCiudadano);
+
+    foreach ($resultados as $resultado) {
+      $table->addRow();
+    	$table->addCell(2000)->addText("".$resultado['fecha']);
+      $table->addCell(2000)->addText("".$resultado['ciudadano']);
+    	$table->addCell(2000)->addText("".$resultado['dependencia']);
+    	$table->addCell(2000)->addText("".$resultado['estatus']);
+    	$table->addCell(2000)->addText("".$resultado['recepcion']);
+      $table->addCell(2000)->addText("".$resultado['asunto']);
+      $table->addCell(2000)->addText("".$resultado['direccion']);
     }
 
-    $filename = "descarga.docx";
+    $filename = "DenunciasPorCiudadano.docx";
     header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document'); //mime type
     header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
     header('Cache-Control: max-age=0'); //no cache
