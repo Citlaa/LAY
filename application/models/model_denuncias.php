@@ -129,7 +129,7 @@ class Model_denuncias extends CI_Model {
     public function by_ciudadano($idCiudadano)
     {
       $resultados= $this->db->query(
-        "SELECT d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, ' ', dir.noExt, ' ', dir.noInt, ' ', dir.colonia, ' ', dir.localidad, ' ', dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto
+        "SELECT CONCAT(c.nombre, ' ', c.apellidoPa, ' ', c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, ' ', dir.noExt, ' ', dir.noInt, ' ', dir.colonia, ' ', dir.localidad, ' ', dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto
         FROM `denuncias` d, dependencias de, estatus e, recepcion r, ciudadanos c, direcciones dir, asuntos a
         WHERE d.idCiudadano = c.idCiudadano
         AND d.idDependencia = de.idDependencia

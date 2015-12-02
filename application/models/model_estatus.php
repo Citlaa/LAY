@@ -11,7 +11,6 @@ class Model_estatus extends CI_Model{
 
   public function get_all()
   {
-    // $this->db->order_by('idEstatus','ASC');
     $query = $this->db->get('estatus');
     return $query->result_array();
   }

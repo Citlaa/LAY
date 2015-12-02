@@ -32,8 +32,9 @@
     </head>
 
     <body>
-      <h2 id=" top title">Reporte Generado</h2>
-    <div class="table" id="topTable">
+    <h2 id=" top title">Reporte Generado</h2>
+    <h3>Reporte de <?php echo $denuncias[0]['dependencia'] ?></h3>
+    <div class="top table">
       <table class="table table-striped">
         <thead>
           <tr>
