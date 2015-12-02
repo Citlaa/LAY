@@ -14,18 +14,11 @@
         background-size: cover;
        }
        #title{
+            padding-top: 70px;
             text-align: center;
             font-family: Lucida Grande, Verdana, Sans-serif;
             font-size: 22px;
             color: #3B0B17;
-        }
-        #top{
-            padding-top: 150px;
-            align-items: center;
-        }
-        #topTable{
-          margin-top: 130px;
-          margin-bottom: 100px;
         }
 
     </style>
