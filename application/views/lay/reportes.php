@@ -168,7 +168,7 @@
         }
       });
       $('#buscarDenCiu').click(function () {
-        window.location.replace("http://localhost:82/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
+        window.location.replace("/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
       });
       $('#dependenciai').autocomplete({
         source:'/lay/dependencias/dependencia_autocomplete_descripcion',
@@ -178,24 +178,24 @@
       });
       $('#buscarDenDep').click(function () {
         // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:8080/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
+        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
       });
       $('#buscarDenCol').click(function () {
-        window.location.replace("http://localhost:8080/lay/pdf_direccion/index/"+  $('#coloniai').val());
+        window.location.replace("/lay/pdf_direccion/index/"+  $('#coloniai').val());
       });
       $('#buscarDenFecha').click(function () {
-        window.location.replace("http://localhost:8080/lay/pdf_fecha/index/"+  $('#fechai').val());
+        window.location.replace("/lay/pdf_fecha/index/"+  $('#fechai').val());
       });
       $('#buscarDenPeriodo').click(function () {
         console.log('clic');
-        window.location.replace("http://localhost:8080/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+        window.location.replace("/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
       });
       $('#buscarDenEst').click(function () {
-        window.location.replace("http://localhost:8080/lay/pdf_estatus/index/"+  $('#idEstatus').val());
+        window.location.replace("/lay/pdf_estatus/index/"+  $('#idEstatus').val());
       });
       $('#buscarDenRec').click(function () {
         // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:8080/lay/pdf_recepcion/index/"+  $('#recepcioni').val());
+        window.location.replace("/lay/pdf_recepcion/index/"+  $('#recepcioni').val());
       });
     });
   </script>
