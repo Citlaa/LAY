@@ -37,7 +37,7 @@ class Pdf_recepcion extends CI_Controller
        //establecemos el tipo de papel
        $this->html2pdf->paper('a4', 'portrait');
 
-
+       $this->load->model(array('model_denuncias'));
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
            'denuncias' => $this->model_denuncias->by_recepcion($idRecepcion)

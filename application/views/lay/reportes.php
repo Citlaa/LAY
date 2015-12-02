@@ -211,7 +211,7 @@
       });
       $('#buscarDenRec').click(function () {
         // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:8080/lay/pdf_recepcion/index/"+  $('#recepcioni').val());
+        window.location.replace("http://localhost:8080/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
       });
     });
   </script>

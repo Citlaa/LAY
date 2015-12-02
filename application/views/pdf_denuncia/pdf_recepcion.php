@@ -26,6 +26,7 @@
 
     <body>
       <h2 id="title">Reporte Generado</h2>
+      <h3>Reporte de denuncias por: <?php echo $denuncias[0]['recepcion'] ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>
