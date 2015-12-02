@@ -37,6 +37,9 @@
               Dependencia
             </th>
             <th>
+              Ciudadano
+            </th>
+            <th>
               Estatus
             </th>
             <th>
@@ -58,6 +61,9 @@
                 </td>
                 <td>
                   <?php echo $denuncia['dependencia'] ?>
+                </td>
+                <td>
+                  <?php echo $denuncia['ciudadano'] ?>
                 </td>
                 <td>
                   <?php echo $denuncia['estatus'] ?>

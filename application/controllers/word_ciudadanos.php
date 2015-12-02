@@ -20,9 +20,9 @@ class Word_Ciudadanos extends CI_Controller{
     // Add a watermark to the header
     $header->addWatermark('plantilla.png', array('marginTop'=>-35, 'marginLeft'=>-85));
 
-
-    $styleTable = array('borderSize'=>6, 'borderColor'=>'006699', 'cellMargin'=>80);
-    $styleFirstRow = array('borderBottomSize'=>18, 'borderBottomColor'=>'0000FF', 'bgColor'=>'66BBFF');
+   
+    $styleTable = array('borderSize'=>6, 'borderColor'=>'000000', 'cellMargin'=>80);
+    $styleFirstRow = array('marginTop'=>90, 'borderBottomSize'=>14, 'borderBottomColor'=>'FFFFF', 'bgColor'=>'393939');
 
     // Define cell style arrays
     $styleCell = array('valign'=>'center');
