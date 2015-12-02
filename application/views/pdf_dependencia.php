@@ -27,7 +27,6 @@
     <body>
       <h2 id=" top title">Reporte Generado</h2>
     <h3>Reporte de <?php echo $denuncias[0]['dependencia'] ?></h3>
-    <div class="table">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -76,6 +75,5 @@
           <?php endforeach; ?>
         </tbody>
       </table>
-    </div>
 </body>
 </html>

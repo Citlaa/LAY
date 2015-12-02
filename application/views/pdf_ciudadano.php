@@ -14,27 +14,19 @@
         background-size: cover;
        }
        #title{
-            text-align: center;
-            font-family: Lucida Grande, Verdana, Sans-serif;
-            font-size: 22px;
-            color: #3B0B17;
-        }
-        #top{
-            padding-top: 150px;
-            align-items: center;
-        }
-        #topTable{
-          margin-top: 130px;
-          margin-bottom: 100px;
-        }
+    padding-top: 70px;
+    text-align: center;
+    font-family: Lucida Grande, Verdana, Sans-serif;
+    font-size: 22px;
+    color: #3B0B17;
+  }
 
     </style>
     </head>
 
     <body>
-      <h2 id=" top title">Reporte Generado</h2>
+      <h2 id="title">Reporte Generado</h2>
     <h3>Reporte de <?php echo $denuncias[0]['ciudadano'] ?></h3>
-    <div class="table">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -83,6 +75,5 @@
           <?php endforeach; ?>
         </tbody>
       </table>
-    </div>
 </body>
 </html>
