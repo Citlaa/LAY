@@ -21,7 +21,7 @@ class Pdf_ciudadano extends CI_Controller
        }
    }
 
-   public function index($idCiudadano = 1)
+   public function index($idCiudadano)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,

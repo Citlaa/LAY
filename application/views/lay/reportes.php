@@ -168,10 +168,14 @@
         }
       });
       $('#buscarDenCiu').click(function () {
+<<<<<<< HEAD
         var nombrei = $("#nombrei").val();
         if(nombrei){
           window.location.replace("http://localhost:8080/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
         }  
+=======
+        window.location.replace("/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
+>>>>>>> e75a455f9aa96df08e2f6fbd2e0ca2de2d428011
       });
       $('#dependenciai').autocomplete({
         source:'/lay/dependencias/dependencia_autocomplete_descripcion',
@@ -180,6 +184,7 @@
         }
       });
       $('#buscarDenDep').click(function () {
+<<<<<<< HEAD
         var dependenciai = $("#dependenciai").val();
         if(dependenciai){
         window.location.replace("http://localhost:8080/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
@@ -196,21 +201,35 @@
         if(fechai){
         window.location.replace("http://localhost:8080/lay/pdf_fecha/index/"+  $('#fechai').val());
        }
+=======
+        // console.log($('#idCiudadano').val());
+        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
+      });
+      $('#buscarDenCol').click(function () {
+        window.location.replace("/lay/pdf_direccion/index/"+  $('#coloniai').val());
+      });
+      $('#buscarDenFecha').click(function () {
+        window.location.replace("/lay/pdf_fecha/index/"+  $('#fechai').val());
+>>>>>>> e75a455f9aa96df08e2f6fbd2e0ca2de2d428011
       });
       $('#buscarDenPeriodo').click(function () {
         var periodoi = $("#periodoi").val();
         var periodof = $("#periodof").val();
         if(periodoi && periodof){
         console.log('clic');
+<<<<<<< HEAD
         window.location.replace("http://localhost:8080/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
       }
+=======
+        window.location.replace("/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+>>>>>>> e75a455f9aa96df08e2f6fbd2e0ca2de2d428011
       });
       $('#buscarDenEst').click(function () {
-        window.location.replace("http://localhost:8080/lay/pdf_estatus/index/"+  $('#idEstatus').val());
+        window.location.replace("/lay/pdf_estatus/index/"+  $('#idEstatus').val());
       });
       $('#buscarDenRec').click(function () {
         // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:8080/lay/pdf_recepcion/index/"+  $('#recepcioni').val());
+        window.location.replace("/lay/pdf_recepcion/index/"+  $('#recepcioni').val());
       });
     });
   </script>

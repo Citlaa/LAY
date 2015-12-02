@@ -24,8 +24,8 @@
     </head>
 
     <body>
-      <h2 id=" top title">Reporte Generado</h2>
-    <div class="table" id="topTable">
+    <h2 id="title">Reporte Generado</h2>
+    <div class="table">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -59,22 +59,22 @@
                   <?php echo $denuncia['nombre'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['colonia'] ?>
+                  <?php echo $denuncia['direccion'] ?>
                 </td>
                 <td>
                   <?php echo $denuncia['fecha'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['descripcion'] ?>
+                  <?php echo $denuncia['estatus'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['descripcion'] ?>
+                  <?php echo $denuncia['recepcion'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['descripcion'] ?>
+                  <?php echo $denuncia['asuntos'] ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['descripcion'] ?>
+                  <?php echo $denuncia['dependencia'] ?>
                 </td>
             </tr>
           <?php endforeach; ?>
