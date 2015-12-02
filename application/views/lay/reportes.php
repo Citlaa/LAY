@@ -99,7 +99,7 @@
     <div role="tabpanel" class="tab-pane" id="estatus">
       <h1>Denuncias por estatus</h1>
       <div class="col-md-12">
-      <select class="col-md-4">
+      <select class="col-md-4 form-control" id="idEstatus">
       <?php foreach ($estatuses as $estatus): ?>
         <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['descripcion'] ?></option>
       <?php endforeach ?>
@@ -179,29 +179,23 @@
         }
       });
       $('#buscarDenDep').click(function () {
-        // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:82/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
       });
       $('#buscarDenCol').click(function () {
-        // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:82/lay/pdf_direccion/index/"+  $('#coloniai').val());
       });
       $('#buscarDenFecha').click(function () {
-        // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:82/lay/pdf_fecha/index/"+  $('#fechai').val());
       });
       $('#buscarDenPeriodo').click(function () {
-        // console.log($('#idCiudadano').val());
         console.log('clic');
         window.location.replace("http://localhost:82/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
       });
       $('#buscarDenEst').click(function () {
-        // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:82/lay/pdf_estatus/index/"+  $('#estatusi').val());
+        window.location.replace("http://localhost:82/lay/pdf_estatus/index/"+  $('#idEstatus').val());
       });
       $('#buscarDenRec').click(function () {
-        // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:82/lay/pdf_recepcion/index/"+  $('#recepcioni').val());
+        window.location.replace("http://localhost:82/lay/pdf_recepcion/index/"+  $('#idEstatus').val());
       });
     });
   </script>

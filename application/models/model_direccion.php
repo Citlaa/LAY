@@ -48,17 +48,27 @@ class Model_direccion extends CI_Model
     $direccion= $this->db->get();
     return $direccion->result_array();
   }
-	public function direccion_autocomplete_colonia($q)
+	public function direccion_autocomplete($q)
 	{
+		$this->db->or_like('calle', $q);
+		$this->db->or_like('noExt', $q);
+		$this->db->or_like('noInt', $q);
 		$this->db->or_like('colonia', $q);
+		$this->db->or_like('localidad', $q);
+		$this->db->or_like('cp', $q);
 	  $query = $this->db->get('direcciones');
-		$colonias =  $query->result_array();
+		$direcciones =  $query->result_array();
 		$resultados=array();
-		foreach ($colonias as $colonia) {
+		foreach ($direcciones as $direccion) {
 			 array_push($resultados,array(
-				'label'=>$colonia['colonia'],
-				'id'=>$colonia['idDireccion'],
-				'value'=>$colonia['colonia']
+				'label'=>$direccion['calle']." ".$direccion['noExt']." ".$direccion['noInt']." ".$direccion['colonia']." ".$direccion['localidad']." ".$direccion['cp'],
+				'id'=>$direccion['idDireccion'],
+				'value'=>$direccion['calle'],
+				'noExt'=>$direccion['noExt'],
+				'noInt'=>$direccion['noInt'],
+				'colonia'=>$direccion['colonia'],
+				'localidad'=>$direccion['localidad'],
+				'cp'=>$direccion['cp'] 
 			));
     }
     return $resultados;
