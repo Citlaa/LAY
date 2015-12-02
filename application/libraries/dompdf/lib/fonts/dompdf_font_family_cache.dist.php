@@ -1,4 +1,11 @@
 <?php return array (
+  'futural' =>
+  array (
+    'normal' => DOMPDF_FONT_DIR . 'Futural',
+    'bold' => DOMPDF_FONT_DIR . 'FUTURAL',
+    'italic' => DOMPDF_FONT_DIR . 'FUTURAL',
+    'bold_italic' => DOMPDF_FONT_DIR . 'FUTURAL',
+  ),
   'sans-serif' => 
   array (
     'normal' => DOMPDF_DIR . '/lib/fonts/Helvetica',

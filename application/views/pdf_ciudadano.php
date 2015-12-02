@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
     <title>Ciudadanos</title>
     <style type="text/css">
        body{
-        font-family: sans-serif;
+        font-family: "sans-serif", monospace;
         font-size: 10pt;
         background: url("plantilla.png") no-repeat fixed center;
         -webkit-background-size: cover;
@@ -20,7 +19,6 @@
     font-size: 22px;
     color: #3B0B17;
   }
-
     </style>
     </head>
 
@@ -40,10 +38,10 @@
               Estatus
             </th>
             <th>
-              Recepcion
+              <?php echo utf8_decode('Recepción'); ?>
             </th>
-            <th>
-              Direccion
+            <th>              
+              <?php echo utf8_decode('Dirección'); ?>
             </th>
             <th>
               Asunto
@@ -54,26 +52,27 @@
           <?php foreach ($denuncias as $denuncia): ?>
             <tr>
                 <td>
-                  <?php echo $denuncia['fecha'] ?>
+                  <?php echo utf8_decode($denuncia['fecha']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['dependencia'] ?>
+                  <?php echo utf8_decode($denuncia['dependencia']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['estatus'] ?>
+                  <?php echo utf8_decode($denuncia['estatus']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['recepcion'] ?>
+                  <?php echo utf8_decode($denuncia['recepcion']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['direccion'] ?>
+                  <?php echo utf8_decode($denuncia['direccion']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['asunto'] ?>
+                  <?php echo utf8_decode($denuncia['asunto']); ?>
                 </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
 </body>
+
 </html>
