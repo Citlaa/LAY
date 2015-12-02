@@ -97,13 +97,15 @@ class Ciudadanos extends CI_Controller {
 		$crud->set_relation('idDependencia','dependencias','dependencia');
 		$crud->set_relation('idEstatus','estatus','descripcion');
 		$crud->set_relation('idDireccion','direcciones','Calle:{calle} \n #:{noExt} # Int:{noInt} Col:{colonia}, \n{localidad}, CP:{cp} ');
-		$crud->set_relation('idAsunto','asuntos','descripcion');
+		$crud->set_relation('idAsunto','asuntos','descripcion');		
 		$crud->display_as('idCiudadano','Ciudadano');
 		$crud->display_as('idDireccion','Dirección');
 		$crud->display_as('idRecepcion','Recepción');
 		$crud->display_as('idEstatus','Estatus');
 		$crud->display_as('idDependencia','Dependencia');
-		$crud->display_as('idAsunto','Asunto');
+		$crud->display_as('idAsunto','Asunto');		
+		$crud->unset_add();
+
 		$crud->columns('idCiudadano','idAsunto','idDependencia','idEstatus','idDireccion','idRecepcion');
 		$output = $crud->render();
 		$this->_example_output($output);
@@ -120,6 +122,8 @@ class Ciudadanos extends CI_Controller {
 			$this->load->view('ciudadanos/edicion_ciudadano', $data);
 
 	}
+
+
 
 	public function edicion_ciudadano_ajax()
 	{
