@@ -26,7 +26,7 @@
 
     <body>
     <h2 id=" top title">Reporte Generado</h2>
-    <h3>Reporte de denuncias de <?php echo $fechai.' a '. $fechaf ?></h3>
+    <h3> <?php echo "Reporte de denuncias del: ".$fechai.' al '. $fechaf ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>

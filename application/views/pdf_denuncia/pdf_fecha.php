@@ -26,7 +26,7 @@
 
 <body>
   <h2 id="title">Reporte Generado</h2>
-  <h3>Reporte del día <?php echo utf8_decode($denuncias[0]['fecha'] );?></h3>
+  <h3> <?php echo utf8_decode( "Reporte del día: " .$denuncias[0]['fecha'] );?></h3>
     <table class="table table-striped">
       <thead>
         <tr>
