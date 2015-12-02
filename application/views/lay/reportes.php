@@ -40,7 +40,7 @@
 
         <div class="container">
           <!-- Nav tabs -->
-  <ul class="nav nav-tabs page-content" role="tablist">
+  <ul class="nav nav-tabs page-content li" role="tablist">
     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ciudadano</a></li>
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Dependencia</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Colonia</a></li>
@@ -168,7 +168,7 @@
         }
       });
       $('#buscarDenCiu').click(function () {
-        window.location.replace("http://localhost:82/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
+        window.location.replace("http://localhost:8080/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
       });
       $('#dependenciai').autocomplete({
         source:'/lay/dependencias/dependencia_autocomplete_descripcion',
@@ -177,25 +177,13 @@
         }
       });
       $('#buscarDenDep').click(function () {
-<<<<<<< HEAD
         // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:8080/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
-=======
-        window.location.replace("http://localhost:82/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
       });
       $('#buscarDenCol').click(function () {
-        window.location.replace("http://localhost:82/lay/pdf_direccion/index/"+  $('#coloniai').val());
+        window.location.replace("http://localhost:8080/lay/pdf_direccion/index/"+  $('#coloniai').val());
       });
       $('#buscarDenFecha').click(function () {
-        window.location.replace("http://localhost:82/lay/pdf_fecha/index/"+  $('#fechai').val());
->>>>>>> 29fc2dbb272c7e88b9d840629fa0fdbf548af0a4
-      });
-      $('#buscarDenCol').click(function () {
-        window.location.replace("http://localhost:82/lay/pdf_direccion/index/"+  $('#coloniai').val());
-      });
-      $('#buscarDenFecha').click(function () {
-<<<<<<< HEAD
-        // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:8080/lay/pdf_fecha/index/"+  $('#fechai').val());
       });
       $('#buscarDenPeriodo').click(function () {
@@ -208,12 +196,6 @@
       $('#buscarDenRec').click(function () {
         // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:8080/lay/pdf_recepcion/index/"+  $('#recepcioni').val());
-=======
-        window.location.replace("http://localhost:82/lay/pdf_estatus/index/"+  $('#idEstatus').val());
-      });
-      $('#buscarDenRec').click(function () {
-        window.location.replace("http://localhost:82/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
->>>>>>> 29fc2dbb272c7e88b9d840629fa0fdbf548af0a4
       });
     });
   </script>

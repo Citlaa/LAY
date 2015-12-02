@@ -2062,15 +2062,15 @@ table th{
 }
 
 .page-content .nav-tabs li  a{
-   background:#47b7cb !important;
+   background: #393939 !important;
    border:0px !important;
    margin:0px !important;
    color:#fff !important;
    border-radius:0px;
    padding:12px 18px;
    font-size:13px !important;
-   border-right:1px solid #37a4b7 !important;
-   border-top:1px solid #37a4b7 !important;
+   border-right:0px solid #37a4b7 !important;
+   border-top:0px solid #37a4b7 !important;
    -webkit-transition: background 0.7s ease;
    -moz-transition: background 0.7s ease;
    -o-transition: background 0.7s ease;
@@ -2097,7 +2097,7 @@ table th{
 }
 
 .page-content .nav-tabs li.active a{
-   background:#8B103E !important;
+   background: #8B103E !important;
 }
 
 .page-content .nav-tabs li.active a:hover{
