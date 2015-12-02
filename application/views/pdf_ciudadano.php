@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
     <title>Ciudadanos</title>
     <style type="text/css">
        body{
@@ -24,7 +25,7 @@
 
     <body>
     <h2 id="title">Reporte Generado</h2>
-    <h3>Reporte de: <?php echo $denuncias[0]['ciudadano']?></h3>
+    <h3>Reporte de: <?php echo utf8_decode($denuncias[0]['ciudadano']);?></h3>
       <table class="table table-striped">
         <thead>
           <tr>

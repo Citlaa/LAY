@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Ciudadanos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+    <title>Dependencias</title>
     <style type="text/css">
        body{
-        font-family: sans-serif;
+        font-family: "sans-serif", monospace;
         font-size: 10pt;
         background: url("plantilla.png") no-repeat fixed center;
         -webkit-background-size: cover;
@@ -14,19 +14,18 @@
         background-size: cover;
        }
        #title{
-            padding-top: 70px;
-            text-align: center;
-            font-family: Lucida Grande, Verdana, Sans-serif;
-            font-size: 22px;
-            color: #3B0B17;
-        }
-
+    padding-top: 70px;
+    text-align: center;
+    font-family: Lucida Grande, Verdana, Sans-serif;
+    font-size: 22px;
+    color: #3B0B17;
+  }
     </style>
     </head>
 
     <body>
     <h2 id=" top title">Reporte Generado</h2>
-    <h3>Reporte de: <?php echo $denuncias[0]['dependencia'] ?></h3>
+    <h3>Reporte de: <?php echo utf8_decode($denuncias[0]['dependencia']); ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -40,10 +39,10 @@
               Estatus
             </th>
             <th>
-              Recepcion
+              <?php echo utf8_decode('Recepción'); ?>
             </th>
             <th>
-              Direccion
+              <?php echo utf8_decode('Dirección'); ?>
             </th>
             <th>
               Asunto
@@ -54,22 +53,22 @@
           <?php foreach ($denuncias as $denuncia): ?>
             <tr>
                 <td>
-                  <?php echo $denuncia['fecha'] ?>
+                  <?php echo utf8_decode($denuncia['fecha']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['ciudadano'] ?>
+                  <?php echo utf8_decode($denuncia['ciudadano']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['estatus'] ?>
+                  <?php echo utf8_decode($denuncia['estatus']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['recepcion'] ?>
+                  <?php echo utf8_decode($denuncia['recepcion']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['direccion'] ?>
+                  <?php echo utf8_decode($denuncia['direccion']); ?>
                 </td>
                 <td>
-                  <?php echo $denuncia['asunto'] ?>
+                  <?php echo utf8_decode($denuncia['asunto']); ?>
                 </td>
             </tr>
           <?php endforeach; ?>

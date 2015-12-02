@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>Direcciones</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+    <title>Direcciòn</title>
     <style type="text/css">
        body{
-        font-family: sans-serif;
+        font-family: "sans-serif", monospace;
         font-size: 10pt;
         background: url("plantilla.png") no-repeat fixed center;
         -webkit-background-size: cover;
@@ -20,7 +20,6 @@
     font-size: 22px;
     color: #3B0B17;
   }
-
     </style>
     </head>
 
@@ -43,7 +42,7 @@
               Estatus
             </th>
             <th>
-              Recepcion
+              <?php echo utf8_decode('Recepción'); ?>
             </th>
             <th>
               Direccion
