@@ -179,6 +179,11 @@
         // console.log($('#idCiudadano').val());
         window.location.replace("http://localhost:82/lay/pdf_fecha/index/"+  $('#fechai').val());
       });
+      $('#buscarDenPeriodo').click(function () {
+        // console.log($('#idCiudadano').val());
+        console.log('clic');
+        window.location.replace("http://localhost:82/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+      });
     });
   </script>
 </section>
