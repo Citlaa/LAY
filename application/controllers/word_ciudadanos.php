@@ -13,16 +13,16 @@ class Word_Ciudadanos extends CI_Controller{
   {
     $this->load->library('word');
     //our docx will have 'lanscape' paper orientation
+    
     $section = $this->word->createSection();
-    // Create header
     $header = $section->createHeader();
 
     // Add a watermark to the header
-    $header->addWatermark('plantilla.png', array('marginTop'=>-35, 'marginLeft'=>-85));
-
-   
+    $header->addWatermark('plantilla.png', array('marginTop'=>-35, 'marginLeft'=>-85));   
+    
+    $sectionStyle = array('orientation' => 'landscape','marginTop' => 600);
     $styleTable = array('borderSize'=>6, 'borderColor'=>'000000', 'cellMargin'=>80);
-    $styleFirstRow = array('marginTop'=>90, 'borderBottomSize'=>14, 'borderBottomColor'=>'FFFFF', 'bgColor'=>'393939');
+    $styleFirstRow = array('valign'=>'center', 'marginTop'=>90, 'borderBottomSize'=>14, 'borderBottomColor'=>'FFFFF', 'bgColor'=>'393939');
 
     // Define cell style arrays
     $styleCell = array('valign'=>'center');
@@ -32,10 +32,12 @@ class Word_Ciudadanos extends CI_Controller{
     $fontStyle = array('bold'=>true, 'align'=>'center');
 
     // Add table style
-    $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
-
-    // Add table
-    $table = $section->addTable('myOwnTableStyle');
+    $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);
+    
+    $section->addText(" ",array("size"=>12,"bold"=>true));// Add table
+    $section->addText("                                    Reporte Generado",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
+    $section->addText("Reporte de ".$resultado['ciudadan'],array("size"=>12,"bold"=>true));// Add table
+    $table = $section->addTable('myOwnTableStyle', $sectionStyle);
 
     // Add row
     $table->addRow(900);

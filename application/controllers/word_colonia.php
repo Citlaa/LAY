@@ -22,7 +22,7 @@ class Word_Colonia extends CI_Controller{
 
 
     $styleTable = array('borderSize'=>6, 'borderColor'=>'006699', 'cellMargin'=>80);
-    $styleFirstRow = array('borderBottomSize'=>18, 'borderBottomColor'=>'0000FF', 'bgColor'=>'66BBFF');
+    $styleFirstRow = array('borderBottomSize'=>18, 'borderBottomColor'=>'0000FF', 'bgColor'=>'393939');
 
     // Define cell style arrays
     $styleCell = array('valign'=>'center');
@@ -31,6 +31,9 @@ class Word_Colonia extends CI_Controller{
     // Define font style for first row
     $fontStyle = array('bold'=>true, 'align'=>'center');
 
+    $section->addText(" ",array("size"=>12,"bold"=>true));// Add table
+    $section->addText("                                    Reporte Generado",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
+    $section->addText("Reporte de ".$resultado['ciudadan'],array("size"=>12,"bold"=>true));// Add table
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 

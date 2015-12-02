@@ -22,7 +22,7 @@ class Word_Recepcion extends CI_Controller{
 
 
     $styleTable = array('borderSize'=>6, 'borderColor'=>'006699', 'cellMargin'=>80);
-    $styleFirstRow = array('borderBottomSize'=>18, 'borderBottomColor'=>'0000FF', 'bgColor'=>'66BBFF');
+    $styleFirstRow = array('borderBottomSize'=>18, 'borderBottomColor'=>'0000FF', 'bgColor'=>'393939');
 
     // Define cell style arrays
     $styleCell = array('valign'=>'center');
