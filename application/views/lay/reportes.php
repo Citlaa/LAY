@@ -112,7 +112,7 @@
        <button id="buscarDenEstW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
-      <h1>Denuncias por recepcion</h1>
+      <h1>Denuncias por recepción</h1>
       <div class="col-md-12">
       <select class="col-md-4" class="form-control" id="idRecepcion">
       <?php foreach ($recepciones as $recepcion): ?>
