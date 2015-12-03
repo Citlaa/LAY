@@ -32,7 +32,7 @@ class Word_Colonia extends CI_Controller{
 
     //Query
     $resultados = $this->model_denuncias->by_colonia($colonia);
-    $colonia = "Reporte de ". $colonia; 
+    $colonia = "Reporte de ". utf8_decode($colonia); 
 
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 
@@ -52,19 +52,19 @@ class Word_Colonia extends CI_Controller{
     $table->addCell(2000, $styleCell)->addText('Ciudadano', $fontStyle);
     $table->addCell(2000, $styleCell)->addText('Dependencia', $fontStyle);
     $table->addCell(2000, $styleCell)->addText('Estatus', $fontStyle);
-    $table->addCell(2000, $styleCell)->addText('Recepcion', $fontStyle);
+    $table->addCell(2000, $styleCell)->addText(utf8_decode('Recepción'), $fontStyle);
     $table->addCell(500, $styleCell)->addText('Asunto', $fontStyle);
-    $table->addCell(500, $styleCell)->addText('Direccion', $fontStyle);
+    $table->addCell(500, $styleCell)->addText(utf8_decode('Dirección'), $fontStyle);
 
     foreach ($resultados as $resultado) {
       $table->addRow();
-    	$table->addCell(2000)->addText("".$resultado['fecha']);
-      $table->addCell(2000)->addText("".$resultado['ciudadano']);
-    	$table->addCell(2000)->addText("".$resultado['dependencia']);
-    	$table->addCell(2000)->addText("".$resultado['estatus']);
-    	$table->addCell(2000)->addText("".$resultado['recepcion']);
-      $table->addCell(2000)->addText("".$resultado['asunto']);
-      $table->addCell(2000)->addText("".$resultado['direccion']);
+    	$table->addCell(2000)->addText("".utf8_decode($resultado['fecha']));
+      $table->addCell(2000)->addText("".utf8_decode($resultado['ciudadano']));
+    	$table->addCell(2000)->addText("".utf8_decode($resultado['dependencia']));
+    	$table->addCell(2000)->addText("".utf8_decode($resultado['estatus']));
+    	$table->addCell(2000)->addText("".utf8_decode($resultado['recepcion']));
+      $table->addCell(2000)->addText("".utf8_decode($resultado['asunto']));
+      $table->addCell(2000)->addText("".utf8_decode($resultado['direccion']));
     }
 
     $filename = "DenunciasPorColonia.docx";

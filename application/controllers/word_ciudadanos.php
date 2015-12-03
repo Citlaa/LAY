@@ -32,7 +32,7 @@ class Word_Ciudadanos extends CI_Controller{
 
     // Query
     $resultados = $this->model_denuncias->by_ciudadano($idCiudadano);
-    $ciudadano = "Reporte de ". $resultados[0]['ciudadano']; 
+    $ciudadano = "Reporte de ". utf8_decode($resultados[0]['ciudadano']); 
 
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);
