@@ -32,7 +32,7 @@ class Word_Colonia extends CI_Controller{
 
     //Query
     $resultados = $this->model_denuncias->by_colonia($colonia);
-    $colonia = "Reporte de ". $resultados[0]['direccion']; 
+    $colonia = "Reporte de ". $colonia; 
 
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 
@@ -40,7 +40,7 @@ class Word_Colonia extends CI_Controller{
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);
     $section->addText(" ",array("size"=>12,"bold"=>true));
     $section->addText("Reporte Generado",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
-    $section->addText($ciudadano, array("size"=>10,"bold"=>true));
+    $section->addText($colonia, array("size"=>10,"bold"=>true));
 
     // Add tabke
     $table = $section->addTable('myOwnTableStyle');
@@ -67,7 +67,7 @@ class Word_Colonia extends CI_Controller{
       $table->addCell(2000)->addText("".$resultado['direccion']);
     }
 
-    $filename = "DenunciasPorCiudadano.docx";
+    $filename = "DenunciasPorColonia.docx";
     header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document'); //mime type
     header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
     header('Cache-Control: max-age=0'); //no cache
