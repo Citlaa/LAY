@@ -12,7 +12,7 @@ class Word_recepcion extends CI_Controller{
   {
     $this->load->library('word');
     //our docx will have 'lanscape' paper orientation
-    $section = $this->word->createSection(array('orientation' => 'landscape'));
+    $section = $this->word->createSection(array('orientation' => 'landscape', 'marginTop'=>2000, 'marginBottom'=>2000));
    
     $header = $section->createHeader();
 
