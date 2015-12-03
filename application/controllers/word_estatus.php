@@ -32,7 +32,7 @@ class Word_Estatus extends CI_Controller{
 
     // Query
     $resultados = $this->model_denuncias->by_estatus($idEstatus);
-    $estatus = "Reporte de ". $resultados[0]['estatus']; 
+    $estatus = "Reporte de ". utf8_decode($resultados[0]['estatus']); 
 
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);

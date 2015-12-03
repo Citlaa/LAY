@@ -32,7 +32,7 @@ class Word_fecha extends CI_Controller{
 
     // Query
     $resultados = $this->model_denuncias->order_fecha($fecha);
-    $fecha = "Reporte de ". $resultados[0]['fecha']; 
+    $fecha = "Reporte de ". utf8_decode($resultados[0]['fecha']); 
 
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);

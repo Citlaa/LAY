@@ -32,7 +32,7 @@ class Word_recepcion extends CI_Controller{
 
     // Query
     $resultados = $this->model_denuncias->by_recepcion($idRecepcion);
-    $recepcion = "Reporte de ". $resultados[0]['recepcion']; 
+    $recepcion = "Reporte de ". utf8_decode($resultados[0]['recepcion']); 
 
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);
