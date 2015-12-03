@@ -13,13 +13,13 @@
         -o-background-size: cover;
         background-size: cover;
        }
-       #title{
-    padding-top: 70px;
-    text-align: center;
-    font-family: Lucida Grande, Verdana, Sans-serif;
-    font-size: 22px;
-    color: #3B0B17;
-  }
+      #title{
+        padding-top: 30px;
+        text-align: center;
+        font-family: Lucida Grande, Verdana, Sans-serif;
+        font-size: 22px;
+        color: #3B0B17;
+      }
     </style>
     </head>
     <body>

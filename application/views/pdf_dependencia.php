@@ -14,18 +14,19 @@
         background-size: cover;
        }
        #title{
-    padding-top: 70px;
-    text-align: center;
-    font-family: Lucida Grande, Verdana, Sans-serif;
-    font-size: 22px;
-    color: #3B0B17;
-  }
+        padding-top: 30px;
+        text-align: center;
+        font-family: Lucida Grande, Verdana, Sans-serif;
+        font-size: 22px;
+        color: #3B0B17;
+      }
+
     </style>
     </head>
 
     <body>
     <h2 id=" top title">Reporte Generado</h2>
-    <h3>Reporte de: <?php echo utf8_decode($denuncias[0]['dependencia']); ?></h3>
+    <h3>Reporte de <?php echo utf8_decode($denuncias[0]['dependencia']); ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>

@@ -35,7 +35,7 @@ class Pdf_direccion extends CI_Controller
        $this->html2pdf->filename('test.pdf');
 
        //establecemos el tipo de papel
-       $this->html2pdf->paper('a4', 'portrait');
+       $this->html2pdf->paper('a4', 'landscape');
 
        $this->load->model(array('model_denuncias'));
 

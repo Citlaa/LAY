@@ -30,7 +30,9 @@ class Word_Dependencias extends CI_Controller{
 
     // Define font style for first row
     $fontStyle = array('bold'=>true, 'align'=>'center');
-
+    $section->addText(" ",array("size"=>12,"bold"=>true));// Add table
+    $section->addText("Reporte Generado",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
+    $section->addText($ciudadano, array("size"=>10,"bold"=>true));// Add table
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 

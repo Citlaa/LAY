@@ -35,6 +35,9 @@ class Word_Colonia extends CI_Controller{
     $section->addText("                                    Reporte Generado",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
     $section->addText("Reporte de ".$resultado['ciudadan'],array("size"=>12,"bold"=>true));// Add table
     // Add table style
+        $section->addText(" ",array("size"=>12,"bold"=>true));// Add table
+    $section->addText("Reporte Generado",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
+    $section->addText($ciudadano, array("size"=>10,"bold"=>true));// Add table
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 
     // Add table
