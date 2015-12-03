@@ -90,22 +90,24 @@ class Regidenu extends CI_Controller {
 			$this->load->helper('form');
     		$this->load->library('form_validation');
 			
-			$this->form_validation->set_rules('nombre', 'Nombre', 'required|alpha');
-			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|alpha');
-			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|alpha');
-			$this->form_validation->set_rules('calle', 'Calle', 'required');
+			$this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|callback_customAlpha');
+			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|trim|callback_customAlpha');
+			$this->form_validation->set_rules('apellidoMa', 'Apellido Materno', 'required|trim|callback_customAlpha');
+			$this->form_validation->set_rules('calle', 'Calle', 'required|trim');
 
-			$this->form_validation->set_rules('noExt', 'No. Exterior', 'required|integer');
-			$this->form_validation->set_rules('cp', 'C.P.', 'required|integer');
-			$this->form_validation->set_rules('colonia', 'Colonia', 'required|alpha');
-			$this->form_validation->set_rules('localidad', 'Localidad', 'required|alpha');
-			$this->form_validation->set_rules('tel1', 'Teléfono', 'required|integer');
-			$this->form_validation->set_rules('tel2', 'Teléfono', 'integer');
-			$this->form_validation->set_rules('asunto', 'Asunto', 'required');
+			$this->form_validation->set_rules('noExt', 'No. Exterior', 'required|integer|trim');
+			$this->form_validation->set_rules('cp', 'C.P.', 'required|integer|trim');
+			$this->form_validation->set_rules('colonia', 'Colonia', 'required|trim');
+			$this->form_validation->set_rules('localidad', 'Localidad', 'required|trim|callback_customAlpha');
+			$this->form_validation->set_rules('tel1', 'Teléfono', 'required|integer|trim');
+			$this->form_validation->set_rules('tel2', 'Teléfono', 'integer|trim');
+			$this->form_validation->set_rules('asunto', 'Asunto', 'required|trim');
 
 			$this->form_validation->set_message('alpha','El campo %s debe estar compuesto solo por letras');
 			$this->form_validation->set_message('required','El campo %s es obligatorio');
 			$this->form_validation->set_message('integer','El campo %s debe estar compuesto por numeros enteros');
+
+
 
 			if ($this->form_validation->run() === FALSE)
 	 		{
@@ -126,6 +128,14 @@ class Regidenu extends CI_Controller {
 
 			echo "no permisos";
 		}
+	}
+
+	public function customAlpha($str) 
+	{
+    	if ( !preg_match('/^[a-z .,\-]+$/i',$str) )
+    	{
+	        return false;
+	    }
 	}
 
 	public function save_denuncia()

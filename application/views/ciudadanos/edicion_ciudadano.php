@@ -132,7 +132,7 @@ $(document).ready(function() {
     var numberRegex = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
     var caracterRegex = /^[a-zA-Z]+$/;
 
-    if(nombre && apellidoPa &&tel1 )
+    if(nombre && apellidoPa &&tel1)
     {
       if(caracterRegex.test(nombre) && caracterRegex.test(apellidoPa) && caracterRegex.test(apellidoMa)) 
       {                        
