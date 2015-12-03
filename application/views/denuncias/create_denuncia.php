@@ -85,6 +85,7 @@
 
                       <div class="col-md-12 row">
                         <label for="calle" class="col-md-2 control-label" style="padding-left: 10px; width: 110px; padding-right: 5px;" >Calle:</label>
+                        <input type="hidden" id="idDireccion" name="idDireccion">
                           <div class="col-md-3" style="margin-top: 15px;">
                             <input type="text" style="width: 226px;" class="form-control" name="calle" placeholder="Calle" id="calle">
                           </div>
@@ -140,7 +141,7 @@
                         <div class="col-md-6" style="padding-left: 0px;width: 165px;margin-top: 5px;">
                           <select class="form-control" name="idRecepcion" style="margin-top: 15px;padding-left: 5px; weight: 150px;">
                             <?php foreach ($recepcion as $recepcion_item): ?>
-                            <option value="<?php echo $recepcion_item['idRecepcion']?>"><?php echo $recepcion_item['descripcion']?></option>
+                              <option value="<?php echo $recepcion_item['idRecepcion']?>"><?php echo $recepcion_item['descripcion']?></option>
                             <?php endforeach;?>
                           </select>
                         </div>
@@ -192,7 +193,7 @@
          </div>
       </div>
 
- 
+
   </body>
   <script type="text/javascript">
     $(function(){
@@ -200,7 +201,7 @@
         source: '/lay/ciudadanos/autocomplete_ciudadanos',
         response: function(event, ui){
           ui.label
-        }, 
+        },
         select: function(event, ui){
           ui.item.label = ui.item.nombre;
           $('#idCiudadano').val(ui.item.id);
@@ -209,6 +210,20 @@
           $('#apellidoPa').val(ui.item.apellidoPa);
           $('#tel1').val(ui.item.tel1);
           $('#tel2').val(ui.item.tel2);
+        }
+      });
+      $("#calle").autocomplete({
+        source: '/lay/direcciones/direccion_autocomplete',
+        response: function(event, ui){
+          ui.label
+        },
+        select: function(event, ui){
+          $('#idDireccion').val(ui.item.id);
+          $('#noExt').val(ui.item.noExt);
+          $('#noInt').val(ui.item.noInt);
+          $('#cp').val(ui.item.cp);
+          $('#colonia').val(ui.item.colonia);
+          $('#localidad').val(ui.item.localidad);
         }
       });
     });

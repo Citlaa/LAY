@@ -70,4 +70,14 @@ class Direcciones extends CI_Controller {
 		echo json_encode($query);
 	}
 
+	public function direccion_autocomplete()
+	{
+		$this->load->model(array('model_direccion'));
+		if ($this->input->get('term')) {
+			$q = $this->input->get('term');
+			$query = $this->model_direccion->direccion_autocomplete($q);
+		}
+		echo json_encode($query);
+	}
+
 }
