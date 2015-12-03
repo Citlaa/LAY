@@ -13,13 +13,13 @@ class Word_Ciudadanos extends CI_Controller{
   {
     $this->load->library('word');
     //our docx will have 'lanscape' paper orientation
-    
+
     $section = $this->word->createSection();
     $header = $section->createHeader();
 
     // Add a watermark to the header
-    $header->addWatermark('plantilla.png', array('marginTop'=>-35, 'marginLeft'=>-85));   
-    
+    $header->addWatermark('plantilla.png', array('marginTop'=>-35, 'marginLeft'=>-85));
+
     $sectionStyle = array('orientation' => 'landscape','marginTop' => 600);
     $styleTable = array('borderSize'=>6, 'borderColor'=>'000000', 'cellMargin'=>80);
     $styleFirstRow = array('valign'=>'center', 'marginTop'=>90, 'borderBottomSize'=>14, 'borderBottomColor'=>'FFFFF', 'bgColor'=>'393939');
@@ -33,7 +33,7 @@ class Word_Ciudadanos extends CI_Controller{
 
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);
-    
+
     $section->addText(" ",array("size"=>12,"bold"=>true));// Add table
     $section->addText("                                    Reporte Generado",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
     $section->addText("Reporte de ".$resultado['ciudadan'],array("size"=>12,"bold"=>true));// Add table
@@ -50,9 +50,9 @@ class Word_Ciudadanos extends CI_Controller{
     $table->addCell(500, $styleCell)->addText('Asunto', $fontStyle);
     $table->addCell(500, $styleCell)->addText('Direccion', $fontStyle);
 
-    $this->load->model(array('model_denuncias'));
+    $this->load->model(array('model_ciudadano'));
 
-    $resultados = $this->model_denuncias->by_ciudadano($idCiudadano);
+    $resultados = $this->model_ciudadano->order_ciudadano($idCiudadano);
 
     foreach ($resultados as $resultado) {
       $table->addRow();
