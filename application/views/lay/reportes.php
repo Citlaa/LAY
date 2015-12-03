@@ -56,31 +56,31 @@
       <h1>Denuncias por ciudadano</h1>
       <input type="hidden" name="idCiudadano" id="idCiudadano">
       <input type="text" name="nombrei" class="form-control" id="nombrei">
-      <input type="radio" name="formato" value="pdf" class="formato"> PDF
-      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
-      <button id="buscarDenCiu" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      <br>
+      <button id="buscarDenCiu" class="btn btn-enter btn-lg"> Buscar denuncias PDF</button>
+      <button id="buscarDenCiuW" class="btn btn-enter btn-lg"> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
       <h1>Denuncias por dependencia</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
       <input type="text" name="dependenciai" class="form-control" id="dependenciai">
-      <input type="radio" name="formato" value="pdf" class="formato"> PDF
-      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
-      <button id="buscarDenDep" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      <br>
+      <button id="buscarDenDep" class="btn btn-enter btn-lg"> Buscar denuncias PDF</button>
+      <button id="buscarDenDepW" class="btn btn-enter btn-lg"> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
       <input type="text" name="coloniai" class="form-control" id="coloniai">
-      <input type="radio" name="formato" value="pdf" class="formato"> PDF
-      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
-      <button id="buscarDenCol" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      <br>
+      <button id="buscarDenCol" class="btn btn-enter btn-lg"> Buscar denuncias PDF</button>
+      <button id="buscarDenColW" class="btn btn-enter btn-lg"> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
       <input type="date" name="fechai" class="form-control date" id="fechai">
-      <input type="radio" name="formato" value="pdf" class="formato"> PDF
-      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
-      <button id="buscarDenFecha" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      <br>
+      <button id="buscarDenFecha" class="btn btn-enter btn-lg"> Buscar denuncias PDF</button>
+      <button id="buscarDenFechaW" class="btn btn-enter btn-lg"> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
       <h1>Denuncias por periodo</h1>
@@ -92,9 +92,9 @@
           <input type="date" class="form-control" id="periodof">
         </div>
       </form>
-      <input type="radio" name="formato" value="pdf" class="formato"> PDF
-      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
-      <button id="buscarDenPeriodo" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      <br>
+      <button id="buscarDenPeriodo" class="btn btn-enter btn-lg"> Buscar denuncias PDF</button>
+      <button id="buscarDenPeriodoW" class="btn btn-enter btn-lg"> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="estatus">
       <h1>Denuncias por estatus</h1>
@@ -106,10 +106,10 @@
       </select>
       </div>
       <div>
-      <input type="radio" name="formato" value="pdf" class="formato"> PDF
-      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
+      <br>
       </div>
-      <button id="buscarDenEst" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      <button id="buscarDenEst" class="btn btn-enter btn-lg"> Buscar denuncias PDF</button>
+       <button id="buscarDenEstW" class="btn btn-enter btn-lg"> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepcion</h1>
@@ -121,10 +121,10 @@
       </select>
       </div>
       <div>
-      <input type="radio" name="formato" value="pdf" class="formato"> PDF
-      <input type="radio" name="formato" value="docx" class="formato"> Word <br>
+      <br>
       </div>
-      <button id="buscarDenRec" class="btn btn-primary btn-lg text-center"> Buscar denuncias</button>
+      <button id="buscarDenRec" class="btn btn-enter btn-lg"> Buscar denuncias PDF</button>
+      <button id="buscarDenRecW" class="btn btn-enter btn-lg"> Buscar denuncias Word</button>
     </div>
   </div>
 
@@ -170,9 +170,18 @@
       $('#buscarDenCiu').click(function () {
         var nombrei = $("#nombrei").val();
         if(nombrei){
-          window.location.replace("http://localhost:8080/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
+          window.location.replace("http://localhost:80/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
         }  
       });
+       $('#buscarDenCiuW').click(function () {
+        var nombrei = $("#nombrei").val();
+        if(nombrei){
+          window.location.replace("http://localhost:80/lay/word_ciudadanos/index/"+  $('#idCiudadano').val());
+        }  
+      });
+
+
+
       $('#dependenciai').autocomplete({
         source:'/lay/dependencias/dependencia_autocomplete_descripcion',
         select: function (event, ui) {
@@ -182,36 +191,96 @@
       $('#buscarDenDep').click(function () {
         var dependenciai = $("#dependenciai").val();
         if(dependenciai){
-        window.location.replace("http://localhost:8080/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
+        window.location.replace("http://localhost:80/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
         }
       });
+
+      $('#buscarDenDepW').click(function () {
+        var dependenciai = $("#dependenciai").val();
+        if(dependenciai){
+        window.location.replace("http://localhost:80/lay/word_dependencias/index/"+  $('#idDependencia').val());
+        }
+      });
+
+
+
+
       $('#buscarDenCol').click(function () {
         var coloniai = $("#coloniai").val();
         if(coloniai){
-        window.location.replace("http://localhost:8080/lay/pdf_direccion/index/"+  $('#coloniai').val());
+        window.location.replace("http://localhost:80/lay/pdf_direccion/index/"+  $('#coloniai').val());
         }
       });
+
+      $('#buscarDenColW').click(function () {
+        var coloniai = $("#coloniai").val();
+        if(coloniai){
+        window.location.replace("http://localhost:80/lay/word_colonia/index/"+  $('#coloniai').val());
+        }
+      });
+
+
+
+
       $('#buscarDenFecha').click(function () {
         var fechai = $("#fechai").val();
         if(fechai){
-        window.location.replace("http://localhost:8080/lay/pdf_fecha/index/"+  $('#fechai').val());
+        window.location.replace("http://localhost:80/lay/pdf_fecha/index/"+  $('#fechai').val());
        }
       });
+
+      $('#buscarDenFechaW').click(function () {
+        var fechai = $("#fechai").val();
+        if(fechai){
+        window.location.replace("http://localhost:80/lay/word_fecha/index/"+  $('#fechai').val());
+       }
+      });
+
+
+
+
       $('#buscarDenPeriodo').click(function () {
         var periodoi = $("#periodoi").val();
         var periodof = $("#periodof").val();
         if(periodoi && periodof){
         console.log('clic');
-        window.location.replace("http://localhost:8080/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+        window.location.replace("http://localhost:80/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
       }
       });
+
+      $('#buscarDenPeriodoW').click(function () {
+        var periodoi = $("#periodoi").val();
+        var periodof = $("#periodof").val();
+        if(periodoi && periodof){
+        console.log('clic');
+        window.location.replace("http://localhost:80/lay/word_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+      }
+      });
+
+
+
+
       $('#buscarDenEst').click(function () {
         
-        window.location.replace("http://localhost:8080/lay/pdf_estatus/index/"+  $('#idEstatus').val());
+        window.location.replace("http://localhost:80/lay/pdf_estatus/index/"+  $('#idEstatus').val());
       });
+
+      $('#buscarDenEstW').click(function () {
+        
+        window.location.replace("http://localhost:80/lay/word_estatus/index/"+  $('#idEstatus').val());
+      });
+
+
+
+
       $('#buscarDenRec').click(function () {
         // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:8080/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
+        window.location.replace("http://localhost:80/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
+      });
+
+      $('#buscarDenRecW').click(function () {
+        // console.log($('#idCiudadano').val());
+        window.location.replace("http://localhost:80/lay/word_recepcion/index/"+  $('#idRecepcion').val());
       });
     });
   </script>
