@@ -89,18 +89,17 @@ class Model_denuncias extends CI_Model {
 
     public function by_colonia($colonia)
     {
-      $this->db->select('CONCAT(c.nombre, " ", c.apellidoPa, " ", c.apellidoMa) as ciudadano, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, d.fecha, e.descripcion as estatus, r.descripcion as recepcion, a.descripcion as asunto, de.dependencia as dependencia');
-      $this->db->from('ciudadanos c, denuncias d, dependencias de, estatus e, recepcion r, asuntos a, direcciones dir');
-      $this->db->where('d.idCiudadano = c.idCiudadano');
-      $this->db->where('d.idDependencia = de.idDependencia');
-      $this->db->where('d.idEstatus = e.idEstatus');
-      $this->db->where('d.idRecepcion = r.idRecepcion');
-      $this->db->where('d.idDireccion = dir.idDireccion');
-      $this->db->where('d.idAsunto = a.idAsunto');
-      $this->db->like('dir.colonia', $colonia);
-
-      $direccion= $this->db->get();
-      return $direccion->result_array();
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
+      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
+      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
+      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
+      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
+      $this->db->where('dir.colonia', $colonia);
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
     }
     public function order_fecha($fecha)
     {
