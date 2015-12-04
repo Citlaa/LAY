@@ -42,7 +42,6 @@ class Pdf_dependencia extends CI_Controller
        $data = array(
            'denuncias' => $this->model_denuncias->by_dependencia($idDependencia)
        );
-       var_dump($data);exit;
 
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
