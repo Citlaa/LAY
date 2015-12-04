@@ -144,7 +144,7 @@ class Model_denuncias extends CI_Model {
         AND d.idDependencia = de.idDependencia
         AND d.idEstatus = e.idEstatus
         AND d.idRecepcion = r.idRecepcion
-        AND d.idCiudadano = dir.idDireccion
+        AND d.idDireccion = dir.idDireccion
         AND d.idAsunto = a.idAsunto
         AND d.idCiudadano = $idCiudadano
         ORDER BY d.fecha ASC");
@@ -154,7 +154,7 @@ class Model_denuncias extends CI_Model {
 
     public function by_dependencia($idDependencia)
     {
-      $this->db->select('CONCAT(c.nombre, " ", c.apellidoPa, " ", c.apellidoMa) as ciudadano, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, d.fecha, e.descripcion as estatus, r.descripcion as recepcion, a.descripcion as asunto, de.dependencia as dependencia');
+       $this->db->select('CONCAT(c.nombre, " ", c.apellidoPa, " ", c.apellidoMa) as ciudadano, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, d.fecha, e.descripcion as estatus, r.descripcion as recepcion, a.descripcion as asunto, de.dependencia as dependencia');
       $this->db->from('ciudadanos c, denuncias d, dependencias de, estatus e, recepcion r, asuntos a, direcciones dir');
       $this->db->where('d.idCiudadano = c.idCiudadano');
       $this->db->where('d.idDependencia = de.idDependencia');
@@ -164,8 +164,8 @@ class Model_denuncias extends CI_Model {
       $this->db->where('d.idAsunto = a.idAsunto');
       $this->db->where('d.idDependencia', $idDependencia);
 
-      $direccion= $this->db->get();
-      return $direccion->result_array();
+      $resultados = $this->db->get();
+      return $resultados->result_array();
     }
 
     public function by_periodo($fechai, $fechaf)

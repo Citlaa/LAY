@@ -170,13 +170,13 @@
       $('#buscarDenCiu').click(function () {
         var nombrei = $("#nombrei").val();
         if(nombrei){
-          window.location.replace("http://localhost:80/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
+          window.location.replace("/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
         }  
       });
        $('#buscarDenCiuW').click(function () {
         var nombrei = $("#nombrei").val();
         if(nombrei){
-          window.location.replace("http://localhost:80/lay/word_ciudadanos/index/"+  $('#idCiudadano').val());
+          window.location.replace("/lay/word_ciudadanos/index/"+  $('#idCiudadano').val());
         }  
       });
 
@@ -191,14 +191,14 @@
       $('#buscarDenDep').click(function () {
         var dependenciai = $("#dependenciai").val();
         if(dependenciai){
-        window.location.replace("http://localhost:80/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
+        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
         }
       });
 
       $('#buscarDenDepW').click(function () {
         var dependenciai = $("#dependenciai").val();
         if(dependenciai){
-        window.location.replace("http://localhost:80/lay/word_dependencias/index/"+  $('#idDependencia').val());
+        window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val());
         }
       });
 
@@ -208,14 +208,14 @@
       $('#buscarDenCol').click(function () {
         var coloniai = $("#coloniai").val();
         if(coloniai){
-        window.location.replace("http://localhost:80/lay/pdf_direccion/index/"+  $('#coloniai').val());
+        window.location.replace("/lay/pdf_direccion/index/"+  $('#coloniai').val());
         }
       });
 
       $('#buscarDenColW').click(function () {
         var coloniai = $("#coloniai").val();
         if(coloniai){
-        window.location.replace("http://localhost:80/lay/word_colonia/index/"+  $('#coloniai').val());
+        window.location.replace("/lay/word_colonia/index/"+  $('#coloniai').val());
         }
       });
 
@@ -225,14 +225,14 @@
       $('#buscarDenFecha').click(function () {
         var fechai = $("#fechai").val();
         if(fechai){
-        window.location.replace("http://localhost:80/lay/pdf_fecha/index/"+  $('#fechai').val());
+        window.location.replace("/lay/pdf_fecha/index/"+  $('#fechai').val());
        }
       });
 
       $('#buscarDenFechaW').click(function () {
         var fechai = $("#fechai").val();
         if(fechai){
-        window.location.replace("http://localhost:80/lay/word_fecha/index/"+  $('#fechai').val());
+        window.location.replace("/lay/word_fecha/index/"+  $('#fechai').val());
        }
       });
 
@@ -244,7 +244,7 @@
         var periodof = $("#periodof").val();
         if(periodoi && periodof){
         console.log('clic');
-        window.location.replace("http://localhost:80/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+        window.location.replace("/lay/pdf_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
       }
       });
 
@@ -253,7 +253,7 @@
         var periodof = $("#periodof").val();
         if(periodoi && periodof){
         console.log('clic');
-        window.location.replace("http://localhost:80/lay/word_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
+        window.location.replace("/lay/word_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
       }
       });
 
@@ -262,12 +262,12 @@
 
       $('#buscarDenEst').click(function () {
         
-        window.location.replace("http://localhost:80/lay/pdf_estatus/index/"+  $('#idEstatus').val());
+        window.location.replace("/lay/pdf_estatus/index/"+  $('#idEstatus').val());
       });
 
       $('#buscarDenEstW').click(function () {
         
-        window.location.replace("http://localhost:80/lay/word_estatus/index/"+  $('#idEstatus').val());
+        window.location.replace("/lay/word_estatus/index/"+  $('#idEstatus').val());
       });
 
 
@@ -275,12 +275,12 @@
 
       $('#buscarDenRec').click(function () {
         // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:80/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
+        window.location.replace("/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
       });
 
       $('#buscarDenRecW').click(function () {
         // console.log($('#idCiudadano').val());
-        window.location.replace("http://localhost:80/lay/word_recepcion/index/"+  $('#idRecepcion').val());
+        window.location.replace("/lay/word_recepcion/index/"+  $('#idRecepcion').val());
       });
     });
   </script>
