@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Ciudadanos</title>
     <style type="text/css">
        body{
@@ -23,6 +23,8 @@
     </style>
     </head>
     <body>
+      <?php if ($denuncias): ?>
+
     <h2 id="title">Reporte Generado</h2>
     <div class="table">
       <table class="table table-striped">
@@ -81,4 +83,7 @@
       </table>
     </div>
 </body>
+<?php else: ?>
+  <h1>No se encontraron registros</h1>
+<?php endif; ?>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Ciudadanos</title>
     <style type="text/css">
        body{
@@ -22,6 +22,7 @@
       }
     </style>
     </head>
+    <?php if ($denuncias): ?>
 
     <body>
     <h2 id="title">Reporte Generado</h2>
@@ -41,7 +42,7 @@
             <th>
               <?php echo utf8_decode('Recepción'); ?>
             </th>
-            <th>              
+            <th>
               <?php echo utf8_decode('Dirección'); ?>
             </th>
             <th>
@@ -75,5 +76,7 @@
         </tbody>
       </table>
 </body>
-
+<?php else: ?>
+  <h2 id="title">No se encontraron registros</h1>
+<?php endif; ?>
 </html>

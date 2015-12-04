@@ -21,7 +21,7 @@ class Pdf_direccion extends CI_Controller
        }
    }
 
-   public function index($colonia)
+   public function index($colonia=null)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,

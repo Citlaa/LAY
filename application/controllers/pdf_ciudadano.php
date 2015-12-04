@@ -3,148 +3,161 @@
 class Pdf_ciudadano extends CI_Controller
 {
 
-   public function __construct()
-   {
-       parent::__construct();
-       //cargamos la libreria html2pdf
-       $this->load->library('html2pdf');
-       //cargamos el modelo pdf_model
-       $this->load->model('model_ciudadano');
-   }
+  public function __construct()
+  {
+    parent::__construct();
+    //cargamos la libreria html2pdf
+    $this->load->library('html2pdf');
+    //cargamos el modelo pdf_model
+    $this->load->model('model_ciudadano');
+  }
 
-   private function createFolder()
-   {
-       if(!is_dir("./files"))
-       {
-           mkdir("./files", 0777);
-           mkdir("./files/pdfs", 0777);
-       }
-   }
+  private function createFolder()
+  {
+    if(!is_dir("./files"))
+    {
+      mkdir("./files", 0777);
+      mkdir("./files/pdfs", 0777);
+    }
+  }
 
-   public function index($idCiudadano)
-   {
+  public function index($idCiudadano=null)
+  {
+    $data['user_id']	= $this->tank_auth->get_user_id();
+    $data['username']	= $this->tank_auth->get_username();
+    if ($this->tank_auth->is_logged_in()) {
 
-       //establecemos la carpeta en la que queremos guardar los pdfs,
-       //si no existen las creamos y damos permisos
-       $this->createFolder();
+      //establecemos la carpeta en la que queremos guardar los pdfs,
+      //si no existen las creamos y damos permisos
+      $this->createFolder();
 
-       //importante el slash del final o no funcionará correctamente
-       $this->html2pdf->folder('./files/pdfs/');
+      //importante el slash del final o no funcionará correctamente
+      $this->html2pdf->folder('./files/pdfs/');
 
-       //establecemos el nombre del archivo
-       $this->html2pdf->filename('test.pdf');
+      //establecemos el nombre del archivo
+      $this->html2pdf->filename('test.pdf');
 
-       //establecemos el tipo de papel
-       $this->html2pdf->paper('a4', 'landscape');
+      //establecemos el tipo de papel
+      $this->html2pdf->paper('a4', 'landscape');
 
-       $this->load->model(array('model_denuncias'));
+      $this->load->model(array('model_denuncias'));
 
-       //datos que queremos enviar a la vista, lo mismo de siempre
-       $data = array(
-           'denuncias' => $this->model_denuncias->by_ciudadano($idCiudadano)
-       );
+      //datos que queremos enviar a la vista, lo mismo de siempre
+      $data = array(
+        'denuncias' => $this->model_denuncias->by_ciudadano($idCiudadano)
+      );
 
-      //  var_dump($data);exit;
-
-       //hacemos que coja la vista como datos a imprimir
-       //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_encode($this->load->view('pdf_ciudadano', $data, true)));
-
-       //si el pdf se guarda correctamente lo mostramos en pantalla
-       if($this->html2pdf->create('save'))
-       {
-           $this->show();
-       }
-   }
-
-   //funcion que ejecuta la descarga del pdf
-   public function downloadPdf()
-   {
-       //si existe el directorio
-       if(is_dir("./files/pdfs"))
-       {
-           //ruta completa al archivo
-           $route = base_url("files/pdfs/test.pdf");
-           //nombre del archivo
-           $filename = "test.pdf";
-           //si existe el archivo empezamos la descarga del pdf
-           if(file_exists("./files/pdfs/".$filename))
-           {
-               header("Cache-Control: public");
-               header("Content-Description: File Transfer");
-               header('Content-disposition: attachment; filename='.basename($route));
-               header("Content-Type: application/pdf");
-               header("Content-Transfer-Encoding: binary");
-               header('Content-Length: '. filesize($route));
-               readfile($route);
-           }
-       }
-   }
+      if($data['denuncias']){
 
 
-   //esta función muestra el pdf en el navegador siempre que existan
-   //tanto la carpeta como el archivo pdf
-   public function show()
-   {
-       if(is_dir("./files/pdfs"))
-       {
-           $filename = "test.pdf";
-           $route = base_url("files/pdfs/test.pdf");
-           if(file_exists("./files/pdfs/".$filename))
-           {
-               header('Content-type: application/pdf');
-               readfile($route);
-           }
-       }
-   }
+        //hacemos que coja la vista como datos a imprimir
+        //importante utf8_decode para mostrar bien las tildes, ñ y demás
+        $this->html2pdf->html(utf8_encode($this->load->view('pdf_ciudadano', $data, true)));
 
-   //función para crear y enviar el pdf por email
-   //ejemplo de la libreria sin modificar
-   public function mail_pdf()
-   {
+        //si el pdf se guarda correctamente lo mostramos en pantalla
+        if($this->html2pdf->create('save'))
+        {
+          $this->show();
+        }
+      }else {
+        $this->load->view('template/header');
+        $this->load->view('template/menu', $data);
+        $this->load->view('no_encontrado');
+        $this->load->view('template/footer');
+      }
+    }else{
+      echo "no permisos";
+    }
+  }
 
-       //establecemos la carpeta en la que queremos guardar los pdfs,
-       //si no existen las creamos y damos permisos
-       $this->createFolder();
+  //funcion que ejecuta la descarga del pdf
+  public function downloadPdf()
+  {
+    //si existe el directorio
+    if(is_dir("./files/pdfs"))
+    {
+      //ruta completa al archivo
+      $route = base_url("files/pdfs/test.pdf");
+      //nombre del archivo
+      $filename = "test.pdf";
+      //si existe el archivo empezamos la descarga del pdf
+      if(file_exists("./files/pdfs/".$filename))
+      {
+        header("Cache-Control: public");
+        header("Content-Description: File Transfer");
+        header('Content-disposition: attachment; filename='.basename($route));
+        header("Content-Type: application/pdf");
+        header("Content-Transfer-Encoding: binary");
+        header('Content-Length: '. filesize($route));
+        readfile($route);
+      }
+    }
+  }
 
-       //importante el slash del final o no funcionará correctamente
-       $this->html2pdf->folder('./files/pdfs/');
 
-       //establecemos el nombre del archivo
-       $this->html2pdf->filename('test.pdf');
+  //esta función muestra el pdf en el navegador siempre que existan
+  //tanto la carpeta como el archivo pdf
+  public function show()
+  {
+    if(is_dir("./files/pdfs"))
+    {
+      $filename = "test.pdf";
+      $route = base_url("files/pdfs/test.pdf");
+      if(file_exists("./files/pdfs/".$filename))
+      {
+        header('Content-type: application/pdf');
+        readfile($route);
+      }
+    }
+  }
 
-       //establecemos el tipo de papel
-       $this->load->model(array('model_ciudadano'));
+  //función para crear y enviar el pdf por email
+  //ejemplo de la libreria sin modificar
+  public function mail_pdf()
+  {
 
-       //datos que queremos enviar a la vista, lo mismo de siempre
-       $data = array(
-           'denuncias' => $this->model_ciudadano->order_ciudadano($idCiudadano)
-       );
+    //establecemos la carpeta en la que queremos guardar los pdfs,
+    //si no existen las creamos y damos permisos
+    $this->createFolder();
 
-       //hacemos que coja la vista como datos a imprimir
-       //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_decode($this->load->view('pdf_ciudadano', $data, true)));
+    //importante el slash del final o no funcionará correctamente
+    $this->html2pdf->folder('./files/pdfs/');
+
+    //establecemos el nombre del archivo
+    $this->html2pdf->filename('test.pdf');
+
+    //establecemos el tipo de papel
+    $this->load->model(array('model_ciudadano'));
+
+    //datos que queremos enviar a la vista, lo mismo de siempre
+    $data = array(
+      'denuncias' => $this->model_ciudadano->order_ciudadano($idCiudadano)
+    );
+
+    //hacemos que coja la vista como datos a imprimir
+    //importante utf8_decode para mostrar bien las tildes, ñ y demás
+    $this->html2pdf->html(utf8_decode($this->load->view('pdf_ciudadano', $data, true)));
 
 
-       //Check that the PDF was created before we send it
-       if($path = $this->html2pdf->create('save'))
-       {
+    //Check that the PDF was created before we send it
+    if($path = $this->html2pdf->create('save'))
+    {
 
-           $this->load->library('email');
+      $this->load->library('email');
 
-           $this->email->from('your@example.com', 'Your Name');
-           $this->email->to('israel965@yahoo.es');
+      $this->email->from('your@example.com', 'Your Name');
+      $this->email->to('israel965@yahoo.es');
 
-           $this->email->subject('Email PDF Test');
-           $this->email->message('Testing the email a freshly created PDF');
+      $this->email->subject('Email PDF Test');
+      $this->email->message('Testing the email a freshly created PDF');
 
-           $this->email->attach($path);
+      $this->email->attach($path);
 
-           $this->email->send();
+      $this->email->send();
 
-           echo "El email ha sido enviado correctamente";
+      echo "El email ha sido enviado correctamente";
 
-       }
+    }
 
-   }
+  }
 }

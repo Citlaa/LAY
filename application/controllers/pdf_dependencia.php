@@ -20,7 +20,7 @@ class Pdf_dependencia extends CI_Controller
        }
    }
 
-   public function index($idDependencia = 1)
+   public function index($idDependencia = null)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
