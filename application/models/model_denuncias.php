@@ -137,19 +137,33 @@ class Model_denuncias extends CI_Model {
 
     public function by_ciudadano($idCiudadano)
     {
-      $resultados= $this->db->query(
-        "SELECT CONCAT(c.nombre, ' ', c.apellidoPa, ' ', c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, ' ', dir.noExt, ' ', dir.noInt, ' ', dir.colonia, ' ', dir.localidad, ' ', dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto
-        FROM `denuncias` d, dependencias de, estatus e, recepcion r, ciudadanos c, direcciones dir, asuntos a
-        WHERE d.idCiudadano = c.idCiudadano
-        AND d.idDependencia = de.idDependencia
-        AND d.idEstatus = e.idEstatus
-        AND d.idRecepcion = r.idRecepcion
-        AND d.idDireccion = dir.idDireccion
-        AND d.idAsunto = a.idAsunto
-        AND d.idCiudadano = $idCiudadano
-        ORDER BY d.fecha ASC");
+      // $resultados= $this->db->query(
+      //   "SELECT CONCAT(c.nombre, ' ', c.apellidoPa, ' ', c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, ' ', dir.noExt, ' ', dir.noInt, ' ', dir.colonia, ' ', dir.localidad, ' ', dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto
+      //   FROM `denuncias` d, dependencias de, estatus e, recepcion r, ciudadanos c, direcciones dir, asuntos a
+      //   WHERE d.idCiudadano = c.idCiudadano
+      //   AND d.idDependencia = de.idDependencia
+      //   AND d.idEstatus = e.idEstatus
+      //   AND d.idRecepcion = r.idRecepcion
+      //   AND d.idDireccion = dir.idDireccion
+      //   AND d.idAsunto = a.idAsunto
+      //   AND d.idCiudadano = $idCiudadano
+      //   ORDER BY d.fecha ASC");
 
-      return $resultados->result_array();
+      // return $resultados->result_array();
+
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
+      $this->db->from('denuncias` d, dependencias de, estatus e, recepcion r, ciudadanos c, direcciones dir, asuntos a');
+      $this->db->where('d.idCiudadano = c.idCiudadano');
+      $this->db->where('d.idDependencia = de.idDependencia');
+      $this->db->where('d.idEstatus = e.idEstatus');
+      $this->db->where('d.idRecepcion = r.idRecepcion');
+      $this->db->where('d.idEstatus = e.idEstatus');
+      $this->db->where('d.idAsunto = a.idAsunto');
+      $this->db->where('d.idDireccion = dir.idDireccion');
+      $this->db->where('d.idCiudadano', $idCiudadano);
+
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
     }
 
     public function by_dependencia($idDependencia)

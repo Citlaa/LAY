@@ -90,15 +90,16 @@ class Regidenu extends CI_Controller {
 			$this->load->helper('form');
     		$this->load->library('form_validation');
 			
-			$this->form_validation->set_rules('nombre', 'Nombre', 'required|trim|callback_customAlpha');
-			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|trim|callback_customAlpha');
-			$this->form_validation->set_rules('apellidoMa', 'Apellido Materno', 'required|trim|callback_customAlpha');
+			$this->form_validation->set_rules('nombre', 'Nombre', 'required|trim');
+			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|trim');
+			$this->form_validation->set_rules('apellidoMa', 'Apellido Materno', 'required|trim');
+			//$this->form_validation->set_rules('apellidoMa', 'Apellido Materno', 'required|trim|callback_customAlpha');
 			$this->form_validation->set_rules('calle', 'Calle', 'required|trim');
 
 			$this->form_validation->set_rules('noExt', 'No. Exterior', 'required|integer|trim');
 			$this->form_validation->set_rules('cp', 'C.P.', 'required|integer|trim');
 			$this->form_validation->set_rules('colonia', 'Colonia', 'required|trim');
-			$this->form_validation->set_rules('localidad', 'Localidad', 'required|trim|callback_customAlpha');
+			$this->form_validation->set_rules('localidad', 'Localidad', 'required|trim');
 			$this->form_validation->set_rules('tel1', 'Teléfono', 'required|integer|trim');
 			$this->form_validation->set_rules('tel2', 'Teléfono', 'integer|trim');
 			$this->form_validation->set_rules('asunto', 'Asunto', 'required|trim');
@@ -132,7 +133,7 @@ class Regidenu extends CI_Controller {
 
 	public function customAlpha($str) 
 	{
-    	if ( !preg_match('/^[a-z .,\-]+$/i',$str) )
+    	if ( !preg_match('/^[a-z. ,\-]+$/i',$str) )
     	{
 	        return false;
 	    }
