@@ -22,37 +22,55 @@ class Pdf_dependencia extends CI_Controller
 
    public function index($idDependencia = null)
    {
+      $data['user_id']  = $this->tank_auth->get_user_id();
+      $data['username'] = $this->tank_auth->get_username();
+      if ($this->tank_auth->is_logged_in()) {
+         //establecemos la carpeta en la que queremos guardar los pdfs,
+         //si no existen las creamos y damos permisos
+         $this->createFolder();
 
-       //establecemos la carpeta en la que queremos guardar los pdfs,
-       //si no existen las creamos y damos permisos
-       $this->createFolder();
+         //importante el slash del final o no funcionará correctamente
+         $this->html2pdf->folder('./files/pdfs/');
 
-       //importante el slash del final o no funcionará correctamente
-       $this->html2pdf->folder('./files/pdfs/');
+         //establecemos el nombre del archivo
+         $this->html2pdf->filename('test.pdf');
 
-       //establecemos el nombre del archivo
-       $this->html2pdf->filename('test.pdf');
+         //establecemos el tipo de papel
+         $this->html2pdf->paper('a4', 'landscape');
 
-       //establecemos el tipo de papel
-       $this->html2pdf->paper('a4', 'landscape');
+         $this->load->model(array('model_denuncias'));
 
-       $this->load->model(array('model_denuncias'));
-
-       //datos que queremos enviar a la vista, lo mismo de siempre
-       $data = array(
+         //datos que queremos enviar a la vista, lo mismo de siempre
+         $data = array(
            'denuncias' => $this->model_denuncias->by_dependencia($idDependencia)
-       );
+         );
 
-       //hacemos que coja la vista como datos a imprimir
-       //importante utf8_decode para mostrar bien las tildes, ñ y demás
-       $this->html2pdf->html(utf8_encode($this->load->view('pdf_dependencia', $data, true)));
+         if($data['denuncias']){
+           //hacemos que coja la vista como datos a imprimir
+           //importante utf8_decode para mostrar bien las tildes, ñ y demás
+           $this->html2pdf->html(utf8_encode($this->load->view('pdf_dependencia', $data, true)));
 
-       //si el pdf se guarda correctamente lo mostramos en pantalla
-       if($this->html2pdf->create('save'))
-       {
-           $this->show();
-       }
-   }
+           //si el pdf se guarda correctamente lo mostramos en pantalla
+           if($this->html2pdf->create('save'))
+           {
+             $this->show();
+           }
+        }else {
+          $data['user_id']  = $this->tank_auth->get_user_id();
+          $data['username'] = $this->tank_auth->get_username();
+          if ($this->tank_auth->is_logged_in()) {
+            $this->load->view('template/header');
+            $this->load->view('template/menu',$data);
+            $this->load->view('no_encontrado');
+            $this->load->view('template/footer');
+          }else{
+            echo "no permisos";
+          }              
+        }
+      }else{
+        echo "no permisos";
+      }
+    }
 
    //funcion que ejecuta la descarga del pdf
    public function downloadPdf()

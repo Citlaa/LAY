@@ -60,15 +60,21 @@ class Pdf_ciudadano extends CI_Controller
           $this->show();
         }
       }else {
-        $this->load->view('template/header');
-        $this->load->view('template/menu', $data);
-        $this->load->view('no_encontrado');
-        $this->load->view('template/footer');
+        $data['user_id']  = $this->tank_auth->get_user_id();
+        $data['username'] = $this->tank_auth->get_username();
+        if ($this->tank_auth->is_logged_in()) {
+          $this->load->view('template/header');
+          $this->load->view('template/menu',$data);
+          $this->load->view('no_encontrado');
+          $this->load->view('template/footer');
+        }else{
+          echo "no permisos";
+        }              
       }
-    }else{
-      echo "no permisos";
+      }else{
+        echo "no permisos";
+      }
     }
-  }
 
   //funcion que ejecuta la descarga del pdf
   public function downloadPdf()

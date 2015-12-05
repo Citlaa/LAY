@@ -23,7 +23,7 @@
 
     </style>
     </head>
-
+<?php if ($denuncias): ?>
     <body>
     <h2 id=" top title">Reporte Generado</h2>
     <h3>Reporte de <?php echo utf8_decode($denuncias[0]['dependencia']); ?></h3>
@@ -76,4 +76,10 @@
         </tbody>
       </table>
 </body>
+</body>
+<?php else: ?>
+  <body>
+  <h2 id="title">No se encontraron registros</h1>
+  </body>
+<?php endif; ?>
 </html>
