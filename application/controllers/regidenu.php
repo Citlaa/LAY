@@ -18,9 +18,9 @@ class Regidenu extends CI_Controller {
 	public function buscar()
 		{
 			$data['user_id']	= $this->tank_auth->get_user_id();
-			$data['username']	= $this->tank_auth->get_username();	
+			$data['username']	= $this->tank_auth->get_username();
 			if ($this->tank_auth->is_logged_in()) {
-			
+
 		$this->load->view('template/header');
 		$this->load->view('template/menu',$data);
 		$this->load->view('LAY/buscar_denuncia');
@@ -64,7 +64,7 @@ class Regidenu extends CI_Controller {
 		 $grocery->add_action('Editar ciudadano','','ciudadanos/editar_ciudadano');
 		 $grocery->add_action('Editar Direccion','','direcciones/editar_direccion');
 		 $grocery->add_action('Editar Asunto','','asuntos/editar_asunto');
-		 
+
 
 
 		 $grocery->columns('fecha','idDependencia','idCiudadano','idEstatus','idRecepcion','idDireccion','idAsunto');
@@ -76,8 +76,8 @@ class Regidenu extends CI_Controller {
 	public function add_denuncia()
 	{
 		$data1['user_id']	= $this->tank_auth->get_user_id();
-		$data1['username']	= $this->tank_auth->get_username();	
-		
+		$data1['username']	= $this->tank_auth->get_username();
+
 		if ($this->tank_auth->is_logged_in()) {
 			$this->load->model('model_recepcion');
 
@@ -89,7 +89,7 @@ class Regidenu extends CI_Controller {
 			$this->load->model('model_denuncias');
 			$this->load->helper('form');
     		$this->load->library('form_validation');
-			
+
 			$this->form_validation->set_rules('nombre', 'Nombre', 'required|trim');
 			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|trim');
 			$this->form_validation->set_rules('apellidoMa', 'Apellido Materno', 'required|trim');
@@ -109,19 +109,18 @@ class Regidenu extends CI_Controller {
 			$this->form_validation->set_message('integer','El campo %s debe estar compuesto por numeros enteros');
 
 
-
 			if ($this->form_validation->run() === FALSE)
 	 		{
 				$this->load->view('template/header.php');
 				$this->load->view('template/menu.php',$data1);
-				$this->load->view('denuncias/create_denuncia.php', $data);				
+				$this->load->view('denuncias/create_denuncia.php', $data);
 				$this->load->view('template/footer.php');
 	 		}
 	 		else
-	 		{	
+	 		{
 			 	$this->model_denuncias->insert_denuncia();
 			 	$this->load->view('template/header.php');
-				$this->load->view('template/menu.php',$data1);			
+				$this->load->view('template/menu.php',$data1);
 			 	$this->load->view('denuncias/exito');
 			 	$this->load->view('template/footer.php');
 	 		}
@@ -131,7 +130,7 @@ class Regidenu extends CI_Controller {
 		}
 	}
 
-	public function customAlpha($str) 
+	public function customAlpha($str)
 	{
     	if ( !preg_match('/^[a-z. ,\-]+$/i',$str) )
     	{
@@ -144,7 +143,7 @@ class Regidenu extends CI_Controller {
 		$this->model_denuncias->insert_denuncia();
 	}
 
-	
+
 	public function get_direccion_denuncia($idDenuncia)
 	{
 		$this->db->select('direcciones.idDireccion, direcciones.calle, direcciones.noExt, direcciones.noInt, direcciones.colonia, direcciones.localidad, direcciones.cp');

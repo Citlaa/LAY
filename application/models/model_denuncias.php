@@ -38,10 +38,9 @@ class Model_denuncias extends CI_Model {
       'descripcion' => $this->input->post('asunto'),
     );
 
-    $idCiudadano = $this->input->post('idCiudadano');
-    $idDireccion = $this->input->post('idDireccion');
+
     $this->db->trans_start();
-    if ($idCiudadano !='null'){
+    if ($idCiudadano = $this->input->post('idCiudadano')){
       $this->db->where('idCiudadano', $idCiudadano);
       $this->db->update('ciudadanos',$ciudadano);
       $cId=$idCiudadano;
@@ -50,7 +49,7 @@ class Model_denuncias extends CI_Model {
       $cId=$this->db->insert_id();
     }
 
-    if ($idDireccion !='null'){
+    if ($idDireccion = $this->input->post('idDireccion')){
       $this->db->where('idDireccion', $idDireccion);
       $this->db->update('direcciones',$direccion);
       $dId=$idDireccion;
@@ -58,7 +57,6 @@ class Model_denuncias extends CI_Model {
       $this->db->insert('ciudadanos', $ciudadano);
       $dId=$this->db->insert_id();
     }
-    $dId=$this->db->insert_id();
     $this->db->insert('asuntos', $asunto);
     $aId=$this->db->insert_id();
     $estatus  = $this->db->get_where('estatus','descripcion','Pendiente');
