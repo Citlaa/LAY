@@ -4,7 +4,7 @@
     <!-- Quick setting box starts -->
       <div class="quick-slide hidden-xs"></div>         
       <div class="out-container">
-         <div class="outer">
+         <!--<div class="outer">-->
             <!-- Sidebar starts -->
             
             <!-- Sidebar ends -->
@@ -90,6 +90,6 @@
             
             <div class="clearfix"></div>
          </div>
-      </div>         
+     <!-- </div>         -->
   </body> 
 </section>
