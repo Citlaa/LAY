@@ -1,17 +1,11 @@
 <section>
 <body>                      
                               
-    <!-- Quick setting box starts -->
-      <div class="quick-slide hidden-xs"></div>         
+    <!-- Quick setting box starts -->      
       <div class="out-container">
-         <!--<div class="outer">-->
-            <!-- Sidebar starts -->
-            
-            <!-- Sidebar ends -->
-            
+         <!--<div class="outer">-->                      
             <!-- Mainbar starts -->
-            <div class="mainbar">
-               
+            <div class="mainbar">               
           <!-- Page heading starts -->
         <div class="page-head">
           <div class="container">
