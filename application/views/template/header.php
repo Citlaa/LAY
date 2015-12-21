@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 
-    <title>Login/Register </title>
+    <title>LAY </title>
 
     <meta name="description" content="Your description">
     <meta name="keywords" content="Your,Keywords">
