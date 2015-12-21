@@ -79,14 +79,21 @@ class Regidenu extends CI_Controller {
 		$data1['username']	= $this->tank_auth->get_username();
 
 		if ($this->tank_auth->is_logged_in()) {
-			$this->load->model('model_recepcion');
 
+			$this->load->model('model_recepcion');
 			$data['recepcion'] = $this->model_recepcion->get_all();
+
 			$this->load->model('model_dependencias');
 			$data['dependencias'] = $this->model_dependencias->get_all();
+			
 			$this->load->model('model_estatus');
 			$data['estatus'] = $this->model_estatus->get_all();
-			$this->load->model('model_denuncias');
+
+			$this->load->model('model_medios');
+			$data['medios'] = $this->model_medios->get_all();
+			
+			
+			$this->load->model('model_denuncias');			
 			$this->load->helper('form');
     		$this->load->library('form_validation');
 

@@ -166,8 +166,8 @@
                         </div>
                           <div class="col-md-6" style="padding-left: 5px;width: 165px;">
                             <select class="form-control" name="idDependencia" style="margin-top: 15px;padding-left: 5px; weight: 150px;">
-                              <?php foreach ($dependencias as $dependencia_item): ?>
-                              <option value="<?php echo $dependencia_item['idDependencia']?>"><?php echo $dependencia_item['dependencia']?></option>
+                              <?php foreach ($medios as $medios_item): ?>
+                              <option value="<?php echo $medios_item['idMedios']?>"><?php echo $medios_item['descripcion']?></option>
                               <?php endforeach;?>
                             </select>
                           </div>
