@@ -159,6 +159,22 @@
                             </select>
                           </div>
                       </div>
+
+                      <div class="col-md-12 row">
+                        <div class="col-md-2" style="width: 120px;padding-right: 10px;padding-left: 60px;margin-top: 5px;">
+                          <label for="dependencia">Medios:</label>
+                        </div>
+                          <div class="col-md-6" style="padding-left: 5px;width: 165px;">
+                            <select class="form-control" name="idDependencia" style="margin-top: 15px;padding-left: 5px; weight: 150px;">
+                              <?php foreach ($dependencias as $dependencia_item): ?>
+                              <option value="<?php echo $dependencia_item['idDependencia']?>"><?php echo $dependencia_item['dependencia']?></option>
+                              <?php endforeach;?>
+                            </select>
+                          </div>
+                      </div>
+
+
+
                           <input type="hidden" name="idEstatus" value="<?php echo$estatus[0]['idEstatus']?>">
                       </div>
                       <input type="submit" value="Enviar" class="btn btn-success">
