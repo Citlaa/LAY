@@ -3,7 +3,7 @@
     <!-- Quick setting box starts -->
       <div class="quick-slide hidden-xs"></div>
       <div class="out-container">
-         <div class="outer">
+
             <!-- Sidebar starts -->
             <!-- Sidebar ends -->
 
@@ -55,7 +55,7 @@
     <div role="tabpanel" class="tab-pane active" id="home">
       <h1>Denuncias por ciudadano</h1>
       <input type="hidden" name="idCiudadano" id="idCiudadano">
-      <input type="text" name="nombrei" class="form-control" id="nombrei">
+      <input type="text" name="nombrei" class="form-control" id="nombrei" style="margin-top: 10px;">
       <br>
       <button id="buscarDenCiu" class="btn btn-enter btn-lg"> <span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenCiuW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
@@ -63,21 +63,21 @@
     <div role="tabpanel" class="tab-pane" id="profile">
       <h1>Denuncias por dependencia</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
-      <input type="text" name="dependenciai" class="form-control" id="dependenciai">
+      <input type="text" name="dependenciai" class="form-control" id="dependenciai" style="margin-top: 10px;">
       <br>
       <button id="buscarDenDep" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenDepW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
-      <input type="text" name="coloniai" class="form-control" id="coloniai">
+      <input type="text" name="coloniai" class="form-control" id="coloniai" style="margin-top: 10px;">
       <br>
       <button id="buscarDenCol" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenColW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
-      <input type="date" name="fechai" class="form-control date" id="fechai">
+      <input type="date" name="fechai" class="form-control date" id="fechai" style="margin-top: 10px;">
       <br>
       <button id="buscarDenFecha" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenFechaW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
@@ -99,7 +99,7 @@
     <div role="tabpanel" class="tab-pane" id="estatus">
       <h1>Denuncias por estatus</h1>
       <div class="col-md-12">
-      <select class="col-md-4 form-control" id="idEstatus">
+      <select class="col-md-4 form-control" id="idEstatus" style="margin-top: 10px;">
       <?php foreach ($estatuses as $estatus): ?>
         <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['descripcion'] ?></option>
       <?php endforeach ?>
@@ -114,7 +114,7 @@
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepción</h1>
       <div class="col-md-12">
-      <select class="col-md-4" class="form-control" id="idRecepcion">
+      <select class="col-md-4" class="form-control" id="idRecepcion" style="margin-top: 10px;">
       <?php foreach ($recepciones as $recepcion): ?>
         <option value="<?php echo $recepcion['idRecepcion'] ?>"><?php echo $recepcion['descripcion'] ?></option>
       <?php endforeach ?>
@@ -151,7 +151,7 @@
           </div>
       </div>
           </div>
-        </div>
+   
         <!-- Content ends -->
         </div>
             <div class="clearfix"></div>
