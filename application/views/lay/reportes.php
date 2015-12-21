@@ -132,8 +132,8 @@
       <h1>Denuncias por medios</h1>
       <div class="col-md-3">
       <select class="col-md-4 form-control" id="idEstatus" style="margin-top: 10px;">
-      <?php foreach ($estatuses as $estatus): ?>
-        <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['descripcion'] ?></option>
+      <?php foreach ($medioses as $medios): ?>
+        <option value="<?php echo $medios['idMedios'] ?>"><?php echo $medios['descripcion'] ?></option>
       <?php endforeach ?>
       </select>
       </div>
