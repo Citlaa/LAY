@@ -56,7 +56,7 @@
     <div role="tabpanel" class="tab-pane active" id="home">
       <h1>Denuncias por ciudadano</h1>
       <input type="hidden" name="idCiudadano" id="idCiudadano">
-      <input type="text" name="nombrei" class="form-control" id="nombrei" style="margin-top: 10px;">
+      <input type="text" name="nombrei" class="form-control" id="nombrei" style="margin-top: 10px;width: 486px;">
       <hr style="border-bottom-width: 0px;">
       <button id="buscarDenCiu" class="btn btn-enter btn-lg"> <span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenCiuW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
@@ -64,21 +64,21 @@
     <div role="tabpanel" class="tab-pane" id="profile">
       <h1>Denuncias por dependencia</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
-      <input type="text" name="dependenciai" class="form-control" id="dependenciai" style="margin-top: 10px;">
+      <input type="text" name="dependenciai" class="form-control" id="dependenciai" style="margin-top: 10px;width: 486px;">
       <hr style="border-bottom-width: 0px;"> 
       <button id="buscarDenDep" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenDepW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
-      <input type="text" name="coloniai" class="form-control" id="coloniai" style="margin-top: 10px;">
+      <input type="text" name="coloniai" class="form-control" id="coloniai" style="margin-top: 10px;width: 486px;">
       <hr style="border-bottom-width: 0px;">
       <button id="buscarDenCol" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenColW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
-      <input type="date" name="fechai" class="form-control date" id="fechai" style="margin-top: 10px;">
+      <input type="date" name="fechai" class="form-control date" id="fechai" style="margin-top: 10px;width: 200px;">
       <hr style="border-bottom-width: 0px;">
       <button id="buscarDenFecha" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenFechaW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
