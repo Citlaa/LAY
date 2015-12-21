@@ -48,6 +48,7 @@ class Regidenu extends CI_Controller {
 		 $grocery->set_relation('idCiudadano','ciudadanos','{nombre} \n{apellidoPa} \n{apellidoMa}');
 		 $grocery->set_relation('idDireccion','direcciones','colonia');
 		 $grocery->set_relation('idAsunto','asuntos','descripcion');
+		 $grocery->set_relation('idMedios','medios','descripcion');
 
 		 $grocery->display_as('idDependencia','Dependencia');
 		 $grocery->display_as('idCiudadano','Ciudadano');
@@ -59,7 +60,7 @@ class Regidenu extends CI_Controller {
 		 $grocery->unset_add();
 		 $grocery->unset_export();
 		 //$grocery->unset_edit();
-		 $grocery->edit_fields('fecha','idDependencia','idEstatus','idRecepcion');
+		 $grocery->edit_fields('fecha','idDependencia','idEstatus','idRecepcion','idMedios');
 
 		 $grocery->add_action('Editar ciudadano','','ciudadanos/editar_ciudadano');
 		 $grocery->add_action('Editar Direccion','','direcciones/editar_direccion');
