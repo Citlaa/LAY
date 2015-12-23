@@ -45,6 +45,9 @@
             <th>              
               <?php echo utf8_decode('Dirección'); ?>
             </th>
+            <th>
+            Medio
+          </th>
           <th>
             Asunto
           </th>
@@ -67,6 +70,9 @@
             </td>
             <td>
               <?php echo utf8_decode($denuncia['direccion']); ?>
+            </td>
+            <td>
+              <?php echo utf8_decode($denuncia['medio']); ?>
             </td>
             <td>
               <?php echo utf8_decode($denuncia['asunto']); ?>

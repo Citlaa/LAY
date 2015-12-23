@@ -2,18 +2,19 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Dependencias</title>
+    <title>Recepcion</title>
     <style type="text/css">
        body{
         font-family: sans-serif;
         font-size: 10pt;
-        background: url("plantilla.png") no-repeat fixed center;
+        background: url("plantilla.png");
+        background-position: 0px 0px;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
        }
-       #title{
+      #title{
         padding-top: 30px;
         text-align: center;
         font-family: Lucida Grande, Verdana, Sans-serif;
@@ -25,8 +26,8 @@
     </head>
 
     <body>
-    <h2 id=" top title">Reporte Generado</h2>
-    <h3> <?php echo "Reporte de denuncias del: ".$fechai.' al '. $fechaf ?></h3>
+      <h2 id="title">Reporte Generado</h2>
+      <h3>Reporte de denuncias por <?php echo utf8_decode($denuncias[0]['recepcion']); ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -47,9 +48,6 @@
             </th>
             <th>              
               <?php echo utf8_decode('Dirección'); ?>
-            </th>
-            <th>
-              Medio
             </th>
             <th>
               Asunto
@@ -77,15 +75,13 @@
               <td>
                 <?php echo utf8_decode($denuncia['direccion']); ?>
               </td>
-              <td>
-                <?php echo utf8_decode($denuncia['medio']); ?>
-              </td>
-              <td>
+              <td>                
                 <?php echo utf8_decode($denuncia['asunto']); ?>
               </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
+    </div>
 </body>
 </html>

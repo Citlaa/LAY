@@ -85,59 +85,16 @@ class Model_denuncias extends CI_Model {
       return $query->result_array();
     }
 
-    public function by_colonia($colonia)
-    {
-      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
-      $this->db->from('denuncias d');
-      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
-      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
-      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
-      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
-      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
-      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
-      $this->db->where('dir.colonia', $colonia);
-      $ciudadano= $this->db->get();
-      return $ciudadano->result_array();
-    }
-    public function order_fecha($fecha)
-    {
-      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
-      $this->db->from('denuncias d');
-      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
-      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
-      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
-      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
-      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
-      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
-      $this->db->where('d.fecha', $fecha);
-      $ciudadano= $this->db->get();
-      return $ciudadano->result_array();
-    }
-
-    public function by_estatus($idEstatus)
-    {
-      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
-      $this->db->from('denuncias d');
-      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
-      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
-      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
-      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
-      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
-      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
-      $this->db->where('d.idEstatus', $idEstatus);
-      $ciudadano= $this->db->get();
-      return $ciudadano->result_array();
-    }
-
     public function by_ciudadano($idCiudadano)
     {
-      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
       $this->db->from('denuncias d');
       $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
       $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
       $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
       $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
       $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
       $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
       $this->db->where('d.idCiudadano', $idCiudadano);
       $ciudadano= $this->db->get();
@@ -146,28 +103,62 @@ class Model_denuncias extends CI_Model {
 
     public function by_dependencia($idDependencia)
     {
-      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
       $this->db->from('denuncias d');
       $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
       $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
       $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
       $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
       $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
       $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
       $this->db->where('d.idDependencia', $idDependencia);
       $ciudadano= $this->db->get();
       return $ciudadano->result_array();
     }
 
-    public function by_periodo($fechai, $fechaf)
+    public function by_colonia($colonia)
     {
-      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
       $this->db->from('denuncias d');
       $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
       $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
       $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
       $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
       $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
+      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
+      $this->db->where('dir.colonia', $colonia);
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    }
+
+    public function order_fecha($fecha)
+    {
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
+      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
+      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
+      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
+      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
+      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
+      $this->db->where('d.fecha', $fecha);
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    }
+
+    public function by_periodo($fechai, $fechaf)
+    {
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
+      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
+      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
+      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
+      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
       $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
       $this->db->where("d.fecha >= '".$fechai."'");
       $this->db->where("d.fecha <= '".$fechaf."'");
@@ -176,9 +167,41 @@ class Model_denuncias extends CI_Model {
       return $direccion->result_array();
     }
 
+    public function by_estatus($idEstatus)
+    {
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
+      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
+      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
+      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
+      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
+      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
+      $this->db->where('d.idEstatus', $idEstatus);
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    }
+
     public function by_recepcion($idRecepcion)
     {
-      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion,  a.descripcion as asunto', FALSE);
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
+      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
+      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
+      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
+      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
+      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
+      $this->db->where('d.idRecepcion', $idRecepcion);
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    }
+
+    public function by_medio($idMedio)
+    {
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
       $this->db->from('denuncias d');
       $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
       $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
@@ -186,7 +209,8 @@ class Model_denuncias extends CI_Model {
       $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
       $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
       $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
-      $this->db->where('d.idRecepcion', $idRecepcion);
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
+      $this->db->where('dir.colonia', $medio);
       $ciudadano= $this->db->get();
       return $ciudadano->result_array();
     }

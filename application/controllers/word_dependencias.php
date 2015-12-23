@@ -51,6 +51,7 @@ class Word_Dependencias extends CI_Controller{
     $table->addCell(2000, $styleCell)->addText('Dependencia', $fontStyle);
     $table->addCell(2000, $styleCell)->addText('Estatus', $fontStyle);
     $table->addCell(2000, $styleCell)->addText(utf8_decode('Recepción'), $fontStyle);
+    $table->addCell(2000, $styleCell)->addText('Medio', $fontStyle);
     $table->addCell(500, $styleCell)->addText('Asunto', $fontStyle);
     $table->addCell(500, $styleCell)->addText(utf8_decode('Dirección'), $fontStyle);
 
@@ -62,6 +63,7 @@ class Word_Dependencias extends CI_Controller{
         $table->addCell(2000)->addText("".utf8_decode($resultado['dependencia']));
         $table->addCell(2000)->addText("".utf8_decode($resultado['estatus']));
         $table->addCell(2000)->addText("".utf8_decode($resultado['recepcion']));
+        $table->addCell(2000)->addText("".utf8_decode($resultado['medio']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['asunto']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['direccion']));
     }
