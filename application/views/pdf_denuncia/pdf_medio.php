@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Recepcion</title>
+    <title>Medio</title>
     <style type="text/css">
        body{
         font-family: sans-serif;
@@ -27,7 +27,7 @@
 
     <body>
       <h2 id="title">Reporte Generado</h2>
-      <h3>Reporte de denuncias por <?php echo utf8_decode($denuncias[0]['recepcion']); ?></h3>
+      <h3>Reporte de denuncias por <?php echo utf8_decode($denuncias[0]['medio']); ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>

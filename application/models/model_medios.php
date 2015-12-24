@@ -15,9 +15,4 @@ class Model_medios extends CI_Model{
     return $query->result_array();
   }
 
-  public function get_pendiente()
-  {
-    $query = $this->db->get_where('medios','descripcion', 'Radio');
-    return $query->result();
-  }
 }

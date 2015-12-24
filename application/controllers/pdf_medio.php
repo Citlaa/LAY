@@ -111,11 +111,11 @@ class Pdf_medio extends CI_Controller
        $this->html2pdf->filename('test.pdf');
 
        //establecemos el tipo de papel
-       $this->load->model(array('model_denuncias'));
+       $this->load->model(array('model_medio'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_denuncias->by_medio($idMedio)
+           'denuncias' => $this->model_medio->order_medio($idMedio)
        );
 
        //hacemos que coja la vista como datos a imprimir

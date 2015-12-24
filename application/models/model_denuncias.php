@@ -80,6 +80,7 @@ class Model_denuncias extends CI_Model {
       $this->db->join('estatus', 'denuncias.idEstatus = estatus.idEstatus', 'left');
       $this->db->join('recepcion', 'denuncias.idRecepcion = recepcion.idRecepcion', 'left');
       $this->db->join('direcciones', 'denuncias.idDireccion = direcciones.idDireccion', 'left');
+      $this->db->join('medios', 'denuncias.idMedios = medios.idMedios', 'left');
       $this->db->join('asuntos', 'denuncias.idAsunto = asuntos.idAsunto', 'left');
       $query = $this->db->get();
       return $query->result_array();
@@ -199,7 +200,7 @@ class Model_denuncias extends CI_Model {
       return $ciudadano->result_array();
     }
 
-    public function by_medio($idMedio)
+    public function by_medio($idMedios)
     {
       $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medio, a.descripcion as asunto', FALSE);
       $this->db->from('denuncias d');

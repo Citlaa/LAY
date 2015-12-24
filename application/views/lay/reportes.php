@@ -93,7 +93,6 @@
           <input type="date" class="form-control" id="periodof">
         </div>
       </form>
-   
       <button id="buscarDenPeriodo" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenPeriodoW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
@@ -127,11 +126,10 @@
       <button id="buscarDenRec" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenRecW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
-
     <div role="tabpanel" class="tab-pane" id="medios">
       <h1>Denuncias por medios</h1>
       <div class="col-md-3">
-      <select class="col-md-4 form-control" id="idEstatus" style="margin-top: 10px;">
+      <select class="col-md-4 form-control" id="idMedios" style="margin-top: 10px;">
       <?php foreach ($medioses as $medios): ?>
         <option value="<?php echo $medios['idMedios'] ?>"><?php echo $medios['descripcion'] ?></option>
       <?php endforeach ?>
@@ -140,8 +138,8 @@
       <div>
       <br>
       </div>
-      <button id="buscarDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-       <button id="buscarDenEstW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="buscarDenMed" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenMedW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
 
     
@@ -186,6 +184,8 @@
           $('#idCiudadano').val(ui.item.id);
         }
       });
+
+
       $('#buscarDenCiu').click(function () {
         var nombrei = $("#nombrei").val();
         if(nombrei){
@@ -207,6 +207,8 @@
           $('#idDependencia').val(ui.item.id);
         }
       });
+
+
       $('#buscarDenDep').click(function () {
         var dependenciai = $("#dependenciai").val();
         if(dependenciai){
@@ -220,8 +222,6 @@
         window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val());
         }
       });
-
-
 
 
       $('#buscarDenCol').click(function () {
@@ -239,8 +239,6 @@
       });
 
 
-
-
       $('#buscarDenFecha').click(function () {
         var fechai = $("#fechai").val();
         if(fechai){
@@ -256,8 +254,6 @@
       });
 
 
-
-
       $('#buscarDenPeriodo').click(function () {
         var periodoi = $("#periodoi").val();
         var periodof = $("#periodof").val();
@@ -267,6 +263,7 @@
       }
       });
 
+
       $('#buscarDenPeriodoW').click(function () {
         var periodoi = $("#periodoi").val();
         var periodof = $("#periodof").val();
@@ -275,8 +272,6 @@
         window.location.replace("/lay/word_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
       }
       });
-
-
 
 
       $('#buscarDenEst').click(function () {
@@ -290,8 +285,6 @@
       });
 
 
-
-
       $('#buscarDenRec').click(function () {
         // console.log($('#idCiudadano').val());
         window.location.replace("/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
@@ -301,6 +294,18 @@
         // console.log($('#idCiudadano').val());
         window.location.replace("/lay/word_recepcion/index/"+  $('#idRecepcion').val());
       });
+
+
+      $('#buscarDenMed').click(function () {
+        
+        window.location.replace("/lay/pdf_medio/index/"+  $('#idMedios').val());
+      });
+
+      $('#buscarDenMedW').click(function () {
+        
+        window.location.replace("/lay/word_medio/index/"+  $('#idMedios').val());
+      });
+
     });
   </script>
 </section>
