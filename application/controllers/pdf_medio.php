@@ -21,7 +21,7 @@ class Pdf_medio extends CI_Controller
        }
    }
 
-   public function index($idMedio = 1)
+   public function index($idMedio)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,

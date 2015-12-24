@@ -27,7 +27,7 @@
 
     <body>
       <h2 id="title">Reporte Generado</h2>
-      <h3>Reporte de denuncias por <?php echo utf8_decode($denuncias[0]['medio']); ?></h3>
+      <h3>Reporte de denuncias por <?php echo utf8_decode($denuncias[0]['estatus']); ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>

@@ -21,7 +21,7 @@ class Pdf_recepcion extends CI_Controller
        }
    }
 
-   public function index($idRecepcion = 1)
+   public function index($idRecepcion)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
@@ -111,11 +111,11 @@ class Pdf_recepcion extends CI_Controller
        $this->html2pdf->filename('test.pdf');
 
        //establecemos el tipo de papel
-       $this->load->model(array('model_denuncias'));
+       $this->load->model(array('model_recepcion'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_denuncias->by_medio($idMedio)
+           'denuncias' => $this->model_recepcion->order_recepcion($idRecepcion)
        );
 
        //hacemos que coja la vista como datos a imprimir
