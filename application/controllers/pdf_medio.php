@@ -21,7 +21,7 @@ class Pdf_medio extends CI_Controller
        }
    }
 
-   public function index($idMedio)
+   public function index($idMedios = 1)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
@@ -37,10 +37,9 @@ class Pdf_medio extends CI_Controller
        //establecemos el tipo de papel
        $this->html2pdf->paper('a4', 'landscape');
 
-       $this->load->model(array('model_denuncias'));
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_denuncias->by_medio($idMedio)
+           'denuncias' => $this->model_denuncias->by_medios($idMedios)
        );
 
        //hacemos que coja la vista como datos a imprimir
@@ -111,11 +110,11 @@ class Pdf_medio extends CI_Controller
        $this->html2pdf->filename('test.pdf');
 
        //establecemos el tipo de papel
-       $this->load->model(array('model_medio'));
+       $this->load->model(array('model_denuncias'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_medio->order_medio($idMedio)
+           'denuncias' => $this->model_denuncias->by_medios($idMedios)
        );
 
        //hacemos que coja la vista como datos a imprimir

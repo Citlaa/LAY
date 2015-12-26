@@ -8,7 +8,7 @@ class Word_medio extends CI_Controller{
     parent::__construct();
 
   }
-  function index($idMedio)
+  function index($idMedios)
   {
     $this->load->library('word');
     //our docx will have 'lanscape' paper orientation
@@ -31,8 +31,8 @@ class Word_medio extends CI_Controller{
     $fontStyle = array('bold'=>true, 'align'=>'center');
 
     // Query
-    $resultados = $this->model_denuncias->by_medio($idMedio);
-    $medio = "Reporte de ". utf8_decode($resultados[0]['medio']); 
+    $resultados = $this->model_denuncias->by_medios($idMedios);
+    $medio = "Reporte de ". utf8_decode($resultados[0]['medios']); 
 
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);
@@ -51,8 +51,8 @@ class Word_medio extends CI_Controller{
     $table->addCell(2000, $styleCell)->addText('Dependencia', $fontStyle);
     $table->addCell(2000, $styleCell)->addText('Estatus', $fontStyle);
     $table->addCell(2000, $styleCell)->addText(utf8_decode('Recepción'), $fontStyle);
-    $table->addCell(500, $styleCell)->addText('Asunto', $fontStyle);
-    $table->addCell(500, $styleCell)->addText(utf8_decode('Dirección'), $fontStyle);
+    $table->addCell(2000, $styleCell)->addText('Asunto', $fontStyle);
+    $table->addCell(2000, $styleCell)->addText(utf8_decode('Dirección'), $fontStyle);
 
 
     foreach ($resultados as $resultado) {

@@ -14,5 +14,5 @@ class Model_medios extends CI_Model{
     $query = $this->db->get('medios');
     return $query->result_array();
   }
-
+  
 }

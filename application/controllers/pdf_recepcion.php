@@ -21,7 +21,7 @@ class Pdf_recepcion extends CI_Controller
        }
    }
 
-   public function index($idRecepcion)
+   public function index($idRecepcion = 1)
    {
 
        //establecemos la carpeta en la que queremos guardar los pdfs,
@@ -37,7 +37,6 @@ class Pdf_recepcion extends CI_Controller
        //establecemos el tipo de papel
        $this->html2pdf->paper('a4', 'landscape');
 
-       $this->load->model(array('model_denuncias'));
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
            'denuncias' => $this->model_denuncias->by_recepcion($idRecepcion)
@@ -46,7 +45,6 @@ class Pdf_recepcion extends CI_Controller
        //hacemos que coja la vista como datos a imprimir
        //importante utf8_decode para mostrar bien las tildes, ñ y demás
        $this->html2pdf->html(utf8_encode($this->load->view('pdf_denuncia/pdf_recepcion', $data, true)));
-
        //si el pdf se guarda correctamente lo mostramos en pantalla
        if($this->html2pdf->create('save'))
        {
@@ -111,11 +109,11 @@ class Pdf_recepcion extends CI_Controller
        $this->html2pdf->filename('test.pdf');
 
        //establecemos el tipo de papel
-       $this->load->model(array('model_recepcion'));
+       $this->load->model(array('model_denuncias'));
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_recepcion->order_recepcion($idRecepcion)
+           'denuncias' => $this->model_denuncias->by_recepcion($idRecepcion)
        );
 
        //hacemos que coja la vista como datos a imprimir
