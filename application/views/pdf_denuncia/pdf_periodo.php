@@ -78,7 +78,7 @@
                 <?php echo utf8_decode($denuncia['direccion']); ?>
               </td>
               <td>
-                <?php echo utf8_decode($denuncia['medio']); ?>
+                <?php echo utf8_decode($denuncia['medios']); ?>
               </td>
               <td>
                 <?php echo utf8_decode($denuncia['asunto']); ?>

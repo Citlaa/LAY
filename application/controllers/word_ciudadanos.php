@@ -63,7 +63,7 @@ class Word_Ciudadanos extends CI_Controller{
     	$table->addCell(2000)->addText("".utf8_decode($resultado['dependencia']));
     	$table->addCell(2000)->addText("".utf8_decode($resultado['estatus']));
     	$table->addCell(2000)->addText("".utf8_decode($resultado['recepcion']));
-        $table->addCell(2000)->addText("".utf8_decode($resultado['medio']));
+        $table->addCell(2000)->addText("".utf8_decode($resultado['medios']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['asunto']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['direccion']));
     }
