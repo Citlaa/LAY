@@ -91,7 +91,7 @@
       </div>
     </div>
   </form>
-    <input type="submit" value="Editar" class="btn btn-success">
+    <button class="btn btn-success" id="enviar">Editar</button>
     <a class="btn btn-danger" href="<?php echo site_url('regidenu/mostrar_busqueda');?>">Cancelar</a>
 </div>
 

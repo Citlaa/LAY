@@ -16,7 +16,7 @@ class Model_denuncias extends CI_Model {
     return $this->db->get('denuncias', $idDenuncia);
   }
 
-  public function insert_denuncia()
+public function insert_denuncia()
   {
     $ciudadano = array(
       'nombre' => $this->input->post('nombre'),
@@ -33,14 +33,13 @@ class Model_denuncias extends CI_Model {
       'localidad' => $this->input->post('localidad'),
       'cp' => $this->input->post('cp'),
     );
-
     $asunto = array(
       'descripcion' => $this->input->post('asunto'),
     );
-
-
+    $idCiudadano = $this->input->post('idCiudadano');
+    $idDireccion = $this->input->post('idDireccion');
     $this->db->trans_start();
-    if ($idCiudadano = $this->input->post('idCiudadano')){
+    if ($idCiudadano !='null'){
       $this->db->where('idCiudadano', $idCiudadano);
       $this->db->update('ciudadanos',$ciudadano);
       $cId=$idCiudadano;
@@ -48,15 +47,15 @@ class Model_denuncias extends CI_Model {
       $this->db->insert('ciudadanos', $ciudadano);
       $cId=$this->db->insert_id();
     }
-
-    if ($idDireccion = $this->input->post('idDireccion')){
+    if ($idDireccion !=null){
       $this->db->where('idDireccion', $idDireccion);
       $this->db->update('direcciones',$direccion);
       $dId=$idDireccion;
     } else {
-      $this->db->insert('ciudadanos', $ciudadano);
+      $this->db->insert('direcciones', $direccion);
       $dId=$this->db->insert_id();
     }
+    // $dId=$this->db->insert_id();
     $this->db->insert('asuntos', $asunto);
     $aId=$this->db->insert_id();
     $estatus  = $this->db->get_where('estatus','descripcion','Pendiente');
@@ -69,7 +68,8 @@ class Model_denuncias extends CI_Model {
       'idDependencia'=>$this->input->post('idDependencia'),
       'idDireccion'=>$dId,
       'idCiudadano'=>$cId,
-      'idAsunto'=>$aId
+      'idAsunto'=>$aId,
+      'idMedios'=>$this->input->post('idMedio')
     ));
     return $this->db->trans_complete();
   }
