@@ -24,7 +24,6 @@ class Pdf_dependencia extends CI_Controller
    {
       $data['user_id']  = $this->tank_auth->get_user_id();
       $data['username'] = $this->tank_auth->get_username();
-      if ($this->tank_auth->is_logged_in()) {
          //establecemos la carpeta en la que queremos guardar los pdfs,
          //si no existen las creamos y damos permisos
          $this->createFolder();
@@ -45,7 +44,6 @@ class Pdf_dependencia extends CI_Controller
            'denuncias' => $this->model_denuncias->by_dependencia($idDependencia)
          );
 
-         if($data['denuncias']){
            //hacemos que coja la vista como datos a imprimir
            //importante utf8_decode para mostrar bien las tildes, ñ y demás
            $this->html2pdf->html(utf8_encode($this->load->view('pdf_dependencia', $data, true)));
@@ -55,21 +53,6 @@ class Pdf_dependencia extends CI_Controller
            {
              $this->show();
            }
-        }else {
-          $data['user_id']  = $this->tank_auth->get_user_id();
-          $data['username'] = $this->tank_auth->get_username();
-          if ($this->tank_auth->is_logged_in()) {
-            $this->load->view('template/header');
-            $this->load->view('template/menu',$data);
-            $this->load->view('no_encontrado');
-            $this->load->view('template/footer');
-          }else{
-            echo "no permisos";
-          }              
-        }
-      }else{
-        echo "no permisos";
-      }
     }
 
    //funcion que ejecuta la descarga del pdf
