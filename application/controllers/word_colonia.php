@@ -33,7 +33,9 @@ class Word_Colonia extends CI_Controller{
     //Query
     $resultados = $this->model_denuncias->by_colonia($colonia);
     $colonia = "Reporte de ". utf8_decode($colonia); 
-
+    if(empty($resultados[0]['ciudadano'])){
+        $section->addText("No se encontraron registros",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
+    }else{
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow);
 
     // Add table style
@@ -68,7 +70,7 @@ class Word_Colonia extends CI_Controller{
       $table->addCell(2000)->addText("".utf8_decode($resultado['asunto']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['direccion']));
     }
-
+}
     $filename = "DenunciasPorColonia.docx";
     header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document'); //mime type
     header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name

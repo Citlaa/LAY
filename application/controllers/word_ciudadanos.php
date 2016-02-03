@@ -33,7 +33,9 @@ class Word_Ciudadanos extends CI_Controller{
     // Query
     $resultados = $this->model_denuncias->by_ciudadano($idCiudadano);
     $ciudadano = "Reporte de ". utf8_decode($resultados[0]['ciudadano']); 
-
+    if(empty($resultados[0]['ciudadano'])){
+        $section->addText("No se encontraron registros",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
+    }else{
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);
     $section->addText(" ",array("size"=>12,"bold"=>true));
@@ -55,7 +57,7 @@ class Word_Ciudadanos extends CI_Controller{
     $table->addCell(500, $styleCell)->addText('Asunto', $fontStyle);
     $table->addCell(500, $styleCell)->addText(utf8_decode('Dirección'), $fontStyle);
 
-
+    
     foreach ($resultados as $resultado) {
       $table->addRow();
     	$table->addCell(2000)->addText("".utf8_decode($resultado['fecha']));
@@ -67,7 +69,7 @@ class Word_Ciudadanos extends CI_Controller{
       $table->addCell(2000)->addText("".utf8_decode($resultado['asunto']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['direccion']));
     }
-
+}
     $filename = "DenunciasPorCiudadano.docx";
     header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document'); //mime type
     header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name

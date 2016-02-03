@@ -33,7 +33,9 @@ class Word_recepcion extends CI_Controller{
     // Query
     $resultados = $this->model_denuncias->by_recepcion($idRecepcion);
     $recepcion = "Reporte de ". utf8_decode($resultados[0]['recepcion']); 
-
+    if(empty($resultados[0]['ciudadano'])){
+        $section->addText("No se encontraron registros",array("color"=>"3B0B17", "size"=>14,"bold"=>true));
+    }else{
     // Add table style
     $this->word->addTableStyle('myOwnTableStyle', $styleTable, $styleFirstRow , $sectionStyle);
     $section->addText(" ",array("size"=>12,"bold"=>true));
@@ -67,7 +69,7 @@ class Word_recepcion extends CI_Controller{
       $table->addCell(2000)->addText("".utf8_decode($resultado['asunto']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['direccion']));
     }
-
+}
     $filename = "DenunciasPorRecepcion.docx";
     header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document'); //mime type
     header('Content-Disposition: attachment;filename="'.$filename.'"'); //tell browser what's the file name
