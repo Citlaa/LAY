@@ -56,6 +56,7 @@ class Regidenu extends CI_Controller {
 		 $grocery->display_as('idRecepcion','Recepción');
 		 $grocery->display_as('idEstatus','Estatus');
 		 $grocery->display_as('idAsunto','Asunto');
+		 $grocery->display_as('idMedios','Medios');
 
 		 $grocery->unset_add();
 		 $grocery->unset_export();
