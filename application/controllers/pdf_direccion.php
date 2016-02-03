@@ -39,6 +39,8 @@ class Pdf_direccion extends CI_Controller
 
        $this->load->model(array('model_denuncias'));
 
+       $colonia = urldecode($colonia);
+
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
            'denuncias' => $this->model_denuncias->by_colonia($colonia),
@@ -50,6 +52,7 @@ class Pdf_direccion extends CI_Controller
        $this->html2pdf->html(utf8_encode($this->load->view('pdf_denuncia/pdf_direccion', $data, true)));
 
        //si el pdf se guarda correctamente lo mostramos en pantalla
+
        if($this->html2pdf->create('save'))
        {
            $this->show();

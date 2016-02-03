@@ -73,4 +73,22 @@ class Model_direccion extends CI_Model
     }
     return $resultados;
 		}
+
+
+	public function direccion_autocomplete_colonia($q)
+	{
+		$this->db->or_like('colonia', $q);		
+		$query = $this->db->get('direcciones');
+		$ciudadanos =  $query->result_array();
+		$resultados=array();
+		foreach ($direcciones as $direccion) {
+			 array_push($resultados,array(
+				'label'=>$direccion['colonia'],
+				'id'=>$direccion['idDireccion'],
+				'value'=>$direccion['colonia']				
+			));
+		}
+
+		return $resultados;
+	}
 }

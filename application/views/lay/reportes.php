@@ -177,7 +177,8 @@
       <!-- Scroll to top -->
   </body>
   <script type="text/javascript">
-    $(function () {      
+    $(function () {
+      console.log($('#nombrei').val());
       $('#nombrei').autocomplete({
         source:'/lay/ciudadanos/autocomplete_ciudadanos_nombre',
         select: function (event, ui) {
@@ -186,8 +187,9 @@
       });
 
 
+
       $('#buscarDenCiu').click(function () {
-        var nombrei = $("#nombrei").val();
+        
         if(nombrei){
           window.location.replace("/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
         }  

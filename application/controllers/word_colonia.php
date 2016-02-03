@@ -29,6 +29,8 @@ class Word_Colonia extends CI_Controller{
 
     // Define font style for first row
     $fontStyle = array('bold'=>true, 'align'=>'center');
+    
+    $colonia = urldecode($colonia);
 
     //Query
     $resultados = $this->model_denuncias->by_colonia($colonia);
