@@ -61,7 +61,7 @@
               <?php echo utf8_decode($denuncia['dependencia']); ?>
             </td>
             <td>
-              <?php echo $denuncia['ciudadano'] ?>
+              <?php echo utf8_decode ($denuncia['ciudadano']) ?>
             </td>
             <td>
               <?php echo utf8_decode($denuncia['estatus']); ?>
