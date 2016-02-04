@@ -99,22 +99,21 @@ class Regidenu extends CI_Controller {
 			$this->load->helper('form');
     		$this->load->library('form_validation');
 
-			$this->form_validation->set_rules('nombre', 'Nombre', 'required|trim');
-			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'required|trim');
-			$this->form_validation->set_rules('apellidoMa', 'Apellido Materno', 'required|trim');
+			$this->form_validation->set_rules('nombre', 'Nombre', 'trim');
+			$this->form_validation->set_rules('apellidoPa', 'Apellido Paterno', 'trim');
+			$this->form_validation->set_rules('apellidoMa', 'Apellido Materno', 'trim');
 			//$this->form_validation->set_rules('apellidoMa', 'Apellido Materno', 'required|trim|callback_customAlpha');
-			$this->form_validation->set_rules('calle', 'Calle', 'required|trim');
+			$this->form_validation->set_rules('calle', 'Calle', 'trim');
 
-			$this->form_validation->set_rules('noExt', 'No. Exterior', 'required|integer|trim');
-			$this->form_validation->set_rules('cp', 'C.P.', 'required|integer|trim');
-			$this->form_validation->set_rules('colonia', 'Colonia', 'required|trim');
-			$this->form_validation->set_rules('localidad', 'Localidad', 'required|trim');
-			$this->form_validation->set_rules('tel1', 'Teléfono', 'required|integer|trim');
+			$this->form_validation->set_rules('noExt', 'No. Exterior', 'integer|trim');
+			$this->form_validation->set_rules('cp', 'C.P.', 'integer|trim');
+			$this->form_validation->set_rules('colonia', 'Colonia', 'trim');
+			$this->form_validation->set_rules('localidad', 'Localidad', 'trim');
+			$this->form_validation->set_rules('tel1', 'Teléfono', 'integer|trim');
 			$this->form_validation->set_rules('tel2', 'Teléfono', 'integer|trim');
-			$this->form_validation->set_rules('asunto', 'Asunto', 'required|trim');
+			$this->form_validation->set_rules('asunto', 'Asunto', 'trim');
 
-			$this->form_validation->set_message('alpha','El campo %s debe estar compuesto solo por letras');
-			$this->form_validation->set_message('required','El campo %s es obligatorio');
+			$this->form_validation->set_message('alpha','El campo %s debe estar compuesto solo por letras');			
 			$this->form_validation->set_message('integer','El campo %s debe estar compuesto por numeros enteros');
 
 
