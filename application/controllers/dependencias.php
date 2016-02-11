@@ -6,7 +6,7 @@ class Dependencias extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		 $this->load->database();
-        $this->load->helper('url');
+         $this->load->helper('url');
         /* ------------------ */
 
         $this->load->library('grocery_CRUD');
@@ -72,7 +72,23 @@ class Dependencias extends CI_Controller {
 			$this->load->view('template/footer');
 			 }else{
 			echo "no permisos";
-		}
+			}
 		}
 
+		public function count_dependencias()
+		{
+			$data['user_id']	= $this->tank_auth->get_user_id();
+			$data['username']	= $this->tank_auth->get_username();
+			if ($this->tank_auth->is_logged_in()) {
+				$this->load->model(array('model_denuncias'));
+				$data['denuncias'] =  $this->model_denuncias->count_dependencias();
+				$this->load->view('template/header');
+				$this->load->view('template/menu',$data);
+				$this->load->view('lay/dependencias_Count');
+				$this->load->view('template/footer');
+			}
+			else{
+			echo "no permisos";
+			}
+		}
 }

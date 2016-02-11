@@ -118,6 +118,7 @@ public function insert_denuncia()
       return $ciudadano->result_array();
     }
 
+    
     public function by_colonia($colonia)
     {
       $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medios, a.descripcion as asunto', FALSE);
@@ -215,4 +216,15 @@ public function insert_denuncia()
       $ciudadano= $this->db->get();
       return $ciudadano->result_array();
     }
+
+   public function count_dependencias()
+    {
+      $this->db->select('idDependencia, COUNT(d.idDependencia) as total');
+      $this->db->from('denuncias d');
+      $this->db->group_by('d.idDependencia'); 
+      $total = $this->db->get();
+      return $total->result_array();
+    }
+
+
 }

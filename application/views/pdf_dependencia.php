@@ -23,10 +23,11 @@
 
     </style>
     </head>
-<?php if ($denuncias): ?>
+    <?php if ($denuncias): ?>
     <body>
     <h2 id=" top title">Reporte Generado</h2>
     <h3>Reporte de <?php echo utf8_decode($denuncias[0]['dependencia']); ?></h3>
+    <h3>Total de registros: <?php echo utf8_decode($denuncias[0]['totalDependencias']); ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -53,6 +54,7 @@
             </th>
           </tr>
         </thead>
+
         <tbody>
           <?php foreach ($denuncias as $denuncia): ?>
             <tr>
