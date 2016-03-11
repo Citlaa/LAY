@@ -27,7 +27,6 @@
     <body>
     <h2 id=" top title">Reporte Generado</h2>
     <h3>Reporte de <?php echo utf8_decode($denuncias[0]['dependencia']); ?></h3>
-    <h3>Total de registros: <?php echo utf8_decode($denuncias[0]['totalDependencias']); ?></h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -36,6 +35,9 @@
             </th>
             <th>
               Ciudadano
+            </th>
+            <th>
+              <?php echo utf8_decode('Teléfono'); ?>
             </th>
             <th>
               Estatus
@@ -63,6 +65,9 @@
                 </td>
                 <td>
                   <?php echo utf8_decode($denuncia['ciudadano']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['telefono']); ?>
                 </td>
                 <td>
                   <?php echo utf8_decode($denuncia['estatus']); ?>

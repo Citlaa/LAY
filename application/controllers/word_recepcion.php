@@ -50,6 +50,7 @@ class Word_recepcion extends CI_Controller{
 
     $table->addCell(2000, $styleCell)->addText('Fecha', $fontStyle);
     $table->addCell(2000, $styleCell)->addText('Ciudadano', $fontStyle);
+    $table->addCell(2000, $styleCell)->addText(utf8_decode('Teléfono'), $fontStyle);
     $table->addCell(2000, $styleCell)->addText('Dependencia', $fontStyle);
     $table->addCell(2000, $styleCell)->addText('Estatus', $fontStyle);
     $table->addCell(2000, $styleCell)->addText(utf8_decode('Recepción'), $fontStyle);
@@ -62,6 +63,7 @@ class Word_recepcion extends CI_Controller{
       $table->addRow();
       $table->addCell(2000)->addText("".utf8_decode($resultado['fecha']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['ciudadano']));
+      $table->addCell(2000)->addText("".utf8_decode($resultado['telefono']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['dependencia']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['estatus']));
       $table->addCell(2000)->addText("".utf8_decode($resultado['recepcion']));

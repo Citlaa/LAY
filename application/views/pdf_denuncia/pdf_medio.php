@@ -40,6 +40,9 @@
               Ciudadano
             </th>
             <th>
+              <?php echo utf8_decode('Teléfono'); ?>
+            </th>
+            <th>
               Estatus
             </th>
             <th>
@@ -65,6 +68,9 @@
                 <td>                  
                   <?php echo utf8_decode($denuncia['ciudadano']); ?>
                 </td>
+                <td>
+              <?php echo utf8_decode($denuncia['telefono']); ?>
+            </td>
                 <td>
                   <?php echo utf8_decode($denuncia['estatus']); ?>
                 </td>

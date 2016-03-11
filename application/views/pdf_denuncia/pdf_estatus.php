@@ -39,6 +39,9 @@
               Ciudadano
             </th>
             <th>
+              <?php echo utf8_decode('Teléfono'); ?>
+            </th>
+            <th>
               <?php echo utf8_decode('Recepción'); ?>
             </th>
             <th>
@@ -63,6 +66,9 @@
                 </td>
                 <td>                  
                   <?php echo utf8_decode($denuncia['ciudadano']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['telefono']); ?>
                 </td>
                 <td>
                   <?php echo utf8_decode($denuncia['recepcion']); ?>
