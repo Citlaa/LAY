@@ -85,7 +85,17 @@ class Reportes extends CI_Controller {
 	public function get_all()
 	{
 		$this->load->model(array('model_denuncias'));
-		var_dump($this->model_denuncias->get_all());
+		echo var_dump($this->model_denuncias->get_all());		
+	}
+
+	public function checkboxes()
+	{
+		//$this->load->view(arrar('LAY/reportes'));
+		$datac=$this->input->post('check');
+		//var_dump($checkdata);
+		echo var_dump($this->input->post('datac'));
+		echo $this->input->post('checkme');
+
 	}
 
 	public function get_all_html(){

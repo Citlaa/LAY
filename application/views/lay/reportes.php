@@ -56,7 +56,7 @@
     <div role="tabpanel" class="tab-pane active" id="home">
       <h1>Denuncias por ciudadano</h1>
       <input type="hidden" name="idCiudadano" id="idCiudadano">
-      <input type="checkbox" name="check" value="ciudadano" id="fancy-checkbox-default" autocomplete="off" />
+      <input type="checkbox" name="check" value="Ciudadano" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Ciudadanos
       </label>
@@ -94,7 +94,7 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
-      <input type="checkbox" name="check" value="ciudadano" id="fancy-checkbox-default" autocomplete="off" />
+      <input type="checkbox" name="check" value="fecha" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Fecha
       </label>
@@ -107,7 +107,7 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
       <h1>Denuncias por periodo</h1>
-      <input type="checkbox" name="check" value="ciudadano" id="fancy-checkbox-default" autocomplete="off" />
+      <input type="checkbox" name="check" value="periodo" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Periodo
       </label>
@@ -124,7 +124,7 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="estatus">
       <h1>Denuncias por estatus</h1>
-      <input type="checkbox" name="check" value="ciudadano" id="fancy-checkbox-default" autocomplete="off" />
+      <input type="checkbox" name="check" value="estatus" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Estatus
       </label>
@@ -144,7 +144,7 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepción</h1>
-      <input type="checkbox" name="check" value="ciudadano" id="fancy-checkbox-default" autocomplete="off" />
+      <input type="checkbox" name="check" value="recepcion" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Recepción
       </label>
@@ -164,7 +164,7 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="medios">
       <h1>Denuncias por medios</h1>
-      <input type="checkbox" name="check" value="ciudadano" id="fancy-checkbox-default" autocomplete="off" />
+      <input type="checkbox" name="checkme" value="medios" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Medios
       </label>
@@ -190,23 +190,6 @@
     
   </div>
 
-        <div class="page-content page-users">
-            <div class="page-tabs">
-              <!-- Nav tabs -->
-
-
-              <!-- Tab panes -->
-                </div>
-                  <div>
-
-                </div>
-                </div>
-
-<!-- Add new Registro -->
-
-
-
-<!--hasta aqui -->
 
               </div>
             </div>
