@@ -90,11 +90,9 @@ class Reportes extends CI_Controller {
 
 	public function checkboxes()
 	{
-		//$this->load->view(arrar('LAY/reportes'));
-		$datac=$this->input->post('check');
-		//var_dump($checkdata);
-		echo var_dump($this->input->post('datac'));
-		echo $this->input->post('checkme');
+		
+		$data=$this->input->post('check');
+		echo $data;	
 
 	}
 

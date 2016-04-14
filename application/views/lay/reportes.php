@@ -55,51 +55,70 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
       <h1>Denuncias por ciudadano</h1>
-      <input type="hidden" name="idCiudadano" id="idCiudadano">
-      <input type="checkbox" name="check" value="Ciudadano" id="fancy-checkbox-default" autocomplete="off" />
-      <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-        Denuncias por Ciudadanos
-      </label>
+      <input type="hidden" name="idCiudadano" id="idCiudadano">     
+
+      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
+        <input type="checkbox" name="check" value="Ciudadano" id="fancy-checkbox-default" autocomplete="off" />
+        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
+          Denuncias por Ciudadanos
+        </label>        
+        <input type="submit" value="Enviar" class="btn btn-success">
+      </form>
 
       <input type="text" name="nombrei" class="form-control" id="nombrei" style="margin-top: 10px;width: 486px;">      
+
+      
       <hr style="border-bottom-width: 0px;">
+      
+            
       <!--<button id="buscarDenCiu" class="btn btn-enter btn-lg"> <span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenCiuW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
     </div>
     <div role="tabpanel" class="tab-pane" id="profile">
       <h1>Denuncias por dependencia</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
-      <input type="checkbox" name="check" value="dependencia" id="fancy-checkbox-default" autocomplete="off" />
-      <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-        Denuncias por Dependencias
-      </label>
-
+      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
+        <input type="checkbox" name="check" value="dependencia" id="fancy-checkbox-default" autocomplete="off" />
+        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
+          Denuncias por Dependencias
+        </label>
+        <input type="submit" value="Enviar" class="btn btn-success">
+      </form>
 
       <input type="text" name="dependenciai" class="form-control" id="dependenciai" style="margin-top: 10px;width: 486px;">
       
+      
+
       <hr style="border-bottom-width: 0px;"> 
       <!--<button id="buscarDenDep" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenDepW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
-      <input type="checkbox" name="check" value="colonia" id="fancy-checkbox-default" autocomplete="off" />
-      <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-        Denuncias por Colonia
-      </label>
-      <input type="text" name="coloniai" class="form-control" id="coloniai" style="margin-top: 10px;width: 486px;">      
+      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
+        <input type="checkbox" name="check" value="colonia" id="fancy-checkbox-default" autocomplete="off" />
+        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
+          Denuncias por Colonia
+        </label>
+        <input type="submit" value="Enviar" class="btn btn-success">
+      </form>
+        <input type="text" name="coloniai" class="form-control" id="coloniai" style="margin-top: 10px;width: 486px;">      
+        
       <hr style="border-bottom-width: 0px;">
       <!--<button id="buscarDenCol" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenColW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>
-      <input type="checkbox" name="check" value="fecha" id="fancy-checkbox-default" autocomplete="off" />
-      <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-        Denuncias por Fecha
-      </label>
+      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
+        <input type="checkbox" name="check" value="fecha" id="fancy-checkbox-default" autocomplete="off" />
+        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
+          Denuncias por Fecha
+        </label>
+        <input type="submit" value="Enviar" class="btn btn-success">
+      </form>
 
-      <input type="date" name="fechai" class="form-control date" id="fechai" style="margin-top: 10px;width: 200px;">    
+        <input type="date" name="fechai" class="form-control date" id="fechai" style="margin-top: 10px;width: 200px;">          
 
       <hr style="border-bottom-width: 0px;">
       <!--<button id="buscarDenFecha" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
@@ -107,10 +126,13 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
       <h1>Denuncias por periodo</h1>
-      <input type="checkbox" name="check" value="periodo" id="fancy-checkbox-default" autocomplete="off" />
-      <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-        Denuncias por Periodo
-      </label>
+      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
+        <input type="checkbox" name="check" value="periodo" id="fancy-checkbox-default" autocomplete="off" />
+        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
+          Denuncias por Periodo
+        </label>
+        <input type="submit" value="Enviar" class="btn btn-success">
+      </form>
       <form class="form-inline">
         <div class="form-group">
           <input type="date" class="form-control" id="periodoi">
@@ -124,11 +146,14 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="estatus">
       <h1>Denuncias por estatus</h1>
-      <input type="checkbox" name="check" value="estatus" id="fancy-checkbox-default" autocomplete="off" />
+      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
+        <input type="checkbox" name="check" value="estatus" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Estatus
       </label>
-      <br>
+        <input type="submit" value="Enviar" class="btn btn-success">
+      </form>
+          
       <div class="col-md-3">
       <select class="col-md-4 form-control" id="idEstatus" style="margin-top: 10px;">
       <?php foreach ($estatuses as $estatus): ?>
@@ -144,11 +169,14 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepción</h1>
+      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
       <input type="checkbox" name="check" value="recepcion" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Recepción
       </label>
-      <br>
+      <input type="submit" value="Enviar" class="btn btn-success">
+      </form>
+      
       <div class="col-md-3">
       <select class="col-md-4 form-control" id="idRecepcion" style="margin-top: 10px;">
       <?php foreach ($recepciones as $recepcion): ?>
@@ -164,11 +192,13 @@
     </div>
     <div role="tabpanel" class="tab-pane" id="medios">
       <h1>Denuncias por medios</h1>
-      <input type="checkbox" name="checkme" value="medios" id="fancy-checkbox-default" autocomplete="off" />
+      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
+      <input type="checkbox" name="check" value="medios" id="fancy-checkbox-default" autocomplete="off" />
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Medios
       </label>
-      <br>
+      <input type="submit" value="Enviar" class="btn btn-success">
+      </form>
       <div class="col-md-3">
       <select class="col-md-4 form-control" id="idMedios" style="margin-top: 10px;">
       <?php foreach ($medioses as $medios): ?>
