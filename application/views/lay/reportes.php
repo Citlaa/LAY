@@ -62,7 +62,7 @@
         <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
           Denuncias por Ciudadanos
         </label>        
-        <input type="submit" value="Enviar" class="btn btn-success">
+        <input type="submit" value="Enviar" class="btn btn-info">
       </form>
 
       <input type="text" name="nombrei" class="form-control" id="nombrei" style="margin-top: 10px;width: 486px;">      
@@ -82,7 +82,7 @@
         <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
           Denuncias por Dependencias
         </label>
-        <input type="submit" value="Enviar" class="btn btn-success">
+        <input type="submit" value="Enviar" class="btn btn-info">
       </form>
 
       <input type="text" name="dependenciai" class="form-control" id="dependenciai" style="margin-top: 10px;width: 486px;">
@@ -100,7 +100,7 @@
         <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
           Denuncias por Colonia
         </label>
-        <input type="submit" value="Enviar" class="btn btn-success">
+        <input type="submit" value="Enviar" class="btn btn-info">
       </form>
         <input type="text" name="coloniai" class="form-control" id="coloniai" style="margin-top: 10px;width: 486px;">      
         
@@ -115,7 +115,7 @@
         <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
           Denuncias por Fecha
         </label>
-        <input type="submit" value="Enviar" class="btn btn-success">
+        <input type="submit" value="Enviar" class="btn btn-info">
       </form>
 
         <input type="date" name="fechai" class="form-control date" id="fechai" style="margin-top: 10px;width: 200px;">          
@@ -131,7 +131,7 @@
         <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
           Denuncias por Periodo
         </label>
-        <input type="submit" value="Enviar" class="btn btn-success">
+        <input type="submit" value="Enviar" class="btn btn-info">
       </form>
       <form class="form-inline">
         <div class="form-group">
@@ -151,7 +151,7 @@
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Estatus
       </label>
-        <input type="submit" value="Enviar" class="btn btn-success">
+        <input type="submit" value="Enviar" class="btn btn-info">
       </form>
           
       <div class="col-md-3">
@@ -174,7 +174,7 @@
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Recepción
       </label>
-      <input type="submit" value="Enviar" class="btn btn-success">
+      <input type="submit" value="Enviar" class="btn btn-info">
       </form>
       
       <div class="col-md-3">
@@ -197,7 +197,7 @@
       <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
         Denuncias por Medios
       </label>
-      <input type="submit" value="Enviar" class="btn btn-success">
+      <input type="submit" value="Enviar" class="btn btn-info">
       </form>
       <div class="col-md-3">
       <select class="col-md-4 form-control" id="idMedios" style="margin-top: 10px;">
