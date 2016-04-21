@@ -55,6 +55,60 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="home">
       <h1>Denuncias por ciudadano</h1>
+       <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              Fecha
+            </th>
+            <th>
+              Dependencia
+            </th>
+            <th>
+              Estatus
+            </th>
+            <th>
+              <?php echo utf8_decode('Recepción'); ?>
+            </th>
+            <th>
+              <?php echo utf8_decode('Dirección'); ?>
+            </th>
+            <th>
+              Medio
+            </th>
+            <th>
+              Asunto
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($denuncias as $denuncia): ?>
+            <tr>
+                <td>
+                  <?php echo utf8_decode($denuncia['fecha']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['dependencia']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['estatus']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['recepcion']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['direccion']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['medios']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['asunto']); ?>
+                </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
       <input type="hidden" name="idCiudadano" id="idCiudadano">     
 
       <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
@@ -264,7 +318,8 @@
           window.location.replace("/lay/pdf_ciudadano/index/"+  $('#idCiudadano').val());
         }  
       });
-       $('#buscarDenCiuW').click(function () {
+
+      $('#buscarDenCiuW').click(function () {
         var nombrei = $("#nombrei").val();
         if(nombrei){
           window.location.replace("/lay/word_ciudadanos/index/"+  $('#idCiudadano').val());
@@ -344,7 +399,6 @@
         window.location.replace("/lay/word_periodo/index/"+  $('#periodoi').val()+"/"+$('#periodof').val());
       }
       });
-
 
       $('#buscarDenEst').click(function () {
         

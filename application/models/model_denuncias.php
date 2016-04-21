@@ -86,6 +86,21 @@ public function insert_denuncia()
       return $query->result_array();
     }
 
+    public function get_todo()
+    {
+      $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medios, a.descripcion as asunto, c.tel1 as telefono', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'left');
+      $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'left');
+      $this->db->join('recepcion r', 'd.idRecepcion = r.idRecepcion', 'left');
+      $this->db->join('ciudadanos c', 'd.idCiudadano = c.idCiudadano', 'left');
+      $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
+      $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
+      $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
+      $query= $this->db->get();
+      return $query->result_array();
+    }
+
     public function by_ciudadano($idCiudadano)
     {
       $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medios, a.descripcion as asunto, c.tel1 as telefono', FALSE);
