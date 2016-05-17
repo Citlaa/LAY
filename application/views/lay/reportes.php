@@ -56,7 +56,45 @@
     <div role="tabpanel" class="tab-pane active" id="home">
       <h1>Denuncias por ciudadano</h1>
        <table class="table table-striped">
-        <thead>
+      
+    <h2>Buscar:</h2>
+  
+      <?php $atributos = array('class' => 'formulario') ?>
+      <?php echo form_open('buscador',$atributos) ?>
+
+      <div class="row">
+      
+      <div class="col-xs-4">
+        <?php echo form_label('Nombre') ?>
+            <input type="text" name="nombrei" class="form-control col-xs-2" id="nombrei">
+      </div>
+
+      <div class="col-xs-2">
+        <?php echo form_label('Estatus') ?> 
+          <select form-control" id="idEstatus" style="height: 31px;">
+            <?php foreach ($estatuses as $estatus): ?>
+              <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['descripcion'] ?></option>
+             <?php endforeach ?>
+           </select>
+      </div>  
+      
+      <div class="col-xs-6">
+         <?php echo form_label('Periodo') ?> 
+         <div class="row">
+            <div class="col-xs-5">
+          <input type="date" class="form-control" id="periodoi"> -
+          </div>
+            <div class="col-xs-5">
+          <input type="date" class="form-control"  id="periodof">
+          </div>
+          <?php echo form_submit('buscar','Buscar') ?>
+          </div>
+      </div>
+
+      </div>
+        <?php echo form_close() ?>
+  </div>
+      <thead>
           <tr>
             <th>
               Fecha
@@ -288,6 +326,37 @@
       </div>
       <!-- Scroll to top -->
   </body>
+    <?php //si hay resultados los mostramos
+
+  if(is_array($resultados) && !is_null($resultados))
+  {
+  ?>
+  <div class="grid_12 resultados">
+    <h2>Resultados</h2>
+    <div class="grid_12" id="head_resultados">
+      <div class="grid_2">Sector</div>  
+      <div class="grid_2">Población</div> 
+      <div class="grid_7">Descripción</div>
+    </div>
+      
+    <div class="grid_12" id="body_resultados">
+    <?php
+    foreach($resultados as $fila)
+    {
+    ?>
+      
+      <div class="grid_2"><?php echo $fila->sector ?></div> 
+      <div class="grid_2"><?php echo $fila->poblacion ?></div>  
+      <div class="grid_7"><?php echo $fila->descripcion ?></div>  
+        
+    <?php
+    }
+    ?>
+    </div>
+  </div>
+  <?php
+  }
+  ?>
   <script type="text/javascript">
 
   $('#myTab li').click(function (e) {
@@ -427,10 +496,20 @@
         window.location.replace("/lay/pdf_medio/index/"+  $('#idMedios').val());
       });
 
-      $('#buscarDenMedW').click(function () {
-        
-        window.location.replace("/lay/word_medio/index/"+  $('#idMedios').val());
-      });
+      $(".formulario").submit(function(){
+    
+    var poblacion = $(".poblacion").val();
+    var sector = $(".sector").val();
+    var descripcion = $(".descripcion").val();
+    
+    if(poblacion == '' && sector == '' && descripcion == '')
+    {
+      
+      alert('Escoge algún filtro para tu búsqueda');
+      return false;
+      
+    }
+  })
 
     });
   </script>

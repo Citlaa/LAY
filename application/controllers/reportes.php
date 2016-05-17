@@ -53,6 +53,44 @@ class Reportes extends CI_Controller {
 
 	}
 	
+	public function filtrar_denuncias()
+	{
+
+		//pasamos el título y los resultados de la búsqueda a la vista
+		//a través del array data
+		$data = array('titulo' => 'Buscador con múltiples criterios',
+					  'resultados' => $this->busqueda());
+
+		$this->load->view('reportes',$data);
+
+	}
+
+	//aquí es donde hacemos toda la búsqueda del buscador
+	public function busqueda()
+	{
+
+		if($this->input->post('buscar'))
+		{
+
+			//los campos del formulario deben tener el mismo nombre
+			//que los de la base de datos a buscar, esto luego lo
+			//recorremos para comprobar como vienen
+			$campos = array('idCiudadano', 'idEstatus', 'fecha');
+
+			//envíamos los datos al modelo para hacer la búsqueda
+			$resultados = $this->buscador_model->nueva_busqueda($campos);
+
+			if($resultados !== FALSE)
+			{
+
+				return $resultados;
+
+			}
+
+		}
+
+	}
+
 	public function periodo(){
 
 		$data['user_id']	= $this->tank_auth->get_user_id();
