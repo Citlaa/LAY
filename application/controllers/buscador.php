@@ -23,11 +23,23 @@ class Buscador extends CI_Controller
 		//a través del array data
 		//pasamos el título y los resultados de la búsqueda a la vista
 		//a través del array data
-		$data = array('titulo' => 'Buscador con múltiples criterios',
-					  'resultados' => $this->busqueda());
 
-		$this->load->view('buscador_view',$data);
-
+		$data['user_id']	= $this->tank_auth->get_user_id();
+		$data['username']	= $this->tank_auth->get_username();
+		if ($this->tank_auth->is_logged_in()) {
+			$this->load->model(array('model_estatus', 'model_recepcion','model_medios', 'model_denuncias'));
+			$data['estatuses'] = $this->model_estatus->get_all();
+			$data['recepciones'] = $this->model_recepcion->get_all();
+			$data['medioses'] = $this->model_medios->get_all();
+			$data['denuncias'] = $this->model_denuncias->get_todo();			
+			$data['resultados']=$this->busqueda();
+			$this->load->view('template/header');
+			$this->load->view('template/menu',$data);
+			$this->load->view('LAY/reportes');
+			$this->load->view('template/footer');
+		}else{
+			echo "usted no tiene permisos";
+		}
 	}
 
 	//aquí es donde hacemos toda la búsqueda del buscador

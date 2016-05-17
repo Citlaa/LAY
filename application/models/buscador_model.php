@@ -45,7 +45,7 @@ class Buscador_model extends CI_Model
 	{
 		
 		//definimos si descripción viene vacio o no para utilizar el operador and or
-		$and_or = $this->input->post('descripcion') != '' ? ' AND ' : ' OR ';
+		$and_or = $this->input->post('idCiudadano') != '' ? ' AND ' : ' OR ';
 			
 		$condiciones = array();
 		
@@ -65,7 +65,7 @@ class Buscador_model extends CI_Model
 		}
 			
 		//la consulta base a la que concatenaremos la búsqueda
-		$sql = "SELECT * FROM ofertas ";
+		$sql = "SELECT * FROM denuncias ";
 		
 		//si existen condiciones entramos
 		if(count($condiciones) > 0) 

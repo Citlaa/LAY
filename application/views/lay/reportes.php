@@ -94,59 +94,9 @@
       </div>
         <?php echo form_close() ?>
   </div>
-      <thead>
-          <tr>
-            <th>
-              Fecha
-            </th>
-            <th>
-              Dependencia
-            </th>
-            <th>
-              Estatus
-            </th>
-            <th>
-              <?php echo utf8_decode('Recepción'); ?>
-            </th>
-            <th>
-              <?php echo utf8_decode('Dirección'); ?>
-            </th>
-            <th>
-              Medio
-            </th>
-            <th>
-              Asunto
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($denuncias as $denuncia): ?>
-            <tr>
-                <td>
-                  <?php echo utf8_decode($denuncia['fecha']); ?>
-                </td>
-                <td>
-                  <?php echo utf8_decode($denuncia['dependencia']); ?>
-                </td>
-                <td>
-                  <?php echo utf8_decode($denuncia['estatus']); ?>
-                </td>
-                <td>
-                  <?php echo utf8_decode($denuncia['recepcion']); ?>
-                </td>
-                <td>
-                  <?php echo utf8_decode($denuncia['direccion']); ?>
-                </td>
-                <td>
-                  <?php echo utf8_decode($denuncia['medios']); ?>
-                </td>
-                <td>
-                  <?php echo utf8_decode($denuncia['asunto']); ?>
-                </td>
-            </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
+      
+        
+    
       <input type="hidden" name="idCiudadano" id="idCiudadano">     
 
       <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
@@ -345,9 +295,9 @@
     {
     ?>
       
-      <div class="grid_2"><?php echo $fila->sector ?></div> 
-      <div class="grid_2"><?php echo $fila->poblacion ?></div>  
-      <div class="grid_7"><?php echo $fila->descripcion ?></div>  
+      <div class="grid_2"><?php echo $fila->idCiudadano ?></div> 
+      <div class="grid_2"><?php echo $fila->idEstatus ?></div>  
+      <div class="grid_7"><?php echo $fila->fecha ?></div>  
         
     <?php
     }
