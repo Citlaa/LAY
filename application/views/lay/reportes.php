@@ -60,7 +60,7 @@
       <input type="hidden" name="idDependencia" id="idDependencia">
      
 
-      <input type="text" name="dependenciai" class="form-control" id="dependenciai" style="margin-top: 10px;width: 486px;">
+      <input type="text" name="dependenciai2" class="form-control" id="dependenciai2" style="margin-top: 10px;width: 486px;">
       <form class="form-inline">
         <div class="form-group">
           <input type="date" class="form-control" id="periodoi">
@@ -72,8 +72,8 @@
       
 
       <hr style="border-bottom-width: 0px;"> 
-      <button id="buscarDenDep" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenDepW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="buscarDenDepFe" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenDepFeW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="home">
@@ -89,6 +89,7 @@
       <button id="buscarDenCiu" class="btn btn-enter btn-lg"> <span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenCiuW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
+
     <div role="tabpanel" class="tab-pane" id="profile">
       <h1>Denuncias por dependencia</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
@@ -278,13 +279,18 @@
         }
       });
 
+      $('#dependenciai2').autocomplete({
+        source:'/lay/dependencias/dependencia_autocomplete_descripcion',
+        select: function (event, ui) {
+          $('#idDependencia').val(ui.item.id);
+        }
+      });
+
 
       $('#buscarDenDep').click(function () {
         var dependenciai = $("#dependenciai").val();
-        var periodoi = $("#periodoi").val();
-        var periodof = $("#periodof").val();
         if(dependenciai){
-        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia')+"/"+ $('#idEstatus')+"/"+ $('#fecha').val());
+        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
         }
       });
 
@@ -294,6 +300,26 @@
         window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val());
         }
       });
+
+
+      $('#buscarDenDepFe').click(function () {
+        var dependenciai2 = $("#dependenciai").val();
+        var periodoi = $("#periodoi").val();
+        var periodof = $("#periodof").val();
+        if(dependenciai){
+        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia')+"/"+ $('#idEstatus')+"/"+ $('#fecha').val());
+        }
+      });
+
+      $('#buscarDenDepFeW').click(function () {
+        var dependenciai2 = $("#dependenciai").val();
+        if(dependenciai){
+        window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val());
+        }
+      });
+
+
+
 
 
       $('#buscarDenCol').click(function () {
