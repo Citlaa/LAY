@@ -41,7 +41,7 @@
         <div class="container">
           <!-- Nav tabs -->
   <ul class="nav nav-tabs page-content li" role="tablist" id="myTab">   
-      <li role="presentation" class="active"><a href="#depeyper" aria-controls="medios" role="tab" data-toggle="tab">Multifiltros</a></li> 
+      <li role="presentation" class="active"><a href="#depeyper" aria-controls="medios" role="tab" data-toggle="tab">Dependencia - Periodo</a></li> 
     <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ciudadano</a></li>
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Dependencia</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Colonia</a></li>
@@ -56,7 +56,7 @@
   <!-- Tab panes -->
   <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="depeyper">
-      <h1>Denuncias por dependencia y fecha</h1>
+      <h1>Denuncias por Dependencia-Fecha-Periodo</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
      
 
@@ -396,6 +396,12 @@
         
         window.location.replace("/lay/pdf_medio/index/"+  $('#idMedios').val());
       });
+
+      $('#buscarDenMedW').click(function () {
+        
+        window.location.replace("/lay/word_medio/index/"+  $('#idMedios').val());
+      });
+
 
       $(".formulario").submit(function(){
     
