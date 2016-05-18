@@ -304,8 +304,8 @@
 
       $('#buscarDenDepFe').click(function () {
         var dependenciai2 = $("#dependenciai").val();
-        var periodoi = $("#periodoi").val();
-        var periodof = $("#periodof").val();
+        var periodoi2 = $("#periodoi2").val();
+        var periodof2 = $("#periodof2").val();
         if(dependenciai){
         window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia')+"/"+ $('#idEstatus')+"/"+ $('#fecha').val());
         }
