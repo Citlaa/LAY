@@ -71,7 +71,7 @@
 
       <div class="col-xs-2">
         <?php echo form_label('Estatus') ?> 
-          <select form-control" id="idEstatus" style="height: 31px;">
+          <select form-control" name="estatusi" id="idEstatus" style="height: 31px;">
             <?php foreach ($estatuses as $estatus): ?>
               <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['descripcion'] ?></option>
              <?php endforeach ?>
@@ -81,25 +81,22 @@
       <div class="col-xs-6">
          <?php echo form_label('Periodo') ?> 
          <div class="row">
-            <div class="col-xs-5">
-          <input type="date" class="form-control" id="periodoi"> -
+          <div class="col-xs-5">
+            <input type="date" name="fechai" class="form-control" id="periodoi"> -
           </div>
-            <div class="col-xs-5">
-          <input type="date" class="form-control"  id="periodof">
-          </div>
-          <?php echo form_submit('buscar','Buscar') ?>
+          <
+          <?php echo form_submit('buscar','Buscar')?>
           </div>
       </div>
 
       </div>
-        <?php echo form_close() ?>
+        <?php echo form_close()  ?>
   </div>
-      
+
         
     
       <input type="hidden" name="idCiudadano" id="idCiudadano">     
 
-      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
         <input type="checkbox" name="check" value="Ciudadano" id="fancy-checkbox-default" autocomplete="off" />
         <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
           Denuncias por Ciudadanos
@@ -107,7 +104,6 @@
         <input type="submit" value="Enviar" class="btn btn-info">
       </form>
 
-      <input type="text" name="nombrei" class="form-control" id="nombrei" style="margin-top: 10px;width: 486px;">      
 
       
       <hr style="border-bottom-width: 0px;">
@@ -119,16 +115,17 @@
     <div role="tabpanel" class="tab-pane" id="profile">
       <h1>Denuncias por dependencia</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
-      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
-        <input type="checkbox" name="check" value="dependencia" id="fancy-checkbox-default" autocomplete="off" />
-        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-          Denuncias por Dependencias
-        </label>
-        <input type="submit" value="Enviar" class="btn btn-info">
-      </form>
+     
 
       <input type="text" name="dependenciai" class="form-control" id="dependenciai" style="margin-top: 10px;width: 486px;">
-      
+      <form class="form-inline">
+        <div class="form-group">
+          <input type="date" class="form-control" id="periodoi">
+        </div>
+        <div class="form-group">
+          <input type="date" class="form-control" id="periodof">
+        </div>
+      </form>
       
 
       <hr style="border-bottom-width: 0px;"> 
@@ -276,6 +273,7 @@
       </div>
       <!-- Scroll to top -->
   </body>
+<<<<<<< HEAD
     <?php //si hay resultados los mostramos
 
   if(is_array($resultados) && !is_null($resultados))
@@ -307,6 +305,9 @@
   <?php
   }
   ?>
+=======
+ 
+>>>>>>> a7167d2c47cbcd8db4f3c5e60be9ed10d746932b
   <script type="text/javascript">
 
   $('#myTab li').click(function (e) {
@@ -357,8 +358,10 @@
 
       $('#buscarDenDep').click(function () {
         var dependenciai = $("#dependenciai").val();
+        var periodoi = $("#periodoi").val();
+        var periodof = $("#periodof").val();
         if(dependenciai){
-        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia').val());
+        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia')+"/"+ $('#idEstatus')+"/"+ $('#fecha').val());
         }
       });
 

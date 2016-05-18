@@ -117,7 +117,7 @@ public function insert_denuncia()
       return $ciudadano->result_array();
     }
 
-    public function by_dependencia($idDependencia)
+    public function by_dependencia($idDependencia, $ifechai, $fechaf)
     {
       $this->db->select('CONCAT(c.nombre, " " , c.apellidoPa, " ", c.apellidoMa) as ciudadano, d.idRegistro, d.fecha, de.dependencia, e.descripcion as estatus, CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, r.descripcion as recepcion, m.descripcion as medios, a.descripcion as asunto, c.tel1 as telefono', FALSE);
       $this->db->from('denuncias d');
@@ -128,7 +128,9 @@ public function insert_denuncia()
       $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'left');
       $this->db->join('medios m', 'd.idMedios = m.idMedios', 'left');
       $this->db->join('asuntos a', 'd.idAsunto = a.idAsunto', 'left');
-      $this->db->where('d.idDependencia', $idDependencia);
+      $this->db->where('d.idDependencia', $idDependencia);      
+      $this->db->where("d.fecha >= '".$fechai."'");
+      $this->db->where("d.fecha <= '".$fechaf."'");
       $ciudadano= $this->db->get();
       return $ciudadano->result_array();
     }
