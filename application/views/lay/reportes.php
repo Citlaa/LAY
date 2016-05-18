@@ -313,8 +313,10 @@
 
       $('#buscarDenDepFeW').click(function () {
         var dependenciai2 = $("#dependenciai").val();
+        var periodoi2 = $("#periodoi2").val();
+        var periodof2 = $("#periodof2").val();
         if(dependenciai){
-        window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val());
+        window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val()+"/"+ $('#periodoi2').val()+"/"+ $('#periodof2').val());
         }
       });
 
