@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Pdf_dependencia extends CI_Controller
+class Pdf_multi extends CI_Controller
 {
 
    public function __construct()
@@ -42,7 +42,11 @@ class Pdf_dependencia extends CI_Controller
 
          //datos que queremos enviar a la vista, lo mismo de siempre
          $data = array(
-           'denuncias' => $this->model_denuncias->by_multifiltro($idDependencia, $fechai, $fechaf)
+           'denuncias' => $this->model_denuncias->by_multifiltro($idDependencia, $fechai, $fechaf),
+           'idDependencia' => $idDependencia,
+           'fechai' => $fechai,
+           'fechaf' => $fechaf
+
          );
            //hacemos que coja la vista como datos a imprimir
            //importante utf8_decode para mostrar bien las tildes, ñ y demás
