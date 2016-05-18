@@ -9,6 +9,7 @@ class Pdf_dependencia extends CI_Controller
        //cargamos la libreria html2pdf
        $this->load->library('html2pdf');
        //cargamos el modelo pdf_model
+       $this->load->model('model_ciudadano');
    }
 
    private function createFolder()
@@ -20,7 +21,7 @@ class Pdf_dependencia extends CI_Controller
        }
    }
 
-   public function index($idDependencia = null)
+   public function index($idDependencia, $fechai, $fechaf)
    {
       $data['user_id']  = $this->tank_auth->get_user_id();
       $data['username'] = $this->tank_auth->get_username();
@@ -41,7 +42,7 @@ class Pdf_dependencia extends CI_Controller
 
          //datos que queremos enviar a la vista, lo mismo de siempre
          $data = array(
-           'denuncias' => $this->model_denuncias->by_dependencia($idDependencia)
+           'denuncias' => $this->model_denuncias->by_dependencia($idDependencia, $fechai, $fechaf)
          );
            //hacemos que coja la vista como datos a imprimir
            //importante utf8_decode para mostrar bien las tildes, ñ y demás
@@ -115,7 +116,7 @@ class Pdf_dependencia extends CI_Controller
 
        //datos que queremos enviar a la vista, lo mismo de siempre
        $data = array(
-           'denuncias' => $this->model_dependencias->order_dependencia($idCiudadano)
+           'denuncias' => $this->model_dependencias->by_dependencia($idDependencia, $fechai, $fechaf)
        );
 
        //hacemos que coja la vista como datos a imprimir
