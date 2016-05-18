@@ -284,9 +284,9 @@
   <div class="grid_12 resultados">
     <h2>Resultados</h2>
     <div class="grid_12" id="head_resultados">
-      <div class="grid_2">Sector</div>  
-      <div class="grid_2">Población</div> 
-      <div class="grid_7">Descripción</div>
+      <div class="grid_2">Ciudadano</div>  
+      <div class="grid_2">Estatus</div> 
+      <div class="grid_7">Fecha</div>
     </div>
       
     <div class="grid_12" id="body_resultados">

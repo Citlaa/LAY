@@ -29,7 +29,7 @@
 			<?php echo form_label('Estatus') ?> 
           <select form-control" id="idEstatus" style="height: 31px;">
             <?php foreach ($estatuses as $estatus): ?>
-              <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['descripcion'] ?></option>
+              <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['idEstatus'] ?></option>
              <?php endforeach ?>
            </select>
 			
@@ -49,7 +49,7 @@
 		<h2>Resultados</h2>
 		<div class="grid_12" id="head_resultados">
 			<div class="grid_2">Ciudadano</div>	
-			<div class="grid_2">Estado</div>	
+			<div class="grid_2">Estatus</div>	
 		</div>
 			
 		<div class="grid_12" id="body_resultados">
@@ -58,8 +58,8 @@
 		{
 		?>
 			
-			<div class="grid_2"><?php echo $fila->Ciudadano ?></div>	
-			<div class="grid_2"><?php echo $fila->Estado ?></div>	
+			<div class="grid_2"><?php echo $fila->idCiudadano ?></div>	
+			<div class="grid_2"><?php echo $fila->idEstatus ?></div>	
 				
 		<?php
 		}

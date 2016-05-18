@@ -57,7 +57,7 @@ class Buscador extends CI_Controller
 			//los campos del formulario deben tener el mismo nombre
 			//que los de la base de datos a buscar, esto luego lo
 			//recorremos para comprobar como vienen
-			$campos = array('sector', 'poblacion', 'descripcion');
+			$campos = array('idCiudadano', 'idEstatus', 'fecha');
 
 			//envíamos los datos al modelo para hacer la búsqueda
 			$resultados = $this->buscador_model->nueva_busqueda($campos);
