@@ -63,10 +63,10 @@
       <input type="text" name="dependenciai2" class="form-control" id="dependenciai2" style="margin-top: 10px;width: 486px;">
       <form class="form-inline">
         <div class="form-group">
-          <input type="date" class="form-control" id="periodoi">
+          <input type="date" class="form-control" id="periodoi2">
         </div>
         <div class="form-group">
-          <input type="date" class="form-control" id="periodof">
+          <input type="date" class="form-control" id="periodof2">
         </div>
       </form>
       
@@ -317,9 +317,6 @@
         window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val());
         }
       });
-
-
-
 
 
       $('#buscarDenCol').click(function () {
