@@ -40,8 +40,9 @@
 
         <div class="container">
           <!-- Nav tabs -->
-  <ul class="nav nav-tabs page-content li" role="tablist" id="myTab">    
-    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ciudadano</a></li>
+  <ul class="nav nav-tabs page-content li" role="tablist" id="myTab">   
+      <li role="presentation" class="active"><a href="#depeyper" aria-controls="medios" role="tab" data-toggle="tab">Multifiltros</a></li> 
+    <li role="presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Ciudadano</a></li>
     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Dependencia</a></li>
     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Colonia</a></li>
     <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Fecha</a></li>
@@ -49,71 +50,13 @@
     <li role="presentation"><a href="#estatus" aria-controls="estatus" role="tab" data-toggle="tab">Estatus</a></li>
     <li role="presentation"><a href="#recepcion" aria-controls="recepcion" role="tab" data-toggle="tab">Modo de recepción</a></li>
     <li role="presentation"><a href="#medios" aria-controls="medios" role="tab" data-toggle="tab">Medios</a></li>
+
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="home">
-      <h1>Denuncias por ciudadano</h1>
-       <table class="table table-striped">
-      
-    <h2>Buscar:</h2>
-  
-      <?php $atributos = array('class' => 'formulario') ?>
-      <?php echo form_open('buscador',$atributos) ?>
-
-      <div class="row">
-      
-      <div class="col-xs-4">
-        <?php echo form_label('Nombre') ?>
-            <input type="text" name="nombrei" class="form-control col-xs-2" id="nombrei">
-      </div>
-
-      <div class="col-xs-2">
-        <?php echo form_label('Estatus') ?> 
-          <select form-control" name="estatusi" id="idEstatus" style="height: 31px;">
-            <?php foreach ($estatuses as $estatus): ?>
-              <option value="<?php echo $estatus['idEstatus'] ?>"><?php echo $estatus['descripcion'] ?></option>
-             <?php endforeach ?>
-           </select>
-      </div>  
-      
-      <div class="col-xs-6">
-         <?php echo form_label('Periodo') ?> 
-         <div class="row">
-          <div class="col-xs-5">
-            <input type="date" name="fechai" class="form-control" id="periodoi"> -
-          </div>
-          <
-          <?php echo form_submit('buscar','Buscar')?>
-          </div>
-      </div>
-
-      </div>
-        <?php echo form_close()  ?>
-  </div>
-
-        
-    
-      <input type="hidden" name="idCiudadano" id="idCiudadano">     
-
-        <input type="checkbox" name="check" value="Ciudadano" id="fancy-checkbox-default" autocomplete="off" />
-        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-          Denuncias por Ciudadanos
-        </label>        
-        <input type="submit" value="Enviar" class="btn btn-info">
-      </form>
-
-
-      
-      <hr style="border-bottom-width: 0px;">
-      
-            
-      <!--<button id="buscarDenCiu" class="btn btn-enter btn-lg"> <span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenCiuW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
-    </div>
-    <div role="tabpanel" class="tab-pane" id="profile">
-      <h1>Denuncias por dependencia</h1>
+  <div role="tabpanel" class="tab-pane active" id="depeyper">
+      <h1>Denuncias por dependencia y fecha</h1>
       <input type="hidden" name="idDependencia" id="idDependencia">
      
 
@@ -129,49 +72,55 @@
       
 
       <hr style="border-bottom-width: 0px;"> 
-      <!--<button id="buscarDenDep" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenDepW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
+      <button id="buscarDenDep" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenDepW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+    </div>
+
+    <div role="tabpanel" class="tab-pane" id="home">
+      <h1>Denuncias por ciudadano</h1>
+      
+      <input type="hidden" name="idCiudadano" id="idCiudadano">     
+
+
+      <input type="text" name="nombrei" class="form-control" id="nombrei" style="margin-top: 10px;width: 486px;">      
+
+      
+            
+      <button id="buscarDenCiu" class="btn btn-enter btn-lg"> <span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenCiuW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+      <h1>Denuncias por dependencia</h1>
+      <input type="hidden" name="idDependencia" id="idDependencia">
+     
+
+      <input type="text" name="dependenciai" class="form-control" id="dependenciai" style="margin-top: 10px;width: 486px;">
+
+      <hr style="border-bottom-width: 0px;"> 
+      <button id="buscarDenDep" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenDepW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
-      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
-        <input type="checkbox" name="check" value="colonia" id="fancy-checkbox-default" autocomplete="off" />
-        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-          Denuncias por Colonia
-        </label>
-        <input type="submit" value="Enviar" class="btn btn-info">
-      </form>
+      
         <input type="text" name="coloniai" class="form-control" id="coloniai" style="margin-top: 10px;width: 486px;">      
         
       <hr style="border-bottom-width: 0px;">
-      <!--<button id="buscarDenCol" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenColW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
+      <button id="buscarDenCol" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenColW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="settings">
-      <h1>Denuncias por fecha</h1>
-      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
-        <input type="checkbox" name="check" value="fecha" id="fancy-checkbox-default" autocomplete="off" />
-        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-          Denuncias por Fecha
-        </label>
-        <input type="submit" value="Enviar" class="btn btn-info">
-      </form>
+      <h1>Denuncias por fecha</h1>      
 
         <input type="date" name="fechai" class="form-control date" id="fechai" style="margin-top: 10px;width: 200px;">          
 
       <hr style="border-bottom-width: 0px;">
-      <!--<button id="buscarDenFecha" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenFechaW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
+      <button id="buscarDenFecha" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenFechaW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
       <h1>Denuncias por periodo</h1>
-      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
-        <input type="checkbox" name="check" value="periodo" id="fancy-checkbox-default" autocomplete="off" />
-        <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-          Denuncias por Periodo
-        </label>
-        <input type="submit" value="Enviar" class="btn btn-info">
-      </form>
+      
       <form class="form-inline">
         <div class="form-group">
           <input type="date" class="form-control" id="periodoi">
@@ -180,19 +129,12 @@
           <input type="date" class="form-control" id="periodof">
         </div>
       </form>
-      <!--<button id="buscarDenPeriodo" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenPeriodoW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
+      <button id="buscarDenPeriodo" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenPeriodoW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="estatus">
       <h1>Denuncias por estatus</h1>
-      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
-        <input type="checkbox" name="check" value="estatus" id="fancy-checkbox-default" autocomplete="off" />
-      <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-        Denuncias por Estatus
-      </label>
-        <input type="submit" value="Enviar" class="btn btn-info">
-      </form>
-          
+      
       <div class="col-md-3">
       <select class="col-md-4 form-control" id="idEstatus" style="margin-top: 10px;">
       <?php foreach ($estatuses as $estatus): ?>
@@ -203,18 +145,11 @@
       <div>
       <br>
       </div>
-      <!--<button id="buscarDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-       <button id="buscarDenEstW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
+      <button id="buscarDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+       <button id="buscarDenEstW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepción</h1>
-      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
-      <input type="checkbox" name="check" value="recepcion" id="fancy-checkbox-default" autocomplete="off" />
-      <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-        Denuncias por Recepción
-      </label>
-      <input type="submit" value="Enviar" class="btn btn-info">
-      </form>
       
       <div class="col-md-3">
       <select class="col-md-4 form-control" id="idRecepcion" style="margin-top: 10px;">
@@ -226,18 +161,12 @@
       <div>
       <br>
       </div>
-      <!--<button id="buscarDenRec" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenRecW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
+      <button id="buscarDenRec" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
+      <button id="buscarDenRecW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="medios">
       <h1>Denuncias por medios</h1>
-      <?php echo form_open('reportes/checkboxes', array('class'=>'form-horizontal'), 'get'); ?>
-      <input type="checkbox" name="check" value="medios" id="fancy-checkbox-default" autocomplete="off" />
-      <label for="fancy-checkbox-default" class="[ btn btn-default active ]">
-        Denuncias por Medios
-      </label>
-      <input type="submit" value="Enviar" class="btn btn-info">
-      </form>
+      
       <div class="col-md-3">
       <select class="col-md-4 form-control" id="idMedios" style="margin-top: 10px;">
       <?php foreach ($medioses as $medios): ?>
@@ -248,14 +177,10 @@
       <div>
       <br>
       </div>
-      <!--<button id="buscarDenMed" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenMedW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>-->
-    </div>
-
-    <div style="text-align:right">
       <button id="buscarDenMed" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenMedW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
     </div>
+
     
   </div>
 
@@ -273,7 +198,7 @@
       </div>
       <!-- Scroll to top -->
   </body>
-<<<<<<< HEAD
+<!--<<<<<<< HEAD
     <?php //si hay resultados los mostramos
 
   if(is_array($resultados) && !is_null($resultados))
@@ -305,9 +230,7 @@
   <?php
   }
   ?>
-=======
- 
->>>>>>> a7167d2c47cbcd8db4f3c5e60be9ed10d746932b
+-->
   <script type="text/javascript">
 
   $('#myTab li').click(function (e) {

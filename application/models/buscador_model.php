@@ -65,9 +65,8 @@ class Buscador_model extends CI_Model
 		}
 			
 		//la consulta base a la que concatenaremos la búsqueda
-		$sql = "SELECT ciudadanos.idCiudadano, ciudadanos.nombre, ciudadanos.apellidoPa, ciudadanos.apellidoMa, ciudadanos.tel1, ciudadanos.tel2 * FROM denuncias join(ciudadanos, denuncias.idCiudadano= ciudadanos.idCiudadano) where denuncias.idRegistro like '%$idDenuncia'";
+		$sql = "SELECT * FROM denuncias ";
 		
-
 		//si existen condiciones entramos
 		if(count($condiciones) > 0) 
 		{
