@@ -307,7 +307,7 @@
         var periodoi2 = $("#periodoi2").val();
         var periodof2 = $("#periodof2").val();
         if(dependenciai){
-        window.location.replace("/lay/pdf_dependencia/index/"+  $('#idDependencia')+"/"+ $('#idEstatus')+"/"+ $('#fecha').val());
+        window.location.replace("/lay/pdf_multi/index/"+  $('#idDependencia').val()+"/"+ $('#periodoi2').val()+"/"+ $('#periodof2').val());
         }
       });
 
