@@ -99,7 +99,10 @@
 
       <hr style="border-bottom-width: 0px;"> 
       <button id="buscarDenDep" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
-      <button id="buscarDenDepW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="buscarDenDepW" class="btn btn-enter btn-lg">
+        <span class="fa fa-file-word-o"></span> Buscar denuncias Word
+      </button>
+      <button id="graficaCountDep" class="btn btn-enter btn-lg"> Grafica :) </button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
@@ -301,6 +304,11 @@
         window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val());
         }
       });
+
+      $('#graficaCountDep').click(function () {
+        window.location.replace("/lay/grafica/count_dep/");
+      });
+      
 
 
       $('#buscarDenDepFe').click(function () {
