@@ -391,7 +391,7 @@
 
       $('#graficaDenEst').click(function () {
         
-        window.location.replace("/lay/grafica/estatus");
+        window.location.replace("/lay/grafica/count_estatus");
       });
 
 

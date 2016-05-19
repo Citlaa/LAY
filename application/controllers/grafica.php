@@ -20,25 +20,6 @@ class Grafica extends CI_Controller {
 	}
 
 
-	public function estatus()
-	{
-		
-		$data['user_id']	= $this->tank_auth->get_user_id();
-			$data['username']	= $this->tank_auth->get_username();	
-		if ($this->tank_auth->is_logged_in()) {
-			$this->load->model('model_estatus');
-			$data['pen'] = $this->model_estatus->grafica_pen();
-			$data['aten'] = $this->model_estatus->grafica_aten();
-			$this->load->view('template/header');
-			$this->load->view('template/menu',$data);
-			$this->load->view('LAY/graficas');
-			$this->load->view('template/footer');
-		}else{
-			echo "no permisos";
-		}		
-
-	}
-
 	public function catalogo()
 	{
 		 $data['title']='Catalogo';
@@ -60,6 +41,24 @@ class Grafica extends CI_Controller {
 		}else{
 
 		}	
+	}
+
+		public function count_estatus()
+	{
+		
+		$data['user_id']	= $this->tank_auth->get_user_id();
+		$data['username']	= $this->tank_auth->get_username();	
+		if ($this->tank_auth->is_logged_in()) {
+			$this->load->model('model_denuncias');
+			$data1 = array('denuncias' => $this->model_denuncias->count_estatus());
+			$this->load->view('template/header');
+			$this->load->view('template/menu',$data);
+			$this->load->view('LAY/graficas_estatus', $data1);
+			$this->load->view('template/footer');
+		}else{
+
+		}	
+
 	}
 
 
