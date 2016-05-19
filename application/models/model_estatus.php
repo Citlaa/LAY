@@ -20,4 +20,18 @@ class Model_estatus extends CI_Model{
     $query = $this->db->get_where('estatus','descripcion', 'Pendiente');
     return $query->result();
   }
+
+  public function grafica_pen()
+  {
+    $query = $this->db->from('denuncias')->where("idEstatus=1");
+    
+    return $this->db->count_all_results();
+  }
+
+  public function grafica_aten()
+  {
+    $query = $this->db->from('denuncias')->where("idEstatus=2");
+    
+    return $this->db->count_all_results();
+  }
 }
