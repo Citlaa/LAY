@@ -36,7 +36,7 @@
             <div class="container">
               <div class="page-content page-statement">
                 <div class="text-center">             
-                <h3 class="pull-left">Cantidad de denuncias por dependencia</h3>           
+                <h3 class="pull-left">Cantidad de denuncias por fecha</h3>           
                 <canvas id="chart-area3" width="600" height="200"></canvas>
                
                 </div>

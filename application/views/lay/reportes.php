@@ -89,7 +89,7 @@
             
       <button id="buscarDenCiu" class="btn btn-enter btn-lg"> <span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenCiuW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-      <button id="graficaDenCiu" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
+      <button id="graficaDenCiu" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Gráfica </button>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="profile">
@@ -104,7 +104,7 @@
       <button id="buscarDenDepW" class="btn btn-enter btn-lg">
         <span class="fa fa-file-word-o"></span> Buscar denuncias Word
       </button>
-      <button id="graficaDenDep" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
+      <button id="graficaDenDep" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Gráfica </button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
@@ -114,7 +114,7 @@
       <hr style="border-bottom-width: 0px;">
       <button id="buscarDenCol" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenColW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-      <button id="graficaDenCol" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
+      <button id="graficaDenCol" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Gráfica </button>
     </div>
 
 
@@ -126,7 +126,7 @@
       <hr style="border-bottom-width: 0px;">
       <button id="buscarDenFecha" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenFechaW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-      <button id="graficaDenFec" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
+      <button id="graficaDenFec" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Gráfica </button>
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
       <h1>Denuncias por periodo</h1>
@@ -157,7 +157,7 @@
       </div>
       <button id="buscarDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
        <button id="buscarDenEstW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-      <button id="graficaDenEst" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
+      <button id="graficaDenEst" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Gráfica </button>
     </div>
 
 
@@ -176,7 +176,7 @@
       </div>
       <button id="buscarDenRec" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenRecW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-      <button id="graficaDenRec" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
+      <button id="graficaDenRec" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Gráfica </button>
     </div>
 
 
@@ -195,7 +195,7 @@
       </div>
       <button id="buscarDenMed" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenMedW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-      <button id="graficaDenMed" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
+      <button id="graficaDenMed" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Gráfica </button>
     </div>
 
     
