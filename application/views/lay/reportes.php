@@ -23,6 +23,7 @@
         <!-- Page heading ends -->
 
 
+
         <!-- Black block starts -->
         <div class="blue-block">
           <div class="page-title">
@@ -151,7 +152,7 @@
       </div>
       <button id="buscarDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
        <button id="buscarDenEstW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-        <button id="graficaDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Grafica </button>
+        <button id="graficaDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Gráfica </button>
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepción</h1>
@@ -168,6 +169,7 @@
       </div>
       <button id="buscarDenRec" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenRecW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="graficaDenModo" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Gráfica</button>
     </div>
     <div role="tabpanel" class="tab-pane" id="medios">
       <h1>Denuncias por medios</h1>
@@ -184,6 +186,7 @@
       </div>
       <button id="buscarDenMed" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenMedW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="graficaDenMedios" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span>Gráfica</button>
     </div>
 
     
@@ -306,7 +309,7 @@
       });
 
       $('#graficaCountDep').click(function () {
-        window.location.replace("/lay/grafica/count_dep/");
+        window.location.replace("/lay/chart_depen");
       });
       
 
@@ -391,7 +394,7 @@
 
       $('#graficaDenEst').click(function () {
         
-        window.location.replace("/lay/grafica");
+        window.location.replace("/lay/chart_estatus");
       });
 
 
@@ -404,6 +407,11 @@
         // console.log($('#idCiudadano').val());
         window.location.replace("/lay/word_recepcion/index/"+  $('#idRecepcion').val());
       });
+      
+      $('#graficaDenModo').click(function () {
+        // console.log($('#idCiudadano').val());
+        window.location.replace("/lay/chart_modo");
+      });
 
 
       $('#buscarDenMed').click(function () {
@@ -414,6 +422,11 @@
       $('#buscarDenMedW').click(function () {
         
         window.location.replace("/lay/word_medio/index/"+  $('#idMedios').val());
+      });
+
+      $('#graficaDenMedios').click(function () {
+        
+        window.location.replace("/lay/chart_medios");
       });
 
 

@@ -35,7 +35,7 @@
             <div class="container">
               <div class="page-content page-statement">
                 <div class="text-center">             
-                <h3 class="pull-left">Dependencias</h3>           
+                <h3 class="pull-left">Modo de Recepción</h3>           
                 <canvas id="chart-area3" width="600" height="200"></canvas>
                
                 </div>
@@ -94,25 +94,13 @@
     // obtenemos el array de valores mediante la conversion a json del
     // array de php
     var arrayJS=<?php echo json_encode($arrayPHP);?>;
-    var arrayJSNum=<?php echo json_encode($arrayNum);?>;
- 
-    // Mostramos los valores del array
-    
-    for(var i=0;i<arrayJSNum.length;i++)
-    {
-        //document.write("<br>"+arrayJSNum2[i]);
-        document.write("<br>"+arrayJS[i]);
-        document.write("<br>"+arrayJSNum[i]);
-
-    }
-    
+    var arrayJSNum=<?php echo json_encode($arrayNum);?>;    
 
 </script>
 
 <script type="text/javascript">  
 
-  var barChartData = {
-   //  labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio"],
+  var barChartData = {   
     labels : arrayJS,
     datasets : [
       
@@ -120,8 +108,7 @@
         fillColor : "#e9e225",
         strokeColor : "#ffffff",
         highlightFill : "#ee7f49",
-        highlightStroke : "#ffffff",
-        //data : [40,50,70,40,85,55,15]
+        highlightStroke : "#ffffff",        
         data : arrayJSNum
       }
     ]
