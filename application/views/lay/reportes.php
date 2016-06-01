@@ -126,6 +126,7 @@
       <hr style="border-bottom-width: 0px;">
       <button id="buscarDenFecha" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenFechaW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="graficaDenFec" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
     </div>
     <div role="tabpanel" class="tab-pane" id="periodo">
       <h1>Denuncias por periodo</h1>
