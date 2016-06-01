@@ -290,7 +290,7 @@ public function insert_denuncia()
       return $ciudadano->result_array();
     }  
 
-    public function count_est()
+    public function count_estatus()
     {
       $this->db->select('e.descripcion, COUNT(d.idEstatus) as total_denuncias', FALSE);
       $this->db->from('denuncias d');
@@ -319,4 +319,35 @@ public function insert_denuncia()
       $medio= $this->db->get();
       return $medio->result_array();
     }
+    }  
+
+    public function count_modo()
+    {
+     $this->db->select('re.descripcion, COUNT(d.idDependencia) as total_denuncias', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('recepcion re', 'd.idRecepcion = re.idRecepcion', 'right');
+      $this->db->group_by('re.idRecepcion');
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    } 
+
+    public function count_medios()
+    {
+     $this->db->select('me.descripcion, COUNT(d.idDependencia) as total_denuncias', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('medios me', 'd.idMedios = me.idMedios', 'right');
+      $this->db->group_by('me.idMedios');
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    }  
+
+    public function count_den()
+    {
+      $this->db->select('de.dependencia, COUNT(dir.idDireccion) as total_denuncias', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('direcciones dir', 'd.idDependencia = dir.idDireccion', 'right');
+      $this->db->group_by('dir.idDireccion');
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    } 
 }

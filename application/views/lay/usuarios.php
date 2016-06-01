@@ -22,7 +22,7 @@
         <!-- Black block starts -->
         <div class="blue-block">
           <div class="page-title">
-            <h3 class="pull-left"><i class="fa fa-desktop"></i>Menú</h3>  
+            <h3 class="pull-left"><i class="fa fa-users"></i>Usuarios</h3>  
             
             <div class="clearfix"></div>
           </div>
@@ -36,42 +36,19 @@
             <!-- Content starts -->
         
         <div class="container">
-         <div class="page-content page-statement">
+          <div class="page-content page-statement">
+            <div class="text-center">
 
-              <div class="text-center">
 
-              <div class="col-md-4 col-sm-4">
 
-                <a href="<?php echo base_url()."regidenu/buscar"?>">
+            <iframe src="<?php echo site_url('usuarios/mostrar_usuarios');?>" width="897px" height="700px"></iframe>
 
-              <div class="well br-red">
-                  <i class="fa fa-gavel"></i>
-                <h2>Denuncias</h2>                
-              </div>
-                </a>
-              </div>
+              
 
-              <div class="col-md-4 col-sm-4">
-                <a href="<?php echo base_url(). "main/catalogo2"?>">
-              <div class="well br-lblue">
-                  <i class="fa fa-folder-open"></i>
-                <h2>Catálogo</h2>                
-              </div>
-                </a>
-              </div>
+             
 
-              <div class="col-md-4 col-sm-4">
-                <a href="<?php echo base_url(). "reportes"?>">
-              <div class="well br-green">
-                <i class="fa fa-bar-chart-o"></i>
-                <h2>Reportes</h2>                
-              </div>
-                </a>
-              </div>
+            
             </div>
-
-
-
             <div class="row">
               <div class="col-md-12">
               <hr />

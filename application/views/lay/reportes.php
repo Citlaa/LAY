@@ -23,6 +23,7 @@
         <!-- Page heading ends -->
 
 
+
         <!-- Black block starts -->
         <div class="blue-block">
           <div class="page-title">
@@ -405,12 +406,10 @@
       });
 
       $('#buscarDenEstW').click(function () {
-        
         window.location.replace("/lay/word_estatus/index/"+  $('#idEstatus').val());
       });
 
       $('#graficaDenEst').click(function () {
-        
         window.location.replace("/lay/chartEst");
       });
 
@@ -424,6 +423,11 @@
       $('#buscarDenRecW').click(function () {
         // console.log($('#idCiudadano').val());
         window.location.replace("/lay/word_recepcion/index/"+  $('#idRecepcion').val());
+      });
+      
+      $('#graficaDenModo').click(function () {
+        // console.log($('#idCiudadano').val());
+        window.location.replace("/lay/chart_modo");
       });
 
       $('#graficaDenRec').click(function () {
