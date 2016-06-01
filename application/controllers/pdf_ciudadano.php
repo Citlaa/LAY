@@ -45,8 +45,7 @@ class Pdf_ciudadano extends CI_Controller
       $data = array(
         'denuncias' => $this->model_denuncias->by_ciudadano($idCiudadano)
       );
-
-
+      
         //hacemos que coja la vista como datos a imprimir
         //importante utf8_decode para mostrar bien las tildes, ñ y demás
         $this->html2pdf->html(utf8_encode($this->load->view('pdf_ciudadano', $data, true)));
@@ -57,7 +56,6 @@ class Pdf_ciudadano extends CI_Controller
           $this->show();
         }
       }
-
   //funcion que ejecuta la descarga del pdf
   public function downloadPdf()
   {

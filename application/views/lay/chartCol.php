@@ -22,7 +22,8 @@
         <!-- Black block starts -->
         <div class="blue-block">
           <div class="page-title">
-            <h3 class="pull-left"><i class="fa fa-desktop"></i>Chart</h3>                        
+            <h3 class="pull-left"><i class="fa fa-bar-chart-o"></i>Gráfica</h3>
+            <div class="clearfix"></div>
           </div>
         </div>
         <!-- Black block ends -->
@@ -35,7 +36,7 @@
             <div class="container">
               <div class="page-content page-statement">
                 <div class="text-center">             
-                <h3 class="pull-left">Dependencias</h3>           
+                <h3 class="pull-left">Cantidad de denuncias por dependencia</h3>           
                 <canvas id="chart-area3" width="600" height="200"></canvas>
                
                 </div>
@@ -48,32 +49,8 @@
 
         <script src="Chart.js"></script>
 
-<h3>Total_denuncias</h3>
 <?php if ($denuncias): ?>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>
-              Estatus
-            </th>
-            <th>
-              total_denuncias
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php foreach ($denuncias as $denuncia): ?>
-            <tr>
-                <td>
-                  <?php echo utf8_decode($denuncia['descripcion']); ?>
-                </td>
-                <td>
-                  <?php echo utf8_decode($denuncia['total_denuncias']); ?>
-                </td>
-            </tr>
-          <?php endforeach; ?>
-        </tbody>
-      </table>
+      
 <?php else: ?>
   <body>
     <br>
@@ -83,7 +60,7 @@
 
 
   <?php foreach ($denuncias as $denu): ?>
-    <?php $arrayPHP[]= array($denu['descripcion']); ?>
+    <?php $arrayPHP[]= array($denu['direccion']); ?>
     <?php $arrayNum[]= array($denu['total_denuncias']); ?>
    <?php endforeach; ?> 
 
@@ -98,13 +75,7 @@
  
     // Mostramos los valores del array
     
-    for(var i=0;i<arrayJSNum.length;i++)
-    {
-        //document.write("<br>"+arrayJSNum2[i]);
-        document.write("<br>"+arrayJS[i]);
-        document.write("<br>"+arrayJSNum[i]);
-
-    }
+    
     
 
 </script>

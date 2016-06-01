@@ -88,6 +88,7 @@
             
       <button id="buscarDenCiu" class="btn btn-enter btn-lg"> <span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenCiuW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="graficaDenCiu" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
     </div>
 
     <div role="tabpanel" class="tab-pane" id="profile">
@@ -102,7 +103,7 @@
       <button id="buscarDenDepW" class="btn btn-enter btn-lg">
         <span class="fa fa-file-word-o"></span> Buscar denuncias Word
       </button>
-      <button id="graficaCountDep" class="btn btn-enter btn-lg"> Grafica :) </button>
+      <button id="graficaDenDep" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
     </div>
     <div role="tabpanel" class="tab-pane" id="messages">
       <h1>Denuncias por colonia</h1>
@@ -112,7 +113,10 @@
       <hr style="border-bottom-width: 0px;">
       <button id="buscarDenCol" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenColW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="graficaDenCol" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
     </div>
+
+
     <div role="tabpanel" class="tab-pane" id="settings">
       <h1>Denuncias por fecha</h1>      
 
@@ -151,7 +155,7 @@
       </div>
       <button id="buscarDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
        <button id="buscarDenEstW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-        <button id="graficaDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Grafica </button>
+        <button id="graficaDenEst" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
     </div>
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepción</h1>
@@ -168,7 +172,10 @@
       </div>
       <button id="buscarDenRec" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenRecW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="graficaDenRec" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
     </div>
+
+
     <div role="tabpanel" class="tab-pane" id="medios">
       <h1>Denuncias por medios</h1>
       
@@ -184,6 +191,7 @@
       </div>
       <button id="buscarDenMed" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
       <button id="buscarDenMedW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
+      <button id="graficaDenMed" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
     </div>
 
     
@@ -259,7 +267,7 @@
       });
 
 
-
+// CIUDADANO
       $('#buscarDenCiu').click(function () {
         
         if(nombrei){
@@ -274,8 +282,13 @@
         }  
       });
 
+      $('#graficaDenCiu').click(function () {
+        
+        window.location.replace("/lay/chartCiu");
+      });
 
 
+// CIUDADANO
       $('#dependenciai').autocomplete({
         source:'/lay/dependencias/dependencia_autocomplete_descripcion',
         select: function (event, ui) {
@@ -304,13 +317,13 @@
         window.location.replace("/lay/word_dependencias/index/"+  $('#idDependencia').val());
         }
       });
-
-      $('#graficaCountDep').click(function () {
-        window.location.replace("/lay/grafica/count_dep/");
-      });
       
+      $('#graficaDenDep').click(function () {
+        
+        window.location.replace("/lay/chartDep");
+      });
 
-
+// MULTIFILTRO
       $('#buscarDenDepFe').click(function () {
         var dependenciai2 = $("#dependenciai").val();
         var periodoi2 = $("#periodoi2").val();
@@ -330,6 +343,7 @@
       });
 
 
+// COLONIA
       $('#buscarDenCol').click(function () {
         var coloniai = $("#coloniai").val();
         if(coloniai){
@@ -344,7 +358,13 @@
         }
       });
 
+      $('#graficaDenCol').click(function () {
+        
+        window.location.replace("/lay/chartCol");
+      });
 
+
+// FECHA
       $('#buscarDenFecha').click(function () {
         var fechai = $("#fechai").val();
         if(fechai){
@@ -391,10 +411,11 @@
 
       $('#graficaDenEst').click(function () {
         
-        window.location.replace("/lay/grafica");
+        window.location.replace("/lay/chartEst");
       });
 
 
+// RECEPCION
       $('#buscarDenRec').click(function () {
         // console.log($('#idCiudadano').val());
         window.location.replace("/lay/pdf_recepcion/index/"+  $('#idRecepcion').val());
@@ -405,7 +426,13 @@
         window.location.replace("/lay/word_recepcion/index/"+  $('#idRecepcion').val());
       });
 
+      $('#graficaDenRec').click(function () {
+        
+        window.location.replace("/lay/chartRec");
+      });
 
+
+// MEDIOS
       $('#buscarDenMed').click(function () {
         
         window.location.replace("/lay/pdf_medio/index/"+  $('#idMedios').val());
@@ -416,21 +443,10 @@
         window.location.replace("/lay/word_medio/index/"+  $('#idMedios').val());
       });
 
-
-      $(".formulario").submit(function(){
-    
-    var poblacion = $(".poblacion").val();
-    var sector = $(".sector").val();
-    var descripcion = $(".descripcion").val();
-    
-    if(poblacion == '' && sector == '' && descripcion == '')
-    {
-      
-      alert('Escoge algún filtro para tu búsqueda');
-      return false;
-      
-    }
-  })
+      $('#graficaDenMed').click(function () {
+        
+        window.location.replace("/lay/chartMed");
+      });
 
     });
   </script>
