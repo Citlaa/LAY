@@ -319,27 +319,6 @@ public function insert_denuncia()
       $medio= $this->db->get();
       return $medio->result_array();
     }
-    }  
-
-    public function count_modo()
-    {
-     $this->db->select('re.descripcion, COUNT(d.idDependencia) as total_denuncias', FALSE);
-      $this->db->from('denuncias d');
-      $this->db->join('recepcion re', 'd.idRecepcion = re.idRecepcion', 'right');
-      $this->db->group_by('re.idRecepcion');
-      $ciudadano= $this->db->get();
-      return $ciudadano->result_array();
-    } 
-
-    public function count_medios()
-    {
-     $this->db->select('me.descripcion, COUNT(d.idDependencia) as total_denuncias', FALSE);
-      $this->db->from('denuncias d');
-      $this->db->join('medios me', 'd.idMedios = me.idMedios', 'right');
-      $this->db->group_by('me.idMedios');
-      $ciudadano= $this->db->get();
-      return $ciudadano->result_array();
-    }  
 
     public function count_den()
     {

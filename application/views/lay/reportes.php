@@ -380,7 +380,12 @@
        }
       });
 
+      $('#graficaDenFec').click(function () {
+        
+        window.location.replace("/lay/chartFec");
+      });
 
+// PERIODO
       $('#buscarDenPeriodo').click(function () {
         var periodoi = $("#periodoi").val();
         var periodof = $("#periodof").val();
