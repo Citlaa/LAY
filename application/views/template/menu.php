@@ -32,6 +32,7 @@
                          <!-- Use the class "current" in main menu to hightlight current main menu -->
 
                          <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
+                        
                          <li><a href="<?php echo base_url()."regidenu/buscar"?>"><i class="fa fa-gavel"></i>Denuncias</a></li>
                          <li class="has_submenu">
                              <a href="#">

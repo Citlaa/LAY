@@ -261,7 +261,7 @@ public function insert_denuncia()
       return $ciudadano->result_array();
     }  
 
-    public function count_estatus()
+    public function count_est()
     {
      $this->db->select('es.descripcion, COUNT(d.idDependencia) as total_denuncias', FALSE);
       $this->db->from('denuncias d');

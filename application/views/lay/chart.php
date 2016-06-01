@@ -87,6 +87,7 @@
     <?php $arrayNum[]= array($denu['total_denuncias']); ?>
    <?php endforeach; ?> 
 
+
   
 
 <script type="text/javascript">
@@ -94,7 +95,6 @@
     // array de php
     var arrayJS=<?php echo json_encode($arrayPHP);?>;
     var arrayJSNum=<?php echo json_encode($arrayNum);?>;
-    var arrayJSNum2;
  
     // Mostramos los valores del array
     
@@ -102,16 +102,18 @@
     {
         //document.write("<br>"+arrayJSNum2[i]);
         document.write("<br>"+arrayJS[i]);
+        document.write("<br>"+arrayJSNum[i]);
+
     }
+    
+
 </script>
 
 <script type="text/javascript">  
 
-for(var i=0;i<arrayJSNum.length;i++)
-    {
   var barChartData = {
-  //  labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio"],
-    labels : [arrayJS],
+   //  labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio"],
+    labels : arrayJS,
     datasets : [
       
       {
@@ -120,12 +122,11 @@ for(var i=0;i<arrayJSNum.length;i++)
         highlightFill : "#ee7f49",
         highlightStroke : "#ffffff",
         //data : [40,50,70,40,85,55,15]
-        data : [arrayJSNum[0]]
+        data : arrayJSNum
       }
     ]
 
   } 
-    }
 var ctx3 = document.getElementById("chart-area3").getContext("2d");
       
 window.myPie = new Chart(ctx3).Bar(barChartData, {responsive:true});
