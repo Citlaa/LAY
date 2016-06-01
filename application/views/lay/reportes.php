@@ -157,8 +157,10 @@
       </div>
       <button id="buscarDenEst" class="btn btn-enter btn-lg"><span class="fa fa-file-pdf-o"></span> Buscar denuncias PDF</button>
        <button id="buscarDenEstW" class="btn btn-enter btn-lg"><span class="fa fa-file-word-o"></span> Buscar denuncias Word</button>
-        <button id="graficaDenEst" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
+      <button id="graficaDenEst" class="btn btn-enter btn-lg"><span class="fa fa-bar-chart-o"></span> Grafica </button>
     </div>
+
+
     <div role="tabpanel" class="tab-pane" id="recepcion">
       <h1>Denuncias por recepción</h1>
       
@@ -406,6 +408,8 @@
       }
       });
 
+
+// ESTATUS
       $('#buscarDenEst').click(function () {
         
         window.location.replace("/lay/pdf_estatus/index/"+  $('#idEstatus').val());
@@ -416,7 +420,8 @@
       });
 
       $('#graficaDenEst').click(function () {
-        window.location.replace("/lay/chartEst");
+        
+        window.location.replace("/lay/chartRec");
       });
 
 

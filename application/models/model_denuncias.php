@@ -290,13 +290,13 @@ public function insert_denuncia()
       return $ciudadano->result_array();
     }  
 
-    public function count_estatus()
+    public function count_est()
     {
       $this->db->select('e.descripcion, COUNT(d.idEstatus) as total_denuncias', FALSE);
       $this->db->from('denuncias d');
       $this->db->join('estatus e', 'd.idEstatus = e.idEstatus', 'right');
       $this->db->group_by('e.idEstatus');
-      $ciudadano= $this->db->get();
+      $ciudadano = $this->db->get();
       return $ciudadano->result_array();
     }
 
