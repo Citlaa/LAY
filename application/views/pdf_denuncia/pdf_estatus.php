@@ -22,7 +22,7 @@
       }
     </style>
     </head>
-<?php if ($denuncias): ?>
+    <?php if ($denuncias): ?>
     <body>
     <h2 id="title">Reporte Generado</h2>
     <h3>Reporte de denuncias: <?php echo utf8_decode($denuncias[0]['estatus'].'s');?></h3>

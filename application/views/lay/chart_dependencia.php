@@ -14,7 +14,7 @@
               <div class="col-md-3 col-sm-6 col-xs-6">
                 <h2><i class="fa fa-desktop"></i>LAY</h2>
               </div>
-          </div>00
+          </div>
         </div>
         <!-- Page heading ends -->
         
@@ -48,25 +48,81 @@
 
         <script src="Chart.js"></script>
 
+<<<<<<< HEAD:application/views/lay/chart.php
 
         
 
 <script>
   var barChartData = {
     labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio"],
+=======
+<h3>Total_denuncias</h3>
+<?php if ($denuncias): ?>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>
+              Estatus
+            </th>
+            <th>
+              total_denuncias
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($denuncias as $denuncia): ?>
+            <tr>
+                <td>
+                  <?php echo utf8_decode($denuncia['dependencia']); ?>
+                </td>
+                <td>
+                  <?php echo utf8_decode($denuncia['total_denuncias']); ?>
+                </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+<?php else: ?>
+  <body>
+    <br>
+  <h2 id="title">No se encontraron registros</h1>
+  </body>
+<?php endif; ?>
+
+
+  <?php foreach ($denuncias as $denu): ?>
+    <?php $arrayPHP[]= array($denu['dependencia']); ?>
+    <?php $arrayNum[]= array($denu['total_denuncias']); ?>
+   <?php endforeach; ?> 
+
+
+  
+
+<script type="text/javascript">
+    // obtenemos el array de valores mediante la conversion a json del
+    // array de php
+    var arrayJS=<?php echo json_encode($arrayPHP);?>;
+    var arrayJSNum=<?php echo json_encode($arrayNum);?>;    
+
+</script>
+
+<script type="text/javascript">  
+
+  var barChartData = {   
+    labels : arrayJS,
+>>>>>>> f875057990612dc6d08cfc4a2feb31945f223800:application/views/lay/chart_dependencia.php
     datasets : [
       
       {
         fillColor : "#e9e225",
         strokeColor : "#ffffff",
         highlightFill : "#ee7f49",
-        highlightStroke : "#ffffff",
-        data : [40,50,70,40,85,55,15]
+        highlightStroke : "#ffffff",        
+        data : arrayJSNum
       }
     ]
 
   } 
-    
 var ctx3 = document.getElementById("chart-area3").getContext("2d");
       
 window.myPie = new Chart(ctx3).Bar(barChartData, {responsive:true});

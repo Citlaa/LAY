@@ -249,63 +249,55 @@ public function insert_denuncia()
       $this->db->where('d.idMedios', $idMedios);
       $ciudadano= $this->db->get();
       return $ciudadano->result_array();
-    }
+    }  
 
-    public function nueva_busqueda($campos)
-  {
-    
-    //definimos si descripción viene vacio o no para utilizar el operador and or
-    $and_or = $this->input->post('descripcion') != '' ? ' AND ' : ' OR ';
-      
-    $condiciones = array();
-    
-    //recorremos los campos del formulario
-    foreach($campos as $campo){
-      
-      //si llegan las variables y no están vacias
-      if($this->input->post($campo) && $this->input->post($campo) != '') 
-      {
-        
-          //definimos la condición para hacer la búsqueda de los campos y de 
-          //esta forma podemos hacer uso del array condiciones fuera del loop
-          $condiciones[] = "$campo LIKE '%" . $this->input->post($campo) . "%'";
-        
-          }
-      
-    }
-      
-    //la consulta base a la que concatenaremos la búsqueda
-    $sql = "SELECT * FROM denuncias ";
-    
-    //si existen condiciones entramos
-    if(count($condiciones) > 0) 
+    public function count_dep()
     {
-      
-        //aquí creamos la condición y la concatenamos a $query
-        $sql .= "WHERE " . implode ($and_or, $condiciones);
-      
-    }
+      $this->db->select('de.dependencia, COUNT(d.idDependencia) as total_denuncias', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('dependencias de', 'd.idDependencia = de.idDependencia', 'right');
+      $this->db->group_by('de.idDependencia');
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    }  
 
-    //asignamos a $query la consulta final
-    $query = $this->db->query($sql);
-    
-    //con la siguiente línea podéis ver lo que arroja la 
-    //consulta escogiendo varios campos, es bueno entenderlo
-    //var_dump($sql); exit;
-    
-    //si se ha encontrado algo 
-    if($query->num_rows() > 0)
+    public function count_estatus()
     {
-        
-      return $query->result();
-        
-    }else{
-      
-      return FALSE;
-      
-    }
-    
-  }
-  
+     $this->db->select('es.descripcion, COUNT(d.idDependencia) as total_denuncias', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('estatus es', 'd.idEstatus = es.idEstatus', 'right');
+      $this->db->group_by('es.idEstatus');
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    }  
 
+    public function count_modo()
+    {
+     $this->db->select('re.descripcion, COUNT(d.idDependencia) as total_denuncias', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('recepcion re', 'd.idRecepcion = re.idRecepcion', 'right');
+      $this->db->group_by('re.idRecepcion');
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    } 
+
+    public function count_medios()
+    {
+     $this->db->select('me.descripcion, COUNT(d.idDependencia) as total_denuncias', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('medios me', 'd.idMedios = me.idMedios', 'right');
+      $this->db->group_by('me.idMedios');
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    }  
+
+    public function count_den()
+    {
+      $this->db->select('de.dependencia, COUNT(dir.idDireccion) as total_denuncias', FALSE);
+      $this->db->from('denuncias d');
+      $this->db->join('direcciones dir', 'd.idDependencia = dir.idDireccion', 'right');
+      $this->db->group_by('dir.idDireccion');
+      $ciudadano= $this->db->get();
+      return $ciudadano->result_array();
+    } 
 }
