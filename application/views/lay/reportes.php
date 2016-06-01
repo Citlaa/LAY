@@ -421,7 +421,7 @@
 
       $('#graficaDenEst').click(function () {
         
-        window.location.replace("/lay/chartRec");
+        window.location.replace("/lay/chartEst");
       });
 
 
