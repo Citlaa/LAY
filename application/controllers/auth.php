@@ -135,7 +135,7 @@ class Auth extends CI_Controller
 				$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|min_length['.$this->config->item('username_min_length', 'tank_auth').']|max_length['.$this->config->item('username_max_length', 'tank_auth').']|alpha_dash');
 			}
 			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
-			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|min_length['.$this->config->item('password_min_length', 'tank_auth').']|max_length['.$this->config->item('password_max_length', 'tank_auth').']|alpha_dash');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|min_length['.$this->config->item('password_min_length', 'tank_auth').']|max_length['.$this->config->item('password_max_length', 'tank_auth').']');
 			$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|xss_clean|matches[password]');
 
 			$captcha_registration	= $this->config->item('captcha_registration', 'tank_auth');
@@ -205,36 +205,7 @@ class Auth extends CI_Controller
 	 *
 	 * @return void
 	 */
-	function send_again()
-	{
-		if (!$this->tank_auth->is_logged_in(FALSE)) {							// not logged in or activated
-			redirect('/auth/login/');
-
-		} else {
-			$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean|valid_email');
-
-			$data['errors'] = array();
-
-			if ($this->form_validation->run()) {								// validation ok
-				if (!is_null($data = $this->tank_auth->change_email(
-						$this->form_validation->set_value('email')))) {			// success
-
-					$data['site_name']	= $this->config->item('website_name', 'tank_auth');
-					$data['activation_period'] = $this->config->item('email_activation_expire', 'tank_auth') / 3600;
-
-					$this->_send_email('activate', $data['email'], $data);
-
-					$this->_show_message(sprintf($this->lang->line('auth_message_activation_email_sent'), $data['email']));
-
-				} else {
-					$errors = $this->tank_auth->get_error_message();
-					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
-				}
-			}
-			$this->load->view('auth/send_again_form', $data);
-		}
-	}
-
+	
 	/**
 	 * Activate user account.
 	 * User is verified by user_id and authentication code in the URL.

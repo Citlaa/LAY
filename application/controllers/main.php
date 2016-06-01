@@ -3,8 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller {
 
-
-
 	public function index()
 	{
 		$data['user_id']	= $this->tank_auth->get_user_id();

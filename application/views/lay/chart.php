@@ -48,6 +48,9 @@
 
         <script src="Chart.js"></script>
 
+
+        
+
 <script>
   var barChartData = {
     labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio"],
@@ -69,6 +72,9 @@ var ctx3 = document.getElementById("chart-area3").getContext("2d");
 window.myPie = new Chart(ctx3).Bar(barChartData, {responsive:true});
 
 </script>
+
+
+
 
   </body> 
 

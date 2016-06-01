@@ -46,7 +46,36 @@ class Grafica extends CI_Controller {
     	 $this->load->view ('ciudadanos', $data);    	 
 	}
 
-
+	function pie()
+	{
+		$this->load->library('highcharts');
+		$this->load->model('model_estatus');
+		$data['pen'] = $this->model_estatus->grafica_pen();
+		$data['aten'] = $this->model_estatus->grafica_aten();
 	
+		$this->load->library('highcharts');
+		$serie['data']	= array(
+			array('value one', $data['pen']), 
+			array('value two', $data['aten']), 
+		);
+		$callback = "function() { return '<b>'+ this.point.name +'</b>: '+ this.y +' %'}";
+		
+		@$tool->formatter = $callback;
+		@$plot->pie->dataLabels->formatter = $callback;
+		
+		$this->highcharts
+			->set_type('pie')
+			->set_serie($serie)
+			->set_tooltip($tool)
+			->set_plotOptions($plot);
+		
+		$data['charts'] = $this->highcharts->render();
+		$this->load->view('charts', $data);
+
+		print json_encode('charts', $data, JSON_NUMERIC_CHECK);
+
+	}
+	
+
 
 }
