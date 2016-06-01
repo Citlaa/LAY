@@ -276,7 +276,7 @@ public function insert_denuncia()
       $this->db->select('CONCAT(dir.calle, " ", dir.noExt, " ", dir.noInt, " ", dir.colonia, " ", dir.localidad, " ", dir.cp) AS direccion, COUNT(d.idCiudadano) as total_denuncias', FALSE);
       $this->db->from('denuncias d');
       $this->db->join('direcciones dir', 'd.idDireccion = dir.idDireccion', 'right');
-      $this->db->group_by('dir.idDireccion');
+      $this->db->group_by('dir.colonia');
       $ciudadano= $this->db->get();
       return $ciudadano->result_array();
     }

@@ -75,8 +75,6 @@
  
     // Mostramos los valores del array
     
-    
-    
 
 </script>
 
