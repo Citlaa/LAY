@@ -48,14 +48,6 @@
 
         <script src="Chart.js"></script>
 
-<<<<<<< HEAD:application/views/lay/chart.php
-
-        
-
-<script>
-  var barChartData = {
-    labels : ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio"],
-=======
 <h3>Total_denuncias</h3>
 <?php if ($denuncias): ?>
       <table class="table table-striped">
@@ -110,7 +102,6 @@
 
   var barChartData = {   
     labels : arrayJS,
->>>>>>> f875057990612dc6d08cfc4a2feb31945f223800:application/views/lay/chart_dependencia.php
     datasets : [
       
       {
@@ -128,9 +119,6 @@ var ctx3 = document.getElementById("chart-area3").getContext("2d");
 window.myPie = new Chart(ctx3).Bar(barChartData, {responsive:true});
 
 </script>
-
-
-
 
   </body> 
 

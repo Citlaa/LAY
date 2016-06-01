@@ -37,8 +37,6 @@
                             <li><a href="<?php echo base_url()."usuarios/index"?>"><i class="fa fa-users"></i>Usuarios</a></li>
                         
                             <?php }?>
-
-<<<<<<< HEAD
                             <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
                             <li><a href="<?php echo base_url()."regidenu/buscar"?>"><i class="fa fa-gavel"></i>Denuncias</a></li>
                             <li class="has_submenu">
@@ -47,17 +45,6 @@
                                    <!-- Icon to show dropdown -->
                                   <span class="caret pull-right"></span>
                                 </a>
-=======
-                         <li><a href="<?php echo base_url()."main"?>"><i class="fa fa-desktop"></i>Menú</a></li>
-                        
-                         <li><a href="<?php echo base_url()."regidenu/buscar"?>"><i class="fa fa-gavel"></i>Denuncias</a></li>
-                         <li class="has_submenu">
-                             <a href="#">
-                                 <i class="fa fa-folder-open"></i>Catálogo
-                                 <!-- Icon to show dropdown -->
-                                 <span class="caret pull-right"></span>
-                             </a>
->>>>>>> f875057990612dc6d08cfc4a2feb31945f223800
                              <!-- Sub navigation -->
                               <ul>
                                    <!-- Use the class "active" in sub menu to hightlight current sub menu -->
